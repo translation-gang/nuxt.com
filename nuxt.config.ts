@@ -17,7 +17,7 @@ const examplesSourceBase = normalizedDirPath(process.env.NUXT_EXAMPLES_PATH)
 const docsSource: any = {
   name: 'nuxt-docs',
   driver: 'github',
-  repo: 'nuxt/nuxt',
+  repo: 'translation-gang/nuxt',
   branch: 'main',
   dir: 'docs',
   prefix: '/1.docs',
