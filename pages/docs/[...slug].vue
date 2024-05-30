@@ -48,7 +48,7 @@ const titleTemplate = computed(() => {
 const communityLinks = computed(() => [{
   icon: 'i-ph-pen-duotone',
   label: 'Edit this page',
-  to: `https://github.com/nuxt/nuxt/edit/main/docs/${page?.value?._file?.split('/').slice(1).join('/')}`,
+  to: `https://github.com/translation-gang/nuxt/edit/main/docs/${page?.value?._file?.split('/').slice(1).join('/')}`,
   target: '_blank'
 }, {
   icon: 'i-ph-shooting-star-duotone',
