@@ -7,7 +7,7 @@ const { slug } = route.params
 
 const { data: provider } = await useAsyncData(route.path, () => queryContent<Hosting>(route.path).findOne())
 if (!provider.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Hosting Platform not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Платформа для хостинга не найдена', fatal: true })
 }
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent('/deploy')
@@ -21,15 +21,15 @@ const title = provider.value.head?.title || provider.value.title
 const description = provider.value.head?.description || provider.value.description
 
 useSeoMeta({
-  titleTemplate: 'Deploy Nuxt to %s',
+  titleTemplate: 'Разверните Nuxt в %s',
   title,
   description,
   ogDescription: description,
-  ogTitle: `Deploy Nuxt to ${title}`
+  ogTitle: `Разверните Nuxt в ${title}`
 })
 
 defineOgImageComponent('Docs', {
-  headline: 'Deploy To'
+  headline: 'Развернуть в'
 })
 
 const links = []
@@ -44,14 +44,14 @@ if (provider.value?.website) {
 if (provider.value?.nitroPreset) {
   links.push({
     icon: 'i-ph-lightning-duotone',
-    label: 'Nitro Preset',
+    label: 'Предустановка Nitro',
     to: `https://nitro.unjs.io/deploy/providers/${provider.value?.nitroPreset}`,
     target: '_blank'
   })
 }
 links.push({
   icon: 'i-ph-pen-duotone',
-  label: 'Edit this page',
+  label: 'Редактировать эту страницу',
   to: `https://github.com/translation-gang/nuxt.com/edit/main/content/3.deploy/${slug}.md`,
   target: '_blank'
 })
@@ -60,7 +60,7 @@ links.push({
 <template>
   <UContainer>
     <UPage>
-      <UPageHeader :description="provider.description" headline="Deploy" :ui="{ icon: { base: 'text-black dark:text-white' } }">
+      <UPageHeader :description="provider.description" headline="Развернуть" :ui="{ icon: { base: 'text-black dark:text-white' } }">
         <template #title>
           <div class="flex items-center gap-4">
             <UIcon v-if="provider.logoIcon" :name="provider.logoIcon" class="w-10 text-black dark:text-white" />
@@ -71,7 +71,7 @@ links.push({
         </template>
 
         <div class="absolute top-[68px] -left-[64px] hidden lg:flex">
-          <UTooltip text="Back to deployments">
+          <UTooltip text="Вернуться к развертыванию">
             <UButton
               to="/deploy"
               icon="i-ph-caret-left"
@@ -98,7 +98,7 @@ links.push({
               <div class="hidden lg:block space-y-6" :class="{ '!mt-6': provider.body?.toc?.links?.length }">
                 <UDivider v-if="links?.length && provider.body?.toc?.links?.length" type="dashed" />
 
-                <UPageLinks title="Links" :links="links" />
+                <UPageLinks title="Ссылки" :links="links" />
 
                 <UDivider type="dashed" />
 

@@ -26,7 +26,7 @@ const mobileNav = computed(() => {
 const open = ref(false)
 const dropdownItems = [
   [{
-    label: 'Copy logo as SVG',
+    label: 'Скопируйте логотип как SVG',
     icon: 'i-simple-icons-nuxtdotjs',
     click: () => copy(logo.value.$el.outerHTML, { title: 'Copied to clipboard' })
   },
@@ -37,7 +37,7 @@ const dropdownItems = [
     target: '_blank'
   }],
   [{
-    label: 'Browse Design Kit',
+    label: 'Просмотреть Design Kit',
     icon: 'i-ph-shapes-duotone',
     to: '/design-kit'
   }]
@@ -73,7 +73,7 @@ defineProps<{
         <NuxtLink to="/" class="flex gap-2 items-end">
           <NuxtLogo ref="logo" class="block w-auto h-6" @click.right.prevent="openLogoContext" @click.left.prevent="navigateTo('/')" />
 
-          <UTooltip v-if="version" :text="`Latest release: v${stats.version}`">
+          <UTooltip v-if="version" :text="`Последний релиз: v${stats.version}`">
             <UBadge variant="subtle" size="xs" class="-mb-[2px] rounded font-semibold">
               v{{ version }}
             </UBadge>
@@ -91,11 +91,11 @@ defineProps<{
         <UContentSearchButton :label="null" />
       </UTooltip>
 
-      <UTooltip :text="$colorMode.preference === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'">
+      <UTooltip :text="$colorMode.preference === 'dark' ? 'Переключитесь в светлую тему' : 'Переключитесь в темную тему'">
         <UColorModeButton />
       </UTooltip>
 
-      <UTooltip text="GitHub Stars">
+      <UTooltip text="Звезды на GitHub">
         <UButton
           icon="i-simple-icons-github"
           to="https://github.com/nuxt/nuxt"

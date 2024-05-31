@@ -9,7 +9,7 @@ const { navKeyFromPath } = useContentHelpers()
 
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Страница не найдена', fatal: true })
 }
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, async () => {
@@ -47,45 +47,45 @@ const titleTemplate = computed(() => {
 
 const communityLinks = computed(() => [{
   icon: 'i-ph-pen-duotone',
-  label: 'Edit this page',
+  label: 'Редактировать эту страницу',
   to: `https://github.com/translation-gang/nuxt/edit/main/docs/${page?.value?._file?.split('/').slice(1).join('/')}`,
   target: '_blank'
 }, {
   icon: 'i-ph-shooting-star-duotone',
-  label: 'Star on GitHub',
+  label: 'Звезды на GitHub',
   to: 'https://github.com/nuxt/nuxt',
   target: '_blank'
 }, {
   icon: 'i-ph-chat-centered-text-duotone',
-  label: 'Chat on Discord',
+  label: 'Чат в Discord',
   to: 'https://discord.com/invite/nuxt',
   target: '_blank'
 }, {
   icon: 'i-ph-hand-heart-duotone',
-  label: 'Become a Sponsor',
+  label: 'Стать спонсором',
   to: 'https://github.com/sponsors/nuxt',
   target: '_blank'
 }])
 
 const ecosystemLinks = [{
   icon: 'i-ph-buildings-duotone',
-  label: 'Enterprise Support',
+  label: 'Корпоративная поддержка',
   to: '/enterprise/support'
 }, {
   icon: 'i-ph-handshake-duotone',
-  label: 'Nuxt Agencies',
+  label: 'Агентства Nuxt',
   to: '/enterprise/agencies'
 }, {
   icon: 'i-ph-briefcase-duotone',
-  label: 'Find a Nuxt Job',
+  label: 'Найти работу в Nuxt',
   to: '/enterprise/jobs'
 }, {
   icon: 'i-ph-graduation-cap-duotone',
-  label: 'Video Courses',
+  label: 'Видеокурсы',
   to: 'https://masteringnuxt.com/nuxt3?ref=nuxt',
   target: '_blank'
 }, {
-  label: 'Nuxt Certification',
+  label: 'Сертификация Nuxt',
   icon: 'i-ph-medal-duotone',
   to: 'https://certification.nuxt.com',
   target: '_blank'
@@ -133,11 +133,11 @@ defineOgImageComponent('Docs', {
           <div class="hidden lg:block space-y-6" :class="{ '!mt-6': page.body?.toc?.links?.length }">
             <UDivider v-if="page.body?.toc?.links?.length" type="dashed" />
 
-            <UPageLinks title="Community" :links="communityLinks" />
+            <UPageLinks title="Сообщество" :links="communityLinks" />
 
             <UDivider type="dashed" />
 
-            <UPageLinks title="Ecosystem" :links="ecosystemLinks" />
+            <UPageLinks title="Экосистема" :links="ecosystemLinks" />
 
             <UDivider type="dashed" />
 

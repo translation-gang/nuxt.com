@@ -16,8 +16,8 @@ const { data: page } = await useAsyncData('index', () => queryContent('/').findO
 const videoModalOpen = ref(false)
 
 const site = useSiteConfig()
-const title = 'Nuxt: The Intuitive Vue Framework'
-const description = 'Nuxt is an open source framework that makes web development intuitive and powerful. Create performant and production-grade full-stack web apps and websites with confidence.'
+const title = 'Nuxt: Интуитивно понятный фреймворк Vue'
+const description = 'Nuxt - это фреймворк с открытым исходным кодом, который делает веб-разработку интуитивно понятной и мощной. Уверенно создавайте производительные веб-приложения и веб-сайты с полным стеком.'
 useSeoMeta({
   title,
   ogTitle: title,
@@ -44,26 +44,26 @@ useSeoMeta({
       </template>
 
       <template #title>
-        The Intuitive<br><span class="text-primary block lg:inline-block">Vue Framework</span>
+        Интуитивный<br><span class="text-primary block lg:inline-block">Vue фреймворк</span>
       </template>
 
       <template #description>
-        Nuxt is an
+        Nuxt - это
         <NuxtLink
           to="https://github.com/nuxt/nuxt"
           target="_blank"
           class="font-medium hover:underline underline-offset-2"
         >
-          open source framework
-        </NuxtLink> that makes web development intuitive and powerful.<br>Create performant and production-grade full-stack web apps and websites with confidence.
+          фреймворк с открытым исходным кодом
+        </NuxtLink> который делает веб-разработку интуитивно понятной и мощной.<br> Создавайте производительные и производственные полнофункциональные веб-приложения и веб-сайты с уверенностью.
       </template>
 
       <template #links>
         <UButton to="/docs/getting-started/installation" icon="i-ph-rocket-launch-duotone" size="xl">
-          Get Started
+          Начало
         </UButton>
         <UButton size="xl" color="white" icon="i-ph-video-duotone" @click="videoModalOpen = true">
-          What is Nuxt?
+          Что такое Nuxt?
         </UButton>
 
         <UModal v-model="videoModalOpen">
@@ -88,7 +88,7 @@ useSeoMeta({
         height="256"
         class="mx-auto lg:my-16"
         src="/uwu.png"
-        alt="Nuxt Logo in uwu style"
+        alt="Логотип Nuxt в стиле uwu"
       />
     </ULandingHero>
 
