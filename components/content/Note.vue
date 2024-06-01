@@ -1,6 +1,6 @@
 <template>
   <Alert
-    title="Note"
+    title="Заметка"
     icon="i-ph-info-duotone"
     color="blue"
     class="_note"

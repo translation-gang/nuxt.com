@@ -3,7 +3,7 @@
     <iframe
       v-if="url"
       :src="url"
-      title="Sandbox editor"
+      title="Редактор песочницы"
       sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"
       class="w-full h-full min-h-[700px] overflow-hidden bg-gray-100 dark:bg-gray-800"
     />

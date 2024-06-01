@@ -1,6 +1,6 @@
 <template>
   <Alert
-    title="Important"
+    title="Важно"
     icon="i-ph-warning-diamond-duotone"
     color="violet"
     class="_important"

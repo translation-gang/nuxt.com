@@ -1,6 +1,6 @@
 <template>
   <Callout icon="i-ph-app-window-duotone">
-    Read and edit a live example in
+    Прочитайте и отредактируйте живой пример в
     <NuxtLink :to="to">
       {{ computedTitle }}
     </NuxtLink>.

@@ -1,6 +1,6 @@
 <template>
   <Alert
-    title="Tip"
+    title="Совет"
     icon="i-ph-lightbulb-duotone"
     color="green"
     class="_tip"

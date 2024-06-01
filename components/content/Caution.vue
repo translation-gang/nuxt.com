@@ -1,6 +1,6 @@
 <template>
   <Alert
-    title="Caution"
+    title="Внимание"
     icon="i-ph-warning-octagon-duotone"
     color="red"
     class="_caution"
