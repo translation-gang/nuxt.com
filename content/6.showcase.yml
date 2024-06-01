@@ -1,6 +1,6 @@
-title: Showcase
-head.title: Nuxt Showcase
-description: Discover our selection of websites built with Nuxt. This collection is powered by VueTelescope.
+title: Витрина
+head.title: Nuxt витрина
+description: Откройте для себя нашу подборку сайтов, созданных с помощью Nuxt. Эта коллекция создана на основе VueTelescope.
 navigation.icon: i-ph-projector-screen-duotone
 links:
   - label: 'Chrome'

@@ -26,7 +26,7 @@ defineProps<{
           :to="`/assets/design-kit/${path}.svg`"
           download
           external
-          aria-label="Download svg"
+          aria-label="Скачать svg"
         />
         <UButton
           variant="link"
@@ -35,7 +35,7 @@ defineProps<{
           :to="`/assets/design-kit/${path}.png`"
           download
           external
-          aria-label="Download png"
+          aria-label="Скачать png"
         />
       </div>
     </div>

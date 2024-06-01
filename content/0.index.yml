@@ -1,7 +1,7 @@
 navigation: false
 hero:
   cta:
-    label: "Refreshed Nuxt ESLint Integrations"
+    label: "Обновленная интеграция Nuxt ESLint"
     to: /blog/eslint-module
     variant: outline
     icon: i-ph-arrow-right

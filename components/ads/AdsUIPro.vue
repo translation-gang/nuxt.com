@@ -10,7 +10,7 @@
       </UBadge>
     </div>
     <p class="text-sm dark:text-gray-400 text-gray-500 pb-1">
-      Premium Vue Components for Nuxt applications.
+      Премиум-компоненты Vue для приложений Nuxt.
     </p>
   </UPageCard>
 </template>

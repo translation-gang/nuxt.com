@@ -2,11 +2,11 @@
 defineProps({
   label: {
     type: String,
-    default: 'Subscribe to our newsletter'
+    default: 'Подпишитесь на нашу рассылку'
   },
   description: {
     type: String,
-    default: 'Stay updated on new releases and features, guides, and community updates.'
+    default: 'Следите за новыми выпусками и функциями, руководствами и обновлениями сообщества.'
   }
 })
 

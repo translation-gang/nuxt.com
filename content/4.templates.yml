@@ -1,7 +1,7 @@
-head.title: Nuxt Templates
-title: Nuxt Templates
-navigation.title: Templates
-description: 'Explore community templates to get up and running in a few seconds.'
+head.title: Шаблоны Nuxt
+title: Шаблоны Nuxt
+navigation.title: Шаблоны
+description: 'Изучите шаблоны сообществ, чтобы начать работу за несколько секунд.'
 navigation.icon: i-ph-browsers-duotone
 links:
   - label: 'List a template'

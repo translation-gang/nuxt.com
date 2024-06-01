@@ -1,9 +1,9 @@
-navigation.title: Deploy
-title: Deploy a Nuxt App
-description: Discover the different ways to deploy your Nuxt project on different hosting providers.
+navigation.title: Развертывание
+title: Развертывание приложения Nuxt
+description: Узнайте о различных способах развертывания проекта Nuxt на различных хостинг-провайдерах.
 navigation.icon: i-ph-rocket-launch-duotone
 links:
-  - label: 'Deployment Guide'
+  - label: 'Руководство по развертыванию'
     icon: i-ph-cloud-duotone
     to: '/docs/getting-started/deployment'
     color: black

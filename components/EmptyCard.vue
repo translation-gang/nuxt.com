@@ -2,7 +2,7 @@
 withDefaults(defineProps<{
   label: string
 }>(), {
-  label: 'No results found.'
+  label: 'Результаты не найдены.'
 })
 </script>
 
