@@ -7,7 +7,7 @@ const { copy } = useCopyToClipboard()
 
 const { data: article } = await useAsyncData(route.path, () => queryContent<BlogArticle>(route.path).findOne())
 if (!article.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Article not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Статья не найдена', fatal: true })
 }
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => queryContent('/blog')
@@ -25,11 +25,11 @@ useSeoMeta({
 const title = article.value.head?.title || article.value.title
 const description = article.value.head?.description || article.value.description
 useSeoMeta({
-  titleTemplate: '%s · Nuxt Blog',
+  titleTemplate: '%s · Nuxt Блог',
   title,
   description,
   ogDescription: description,
-  ogTitle: `${title} · Nuxt Blog`
+  ogTitle: `${title} · Nuxt Блог`
 })
 
 if (article.value.image) {
@@ -37,41 +37,41 @@ if (article.value.image) {
 }
 else {
   defineOgImageComponent('Docs', {
-    headline: 'Blog'
+    headline: 'Блог'
   })
 }
 
 const authorTwitter = article.value.authors?.[0]?.twitter
 const socialLinks = computed(() => [{
   icon: 'i-simple-icons-linkedin',
-  to: `https://www.linkedin.com/sharing/share-offsite/?url=https://nuxt.com${article.value._path}`
+  to: `https://www.linkedin.com/sharing/share-offsite/?url=https://nuxt-ru.vercel.app${article.value._path}`
 }, {
   icon: 'i-simple-icons-twitter',
-  to: `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${article.value.title}${authorTwitter ? ` by @${article.value.authors[0].twitter}` : ''}\n\n`)}https://nuxt.com${article.value._path}`
+  to: `https://twitter.com/intent/tweet?text=${encodeURIComponent(`${article.value.title}${authorTwitter ? ` by @${article.value.authors[0].twitter}` : ''}\n\n`)}https://nuxt-ru.vercel.app${article.value._path}`
 }])
 
 function copyLink() {
-  copy(`https://nuxt.com${article.value._path}`, { title: 'Copied to clipboard' })
+  copy(`https://nuxt-ru.vercel.app${article.value._path}`, { title: 'Скопировано в буфер обмена' })
 }
 const links = [
   {
     icon: 'i-ph-pen-duotone',
-    label: 'Edit this article',
-    to: `https://github.com/nuxt/nuxt.com/edit/main/content/${article.value._file}`,
+    label: 'Отредактируйте эту статью',
+    to: `https://github.com/translation-gang/nuxt.com/edit/main/content/${article.value._file}`,
     target: '_blank'
   }, {
     icon: 'i-ph-shooting-star-duotone',
-    label: 'Star on GitHub',
+    label: 'Звезды на GitHub',
     to: 'https://github.com/nuxt/nuxt',
     target: '_blank'
   }, {
     icon: 'i-ph-chat-centered-text-duotone',
-    label: 'Chat on Discord',
+    label: 'Чат в Discord',
     to: 'https://discord.com/invite/nuxt',
     target: '_blank'
   }, {
     icon: 'i-ph-hand-heart-duotone',
-    label: 'Become a Sponsor',
+    label: 'Стать спонсором',
     to: 'https://github.com/sponsors/nuxt',
     target: '_blank'
   }

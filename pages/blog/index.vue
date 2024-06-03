@@ -11,8 +11,8 @@ useHead({
     {
       rel: 'alternate',
       type: 'application/atom+xml',
-      title: 'Nuxt Blog RSS',
-      href: 'https://nuxt.com/blog/rss.xml'
+      title: 'Nuxt Блог RSS',
+      href: 'https://nuxt-ru.vercel.app/blog/rss.xml'
     }
   ]
 })
