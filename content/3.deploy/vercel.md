@@ -1,64 +1,64 @@
 ---
 title: Vercel
-description: 'Deploy your Nuxt Application to Vercel infrastructure.'
+description: 'Разверните ваше приложение Nuxt на Vercel инфраструктуре.'
 componentImg: Vercel
 logoSrc: '/assets/integrations/vercel.svg'
-category: Hosting
+category: Хостинг
 featured: true
 nitroPreset: 'vercel'
 website: 'https://vercel.com/'
 ---
 
 ::tip
-**Zero Configuration ✨**
+**Нулевая конфигурация ✨**
 :br
-Integration with Vercel is possible with zero configuration, [learn more](https://nitro.unjs.io/deploy#zero-config-providers).
+Интеграция с Vercel возможна с нулевой конфигурацией, [подробнее](https://nitro.unjs.io/deploy#zero-config-providers).
 ::
 
-## Deploy using Git
+## Развертывание с помощью Git
 
-1. Push your code to your git repository (GitHub, GitLab, Bitbucket).
-2. [Import your project](https://vercel.com/new) into Vercel.
-3. Vercel will detect that you are using Nitro and will enable the correct settings for your deployment.
-4. Your application is deployed!
+1. Поместите код в свой git-репозиторий (GitHub, GitLab, Bitbucket).
+2. [Импортируйте ваш проект](https://vercel.com/new) в Vercel.
+3. Vercel определит, что вы используете Nitro, и включит правильные настройки для развертывания.
+4. Ваше приложение развернуто!
 
-After your project has been imported and deployed, all subsequent pushes to branches will generate [Preview Deployments](https://vercel.com/docs/concepts/deploy/environments#preview), and all changes made to the Production Branch (commonly “main”) will result in a [Production Deployment](https://vercel.com/docs/concepts/deploy/environments#production).
+После того как проект импортирован и развернут, все последующие изменения в ветках будут генерировать [Preview Deployments](https://vercel.com/docs/concepts/deploy/environments#preview), а все изменения, внесенные в Production Branch (обычно «main»), приведут к [Production Deployment](https://vercel.com/docs/concepts/deploy/environments#production).
 
-Learn more about Vercel’s [Git Integration](https://vercel.com/docs/concepts/git).
+Узнайте больше о [Интеграции с Git в Vercel](https://vercel.com/docs/concepts/git).
 
-## Vercel Edge Functions
+## Vercel Edge функции
 
-It is possible to deploy your Nuxt applications directly on [Vercel Edge Functions](https://vercel.com/docs/concepts/functions/edge-functions).
+Можно развернуть ваши приложения Nuxt непосредственно на [Vercel Edge Функциях](https://vercel.com/docs/concepts/functions/edge-functions).
 
-> Vercel Edge Functions allow you to deliver content to your site's visitors with speed and personalization.
-> They are deployed globally by default on Vercel's Edge Network and enable you to move server-side logic to the Edge, close to your visitor's origin.
-> Edge Functions use the Vercel Edge Runtime, which is built on the same high-performance V8 JavaScript and WebAssembly engine that is used by the Chrome browser.
-> By taking advantage of this small runtime, Edge Functions can have faster cold boots and higher scalability than Serverless Functions.
-> Edge Functions run after the cache, and can both cache and return responses. [Read More](https://vercel.com/docs/concepts/functions/edge-functions)
+> Функции Vercel Edge Functions позволяют быстро и персонализировано доставлять контент посетителям вашего сайта.
+> Они по умолчанию развернуты в глобальной сети Vercel Edge Network и позволяют перенести логику на стороне сервера в Edge, ближе к месту нахождения посетителей.
+> Функции Edge используют Vercel Edge Runtime, который построен на том же высокопроизводительном движке V8 JavaScript и WebAssembly, что и браузер Chrome.
+> Используя преимущества этого небольшого времени выполнения, Edge-функции могут иметь более быструю загрузку и более высокую масштабируемость, чем без серверные функции.
+> Edge Functions запускаются после кэша и могут как кэшировать, так и возвращать ответы. [Читать далее](https://vercel.com/docs/concepts/functions/edge-functions)
 
-In order to enable this target, set the following environment variable:
+Чтобы включить эту цель, установите следующую переменную окружения:
 
 ```bash
 SERVER_PRESET=vercel_edge
 ```
 
-Or update the build command to `nuxt build --preset=vercel_edge`.
+Или обновите команду сборки на `nuxt build --preset=vercel_edge`.
 
 ## Vercel KV Storage
 
-You can easily use [Vercel KV Storage](https://vercel.com/docs/storage/vercel-kv) with [Nuxt Server Storage](/docs/guide/directory-structure/server#server-storage).
+Вы можете легко использовать [Vercel KV Storage](https://vercel.com/docs/storage/vercel-kv) с [Nuxt Server Storage](/docs/guide/directory-structure/server#server-storage).
 
 ::read-more{to="https://unstorage.unjs.io/drivers/vercel-kv" target="_blank"}
-Read more about the Vercel KV driver on Unstorage documentation.
+Подробнее о драйвере Vercel KV читайте в документации Unstorage.
 ::
 
-1. Install `@vercel/kv` dependency:
+1. Установите зависимость `@vercel/kv`:
 
     ```bash [Terminal]
     npm i @vercel/kv
     ```
 
-2. Update your `nuxt.config`:
+2. Обновите файл `nuxt.config`:
 
     ```ts [nuxt.config.ts]
     export default defineNuxtConfig({
@@ -66,7 +66,7 @@ Read more about the Vercel KV driver on Unstorage documentation.
         storage: {
           data: {
             driver: 'vercelKV'
-            /* Vercel KV driver options */
+            /* Vercel KV driver параметры */
           }
         }
       }
@@ -74,10 +74,10 @@ Read more about the Vercel KV driver on Unstorage documentation.
     ```
 
 ::caution
-You need to either set `KV_REST_API_URL` and `KV_REST_API_TOKEN` environment variables or pass `url` and `token` to driver options. Check [driver docs](https://unstorage.unjs.io/drivers/vercel-kv) for more information about usage.
+Вам нужно либо установить переменные окружения `KV_REST_API_URL` и `KV_REST_API_TOKEN`, либо передать `url` и `token` в опции драйвера. Более подробную информацию об использовании смотрите в [документация по драйверам](https://unstorage.unjs.io/drivers/vercel-kv).
 ::
 
-You can now access your data store anywhere in your `server/` directory:
+Теперь вы можете получить доступ к своему хранилищу данных в любом месте директории `server/`:
 
 ```ts [server/routes/hello.ts]
 export default defineEventHandler(async (event) => {
@@ -90,11 +90,11 @@ export default defineEventHandler(async (event) => {
 })
 ```
 
-## Custom Build Output Configuration
+## Пользовательская конфигурация вывода сборки
 
-You can provide additional [build output configuration](https://vercel.com/docs/build-output-api/v3) using `nitro.vercel.config` key inside `nuxt.config`. It will be merged with built-in auto generated config.
+Вы можете предоставить дополнительную [конфигурацию вывода сборки](https://vercel.com/docs/build-output-api/v3), используя ключ `nitro.vercel.config` внутри `nuxt.config`. Она будет объединена со встроенной автоматически генерируемой конфигурацией.
 
-## Templates
+## Шаблоны
 
 ::card-group
   ::card
@@ -105,7 +105,9 @@ You can provide additional [build output configuration](https://vercel.com/docs/
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
-  Example of a Nuxt application with hybrid rendering deployed on Vercel.
+
+  Пример приложения Nuxt с гибридным рендерингом, развернутого на Vercel.
+
   ::
   ::card
   ---
@@ -115,12 +117,13 @@ You can provide additional [build output configuration](https://vercel.com/docs/
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
-  Example of a Nuxt application running on Vercel Edge Functions.
+
+  Пример приложения Nuxt, работающего на Vercel Edge Functions.
   ::
 ::
 
-## Learn More
+## Узнать больше
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/vercel" target="_blank"}
-Head over **Nitro documentation** to learn more about On-Demand Incremental Static Regeneration or more advanced options.
+Перейдите по ссылке **Документация Nitro**, чтобы узнать больше об инкрементной статической регенерации по требованию или более продвинутых опциях.
 ::

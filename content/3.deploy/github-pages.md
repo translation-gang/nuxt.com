@@ -1,31 +1,31 @@
 ---
 title: GitHub Pages
-description: 'Deploy your Nuxt Application to GitHub Pages infrastructure.'
+description: 'Разверните ваше приложение Nuxt на GitHub Pages инфраструктуре.'
 logoIcon: 'i-simple-icons-github'
-category: Hosting
+category: Хостинг
 nitroPreset: 'github-pages'
 website: 'https://pages.github.com/'
 ---
 
-Nuxt supports deploying to [GitHub Pages](https://pages.github.com/) with minimal configuration.
+Nuxt поддерживает развертывание на [GitHub Pages](https://pages.github.com/) с минимальными настройками.
 
 ::caution
-GitHub Pages only support static sites, Nuxt will pre-render your application to static HTML files.
+GitHub Pages поддерживает только статические сайты, Nuxt будет предварительно рендерить ваше приложение в статические HTML-файлы.
 ::
 
 ::caution
-If you are **not** using a custom domain, you need to set `NUXT_APP_BASE_URL` to your repository-slug for your build step.
+Если вы **не** используете пользовательский домен, вам нужно установить `NUXT_APP_BASE_URL` на ваш репозиторий-slug для вашего шага сборки.
 
-**Example**: `https://<user>.github.io/<repository>/`: `NUXT_APP_BASE_URL=/<repository>/ npx nuxt build --preset github_pages`
+**Пример**: `https://<user>.github.io/<repository>/`: `NUXT_APP_BASE_URL=/<repository>/ npx nuxt build --preset github_pages`
 ::
 
-## Setup
+## Настройка
 
-Follow the steps to [create a GitHub Pages site](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+Выполните следующие шаги, чтобы [создать сайт GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
 
-## Deployment
+## Развертывание
 
-Here is an example GitHub Actions workflow to deploy your site to GitHub Pages using the `github_pages` preset:
+Вот пример рабочего процесса GitHub Actions для развертывания вашего сайта на GitHub Pages с использованием предустановки `github_pages`:
 
 ```yaml [.github/workflows/deploy.yml]
 # https://github.com/actions/deploy-pages#usage
@@ -44,26 +44,26 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "20"
-      # Pick your own package manager and build script
+      # Выберите свой собственный менеджер пакетов и сценарий сборки
       - run: npm install
       - run: npx nuxt build --preset github_pages
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./.output/public
-  # Deployment job
+  # Задание по развертыванию
   deploy:
-    # Add a dependency to the build job
+    # Добавьте зависимость в задание сборки
     needs: build
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
+    # Предоставьте GITHUB_TOKEN права, необходимые для развертывания Pages
     permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-    # Deploy to the github_pages environment
+      pages: write      # для развертывания в Pages
+      id-token: write   # для проверки того, что развертывание происходит из соответствующего источника
+    # Развертывание в среде github_pages
     environment:
       name: github_pages
       url: ${{ steps.deployment.outputs.page_url }}
-    # Specify runner + deployment step
+    # Определите раннер + шаг развертывания
     runs-on: ubuntu-latest
     steps:
       - name: Deploy to GitHub Pages
@@ -72,5 +72,5 @@ jobs:
 ```
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/github-pages" target="_blank"}
-Head over **Nitro documentation** to learn more about the github-pages deployment preset.
+Перейдите по ссылке **Документация Nitro**, чтобы узнать больше о предустановке развертывания github-pages.
 ::

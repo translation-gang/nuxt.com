@@ -1,15 +1,15 @@
 ---
 title: Firebase
-description: 'Deploy your Nuxt Application to Firebase infrastructure.'
+description: 'Разверните ваше приложение Nuxt на Firebase инфраструктуре.'
 logoIcon: 'i-logos-firebase'
-category: Hosting
+category: Хостинг
 nitroPreset: 'firebase'
 website: 'https://firebase.google.com/'
 ---
 
-## Firebase Functions
+## Firebase функции
 
-To use the more recent and recommended generation of firebase functions, set the `firebase.gen` option to `2`:
+Чтобы использовать более новое и рекомендуемое поколение функций firebase, установите опцию `firebase.gen` в значение `2`:
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
@@ -22,26 +22,26 @@ export default defineNuxtConfig({
 ```
 
 ::note
-If you cannot use configuration for any reason, alternatively you can use `NITRO_FIREBASE_GEN=2` environment variable.
+Если по каким-либо причинам вы не можете использовать конфигурацию, в качестве альтернативы можно воспользоваться переменной окружения `NITRO_FIREBASE_GEN=2`.
 ::
 
-If you already have a deployed version of your website and want to upgrade to 2nd gen, [see the Migration process on Firebase docs](https://firebase.google.com/docs/functions/2nd-gen-upgrade). Namely, the CLI will ask you to delete your existing functions before deploying the new ones.
+Если у вас уже есть развернутая версия вашего сайта и вы хотите перейти на 2-й gen, [см. процесс миграции в документации Firebase](https://firebase.google.com/docs/functions/2nd-gen-upgrade). А именно, CLI попросит вас удалить существующие функции перед развертыванием новых.
 
 ::tip{to="https://firebase.google.com/docs/functions/version-comparison" target="_blank"}
-Comparison between 1st and 2nd generation functions
+Сравнение функций 1-го и 2-го поколения
 ::
 
-## Project Setup
+## Настройка проекта
 
-You may instead prefer to set up your project with the Firebase CLI, which will fetch your project ID for you, add required dependencies (see above) and even set up automated deployments via GitHub Actions (for hosting only). [Learn about installing the firebase CLI](https://firebase.google.com/docs/cli#windows-npm).
+Вы можете предпочесть настроить проект с помощью Firebase CLI, который получит для вас идентификатор проекта, добавит необходимые зависимости (см. выше) и даже настроит автоматическое развертывание через GitHub Actions (только для хостинга). [Узнайте об установке Firebase CLI](https://firebase.google.com/docs/cli#windows-npm).
 
-1. Install the latest version of the Firebase CLI.
+1. Установите последнюю версию Firebase CLI.
 
     ```bash [Terminal]
     npm install -g firebase-tools@latest
     ```
 
-2. Initialize your Firebase Project
+2. Инициализируйте ваш проект Firebase
 
     ```bash [Terminal]
     firebase login
@@ -49,10 +49,10 @@ You may instead prefer to set up your project with the Firebase CLI, which will 
     ```
 
 ::note
-When prompted, you can enter `.output/public` as the public directory. In the next step, **do not** configure your project as a single-page app.
+При появлении запроса вы можете указать `.output/public` в качестве публичной директории. На следующем шаге **не** конфигурируйте проект как одностраничное приложение.
 ::
 
-Once complete, add the following to your `firebase.json` to enable server rendering in Cloud Functions:
+После завершения работы добавьте следующее в файл `firebase.json`, чтобы включить серверный рендеринг в Cloud Functions:
 
 ```json [firebase.json]
 {
@@ -68,27 +68,27 @@ Once complete, add the following to your `firebase.json` to enable server render
 }
 ```
 
-## Local Preview
+## Локальный предварительный просмотр
 
-You can preview a local version of your site if you need to test things out without deploying.
+Вы можете предварительно просмотреть локальную версию своего сайта, если вам нужно протестировать его без развертывания.
 
 ```bash
 npm run build -- --preset=firebase
 firebase emulators:start
 ```
 
-## Build and Deploy
+## Сборка и развертывание
 
-Deploy to Firebase Hosting by running a Nitro build and then running the `firebase deploy` command.
+Разверните хостинг Firebase Hosting, выполнив сборку Nitro, а затем запустив команду `firebase deploy`.
 
 ```bash
 npm run build -- --preset=firebase
 firebase deploy
 ```
 
-## Options
+## Параметры
 
-You can set options for the firebase functions in your `nuxt.config.ts` file:
+Вы можете задать параметры для функций firebase в файле `nuxt.config.ts`:
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
@@ -104,23 +104,23 @@ export default defineNuxtConfig({
 });
 ```
 
-### Runtime Node.js Version
+### Версия Node.js для выполнения
 
-You can set custom Node.js version in configuration:
+В конфигурации можно задать пользовательскую версию Node.js:
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   nitro: {
     firebase: {
-      nodeVersion: '18' // Can be '16' or '18' or '20'
+      nodeVersion: '18' // Может быть '16' или '18' или '20'
     },
   },
 });
 ```
 
-Firebase tools use the `engines.node` version in  `package.json` to determine which node version to use for your functions. Nuxt automatically writes to the `.output/server/package.json` with configured Node.js version.
+Инструменты Firebase используют версию `engines.node` в `package.json`, чтобы определить, какую версию node использовать для ваших функций. Nuxt автоматически записывает в `.output/server/package.json` сконфигурированную версию Node.js.
 
-You might also need to add a runtime key to your `firebase.json` file:
+Вам также может понадобиться добавить ключ времени выполнения в файл `firebase.json`:
 
 ```json [firebase.json]
 {
@@ -132,17 +132,17 @@ You might also need to add a runtime key to your `firebase.json` file:
 ```
 
 ::read-more{to="https://firebase.google.com/docs/functions/manage-functions?gen=2nd#set_nodejs_version" target="_blank"}
-You can read more about this in **Firebase Docs**.
+Подробнее об этом можно прочитать в **Firebase Docs**.
 ::
 
-## If your firebase project has other cloud functions
+## Если в вашем проекте firebase есть другие облачные функции
 
-You may be warned that other cloud functions will be deleted when you deploy your Nuxt project. This is because nitro will deploy your entire project to firebase functions. If you want to deploy only your Nuxt project, you can use the `--only` flag:
+Вы можете получить предупреждение о том, что другие облачные функции будут удалены при развертывании проекта Nuxt. Это происходит потому, что Nitro развернет весь ваш проект в функции firebase. Если вы хотите развернуть только ваш проект Nuxt, вы можете использовать флаг `--only`:
 
 ```bash
 firebase deploy --only functions:server,hosting
 ```
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/firebase" target="_blank"}
-Head over **Nitro documentation** to learn more about the Firebase deployment preset.
+Перейдите по ссылке **Документация Nitro**, чтобы узнать больше о предустановке развертывания Firebase.
 ::

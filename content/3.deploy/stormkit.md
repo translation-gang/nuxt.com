@@ -1,26 +1,26 @@
 ---
 title: Stormkit
-description: 'Deploy your Nuxt Application to Stormkit infrastructure.'
+description: 'Разверните ваше приложение Nuxt на Stormkit инфраструктуре.'
 logoSrc: '/assets/integrations/stormkit.webp'
-category: Hosting
+category: Хостинг
 nitroPreset: 'stormkit'
 website: 'https://www.stormkit.io/'
 ---
 
 ::tip
-**Zero Configuration ✨**
+**Нулевая конфигурация ✨**
 :br
-Integration with [Stormkit](https://www.stormkit.io/) is possible with zero configuration, [learn more](https://nitro.unjs.io/deploy#zero-config-providers).
+Интеграция с [Stormkit](https://www.stormkit.io/) возможна с нулевой настройкой, [узнать больше](https://nitro.unjs.io/deploy#zero-config-providers).
 ::
 
-## Setup
+## Настройка
 
-Follow the steps to [create a new app](https://app.stormkit.io/apps/new) on Stormkit.
+Выполните шаги по [созданию нового приложения](https://app.stormkit.io/apps/new) на Stormkit.
 
-## Deployment
+## Развертывание
 
-By default, Stormkit will deploy your apps automatically when you push changes to your main branch. But to trigger a manual deploy (for example, you might do this for the very first deployment), you may click `Deploy now`.
+По умолчанию Stormkit развертывает ваши приложения автоматически, когда вы вносите изменения в основную ветку. Но чтобы вызвать ручное развертывание (например, для самого первого развертывания), вы можете нажать `Deploy now`.
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/stormkit" target="_blank"}
-Head over **Nitro documentation** to learn more about the stormkit deployment preset.
+Ознакомьтесь с **документацией Nitro**, чтобы узнать больше о предустановке развертывания stormkit.
 ::

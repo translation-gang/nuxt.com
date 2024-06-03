@@ -1,29 +1,31 @@
 ---
 title: Render
-description: 'Deploy your Nuxt Application to Render infrastructure.'
+description: 'Разверните ваше приложение Nuxt на Render инфраструктуре.'
 logoSrc: '/assets/integrations/render.png'
-category: Hosting
+category: Хостинг
 nitroPreset: 'render'
 website: 'https://render.com/'
 ---
 
-Nuxt supports deploying on [Render](https://render.com/) with minimal configuration.
+Nuxt поддерживает развертывание на [Render](https://render.com/) с минимальными настройками.
 
-## Set up application
+## Настройка приложения
 
-1. [Create a new Web Service](https://dashboard.render.com/select-repo?type=web) and select the repository that contains your code.
-2. Ensure the 'Node' environment is selected.
-3. Depending on your package manager, set the build command to `yarn && yarn build`, `npm install && npm run build`, or `pnpm i --shamefully-hoist && pnpm build`.
-4. Update the start command to `node .output/server/index.mjs`
-5. Click 'Advanced' and add the following environment variables
+1. [Создайте новый веб-сервис](https://dashboard.render.com/select-repo?type=web) и выберите репозиторий, содержащий ваш код.
+2. Убедитесь, что выбрано окружение 'Node'.
+3. В зависимости от менеджера пакетов задайте команду сборки: `yarn && yarn build`, `npm install && npm run build` или `pnpm i --shamefully-hoist && pnpm build`.
+4. Обновите команду запуска на `node .output/server/index.mjs`.
+5. Нажмите «Дополнительно» и добавьте следующие переменные окружения
+
     ```bash
     SERVER_PRESET=render_com
     NODE_VERSION=20
     ```
-6. Click on `Create Web Service`.
 
-## More options
+6. Нажмите на `Create Web Service`.
+
+## Дополнительные параметры
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/render" target="_blank"}
-Head over **Nitro documentation** to learn more about the Render deployment presets.
+Ознакомьтесь с документацией **Nitro**, чтобы узнать больше о пресетах развертывания Render.
 ::

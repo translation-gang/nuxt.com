@@ -1,79 +1,79 @@
 ---
 title: Flightcontrol
-description: 'Deploy your Nuxt Application to Flightcontrol infrastructure.'
+description: 'Разверните ваше приложение Nuxt на Flightcontrol инфраструктуре.'
 logoSrc: '/assets/integrations/flightcontrol.webp'
-category: Hosting
+category: Хостинг
 nitroPreset: 'flightcontrol'
 website: 'https://www.flightcontrol.dev'
 ---
 
-Nitro supports deploying to [AWS via Flightcontrol](https://flightcontrol.dev?ref=nuxt) with minimal configuration.
+Nitro поддерживает развертывание в [AWS через Flightcontrol](https://flightcontrol.dev?ref=nuxt) с минимальными настройками.
 
 ::tip
-**Zero Configuration ✨**
+**Нулевая конфигурация ✨**
 :br
-Integration with Flightcontrol is possible with zero configuration.
+Интеграция с Flightcontrol возможна с нулевой конфигурацией.
 ::
 
-## Set Up your Flightcontrol account
+## Настройте свою учетную запись Flightcontrol
 
-On a high level, the steps you will need to follow to deploy a project for the first time are:
+В общих чертах, чтобы развернуть проект в первый раз, вам нужно выполнить следующие шаги:
 
-1. Create an account at [Flightcontrol](https://app.flightcontrol.dev/signup?ref=nuxt)
-2. Create an account at [AWS](https://portal.aws.amazon.com/billing/signup) (if you don't already have one)
-3. Link your AWS account to the Flightcontrol
-4. Authorize the Flightcontrol GitHub App to access your chosen repositories, public or private.
-5. Create a Flightcontrol project with configuration via the Dashboard or with configuration via `flightcontrol.json`.
+1. Создайте учетную запись на сайте [Flightcontrol](https://app.flightcontrol.dev/signup?ref=nuxt).
+2. Создайте учетную запись на [AWS](https://portal.aws.amazon.com/billing/signup) (если у вас ее еще нет).
+3. Свяжите свою учетную запись AWS с Flightcontrol
+4. Авторизуйте приложение Flightcontrol GitHub App для доступа к выбранным вами репозиториям, публичным или частным.
+5. Создайте проект Flightcontrol с конфигурацией через приборную панель или с конфигурацией через `flightcontrol.json`.
 
-## Create a Project with Configuration via the Dashboard
+## Создание проекта с конфигурацией через приборную панель
 
-1. Create a Flightcontrol project from the Dashboard. Select a repository for the source.
-2. Select the `GUI` config type.
-3. Select the Nuxt preset.
-4. Select your preferred AWS server size.
-5. Submit the new project form.
+1. Создайте проект Flightcontrol с помощью панели управления. Выберите репозиторий для источника.
+2. Выберите тип конфигурации `GUI`.
+3. Выберите предустановку Nuxt.
+4. Выберите желаемый размер сервера AWS.
+5. Отправьте форму нового проекта.
 
-## Create a Project with Configuration via `flightcontrol.json`
+## Создание проекта с конфигурацией через `flightcontrol.json`
 
-1. Create a Flightcontrol project from your dashboard. Select a repository for the source.
-2. Select the `flightcontrol.json` config type.
-3. Add a new file at the root of your repository called `flightcontrol.json`. Here is an example configuration that creates an AWS fargate service for your app:
+1. Создайте проект Flightcontrol на панели управления. Выберите репозиторий для источника.
+2. Выберите тип конфигурации `flightcontrol.json`.
+3. Добавьте новый файл в корень репозитория с именем `flightcontrol.json`. Вот пример конфигурации, которая создает сервис AWS fargate для вашего приложения:
 
-```json [flightcontrol.json]
-{
-  "$schema": "https://app.flightcontrol.dev/schema.json",
-  "environments": [
+    ```json [flightcontrol.json]
     {
-      "id": "production",
-      "name": "Production",
-      "region": "us-west-2",
-      "source": {
-        "branch": "main"
-      },
-      "services": [
+      "$schema": "https://app.flightcontrol.dev/schema.json",
+      "environments": [
         {
-          "id": "nitro",
-          "buildType": "nixpacks",
-          "name": "My Nitro site",
-          "type": "fargate",
-          "domain": "www.yourdomain.com",
-          "outputDirectory": ".output",
-          "startCommand": "node .output/server/index.mjs",
-          "cpu": 0.25,
-          "memory": 0.5
+          "id": "production",
+          "name": "Production",
+          "region": "us-west-2",
+          "source": {
+            "branch": "main"
+          },
+          "services": [
+            {
+              "id": "nitro",
+              "buildType": "nixpacks",
+              "name": "My Nitro site",
+              "type": "fargate",
+              "domain": "www.yourdomain.com",
+              "outputDirectory": ".output",
+              "startCommand": "node .output/server/index.mjs",
+              "cpu": 0.25,
+              "memory": 0.5
+            }
+          ]
         }
       ]
     }
-  ]
-}
-```
+    ```
 
-4. Submit the new project form.
+4. Отправьте форму нового проекта.
 
 ::read-more{to="https://www.flightcontrol.dev/docs?ref=nuxt" target="_blank"}
-Learn more about Flightcontrol's configuration.
+Узнайте больше о конфигурации Flightcontrol.
 ::
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/flightcontrol" target="_blank"}
-Head over **Nitro documentation** to learn more about the flightcontrol deployment preset.
+Перейдите по ссылке **Документация Nitro**, чтобы узнать больше о предустановке развертывания flightcontrol.
 ::
