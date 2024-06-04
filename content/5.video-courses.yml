@@ -10,7 +10,7 @@ courses:
     url: 'https://vueschool.io/courses/nuxt-js-3-fundamentals?friend=nuxt'
   - name: 'Советы Nuxt 3 от Дэниела Ро'
     slug: 'nuxt3-tips-daniel'
-    description: 'Узнайте советы и рекомендации по работе с Nuxt 3 вместе с вместе с Дэниелом Ро (ведущим разработчиком Nuxt).'
+    description: 'Узнайте советы и рекомендации по работе с Nuxt 3 вместе с Дэниелом Ро (ведущим разработчиком Nuxt).'
     url: 'https://www.youtube.com/watch?v=dZSNW07sO-A&list=PLQnM-cL9ttacXZavMQMT-0lyGki8iSkGF'
     screenshotOptions:
       delay: 1
