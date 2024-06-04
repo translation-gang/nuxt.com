@@ -4,78 +4,78 @@ navigation.title: Видеокурсы
 description: 'Смотрите видеокурсы от сообщества, чтобы изучить Vue 3 и Nuxt 3.'
 navigation.icon: i-ph-graduation-cap-duotone
 courses:
-  - name: 'Nuxt 3 Fundamentals'
+  - name: 'Основы работы с Nuxt 3'
     slug: 'vc-nuxt-3-fundamentals'
-    description: 'Learn Nuxt 3 fundamentals with VueSchool.'
+    description: 'Изучите основы с Nuxt 3 с помощью VueSchool.'
     url: 'https://vueschool.io/courses/nuxt-js-3-fundamentals?friend=nuxt'
-  - name: 'Nuxt 3 Tips by Daniel Roe'
+  - name: 'Советы Nuxt 3 от Дэниела Ро'
     slug: 'nuxt3-tips-daniel'
-    description: 'Learn Nuxt 3 tips and tricks with Daniel Roe (Nuxt lead).'
+    description: 'Узнайте советы и рекомендации по работе с Nuxt 3 вместе с Дэниелом Ро (ведущим разработчиком Nuxt).'
     url: 'https://www.youtube.com/watch?v=dZSNW07sO-A&list=PLQnM-cL9ttacXZavMQMT-0lyGki8iSkGF'
     screenshotOptions:
       delay: 1
       removeElements: ['tp-yt-iron-overlay-backdrop', 'tp-yt-paper-dialog']
-  - name: 'Nuxt 3 Tips by Alex Lichter'
+  - name: 'Советы Nuxt 3 от Алекса Лихтера'
     slug: 'nuxt3-tips'
-    description: 'Learn Nuxt 3 tips and tricks with Alexander Lichter (core team).'
+    description: 'Узнайте советы и рекомендации по Nuxt 3 от Алекса Лихтера (core team).'
     url: 'https://www.youtube.com/watch?v=2tKOZc3Z1dk&list=PL06MUQt-_wlsRNxmbIvgVuhsXG_dN1XaO'
     screenshotOptions:
       delay: 1
       removeElements: ['tp-yt-iron-overlay-backdrop', 'tp-yt-paper-dialog']
-  - name: 'Nuxt 3 Performance (Playlist)'
+  - name: 'Производительность Nuxt 3 (плейлист)'
     slug: 'nuxt3-performance'
-    description: 'Deep dive into Nuxt 3 performance with Alexander Lichter (core team).'
+    description: 'Глубокое погружение в производительность Nuxt 3 с Алексом Лихтером (core team).'
     url: 'https://www.youtube.com/watch?v=laRJNkG_wls&list=PL06MUQt-_wls2sirXbt919cIbGvKv6k5Q'
     screenshotOptions:
       delay: 1
       removeElements: ['tp-yt-iron-overlay-backdrop', 'tp-yt-paper-dialog']
-  - name: 'Mastering Nuxt'
+  - name: 'Освоение технологии Nuxt'
     slug: 'mastering-nuxt'
-    description: 'The complete guide to developing and deploying fast, production-ready Nuxt 3 apps.'
+    description: 'Полное руководство по разработке и развертыванию быстрых, готовых к продакшену приложений Nuxt 3.'
     url: 'https://masteringnuxt.com/nuxt3'
-    badge: Premium
-  - name: 'Real World Nuxt 3'
+    badge: Премиум
+  - name: 'Реальный мир Nuxt 3'
     slug: 'vm-real-world-nuxt'
-    description: 'This is a hands-on course for learning how to build web apps using Nuxt.'
+    description: 'Это практический курс по созданию веб-приложений с помощью Nuxt.'
     url: 'https://www.vuemastery.com/courses/real-world-nuxt-3/intro/?fpr=nuxt'
-    badge: Premium
-  - name: 'FullStack with Nuxt'
+    badge: Премиум
+  - name: 'FullStack с Nuxt'
     slug: 'vm-fullstack-nuxt'
-    description: 'Get the knowledge to build full-stack apps with your existing front-end skills.'
+    description: 'Получите знания, позволяющие создавать full-stack приложения, используя имеющиеся у вас навыки работы с фронтендом.'
     url: 'https://www.vuemastery.com/courses/nuxt-3-server/nuxt-3-server-introduction?fpr=nuxt'
-    badge: Premium
-  - name: 'Build a Nuxt Blog'
+    badge: Премиум
+  - name: 'Создайте блог Nuxt'
     slug: 'vm-blog-content'
-    description: 'Learn how to create a blog with Nuxt 3 and Nuxt Content.'
+    description: 'Узнайте, как создать блог с помощью Nuxt 3 и Nuxt Content.'
     url: 'https://www.vuemastery.com/courses/build-a-blog-nuxt3-content/build-the-blog-post-detail-page?fpr=nuxt'
-    badge: Premium
+    badge: Премиум
   - name: 'Nuxt 3 Middleware'
     slug: 'vm-nuxt-middleware'
-    description: 'Learn to Nuxt middleware to handle authentication, redirection, and custom logic like a pro.'
+    description: 'Научитесь использовать middleware Nuxt для обработки аутентификации, перенаправления и пользовательской логики как профессионал.'
     url: 'https://www.vuemastery.com/courses/nuxt-3-middleware/middleware-introduction?fpr=nuxt'
-    badge: Premium
-  - name: 'Trello Clone'
+    badge: Премиум
+  - name: 'Клон Trello'
     slug: 'vm-trello-clone'
-    description: 'Learn how to build a Trello Clone with Nuxt 3 and Nuxt UI.'
+    description: 'Узнайте, как создать клон Trello с помощью Nuxt 3 и Nuxt UI.'
     url: 'https://www.vuemastery.com/courses/build-a-trello-clone-w-nuxt-3/trello-clone-nuxt-introduction/?fpr=nuxt'
-    badge: Premium
-  - name: 'The Vue 3 Masterclass'
+    badge: Премиум
+  - name: 'Мастер-класс по Vue 3'
     slug: 'vc-vue-masterclass'
-    description: 'Learn Vue 3 by building a real-world application.'
+    description: 'Изучите Vue 3, создав реальное приложение.'
     url: 'https://vueschool.io/courses/the-vuejs-3-master-class?friend=nuxt'
-  - name: 'Vue 3 Deep Dive'
+  - name: 'Глубокое погружение в Vue 3'
     slug: 'vm-deep-dive'
-    description: 'Deep dive into Vue 3 with Evan You.'
+    description: 'Глубокое погружение в Vue 3 с Эваном Ю.'
     url: 'https://www.vuemastery.com/courses/vue3-deep-dive-with-evan-you/vue3-overview?fpr=nuxt'
-    badge: Premium
-  - name: 'Nuxt 3 - Crash Course'
+    badge: Премиум
+  - name: 'Nuxt 3 - краш-курс'
     slug: 'nuxt-3-crash-course-prismic'
-    description: 'Unleash the power of Prismic as a Headless Website Builder alongside Nuxt.'
+    description: 'Раскройте возможности Prismic в качестве Headless конструктора сайтов вместе с Nuxt.'
     url: 'https://www.youtube.com/watch?v=8GmfcbuYOWE'
     screenshotUrl: 'https://www.youtube-nocookie.com/embed/8GmfcbuYOWE?si=cQuXzIV68IJKT71m'
-  - name: 'Nuxt 3 — Course for Beginners'
+  - name: 'Nuxt 3 - курс для начинающих'
     slug: 'nuxt-3-crash-beginners'
-    description: 'Learn how to use Nuxt 3 in this full tutorial for beginners.'
+    description: 'Узнайте, как использовать Nuxt 3 в этом полном руководстве для начинающих.'
     url: 'https://www.youtube.com/watch?v=fTPCKnZZ2dk'
     screenshotUrl: 'https://www.youtube-nocookie.com/embed/fTPCKnZZ2dk?si=3Fq2wEvmXh2u3jlr'
 
