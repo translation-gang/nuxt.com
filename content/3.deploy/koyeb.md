@@ -13,7 +13,7 @@ Nuxt поддерживает развертывание на [Koyeb serverless 
 
 1. Создайте новое приложение Koyeb для Nuxt, следуя [руководству](https://www.koyeb.com/docs/deploy/nuxt).
 
-2. Установите в поле `engines.node` в файле `package.json` вашего проекта значение [Koyeb-поддерживаемая версия Node.js](https://www.koyeb.com/docs/build-and-deploy/build-from-git/nodejs#runtime):
+2. Установите в поле `engines.node` в файле `package.json` вашего проекта значение [Koyeb-поддерживаемой версии Node.js](https://www.koyeb.com/docs/build-and-deploy/build-from-git/nodejs#runtime):
 
     ```json [package.json]
     {

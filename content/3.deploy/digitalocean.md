@@ -13,7 +13,7 @@ Nuxt поддерживает развертывание на [Digital Ocean App
 
 1. Создайте новое приложение Digital Ocean, следуя [руководству](https://docs.digitalocean.com/products/app-platform/how-to/create-apps/).
 
-2. Далее вам нужно настроить переменные окружения. В настройках приложения убедитесь, что следующие [переменные окружения на уровне приложения](https://docs.digitalocean.com/products/app-platform/how-to/use-environment-variables/):
+2. Далее вам нужно настроить переменные окружения. В настройках приложения убедитесь, что есть следующие [переменные окружения на уровне приложения](https://docs.digitalocean.com/products/app-platform/how-to/use-environment-variables/):
 
     ```bash
     SERVER_PRESET=digital-ocean

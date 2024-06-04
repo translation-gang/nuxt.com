@@ -79,7 +79,7 @@ export default defineNuxtConfig({
 Если вы пропустите этот шаг, вы всегда можете найти раздел конфигурации сборки в своем рабочем процессе и обновить конфигурацию сборки:
 
 ```yaml [.github/workflows/azure-static-web-apps-<RANDOM_NAME>.yml]
-###### Конфигурация репозитория/сборкии ######
+###### Конфигурация репозитория/сборки ######
 app_location: '/'
 api_location: '.output/server'
 output_location: '.output/public'

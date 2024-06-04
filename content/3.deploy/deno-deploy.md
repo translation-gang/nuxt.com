@@ -21,7 +21,7 @@ website: 'https://deno.com/deploy'
 # Сборка с предварительной установкой deno_deploy
 npm run build --preset=deno_deploy
 
-# Убедитесь, что команда deployctl запущена из выходного каталога.
+# Убедитесь, что команда deployctl запущена из выходной директории.
 cd .output
 deployctl deploy --project=my-project server/index.ts --token=<DENO_DEPLOY_TOKEN>
 ```

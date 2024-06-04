@@ -20,18 +20,18 @@ website: 'https://pages.cloudflare.com/'
 Если вы используете интеграцию GitHub/GitLab с Cloudflare Pages, **настройка не требуется**. При отправке в ваш репозиторий проект будет автоматически собран и развернут.
 
 ::note
-Nuxt определит окружающую среду, чтобы установить правильную настройку [Server/Nitro предустановка](https://nitro.unjs.io/deploy/providers/cloudflare).
+Nuxt определит окружающую среду, чтобы установить правильную предустановку [Server/Nitro](https://nitro.unjs.io/deploy/providers/cloudflare).
 ::
 
-Чтобы использовать рендеринг на стороне сервера на краю, задайте команду сборки: `nuxt build`.
+Чтобы использовать серверный рендеринг на уровне сети, установите команду сборки на: `nuxt build`.
 
 Чтобы статически сгенерировать ваш сайт, задайте команду сборки: `nuxt generate`.
 
 ### Сопоставление маршрутов
 
-Если на CloudFlare Pages будет найден HTML-файл, путь к которому совпадает с текущим запрошенным маршрутом, он будет обслуживать его. Он также перенаправит HTML-страницы на их аналоги без расширения: например, `/contact.html` будет перенаправлен на `/contact`, а `/about/index.html` будет перенаправлен на `/about/`.
+Если на CloudFlare Pages будет найден HTML-файл, путь к которому совпадает с текущим запрошенным маршрутом, он будет использовать его. Он также перенаправит HTML-страницы на их аналоги без расширения: например, `/contact.html` будет перенаправлен на `/contact`, а `/about/index.html` будет перенаправлен на `/about/`.
 
-Чтобы соответствовать правилам Cloudflare [согласование маршрутов](https://developers.cloudflare.com/pages/configuration/serving-pages/#route-matching), установите для параметра nitro `autoSubfolderIndex` значение `false`.
+Чтобы соответствовать правилам Cloudflare [согласования маршрутов](https://developers.cloudflare.com/pages/configuration/serving-pages/#route-matching), установите для параметра nitro `autoSubfolderIndex` значение `false`.
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
