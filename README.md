@@ -20,7 +20,7 @@ pnpm install
 cp .env.example .env
 ```
 
-Клон/форк [translation-gang/nuxt](https://github.com/translation-gang/nuxt) репо в нужном вам месте (но не в проекте Nuxt.com) и внутри директории `docs/`, запустите:
+Клонируйте/сделайте форк репозитория [translation-gang/nuxt](https://github.com/translation-gang/nuxt) в нужном вам месте (но не в проекте Nuxt.com) и внутри директории `docs/`, запустите:
 
 ```bash
 pwd
