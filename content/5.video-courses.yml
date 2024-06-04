@@ -10,21 +10,21 @@ courses:
     url: 'https://vueschool.io/courses/nuxt-js-3-fundamentals?friend=nuxt'
   - name: 'Советы Nuxt 3 от Дэниела Ро'
     slug: 'nuxt3-tips-daniel'
-    description: 'Узнайте советы и рекомендации по работе с Nuxt 3 вместе с Дэниелом Роем (ведущим разработчиком Nuxt).'
+    description: 'Узнайте советы и рекомендации по работе с Nuxt 3 вместе с вместе с Дэниелом Ро (ведущим разработчиком Nuxt).'
     url: 'https://www.youtube.com/watch?v=dZSNW07sO-A&list=PLQnM-cL9ttacXZavMQMT-0lyGki8iSkGF'
     screenshotOptions:
       delay: 1
       removeElements: ['tp-yt-iron-overlay-backdrop', 'tp-yt-paper-dialog']
   - name: 'Советы Nuxt 3 от Алекса Лихтера'
     slug: 'nuxt3-tips'
-    description: 'Узнайте советы и рекомендации по Nuxt 3 с Александром Лихтером (core team).'
+    description: 'Узнайте советы и рекомендации по Nuxt 3 от Алекса Лихтера (core team).'
     url: 'https://www.youtube.com/watch?v=2tKOZc3Z1dk&list=PL06MUQt-_wlsRNxmbIvgVuhsXG_dN1XaO'
     screenshotOptions:
       delay: 1
       removeElements: ['tp-yt-iron-overlay-backdrop', 'tp-yt-paper-dialog']
   - name: 'Производительность Nuxt 3 (плейлист)'
     slug: 'nuxt3-performance'
-    description: 'Глубокое погружение в производительность Nuxt 3 с Александром Лихтером (core team).'
+    description: 'Глубокое погружение в производительность Nuxt 3 с Алексом Лихтером (core team).'
     url: 'https://www.youtube.com/watch?v=laRJNkG_wls&list=PL06MUQt-_wls2sirXbt919cIbGvKv6k5Q'
     screenshotOptions:
       delay: 1
@@ -41,7 +41,7 @@ courses:
     badge: Премиум
   - name: 'FullStack с Nuxt'
     slug: 'vm-fullstack-nuxt'
-    description: 'Получите знания, позволяющие создавать full-stack приложения, используя имеющиеся у вас навыки работы с внешними компонентами.'
+    description: 'Получите знания, позволяющие создавать full-stack приложения, используя имеющиеся у вас навыки работы с фронтендом.'
     url: 'https://www.vuemastery.com/courses/nuxt-3-server/nuxt-3-server-introduction?fpr=nuxt'
     badge: Премиум
   - name: 'Создайте блог Nuxt'
