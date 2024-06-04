@@ -1,37 +1,37 @@
 ---
 title: Cloudflare
-description: 'Deploy your Nuxt Application to Cloudflare infrastructure.'
+description: 'Разверните ваше приложение Nuxt на Cloudflare инфраструктуре.'
 logoSrc: '/assets/integrations/cloudflare.svg'
-category: Hosting
+category: Хостинг
 nitroPreset: 'cloudflare'
 website: 'https://pages.cloudflare.com/'
 ---
 
-## Cloudflare Pages
+## Страницы Cloudflare
 
 ::tip
-**Zero Configuration ✨**
+**Нулевая конфигурация ✨**
 :br
-Integration with Cloudflare Pages is possible with zero configuration, [learn more](https://nitro.unjs.io/deploy#zero-config-providers).
+Интеграция с Cloudflare Pages возможна с нулевой настройкой, [узнать больше](https://nitro.unjs.io/deploy#zero-config-providers).
 ::
 
-### Git Integration
+### Интеграция с Git
 
-If you use the GitHub/GitLab integration with Cloudflare Pages, **no configuration is required**. Pushing to your repository will automatically build your project and deploy it.
+Если вы используете интеграцию GitHub/GitLab с Cloudflare Pages, **настройка не требуется**. При отправке в ваш репозиторий проект будет автоматически собран и развернут.
 
 ::note
-Nuxt will detect the environment to set the correct [Server/Nitro preset](https://nitro.unjs.io/deploy/providers/cloudflare).
+Nuxt определит окружающую среду, чтобы установить правильную предустановку [Server/Nitro](https://nitro.unjs.io/deploy/providers/cloudflare).
 ::
 
-To leverage server-side rendering on the edge, set the build command to: `nuxt build`
+Чтобы использовать серверный рендеринг на уровне сети, установите команду сборки на: `nuxt build`.
 
-To statically generate your website, set the build command to: `nuxt generate`
+Чтобы статически сгенерировать ваш сайт, задайте команду сборки: `nuxt generate`.
 
-### Route matching
+### Сопоставление маршрутов
 
-On CloudFlare Pages, if an HTML file is found with a matching path to the current route requested, it will serve it. It will also redirect HTML pages to their extension-less counterparts: for instance, `/contact.html` will be redirected to `/contact`, and `/about/index.html` will be redirected to `/about/`.
+Если на CloudFlare Pages будет найден HTML-файл, путь к которому совпадает с текущим запрошенным маршрутом, он будет использовать его. Он также перенаправит HTML-страницы на их аналоги без расширения: например, `/contact.html` будет перенаправлен на `/contact`, а `/about/index.html` будет перенаправлен на `/about/`.
 
-To match Cloudflare [route matching](https://developers.cloudflare.com/pages/configuration/serving-pages/#route-matching) rules, set the nitro option `autoSubfolderIndex` to `false`.
+Чтобы соответствовать правилам Cloudflare [согласования маршрутов](https://developers.cloudflare.com/pages/configuration/serving-pages/#route-matching), установите для параметра nitro `autoSubfolderIndex` значение `false`.
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
@@ -43,38 +43,38 @@ export default defineNuxtConfig({
 })
 ```
 
-### Direct Upload
+### Прямая загрузка
 
-Alternatively, you can use [wrangler](https://github.com/cloudflare/workers-sdk) to upload your project to Cloudflare.
+В качестве альтернативы вы можете использовать [wrangler](https://github.com/cloudflare/workers-sdk) для загрузки проекта на Cloudflare.
 
-In this case, you will have to set the preset manually.
+В этом случае вам придется задать предварительную настройку вручную.
 
-1. Build your project for Cloudflare Pages:
+1. Создайте проект для Cloudflare Pages:
 
     ```bash [Terminal]
     npx nuxi build --preset=cloudflare_pages
     ```
 
-2. Deploy, it will ask you to create a project for the first time:
+2. Разверните, и он попросит вас создать проект в первый раз:
 
     ```bash [Terminal]
     wrangler pages deploy dist/
     ```
 
-## Disable Auto Minify
+## Отключите автоминификацию
 
-Make sure to disable the minification of HTML, CSS and JavaScript in **CloudFlare -> Speed -> Optimization -> Auto Minify** to avoid any Vue hydration.
+Убедитесь, что отключили минификацию HTML, CSS и JavaScript в **CloudFlare -> Speed -> Optimization -> Auto Minify**, чтобы избежать гидратации Vue.
 
-![Disable Cloudflare auto minify](/assets/deploy/cloudflare-auto-minify.png)
+![Отключить автоматическую минификацию Cloudflare](/assets/deploy/cloudflare-auto-minify.png)
 
-## Learn more
+## Узнать больше
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/cloudflare" target="_blank"}
-Head over **Nitro documentation** to learn more about the Cloudflare deployment preset.
+Ознакомьтесь с **документацией Nitro**, чтобы узнать больше о предварительной настройке развертывания Cloudflare.
 ::
 
 ::read-more{to="https://developers.cloudflare.com/pages/framework-guides/deploy-a-nuxt-site/#use-bindings-in-your-nuxt-application" target="_blank"}
-Head over **CloudFlare Pages** documentation to learn more about it.
+Ознакомьтесь с документацией **CloudFlare Pages**, чтобы узнать об этом подробнее.
 ::
 
 ## Templates
@@ -88,7 +88,9 @@ Head over **CloudFlare Pages** documentation to learn more about it.
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
-  A todos application with user authentication, SSR and Cloudflare D1.
+
+  Приложение todos с аутентификацией пользователей, SSR и Cloudflare D1.
+
   ::
   ::card
   ---
@@ -98,12 +100,13 @@ Head over **CloudFlare Pages** documentation to learn more about it.
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
-  An editable website with universal rendering based on Cloudflare KV.
+
+  Редактируемый сайт с универсальным рендерингом на базе Cloudflare KV.
   ::
 ::
 
-## Learn more
+## Узнать больше
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/cloudflare" target="_blank"}
-Head over **Nitro documentation** to learn more about the cloudflare deployment preset.
+Ознакомьтесь с **документацией Nitro**, чтобы узнать больше о предварительной настройке развертывания cloudflare.
 ::

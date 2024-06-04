@@ -1,25 +1,25 @@
 ---
 title: Digital Ocean
-description: 'Deploy your Nuxt Application to Digital Ocean infrastructure.'
+description: 'Разверните ваше приложение Nuxt на Digital Ocean инфраструктуре.'
 logoSrc: '/assets/integrations/digitalocean.svg'
-category: Hosting
+category: Хостинг
 nitroPreset: 'digitalocean'
 website: 'https://www.digitalocean.com/'
 ---
 
-Nuxt supports deploying on the [Digital Ocean App Platform](https://docs.digitalocean.com/products/app-platform/) with minimal configuration.
+Nuxt поддерживает развертывание на [Digital Ocean App Platform](https://docs.digitalocean.com/products/app-platform/) с минимальными настройками.
 
-## Setup
+## Настройка
 
-1. Create a new Digital Ocean app following the [guide](https://docs.digitalocean.com/products/app-platform/how-to/create-apps/).
+1. Создайте новое приложение Digital Ocean, следуя [руководству](https://docs.digitalocean.com/products/app-platform/how-to/create-apps/).
 
-2. Next, you'll need to configure environment variables. In your app settings, ensure the following [app-level environment variables](https://docs.digitalocean.com/products/app-platform/how-to/use-environment-variables/):
+2. Далее вам нужно настроить переменные окружения. В настройках приложения убедитесь, что есть следующие [переменные окружения на уровне приложения](https://docs.digitalocean.com/products/app-platform/how-to/use-environment-variables/):
 
     ```bash
     SERVER_PRESET=digital-ocean
     ```
 
-3. You will need to ensure you set an `engines.node` field in your app's `package.json` to ensure Digital Ocean uses a supported version of Node.js:
+3. Чтобы убедиться, что Digital Ocean использует поддерживаемую версию Node.js, вам необходимо задать поле `engines.node` в файле `package.json` вашего приложения:
 
     ```json [package.json]
     {
@@ -29,7 +29,7 @@ Nuxt supports deploying on the [Digital Ocean App Platform](https://docs.digital
     }
     ```
 
-4. You'll also need to add a run command so Digital Ocean knows what command to run after a build. You can do so by adding a start script to your `package.json`:
+4. Вам также нужно будет добавить команду run, чтобы Digital Ocean знал, какую команду запускать после сборки. Это можно сделать, добавив скрипт запуска в ваш `package.json`:
 
     ```json [package.json]
     {
@@ -39,14 +39,14 @@ Nuxt supports deploying on the [Digital Ocean App Platform](https://docs.digital
     }
     ```
 
-5. Finally, you'll need to add this start script to your Digital Ocean app's run command. Go to `Components > Settings > Commands`, click "Edit", then add `npm run start`
+5. Наконец, вам нужно добавить этот скрипт запуска в команду запуска вашего приложения Digital Ocean. Перейдите в `Компоненты > Настройки > Команды`, нажмите «Редактировать», а затем добавьте `npm run start`.
 
 ::tip
-Your Nuxt app should be live at a Digital Ocean generated URL and you can now follow [the rest of the Digital Ocean deployment guide](https://docs.digitalocean.com/products/app-platform/how-to/manage-deployments/).
+Ваше приложение Nuxt должно быть размещено на сгенерированном Digital Ocean URL, и теперь вы можете следовать [остальной части руководства по развертыванию Digital Ocean](https://docs.digitalocean.com/products/app-platform/how-to/manage-deployments/).
 ::
 
-## Learn more
+## Узнать больше
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/digitalocean" target="_blank"}
-Head over **Nitro documentation** to learn more about the digitalocean deployment preset.
+Ознакомьтесь с **документацией Nitro**, чтобы узнать больше о предустановке развертывания digitalocean.
 ::

@@ -1,27 +1,28 @@
 ---
 title: IIS
-description: 'Deploy your Nuxt Application to IIS infrastructure.'
+description: 'Разверните ваше приложение Nuxt на IIS инфраструктуре.'
 logoSrc: '/assets/integrations/microsoft.webp'
-category: Hosting
+category: Хостинг
 nitroPreset: 'iis'
 website: 'https://www.iis.net/'
 ---
 
-## Using IISnode
+## Использование IISnode
 
-1. Install the latest LTS version of [Node.js](https://nodejs.org/en/) on your Windows Server.
-2. Install [IISnode](https://github.com/azure/iisnode/releases)
-3. Install [IIS `URLRewrite` Module](https://www.iis.net/downloads/microsoft/url-rewrite).
-4. In IIS, add `.mjs` as a new mime type and set its content type to `application/javascript`.
-5. Build you application with the following command:
+1. Установите последнюю LTS-версию [Node.js](https://nodejs.org/en/) на ваш Windows Server.
+2. Установите [IISnode](https://github.com/azure/iisnode/releases).
+3. Установите [IIS `URLRewrite` Module](https://www.iis.net/downloads/microsoft/url-rewrite).
+4. В IIS добавьте `.mjs` как новый тип mime и установите тип содержимого `application/javascript`.
+5. Создайте приложение с помощью следующей команды:
+
     ```bash [Terminal]
     npx nuxi build --preset=iis_node
     ```
-5. Deploy the contents of your `.output` folder to your website in IIS.
 
+6. Разверните содержимое папки `.output` на вашем сайте в IIS.
 
-## More options
+## Дополнительные параметры
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/iis" target="_blank"}
-Head over **Nitro documentation** to learn more about the IIS deployment presets.
+Ознакомьтесь с **документацией Nitro**, чтобы узнать больше о предварительных настройках развертывания IIS.
 ::

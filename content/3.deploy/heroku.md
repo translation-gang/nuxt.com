@@ -1,35 +1,35 @@
 ---
 title: Heroku
-description: 'Deploy your Nuxt Application to Heroku infrastructure.'
+description: 'Разверните ваше приложение Nuxt на Heroku инфраструктуре.'
 logoSrc: '/assets/integrations/heroku.svg'
-category: Hosting
+category: Хостинг
 nitroPreset: 'heroku'
 website: 'https://www.heroku.com/'
 ---
 
-Nuxt supports deploying on [Heroku](https://heroku.com/) with minimal configuration.
+Nuxt поддерживает развертывание на [Heroku](https://heroku.com/) с минимальными настройками.
 
-## Using the Heroku CLI
+## Использование Heroku CLI
 
-1. Create a new Heroku app.
+1. Создайте новое приложение Heroku.
 
     ```bash [Terminal]
     heroku create myapp
     ```
 
-2. Configure Heroku to use the nodejs buildpack.
+2. Настройте Heroku на использование билдпака nodejs.
 
     ```bash [Terminal]
     heroku buildpacks:set heroku/nodejs
     ```
 
-3. Configure your app.
+3. Настройте свое приложение.
 
     ```bash [Terminal]
     heroku config:set SERVER_PRESET=heroku
     ```
 
-4. Ensure you have `start` and `build` commands in your `package.json` file.
+4. Убедитесь, что в файле `package.json` есть команды `start` и `build`.
 
     ```json [package.json]
     {
@@ -40,8 +40,8 @@ Nuxt supports deploying on [Heroku](https://heroku.com/) with minimal configurat
     }
     ```
 
-## Learn more
+## Узнать больше
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/heroku" target="_blank"}
-Head over **Nitro documentation** to learn more about the Heroku deployment preset.
+Ознакомьтесь с **документацией Nitro**, чтобы узнать больше о предварительной настройке развертывания Heroku.
 ::
