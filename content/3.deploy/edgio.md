@@ -1,56 +1,56 @@
 ---
 title: Edgio
-description: 'Deploy your Nuxt Application to Edgio infrastructure.'
+description: 'Разверните ваше приложение Nuxt на Edgio инфраструктуре.'
 logoIcon: 'i-logos-edgio-icon'
-category: Hosting
+category: Хостинг
 nitroPreset: 'edgio'
 website: https://edgio.app
 ---
 
-Nuxt provides a built-in preset to generate output format compatible with [Edgio (formerly Layer0)](https://edg.io/).
+Nuxt предоставляет встроенный пресет для создания выходного формата, совместимого с [Edgio (formerly Layer0)](https://edg.io/).
 
-Edgio (formerly Layer0) extends the capabilities of a traditional CDN by not only hosting your static content, but also providing server-side rendering for progressive web applications as well as caching both your APIs and HTML at the network edge to provide your users with the fastest browsing experience.
+Edgio (ранее Layer0) расширяет возможности традиционных CDN, не только размещая статический контент, но и обеспечивая рендеринг на стороне сервера для прогрессивных веб-приложений, а также кэшируя API и HTML на стороне сети, чтобы обеспечить пользователям максимально быстрый просмотр.
 
-If this is your first time deploying to Edgio, the interactive CLI as part of the `deploy` command will prompt to authenticate using your browser. You may also [sign up](https://edgio.app/signup) prior to deployment.
+Если вы впервые развертываете Edgio, интерактивный CLI в составе команды `deploy` предложит пройти аутентификацию с помощью браузера. Вы также можете [зарегистрироваться](https://edgio.app/signup) перед развертыванием.
 
-## Install the Edgio CLI
+## Установите Edgio CLI
 
 ```bash
 npm i -g @edgio/cli
 ```
 
-## Testing production build locally with Edgio
+## Локальное тестирование продакшен сборок с помощью Edgio
 
-You can use Nitropack to test your app's developement experience locally:
+Вы можете использовать Nitropack для локального тестирования процесса разработки вашего приложения:
 
 ```bash
 npx nuxi build --preset=edgio
 ```
 
-To simulate on local how your app would run in production with Edgio, run the following command:
+Чтобы смоделировать на локальном компьютере, как ваше приложение будет работать в производстве с Edgio, выполните следующую команду:
 
 ```bash
 edgio build && edgio run --production
 ```
 
-## Deploying from your local machine
+## Развертывание с локальной машины
 
-Once you have tested your application locally, you may deploy using:
+После того как вы протестировали свое приложение на локальной машине, вы можете развернуть его с помощью:
 
 ```bash
 edgio deploy
 ```
 
-## Deploying using CI/CD
+## Развертывание с помощью CI/CD
 
-If you are deploying from a non-interactive environment, you will need to create an account on [Edgio Developer Console](https://app.layer0.co) first and setup a [deploy token](https://docs.edg.io/guides/basics/deploy#deploy-from-ci). Once the deploy token is created, save it as a secret to your environment. You can start the deploy by running:
+Если вы выполняете развертывание из неинтерактивной среды, вам необходимо сначала создать учетную запись в [Edgio Developer Console](https://app.layer0.co) и настроить [deploy-токен](https://docs.edg.io/guides/basics/deploy#deploy-from-ci). После создания токена развертывания сохраните его как секрет для вашей среды. Вы можете начать развертывание, выполнив команду:
 
 ```bash
 edgio deploy --token=XXX
 ```
 
-## Learn more
+## Узнать больше
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/edgio" target="_blank"}
-Head over **Nitro documentation** to learn more about the edgio deployment preset.
+Перейдите по ссылке **Документация Nitro**, чтобы узнать больше о предустановке развертывания edgio.
 ::

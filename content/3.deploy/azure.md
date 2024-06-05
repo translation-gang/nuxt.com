@@ -1,8 +1,8 @@
 ---
 title: Azure
-description: 'Deploy your Nuxt Application to Azure infrastructure.'
+description: 'Разверните ваше приложение Nuxt на Azure инфраструктуре.'
 logoIcon: 'i-logos-azure-icon'
-category: Hosting
+category: Хостинг
 nitroPreset: 'azure'
 website: 'https://azure.microsoft.com/en-us/services/app-service/static/'
 ---
@@ -10,41 +10,41 @@ website: 'https://azure.microsoft.com/en-us/services/app-service/static/'
 ## Azure Static Web Apps
 
 ::tip
-**Zero Configuration ✨**
+**Нулевая конфигурация ✨**
 :br
-Integration with Azure Static Web Apps provider is possible with zero configuration, [learn more](https://nitro.unjs.io/deploy#zero-config-providers).
+Интеграция с провайдером Azure Static Web Apps возможна с нулевой настройкой, [подробнее](https://nitro.unjs.io/deploy#zero-config-providers).
 ::
 
-Azure Static Web Apps are designed to be deployed continuously in a [GitHub Actions workflow](https://docs.microsoft.com/en-us/azure/static-web-apps/github-actions-workflow). By default, Nuxt will detect this deployment environment to enable the `azure` preset.
+Статические веб-приложения Azure предназначены для постоянного развертывания в рамках рабочего процесса [GitHub Actions](https://docs.microsoft.com/en-us/azure/static-web-apps/github-actions-workflow). По умолчанию Nuxt определяет эту среду развертывания, чтобы включить предустановку `azure`.
 
-### Local preview
+### Локальный предварительный просмотр
 
-Install [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local) if you want to test locally.
+Установите [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local), если хотите протестировать локально.
 
-You can invoke a development environment to preview before deploying.
+Вы можете вызвать среду разработки для предварительного просмотра перед развертыванием.
 
 ```bash [Terminal]
 npx nuxi build --preset=azure
 npx @azure/static-web-apps-cli start .output/public --api-location .output/server
 ```
 
-### Configuration
+### Конфигурация
 
-Azure Static Web Apps are [configured](https://learn.microsoft.com/en-us/azure/static-web-apps/configuration) using the `staticwebapp.config.json` file.
+Статические веб-приложения Azure [настраиваются](https://learn.microsoft.com/en-us/azure/static-web-apps/configuration) с помощью файла `staticwebapp.config.json`.
 
-Nuxt automatically generates this configuration file whenever the application is built with the `azure` preset.
+Nuxt автоматически генерирует этот конфигурационный файл, когда приложение собирается с предустановкой `azure`.
 
-It adds the following properties based on the following criteria:
+Он добавляет следующие свойства, основываясь на следующих критериях:
 
-| Property | Criteria | Default |
+| Свойство | Критерии | По умолчанию |
 | --- | --- | --- |
-| **[platform.apiRuntime](https://learn.microsoft.com/en-us/azure/static-web-apps/configuration#platform)** | Will automatically set to `node:16` or `node:14` depending on your package configuration. | `node:16` |
-| **[navigationFallback.rewrite](https://learn.microsoft.com/en-us/azure/static-web-apps/configuration#fallback-routes)** | Is always `/api/server` | `/api/server` |
-| **[routes](https://learn.microsoft.com/en-us/azure/static-web-apps/configuration#routes)** | All prerendered routes are added. Additionally, if you do not have an `index.html` file an empty one is created for you for compatibility purposes and also requests to `/index.html` are redirected to the root directory which is handled by `/api/server`.  | `[]` |
+| **[platform.apiRuntime](https://learn.microsoft.com/en-us/azure/static-web-apps/configuration#platform)** | Будет автоматически установлен на `node:16` или `node:14` в зависимости от конфигурации вашего пакета. | `node:16` |
+| **[navigationFallback.rewrite](https://learn.microsoft.com/en-us/azure/static-web-apps/configuration#fallback-routes)** | Всегда `/api/server` | `/api/server` |
+| **[routes](https://learn.microsoft.com/en-us/azure/static-web-apps/configuration#routes)** | Добавляются все пререндеренные маршруты. Кроме того, если у вас нет файла `index.html`, то в целях совместимости будет создан пустой файл, а также запросы к `/index.html` будут перенаправлены в корневой каталог, который обрабатывается `/api/server`.  | `[]` |
 
-### Custom Configuration
+### Пользовательская конфигурация
 
-You can alter the generated configuration using `azure.config` option. For instance, if you wanted to specify a Node runtime for your Azure Functions, edit your `nuxt.config.ts` file to the following:
+Вы можете изменить сгенерированную конфигурацию с помощью опции `azure.config`. Например, если вы хотите указать Node runtime для ваших Azure Functions, измените файл `nuxt.config.ts` следующим образом:
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
@@ -62,38 +62,38 @@ export default defineNuxtConfig({
 })
 ```
 
-Custom routes will be added and matched first. In the case of a conflict (determined if an object has the same route property), custom routes will override generated ones.
+Пользовательские маршруты будут добавлены и сопоставлены первыми. В случае конфликта (определяется, если объект имеет одинаковое свойство route) пользовательские маршруты будут преобладать над сгенерированными.
 
-### Deploy from CI/CD via GitHub Actions
+### Развертывание с помощью CI/CD через GitHub Actions
 
-When you link your GitHub repository to Azure Static Web Apps, a workflow file is added to the repository.
+Когда вы связываете свой репозиторий GitHub с Azure Static Web Apps, в репозиторий добавляется файл workflow.
 
-When you are asked to select your framework, select custom and provide the following information:
+Когда вам будет предложено выбрать фреймворк, выберите пользовательский и укажите следующую информацию:
 
-| Input | Value |
+| Входные данные | Значение |
 | --- | --- |
 | **app_location** | '/' |
 | **api_location** | '.output/server' |
 | **output_location** | '.output/public' |
 
-If you miss this step, you can always find the build configuration section in your workflow and update the build configuration:
+Если вы пропустите этот шаг, вы всегда можете найти раздел конфигурации сборки в своем рабочем процессе и обновить конфигурацию сборки:
 
 ```yaml [.github/workflows/azure-static-web-apps-<RANDOM_NAME>.yml]
-###### Repository/Build Configurations ######
+###### Конфигурация репозитория/сборки ######
 app_location: '/'
 api_location: '.output/server'
 output_location: '.output/public'
-###### End of Repository/Build Configurations ######
+###### Завершение конфигурации репозитория/сборки ######
 ```
 
 ::alert
-That's it! Now Azure Static Web Apps will automatically deploy your Nitro-powered application on push.
+Вот и все! Теперь Azure Static Web Apps будет автоматически разворачивать ваше приложение на базе Nitro в режиме push.
 ::
 
-If you are using `runtimeConfig`, you will likely want to configure the corresponding [environment variables on Azure](https://docs.microsoft.com/en-us/azure/static-web-apps/application-settings).
+Если вы используете `runtimeConfig`, вам, скорее всего, потребуется настроить соответствующие [переменные окружения в Azure](https://docs.microsoft.com/en-us/azure/static-web-apps/application-settings).
 
-## More options
+## Дополнительные параметры
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/azure" target="_blank"}
-Learn about the other Azure deployment presets on Nitro documentation.
+Узнайте о других предустановках развертывания Azure в документации Nitro.
 ::

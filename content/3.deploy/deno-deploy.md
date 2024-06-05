@@ -1,36 +1,36 @@
 ---
 title: Deno Deploy
-description: 'Deploy your Nuxt Application to Deno Deploy infrastructure.'
+description: 'Разверните ваше приложение Nuxt на Deno Deploy инфраструктуре.'
 logoIcon: 'i-logos-deno'
-category: Hosting
+category: Хостинг
 nitroPreset: 'deno-deploy'
 website: 'https://deno.com/deploy'
 ---
 
 ::important
-Deno deploy preset is experimental.
+Предварительная установка Deno deploy является экспериментальной.
 ::
 
-## Deploy with the CLI
+## Развертывание с помощью CLI
 
-You can use [deployctl](https://deno.com/deploy/docs/deployctl) to deploy your app.
+Вы можете использовать [deployctl](https://deno.com/deploy/docs/deployctl) для развертывания вашего приложения.
 
-Login to [Deno Deploy](https://dash.deno.com/account#access-tokens) to obtain a `DENO_DEPLOY_TOKEN` access token, and set it as an environment variable.
+Войдите в [Deno Deploy](https://dash.deno.com/account#access-tokens), чтобы получить токен доступа `DENO_DEPLOY_TOKEN`, и установите его в качестве переменной окружения.
 
 ```bash
-# Build with the deno_deploy preset
+# Сборка с предварительной установкой deno_deploy
 npm run build --preset=deno_deploy
 
-# Make sure to run the deployctl command from the output directory
+# Убедитесь, что команда deployctl запущена из выходной директории.
 cd .output
 deployctl deploy --project=my-project server/index.ts --token=<DENO_DEPLOY_TOKEN>
 ```
 
-## Deploy within CI/CD using GitHub Actions
+## Развертывание в рамках CI/CD с помощью GitHub Actions
 
-Link your GitHub repository to your Deno Deploy project and choose the "GitHub Actions" deployment mode. You can do this in your project settings on https://dash.deno.com.
+Свяжите свой репозиторий GitHub с проектом Deno Deploy и выберите режим развертывания «GitHub Actions». Это можно сделать в настройках проекта на <https://dash.deno.com>.
 
-Create a GitHub action file in your repository:
+Создайте файл действия GitHub в вашем репозитории:
 
 ```yaml [.github/workflows/deno_deploy.yml]
 name: deno-deploy
@@ -63,10 +63,10 @@ jobs:
 ```
 
 ::important
-Make sure to rename `<my-project>` with your project name.
+Обязательно переименуйте `<my-project>` в название вашего проекта.
 ::
 
-## Templates
+## Шаблоны
 
 ::card-group
   ::card
@@ -77,12 +77,13 @@ Make sure to rename `<my-project>` with your project name.
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
-  A collaborative todo-list app built with Deno KV and Nuxt.
+
+  Совместное приложение для составления списков дел, созданное с помощью Deno KV и Nuxt.
   ::
 ::
 
-## Learn more
+## Узнать больше
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/deno-deploy" target="_blank"}
-Head over **Nitro documentation** to learn more about the deno-deploy deployment preset.
+Перейдите по ссылке **Документация Nitro**, чтобы узнать больше о предустановке развертывания deno-deploy.
 ::

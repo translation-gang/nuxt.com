@@ -1,49 +1,49 @@
 ---
 title: GitLab Pages
-description: 'Deploy your Nuxt Application to GitLab Pages.'
+description: 'Разверните ваше приложение Nuxt на GitLab Pages.'
 logoSrc: '/assets/integrations/gitlab.svg'
-category: Hosting
+category: Хостинг
 website: 'https://docs.gitlab.com/ee/user/project/pages'
 ---
 
-Nuxt supports deploying on the [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages) with minimal configuration.
+Nuxt поддерживает развертывание на [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages) с минимальными настройками.
 
 ::caution
-GitLab Pages only support static sites, Nuxt will pre-render your application to static HTML files.
+GitLab Pages поддерживает только статические сайты, Nuxt будет предварительно рендерить ваше приложение в статические HTML-файлы.
 ::
 
-## Deployment
+## Развертывание
 
-1. Here is an example GitLab Pages workflow to deploy your site to GitLab Pages:
+1. Вот пример рабочего процесса GitLab Pages для развертывания вашего сайта на GitLab Pages:
 
 ```yaml [.gitlab-ci.yml]
-# The Docker image that will be used to build your app
+# Образ Docker, который будет использоваться для сборки вашего приложения
 image: node:lts
-# Functions that should be executed before the build script is run
+# Функции, которые должны быть выполнены перед запуском сценария сборки
 before_script:
    - npm install
 cache:
    paths:
-      # Directories that are cached between builds
+      # Директории, кэшируемые между сборками
       - node_modules/
 pages:
    script:
-      # Specify the steps involved to build your app here
+      # Укажите здесь шаги, необходимые для создания вашего приложения
       - npm run generate
    artifacts:
       paths:
-         # The directory that contains the built files to be published
+         # Директория, содержащая собранные файлы для публикации
          - .output/public
-   # The directory that contains the built files to be published
+   # Директория, содержащая собранные файлы для публикации
    publish: .output/public
    rules:
-      # This ensures that only pushes to the default branch 
-      # will trigger a pages deploy
+      # Это гарантирует, что развертывание страниц будет происходить
+      # только в ветке по умолчанию
       - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
 ```
 
-## Learn more
+## Узнать больше
 
 ::read-more{to="https://docs.gitlab.com/ee/user/project/pages/getting_started_part_one.html#project-website-examples" target="_blank"}
-Head over **GitLab Pages default domain names and URLs** to learn more about the GitLab Pages default domain names.
+Перейдите по ссылке **Доменные имена и URL-адреса по умолчанию GitLab Pages**, чтобы узнать больше о доменных именах по умолчанию GitLab Pages.
 ::
