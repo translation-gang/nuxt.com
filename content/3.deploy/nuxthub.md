@@ -1,108 +1,117 @@
 ---
 title: NuxtHub
-description: 'Deploy your full-stack Nuxt application globally on your Cloudflare account.'
+description: 'Разверните свое full-stack приложение Nuxt на глобальных серверах вашего аккаунта Cloudflare.'
 componentImg: NuxtHub
 logoSrc: '/assets/integrations/nuxthub.svg'
-category: Hosting
+category: Хостинг
 featured: true
 nitroPreset: 'cloudflare-pages'
 website: 'https://hub.nuxt.com'
 ---
 
 ::tip
-**Zero Configuration ✨**
+**Нулевая конфигурация ✨**
 :br
-Integration with NuxtHub is possible with zero configuration, [learn more](https://nitro.unjs.io/deploy#zero-config-providers).
+Интеграция с NuxtHub возможна с нулевой конфигурацией, [узнать больше](https://nitro.unjs.io/deploy#zero-config-providers).
 ::
 
 ::note
-NuxtHub is a deployment and administration platform for Nuxt, powered by Cloudflare. :br The main difference with the [Cloudflare](/deploy/cloudflare) deployment is that NuxtHub provides a zero-configuration deployment experience (provisioning, deployment, and administration). :br It also provides a powerful admin interface to manage your Nuxt projects (database, blob, KV, ...) as well as [remote storage](https://hub.nuxt.com/docs/getting-started/remote-storage).
+NuxtHub - это платформа развертывания и администрирования для Nuxt на базе Cloudflare. :br Основное отличие от [Cloudflare](/deploy/cloudflare) заключается в том, что NuxtHub обеспечивает развертывание с нулевой конфигурацией (инициализация, развертывание и администрирование). :br Он также предоставляет мощный интерфейс администратора для управления вашими проектами Nuxt (база данных, blob, KV, ...), а также [удалённое хранение](https://hub.nuxt.com/docs/getting-started/remote-storage).
 ::
 
-## Quick Start
+## Быстрый старт
 
-- Login to [admin.hub.nuxt.com](https://admin.hub.nuxt.com)
-- Connect your Cloudflare account by clicking on `Create a new token with required permissions` and follow the instructions
-- You are now ready to deploy your Nuxt project to your Cloudflare account!
+- Войдите на сайт [admin.hub.nuxt.com](https://admin.hub.nuxt.com)
+- Подключите свой аккаунт Cloudflare, нажав на `Создать новый токен с необходимыми правами` и следуйте инструкциям
+- Теперь вы готовы развернуть ваш проект Nuxt на вашем аккаунте Cloudflare!
 
-## Deploy using Git
+## Развертывание с помощью Git
 
-1. Push your code to your git repository (GitHub or GitLab)
-2. Click on `New Project` then `Import a Git repository`
-3. Select your repository and click on `Import repository`
-4. NuxtHub will configure your project on Cloudflare Pages and deploy it
-5. Your application is deployed with a `.nuxt.dev` domain
+1. Разместите код в своем git-репозитории (GitHub или GitLab).
+2. Нажмите на `Новый проект`, затем `Импортировать Git-репозиторий`.
+3. Выберите репозиторий и нажмите на `Импортировать репозиторий`.
+4. NuxtHub настроит ваш проект на Cloudflare Pages и развернет его
+5. Ваше приложение будет развернуто с доменом `.nuxt.dev`.
 
-After your project has been imported and deployed, all subsequent pushes to branches will generate preview deployments and all changes made to the production branch (commonly “main”) will result in a production deployment.
+После импорта и развертывания вашего проекта все последующие изменения в ветках будут генерировать предварительные развертывания, а все изменения, внесенные в продакшен ветку (обычно «main»), приведут к развертыванию на продакшен.
 
 ### NuxtHub CLI
 
 ::warning
-If you do your first deployment with the NuxtHub CLI, you won't be able to attach your GitHub/GitLab repository later on due to a Cloudflare limitation.
+Если вы выполните первое развертывание с помощью NuxtHub CLI, вы не сможете прикрепить свой репозиторий GitHub/GitLab в дальнейшем из-за ограничения Cloudflare.
 ::
 
-You can deploy your local project with a single command:
+Вы можете развернуть свой локальный проект с помощью одной команды:
 
 ```bash [Terminal]
 npx nuxthub deploy
 ```
 
-The command will:
-1. Ensure you are logged in on [admin.hub.nuxt.com](https://admin.hub.nuxt.com)
-2. Link your local project with a NuxtHub project or help you create a new one
-3. Build your Nuxt project with the correct preset
-4. Deploy it to your Cloudflare account with all the necessary resources
-4. Provide you with a URL to access your project
+Далее:
+
+1. Убедитесь, что вы авторизованы на [admin.hub.nuxt.com](admin.hub.nuxt.com)
+2. Свяжите ваш локальный проект с проектом NuxtHub или помогите создать новый
+3. Соберите ваш проект Nuxt с правильным пресетом
+4. Разверните его на вашем аккаунте Cloudflare со всеми необходимыми ресурсами
+5. Предоставьте вам URL-адрес для доступа к вашему проекту
 
 ::note
-You can also install the [NuxtHub CLI](https://github.com/nuxt-hub/cli) globally with: `npm i -g nuxthub`.
+Вы также можете установить [NuxtHub CLI](https://github.com/nuxt-hub/cli) глобально с помощью: `npm i -g nuxthub`.
 ::
 
-## Templates
+## Шаблоны
 
 ::card-group
   ::card
   ---
+
   icon: i-simple-icons-github
   title: NuxtHub Starter
   to: https://github.com/nuxt-hub/starter
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
-  A minimal starter to get started with NuxtHub storage and features.
+
+  Минимальный стартовый набор для начала работы с хранилищем и функциями NuxtHub.
   ::
   ::card
   ---
+
   icon: i-simple-icons-github
   title: Nuxt Todos
   to: https://github.com/atinux/nuxt-todos-edge
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
-  A full-stack application with authentication and a database to manage your Todos.
+
+  Full-stack приложение с аутентификацией и базой данных для управления вашими Todos.
   ::
   ::card
   ---
+
   icon: i-simple-icons-github
   title: Nuxt Image Gallery
   to: https://github.com/flosciante/nuxt-image-gallery
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
-  An image gallery to upload, edit and share your images to the world.
+
+  Галерея изображений, позволяющая загружать, редактировать и делиться своими изображениями со всем миром.
   ::
   ::card
   ---
+
   icon: i-simple-icons-github
   title: Atinotes
   to: https://github.com/atinux/atinotes
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
-  An editable website powered by Markdown & Vue components with dynamic OG image generation.
+
+  Редактируемый сайт на основе компонентов Markdown и Vue с динамической генерацией изображений OG.
   ::
 ::
 
 ::callout
-See the whole list of templates on https://hub.nuxt.com/templates
+Посмотреть весь список шаблонов можно на <https://hub.nuxt.com/templates>
 ::
