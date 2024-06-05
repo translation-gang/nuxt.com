@@ -25,11 +25,11 @@ function onSubmit() {
     method: 'POST',
     body: { email: email.value }
   }).then(() => {
-    toast.add({ title: 'Subscription pending', description: 'Please check your emails to confirm your subscription.', color: 'green' })
+    toast.add({ title: 'Подписка ожидается', description: 'Пожалуйста, проверьте свою электронную почту, чтобы подтвердить подписку.', color: 'green' })
     email.value = ''
   }).catch((err) => {
-    const description = err.data?.message || 'Something went wrong. Please try again later.'
-    toast.add({ title: 'Subscription failed', description, color: 'red' })
+    const description = err.data?.message || 'Что-то пошло не так. Пожалуйста, повторите попытку позже.'
+    toast.add({ title: 'Подписка не удалась', description, color: 'red' })
   }).finally(() => {
     loading.value = false
   })
@@ -49,7 +49,7 @@ function onSubmit() {
         class="max-w-sm"
       >
         <template #trailing>
-          <UButton type="submit" size="xs" color="black" :label="loading ? 'Subscribing' : 'Subscribe'" :loading="loading" />
+          <UButton type="submit" size="xs" color="black" :label="loading ? 'Подписываемся' : 'Подпишись'" :loading="loading" />
         </template>
       </UInput>
     </UFormGroup>

@@ -83,12 +83,12 @@ const links = [
     <UPage>
       <UPageHeader :title="article.title" :description="article.description" :ui="{ headline: 'flex flex-col gap-y-8 items-start' }">
         <template #headline>
-          <UBreadcrumb :links="[{ label: 'Blog', icon: 'i-ph-newspaper-duotone', to: '/blog' }, { label: article.title }]" />
+          <UBreadcrumb :links="[{ label: 'Блог', icon: 'i-ph-newspaper-duotone', to: '/blog' }, { label: article.title }]" />
           <div class="flex items-center space-x-2">
             <span>
               {{ article.category }}
             </span>
-            <span class="text-gray-500 dark:text-gray-400">&middot;&nbsp;&nbsp;<time>{{ formatDateByLocale('en', article.date) }}</time></span>
+            <span class="text-gray-500 dark:text-gray-400">&middot;&nbsp;&nbsp;<time>{{ formatDateByLocale('ru', article.date) }}</time></span>
           </div>
         </template>
 
@@ -122,11 +122,11 @@ const links = [
 
           <div class="flex items-center justify-between mt-12 not-prose">
             <NuxtLink href="/blog" class="text-primary">
-              ← Back to blog
+              ← Вернуться к блогу
             </NuxtLink>
             <div class="flex justify-end items-center gap-1.5">
               <UButton icon="i-ph-link-simple" v-bind="($ui.button.secondary as any)" @click="copyLink">
-                Copy URL
+                Скопировать URL
               </UButton>
               <UButton
                 v-for="(link, index) in socialLinks"
@@ -148,7 +148,7 @@ const links = [
           <UContentToc v-if="article.body && article.body.toc" :links="article.body.toc.links">
             <template #bottom>
               <div class="hidden lg:block space-y-6">
-                <UPageLinks title="Links" :links="links" />
+                <UPageLinks title="Ссылки" :links="links" />
 
                 <UDivider type="dashed" />
 
