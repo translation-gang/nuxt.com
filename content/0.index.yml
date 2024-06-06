@@ -107,7 +107,7 @@ sections:
     class: 'dark:bg-gradient-to-b from-gray-900 to-gray-950'
     slot: features
     features:
-      - title: 'Маршрутизация и Лаяуты.'
+      - title: 'Маршрутизация и лейауты.'
         description: 'Система маршрутизации на основе файлов для создания сложных представлений и интерфейсов с помощью мощного и традиционного подхода.'
         icon: 'i-ph-signpost-duotone'
         to: '/docs/getting-started/routing'
@@ -132,7 +132,7 @@ sections:
         icon: 'i-ph-database-duotone'
         to: '/docs/getting-started/state-management'
       - title: 'Transitions'
-        description: 'Создавайте плавные переходы между лаяутами, страницами и компонентами с помощью встроенной поддержки transitions Vue и браузера.'
+        description: 'Создавайте плавные переходы между лейаут, страницами и компонентами с помощью встроенной поддержки transitions Vue и браузера.'
         icon: 'i-ph-exclude-square-duotone'
         to: '/docs/getting-started/transitions'
       - title: 'Обработка ошибок'
