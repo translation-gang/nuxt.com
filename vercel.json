@@ -183,5 +183,9 @@
       "destination": "/docs/guide/recipes/custom-routing",
       "permanent": false
     }
-  ]
+  ],
+  "crons": [{
+    "path": "/api/cron",
+    "cron": "0 * * * *"
+  }]
 }
