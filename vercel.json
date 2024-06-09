@@ -186,6 +186,6 @@
   ],
   "crons": [{
     "path": "/api/cron",
-    "cron": "0 * * * *"
+    "schedule": "0 * * * *"
   }]
 }
