@@ -87,7 +87,7 @@ defineProps<{
     </template>
 
     <template #right>
-      <UTooltip text="Search" :shortcuts="[metaSymbol, 'K']">
+      <UTooltip text="Поиск" :shortcuts="[metaSymbol, 'K']">
         <UContentSearchButton :label="null" />
       </UTooltip>
 
