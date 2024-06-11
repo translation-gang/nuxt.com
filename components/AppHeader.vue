@@ -98,7 +98,7 @@ defineProps<{
       <UTooltip text="Звезды на GitHub">
         <UButton
           icon="i-simple-icons-github"
-          to="https://github.com/nuxt/nuxt"
+          to="https://go.nuxt.com/github"
           target="_blank"
           :label="stats ? formatNumber(stats.stars) : '...'"
           v-bind="($ui.button.secondary as any)"

@@ -6,7 +6,7 @@ logoSrc: '/assets/integrations/nuxthub.svg'
 category: Хостинг
 featured: true
 nitroPreset: 'cloudflare-pages'
-website: 'https://hub.nuxt.com'
+website: 'https://hub.nuxt.com/?utm_source=nuxt-website&utm_medium=deploy-page'
 ---
 
 ::tip
@@ -16,12 +16,12 @@ website: 'https://hub.nuxt.com'
 ::
 
 ::note
-NuxtHub - это платформа развертывания и администрирования для Nuxt на базе Cloudflare. :br Основное отличие от [Cloudflare](/deploy/cloudflare) заключается в том, что NuxtHub обеспечивает развертывание с нулевой конфигурацией (инициализация, развертывание и администрирование). :br Он также предоставляет мощный интерфейс администратора для управления вашими проектами Nuxt (база данных, blob, KV, ...), а также [удалённое хранение](https://hub.nuxt.com/docs/getting-started/remote-storage).
+NuxtHub is a deployment and administration platform for Nuxt, powered by Cloudflare. :br The main difference with the [Cloudflare](/deploy/cloudflare) deployment is that NuxtHub provides a zero-configuration deployment experience (provisioning, deployment, and administration). :br It also provides a powerful admin interface to manage your Nuxt projects (database, blob, KV, ...) as well as [remote storage](https://hub.nuxt.com/docs/getting-started/remote-storage?utm_source=nuxt-website&utm_medium=deploy-page).
 ::
 
 ## Быстрый старт
 
-- Войдите на сайт [admin.hub.nuxt.com](https://admin.hub.nuxt.com)
+- Войдите на сайт [admin.hub.nuxt.com](https://admin.hub.nuxt.com/?utm_source=nuxt-website&utm_medium=deploy-page)
 - Подключите свой аккаунт Cloudflare, нажав на `Создать новый токен с необходимыми правами` и следуйте инструкциям
 - Теперь вы готовы развернуть ваш проект Nuxt на вашем аккаунте Cloudflare!
 
@@ -49,7 +49,7 @@ npx nuxthub deploy
 
 Далее:
 
-1. Убедитесь, что вы авторизованы на [admin.hub.nuxt.com](admin.hub.nuxt.com)
+1. Убедитесь, что вы авторизованы на [admin.hub.nuxt.com](https://admin.hub.nuxt.com/?utm_source=nuxt-website&utm_medium=deploy-page)
 2. Свяжите ваш локальный проект с проектом NuxtHub или помогите создать новый
 3. Соберите ваш проект Nuxt с правильным пресетом
 4. Разверните его на вашем аккаунте Cloudflare со всеми необходимыми ресурсами

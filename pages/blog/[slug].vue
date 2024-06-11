@@ -62,17 +62,17 @@ const links = [
   }, {
     icon: 'i-ph-shooting-star-duotone',
     label: 'Звезды на GitHub',
-    to: 'https://github.com/nuxt/nuxt',
+    to: 'https://go.nuxt.com/github',
     target: '_blank'
   }, {
     icon: 'i-ph-chat-centered-text-duotone',
     label: 'Чат в Discord',
-    to: 'https://discord.com/invite/nuxt',
+    to: 'https://go.nuxt.com/discord',
     target: '_blank'
   }, {
     icon: 'i-ph-hand-heart-duotone',
     label: 'Стать спонсором',
-    to: 'https://github.com/sponsors/nuxt',
+    to: 'https://go.nuxt.com/sponsor',
     target: '_blank'
   }
 ]
