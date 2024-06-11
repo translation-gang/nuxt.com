@@ -44,7 +44,7 @@ useSeoMeta({
       </template>
 
       <template #title>
-        Интуитивный<br><span class="text-primary block lg:inline-block">Vue фреймворк</span>
+        Интуитивный<br><span class="text-primary block lg:inline-block">Vue-фреймворк</span>
       </template>
 
       <template #description>
