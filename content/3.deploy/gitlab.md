@@ -12,24 +12,31 @@ Nuxt поддерживает развертывание на [GitLab Pages](htt
 GitLab Pages поддерживает только статические сайты, Nuxt будет предварительно рендерить ваше приложение в статические HTML-файлы.
 ::
 
+::caution
+If you are **not** using a custom domain, you need to set `NUXT_APP_BASE_URL` to your repository-slug for your build step.
+
+**Example**: `https://<group/user>.gitlab.io/<repository>/`: `NUXT_APP_BASE_URL=/<repository>/ npm run genertate`
+::
+
 ## Развертывание
 
 1. Вот пример рабочего процесса GitLab Pages для развертывания вашего сайта на GitLab Pages:
 
 ```yaml [.gitlab-ci.yml]
-# Образ Docker, который будет использоваться для сборки вашего приложения
-image: node:lts
-# Функции, которые должны быть выполнены перед запуском сценария сборки
-before_script:
-   - npm install
-cache:
-   paths:
-      # Директории, кэшируемые между сборками
-      - node_modules/
+# Job name has to be `pages`. See https://docs.gitlab.com/ee/user/project/pages/#how-it-works
 pages:
+   image: node
+   before_script:
+      - npm ci --cache .npm --prefer-offline
    script:
       # Укажите здесь шаги, необходимые для создания вашего приложения
       - npm run generate
+   cache: # https://docs.gitlab.com/ee/ci/caching/#cache-nodejs-dependencies
+      key:
+         files:
+         - package-lock.json
+      paths:
+         - .npm/
    artifacts:
       paths:
          # Директория, содержащая собранные файлы для публикации
