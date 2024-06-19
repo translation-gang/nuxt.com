@@ -32,7 +32,7 @@ users:
       - icon: i-simple-icons-github
         to: https://github.com/pi0
         target: _blank
-  - name: Daniel Roe
+  - name: Дэниел Ро
     location: Durham, UK
     sponsor: https://github.com/sponsors/danielroe
     avatar:
