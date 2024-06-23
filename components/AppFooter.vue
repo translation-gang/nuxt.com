@@ -27,6 +27,7 @@ const { footerLinks } = useNavigation()
 
     <template #right>
       <UButton aria-label="Nuxt в X" to="https://go.nuxt.com/x" target="_blank" icon="i-simple-icons-x" v-bind="($ui.button.secondary as any)" />
+      <UButton aria-label="Nuxt в LinkedIn" to="https://go.nuxt.com/linkedin" target="_blank" icon="i-simple-icons-linkedin" v-bind="($ui.button.secondary as any)" />
       <UButton aria-label="Nuxt в Discord" to="https://go.nuxt.com/discord" target="_blank" icon="i-simple-icons-discord" v-bind="($ui.button.secondary as any)" />
       <UButton aria-label="Nuxt в GitHub" to="https://go.nuxt.com/github" target="_blank" icon="i-simple-icons-github" v-bind="($ui.button.secondary as any)" />
     </template>

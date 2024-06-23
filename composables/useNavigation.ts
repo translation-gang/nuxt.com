@@ -102,11 +102,6 @@ const _useNavigation = () => {
         to: '/enterprise/sponsors',
         description: 'Станьте спонсором и получите ваш логотип на нашем README на GitHub со ссылкой на ваш сайт.',
         icon: 'i-ph-hand-heart-duotone'
-      }, {
-        label: 'Работа',
-        to: '/enterprise/jobs',
-        description: 'Найдите работу или опубликуйте вакансию для специалистов по Nuxt.js.',
-        icon: 'i-ph-briefcase-duotone'
       }]
     }, {
       label: 'Блог',
@@ -122,15 +117,26 @@ const _useNavigation = () => {
       to: 'https://nuxters.nuxt.com',
       target: '_blank'
     }, {
-      label: 'Nuxt на GitHub',
-      to: 'https://github.com/nuxt',
-      target: '_blank'
-    }, {
       label: 'Команда',
       to: '/team'
     }, {
       label: 'Design Kit',
       to: '/design-kit'
+    }]
+  }, {
+    label: 'Продукты',
+    children: [{
+      label: 'Nuxt UI Pro',
+      to: 'https://ui.nuxt.com/pro?utm_source=nuxt-website&utm_medium=footer',
+      target: '_blank'
+    }, {
+      label: 'Nuxt Studio',
+      to: 'https://nuxt.studio/?utm_source=nuxt-website&utm_medium=footer',
+      target: '_blank'
+    }, {
+      label: 'NuxtHub',
+      to: 'https://hub.nuxt.com/?utm_source=nuxt-website&utm_medium=footer',
+      target: '_blank'
     }]
   }, {
     label: 'Enterprise',
@@ -141,30 +147,8 @@ const _useNavigation = () => {
       label: 'Агентства',
       to: '/enterprise/agencies'
     }, {
-      label: 'Работа',
-      to: '/enterprise/jobs'
-    }, {
       label: 'Спонсоры',
       to: '/enterprise/sponsors'
-    }]
-  }, {
-    label: 'Решения',
-    children: [{
-      label: 'Nuxt Content',
-      to: 'https://content.nuxt.com/',
-      target: '_blank'
-    }, {
-      label: 'Nuxt DevTools',
-      to: 'https://devtools.nuxt.com/',
-      target: '_blank'
-    }, {
-      label: 'Nuxt Image',
-      to: 'https://image.nuxt.com/',
-      target: '_blank'
-    }, {
-      label: 'Nuxt UI',
-      to: 'https://ui.nuxt.com/',
-      target: '_blank'
     }]
   }]
 
