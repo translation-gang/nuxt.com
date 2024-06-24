@@ -160,12 +160,12 @@ sections:
     class: 'dark:bg-gray-900 dark:!bg-gradient-to-b from-gray-950 to-gray-900'
     align: left
     links:
-      - label: 'Explore Nuxt Modules'
+      - label: 'Исследуйте модули Nuxt'
         icon: i-ph-puzzle-piece-duotone
         to: '/modules'
         color: black
         size: md
-      - label: 'Learn about Modules'
+      - label: 'Узнайте больше о модулях'
         icon: i-ph-info-duotone
         to: '/docs/guide/concepts/modules'
         color: gray
