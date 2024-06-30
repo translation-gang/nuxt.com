@@ -192,7 +192,7 @@ templates:
     demo: 'https://shadcn-docs-nuxt.vercel.app/'
   - name: 'Shadcn Landing Pro'
     slug: 'shadcn-landing-pro'
-    description: 'Готовый шаблон страницы посадки с компонентами Shadcn UI.'
+    description: 'Готовый шаблон лендинга с компонентами Shadcn UI.'
     demo: 'https://nuxt-shadcn-landing-pro.vercel.app/'
     purchase: 'https://waterwaystudios.lemonsqueezy.com/buy/48ba7098-5ef6-4177-ae64-e469f445e85f?aff=J0Emk'
     badge: 'Premium'
