@@ -1,10 +1,10 @@
-title: Nuxt Sponsors
-description: Nuxt is an open-source framework totally free to use thanks to our generous sponsors. If you use Nuxt in your daily work and feel that it has made your life easier, please consider backing us.
-navigation.title: Sponsors
-head.description: Nuxt is an open-source framework totally free to use thanks to our generous sponsors.
+title: Спонсоры Nuxt
+description: Nuxt - это фреймворк с открытым исходным кодом, бесплатно доступный для использования благодаря нашим щедрым спонсорам. Если вы используете Nuxt в своей повседневной работе и чувствуете, что он облегчил вашу жизнь, пожалуйста, подумайте о поддержке нас.
+navigation.title: Спонсоры
+head.description: Nuxt - это фреймворк с открытым исходным кодом, бесплатно доступный для использования благодаря нашим щедрым спонсорам.
 navigation.icon: i-ph-hand-heart-duotone
 links:
-  - label: 'Become a sponsor'
+  - label: 'Стать спонсором'
     to: 'https://github.com/sponsors/nuxt'
     color: 'black'
     size: 'lg'
