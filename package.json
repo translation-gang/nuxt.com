@@ -50,7 +50,7 @@
     "nuxt-build-cache": "^0.1.1",
     "nuxt-content-twoslash": "0.0.10",
     "shiki": "^1.7.0",
-    "twoslash": "^0.2.8",
+    "twoslash": "^0.2.9",
     "vitest": "^1.6.0",
     "vue": "^3.4.29",
     "vue-tsc": "^2.0.16"
@@ -58,6 +58,8 @@
   "resolutions": {
     "@nuxt/kit": "3.12.2",
     "@nuxt/schema": "3.12.2",
-    "vue-tsc": "2.0.16"
+    "vue-tsc": "2.0.16",
+    "twoslash": "^0.2.9",
+    "twoslash-vue": "^0.2.9"
   }
 }
