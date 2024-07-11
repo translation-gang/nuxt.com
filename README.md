@@ -39,7 +39,7 @@ echo %cd%
 Запустите сервер разработки:
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 ### Добавьте шаблон Nuxt
@@ -61,7 +61,7 @@ npm run dev
 Соберите production-приложение:
 
 ```bash
-npm run generate
+pnpm generate
 ```
 
 ## Лицензия

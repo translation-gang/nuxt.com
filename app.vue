@@ -60,7 +60,7 @@ provide('navigation', navigation)
           name="i-ph-hourglass-low-duotone"
           class="w-5 h-5 flex-shrink-0 pointer-events-none hidden lg:inline-block"
         />
-        <span>Срок службы Nuxt 2 истекает 30 июня 2024 года.</span>
+        <span>Срок службы Nuxt 2 истек 30 июня 2024 года.</span>
         <UButton
           label="Узнать больше"
           color="white"

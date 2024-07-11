@@ -28,7 +28,8 @@ function onSubmit() {
     toast.add({ title: 'Подписка ожидается', description: 'Пожалуйста, проверьте свою электронную почту, чтобы подтвердить подписку.', color: 'green' })
     email.value = ''
   }).catch((err) => {
-    const description = err.data?.message || 'Что-то пошло не так. Пожалуйста, повторите попытку позже.'
+    const error = JSON.parse(err.data?.message)
+    const description = error[0].message || 'Что-то пошло не так. Пожалуйста, повторите попытку позже.'
     toast.add({ title: 'Подписка не удалась', description, color: 'red' })
   }).finally(() => {
     loading.value = false
