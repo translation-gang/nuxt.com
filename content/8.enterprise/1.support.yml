@@ -1,12 +1,12 @@
-title: 'Nuxt Professional Service'
-navigation.title: 'Support'
-description: 'Get professional support by the Nuxt experts to optimize your site performance and overcome any challenge'
-head.title: 'Nuxt professional services'
-head.description: 'Vue and Nuxt professional support and consulting services by the creators and maintainers of Vue and Nuxt for code audit and performance optimization.'
+title: 'Профессиональные услуги Nuxt'
+navigation.title: 'Поддержка'
+description: 'Получите профессиональную поддержку от экспертов по Nuxt, чтобы оптимизировать производительность вашего сайта и преодолеть любые трудности.'
+head.title: 'Профессиональные услуги Nuxt'
+head.description: 'Профессиональная поддержка и консультационные услуги по Vue и Nuxt от создателей и разработчиков Vue и Nuxt для аудита кода и оптимизации производительности.'
 navigation.icon: i-ph-lifebuoy-duotone
 hero:
   links:
-  - label: Talk to an expert
+  - label: Поговорите с экспертом
     color: black
     to: 'https://calendly.com/ferdinand-nuxt/nuxtlabs-ferdinand'
     size: lg
@@ -68,24 +68,24 @@ logos:
     height: '89'
     alt: 'realtruck logo'
 service:
-  title: Our services
-  description: We provide expertise and guidance to companies using Vue and Nuxt, including assistance with project architecture, performance optimization, best practices, and troubleshooting.
+  title: Наши услуги
+  description: Мы предоставляем экспертные знания и рекомендации компаниям, использующим Vue и Nuxt, включая помощь с архитектурой проекта, оптимизацией производительности, лучшими практиками и устранением неполадок.
   services:
     - icon: i-ph-chart-line
-      title: Performance optimizations
-      description: Optimize your Nuxt application with tailored recommendations to make it faster and more reliable than ever.
+      title: Оптимизация производительности
+      description: Оптимизируйте приложение Nuxt с помощью индивидуальных рекомендаций, чтобы сделать его более быстрым и надежным, чем когда-либо.
     - icon: i-ph-code
-      title: Migration to Nuxt
-      description: Make any migration project a successful and painless experience from the first steps to the deployment.
+      title: Миграция на Nuxt
+      description: Сделайте любой проект миграции успешным и безболезненным с первых шагов до развертывания.
     - icon: i-ph-rocket-launch
-      title: Nuxt Workshop
-      description: Bring your team’s skills to the expert level with custom workshops session and continuous support.
+      title: Воркшоп по Nuxt
+      description: Поднимите навыки вашей команды на экспертный уровень с помощью индивидуальных воркшопов и постоянной поддержки.
     - icon: i-ph-pencil-ruler
-      title: Custom services
-      description: Tell us what you’re looking for and we’ll find the most effective way to help you achieve your goals.
+      title: Индивидуальные услуги
+      description: Расскажите нам, что вы ищете, и мы найдем наиболее эффективный способ помочь вам достичь ваших целей.
 expertise:
-  title: 'The highest level of expertise'
-  description: 'The Nuxt experts are Vue, Nuxt and Vite core team members or chosen contributors.'
+  title: 'Высочайший уровень экспертизы'
+  description: 'Эксперты Nuxt — это члены основных команд Vue, Nuxt и Vite или выбранные ими участники.'
   logos:
     - src: '/assets/enterprise/support/nuxt.svg'
       width: 32
@@ -108,10 +108,10 @@ expertise:
       color: '#42b883'
       alt: 'vue logo'
 testimonials:
-  title: 'What our clients say'
-  description: 'Hear from our clients about how our consulting services have transformed their projects and boosted their performance.'
+  title: 'Что говорят наши клиенты'
+  description: 'Узнайте от наших клиентов, как наши консалтинговые услуги преобразили их проекты и повысили их эффективность.'
   items:
-    - quote: "“I'd highly recommend their services for anyone looking into Nuxt, to ensure you get all the benefits that it can provide and make sure your team follow all the best practice design patterns.“"
+    - quote: "“Я настоятельно рекомендую их услуги всем, кто рассматривает Nuxt, чтобы убедиться, что вы получите все преимущества, которые он может предоставить, и что ваша команда будет следовать всем лучшим шаблонам проектирования.“"
       author: 'James Baddiley'
       job: 'CEO/CTO @ Chillisauce'
       logo:
@@ -121,13 +121,13 @@ testimonials:
         width: 134
         height: 28
       achievements:
-        - label: 'Migration to Nuxt'
+        - label: 'Миграция на Nuxt'
           color: 'blue'
-        - label: 'Performance optimization'
+        - label: 'Оптимизация производительности'
           color: 'orange'
-        - label: 'Long-term support'
+        - label: 'Долгосрочная поддержка'
           color: 'yellow'
-    - quote: "“Choosing NuxtLabs for an audit of our Nuxt project was a game-changer. Their detailed insights significantly enhanced our site's performance and the quality of our code. We're grateful for their support and highly recommend them to others.“"
+    - quote: "“Выбор NuxtLabs для аудита нашего проекта на Nuxt стал переломным моментом. Их подробные выводы значительно улучшили производительность нашего сайта и качество нашего кода. Мы благодарны за их поддержку и настоятельно рекомендуем их другим.“"
       author: 'Melene Ulm'
       job: 'Web Developer @ Mobile Industrial Robots'
       logo:
@@ -137,13 +137,13 @@ testimonials:
         width: 54
         height: 24
       achievements:
-        - label: 'Codebase audit'
+        - label: 'Аудит кодовой базы'
           color: 'pink'
-        - label: 'Performance optimization'
+        - label: 'Оптимизация производительности'
           color: 'orange'
-        - label: 'Long-term support'
+        - label: 'Долгосрочная поддержка'
           color: 'yellow'
-    - quote: "“The expert provided us with valuable feedback, which included improvements on how we can utilize Nuxt and the ecosystem more effectively, raising questions about the background of historic implementation and finding bugs that we did not yet catch.“"
+    - quote: "“Эксперт предоставил нам ценные отзывы, в том числе рекомендации по более эффективному использованию Nuxt и экосистемы, поднял вопросы об истории внедрения и выявил ошибки, которые мы еще не обнаружили.“"
       author: 'Robert K Pauls'
       job: 'Lead dev at @ ABOUT YOU group'
       logo:
@@ -153,11 +153,11 @@ testimonials:
         width: 120
         height: 24
       achievements:
-        - label: 'Performance optimization'
+        - label: 'Оптимизация производительности'
           color: 'orange'
-        - label: 'Codebase audit'
+        - label: 'Аудит кодовой базы'
           color: 'pink'
-    - quote: "“They provided excellent feedback on how to make the core of our app more efficient as well some very valuable tips for the features we are planing to implement in the near future.“"
+    - quote: "“Они предоставили прекрасную обратную связь о том, как сделать ядро ​​нашего приложения более эффективным, а также несколько очень ценных советов по функциям, которые мы планируем реализовать в ближайшем будущем.“"
       author: 'Maxime Casadei'
       job: 'CEO at @NAKWEB for Otypo'
       width: 80
@@ -167,13 +167,13 @@ testimonials:
         dark: '/assets/enterprise/support/dark/otypo.svg'
         alt: 'otypo logo'
       achievements:
-        - label: 'Migration to Nuxt'
+        - label: 'Миграция на Nuxt'
           color: 'blue'
-        - label: 'Performance optimizations'
+        - label: 'Оптимизация производительности'
           color: 'orange'
-        - label: 'Codebase audit'
+        - label: 'Аудит кодовой базы'
           color: 'pink'
-    - quote: "“NuxtLabs was amazing to work with. They found hidden opportunities buried deep within our codebase. Our enterprise application is now faster, more secure and reliable than ever!“"
+    - quote: "“Работать с NuxtLabs было потрясающе. Они нашли скрытые возможности, зарытые глубоко в нашей кодовой базе. Наше корпоративное приложение теперь быстрее, безопаснее и надежнее, чем когда-либо!“"
       author: 'Josh Deltener'
       job: 'Director of software engineering @ RealTruck.com'
       logo:
@@ -183,44 +183,44 @@ testimonials:
         width: 140
         height: 30
       achievements:
-        - label: 'Migration to Nuxt'
+        - label: 'Миграция на Nuxt'
           color: 'blue'
-        - label: 'Performance optimizations'
+        - label: 'Оптимизация производительности'
           color: 'orange'
-        - label: 'Codebase audit'
+        - label: 'Аудит кодовой базы'
           color: 'pink'
 project:
-  title: 'How do we proceed?'
-  description: "3 easy steps to get professionnal support and consulting services from a Vue & Nuxt expert."
+  title: 'Что дальше?'
+  description: "3 простых шага для получения профессиональной поддержки и консультационных услуг от эксперта по Vue и Nuxt."
   steps:
-    - title: 'Introduction meeting'
-      description: "This first meeting is dedicated to gather as much information as possible about your needs and context, for us to determine the right service by the right expert."
+    - title: 'Вводная встреча'
+      description: "Эта первая встреча посвящена сбору как можно большего количества информации о ваших потребностях и контексте, чтобы мы могли подобрать подходящую услугу у подходящего специалиста."
       number: 1
-    - title: 'A quote suited to your needs'
-      description: "Based on the information you provided and from previous similar consulting engagements, we will present a custom quote to answer your demand."
+    - title: 'Предложение, соответствующее вашим потребностям'
+      description: "На основе предоставленной вами информации и результатов предыдущих аналогичных консультационных проектов мы предоставим вам индивидуальное предложение, отвечающее вашим требованиям."
       number: 2
-    - title: 'Nuxt Expert onboarding'
-      description: "Once an agreement is reached, the expert will be introduced to your team to start performing the consulting engagement."
+    - title: 'Подключение эксперта по Nuxt'
+      description: "После достижения соглашения эксперт будет представлен вашей команде для начала выполнения консультационного задания."
       number: 3
 form:
-  title: 'Get in Touch with Us'
-  description: "Have questions or need assistance? Fill out the form below, and we'll get back to you as soon as possible."
+  title: 'Свяжитесь с нами'
+  description: "Есть вопросы или нужна помощь? Заполните форму ниже, и мы свяжемся с вами как можно скорее."
   name:
-    label: 'Name'
-    placeholder: 'John Doe'
+    label: 'Имя'
+    placeholder: 'Джон Доу'
   email:
-    label: 'Company Email'
+    label: 'Электронная почта компании'
     placeholder: 'you@example.com'
   company:
-    label: 'Company'
-    placeholder: 'Your company name'
+    label: 'Компания'
+    placeholder: 'Название компании'
   link:
-    label: 'Useful link'
+    label: 'Ссылка'
     placeholder: 'www.nuxt.com'
   body:
-    label: 'What can we help you achieve?'
-    placeholder: 'Tell us how we can help you'
-  info: 'By submitting this form, I confirm that I have read and understood the <a class="text-gray-950 dark:text-gray-100 underline font-medium">Nuxt Privacy Statement.</a>'
+    label: 'Чего мы можем вам помочь достичь?'
+    placeholder: 'Расскажите, как мы можем вам помочь'
+  info: 'Отправляя эту форму, я подтверждаю, что прочитал и понял <a class="text-gray-950 dark:text-gray-100 underline font-medium">Заявление о конфиденциальности Nuxt.</a>'
   button:
     icon: i-ph-paper-plane-right-duotone
-    label: 'Send message'
+    label: 'Отправить сообщение'
