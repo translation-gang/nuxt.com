@@ -133,7 +133,13 @@ export default defineNuxtConfig({
       }
     }
   },
-
+  $production: {
+    image: {
+      ipx: {
+        baseURL: 'https://ipx.nuxt.com'
+      }
+    }
+  },
   $development: {
     runtimeConfig: {
       public: {

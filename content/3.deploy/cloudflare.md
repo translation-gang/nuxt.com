@@ -15,6 +15,10 @@ website: 'https://pages.cloudflare.com/'
 Интеграция с Cloudflare Pages возможна с нулевой настройкой, [узнать больше](https://nitro.unjs.io/deploy#zero-config-providers).
 ::
 
+::important
+Checkout the [@nuxthub/core](/modules/hub) module to build full-stack Nuxt applications with Cloudflare, learn more on [hub.nuxt.com](https://hub.nuxt.com).
+::
+
 ### Интеграция с Git
 
 Если вы используете интеграцию GitHub/GitLab с Cloudflare Pages, **настройка не требуется**. При отправке в ваш репозиторий проект будет автоматически собран и развернут.
@@ -83,8 +87,8 @@ export default defineNuxtConfig({
   ::card
   ---
   icon: i-simple-icons-github
-  title: Nuxt Todos Edge
-  to: https://github.com/atinux/nuxt-todos-edge
+  title: Atidone
+  to: https://github.com/atinux/atidone
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
@@ -102,6 +106,26 @@ export default defineNuxtConfig({
   ---
 
   Редактируемый сайт с универсальным рендерингом на базе Cloudflare KV.
+  ::
+  ::card
+  ---
+  icon: i-simple-icons-github
+  title: Atidraw
+  to: https://github.com/atinux/atidraw
+  target: _blank
+  ui.icon.base: text-black dark:text-white
+  ---
+  Web application that lets you to draw and share your drawings with the world, with Cloudflare R2 & AI.
+  ::
+  ::card
+  ---
+  icon: i-simple-icons-github
+  title: Nuxt Image Gallery
+  to: https://github.com/flosciante/nuxt-image-gallery
+  target: _blank
+  ui.icon.base: text-black dark:text-white
+  ---
+  An image gallery to upload, edit and share your images to the world, with Cloudflare R2.
   ::
 ::
 
