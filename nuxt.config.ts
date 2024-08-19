@@ -31,7 +31,7 @@ if (docsSourceBase) {
 const examplesSource: any = {
   name: 'nuxt-examples',
   driver: 'github',
-  repo: 'translation-gang/examples',
+  repo: 'nuxt/examples',
   branch: 'main',
   dir: '.docs',
   prefix: '/docs/4.examples',
