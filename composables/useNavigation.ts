@@ -43,6 +43,7 @@ const _useNavigation = () => {
     }, {
       label: 'Интеграции',
       to: '/modules',
+      icon: 'i-ph-plugs-connected-duotone',
       search: false,
       active: route.path.startsWith('/modules') || route.path.startsWith('/deploy'),
       children: [{
@@ -58,6 +59,7 @@ const _useNavigation = () => {
       }]
     }, {
       label: 'Ресурсы',
+      icon: 'i-ph-books-duotone',
       to: '/templates',
       search: false,
       active: route.path.startsWith('/templates') || route.path.startsWith('/video-courses'),
@@ -72,6 +74,11 @@ const _useNavigation = () => {
         icon: 'i-ph-graduation-cap-duotone',
         to: '/video-courses'
       }, {
+        label: 'Витрина',
+        description: 'Discover and explore projects built with Nuxt.',
+        icon: 'i-ph-projector-screen-duotone',
+        to: '/showcase'
+      }, {
         label: 'Сертификация Nuxt',
         description: 'Получите сертификат компетентности.',
         icon: 'i-ph-medal-duotone',
@@ -79,28 +86,44 @@ const _useNavigation = () => {
         target: '_blank'
       }]
     }, {
-      label: 'Витрина',
-      icon: 'i-ph-projector-screen-duotone',
-      to: '/showcase'
+      label: 'Products',
+      icon: 'i-ph-sparkle-duotone',
+      search: false,
+      children: [{
+        label: 'Nuxt UI Pro',
+        to: 'https://ui.nuxt.com/pro?utm_source=nuxt-website&utm_medium=header',
+        description: 'Premium Vue components for Nuxt.',
+        icon: 'i-ph-layout-duotone'
+      }, {
+        label: 'Nuxt Studio',
+        to: 'https://nuxt.studio/?utm_source=nuxt-website&utm_medium=header',
+        description: 'The Git-based CMS for Nuxt.',
+        icon: 'i-ph-pen-duotone'
+      }, {
+        label: 'NuxtHub',
+        to: 'https://hub.nuxt.com/?utm_source=nuxt-website&utm_medium=header',
+        description: 'Build, deploy & manage Nuxt apps that scale.',
+        icon: 'i-ph-rocket-launch-duotone'
+      }]
     }, {
-      label: 'Enterprise',
+      label: 'Services',
       icon: 'i-ph-buildings-duotone',
       to: '/enterprise',
       search: false,
       children: [{
         label: 'Поддержка',
         to: '/enterprise/support',
-        description: 'Получите помощь по Nuxt.js непосредственно от команды, которая его создает.',
+        description: 'Professional support by Nuxt experts.',
         icon: 'i-ph-lifebuoy-duotone'
       }, {
         label: 'Агентства',
         to: '/enterprise/agencies',
-        description: 'Найдите агентство, которое специализируется на разработке Nuxt.js.',
+        description: 'Agencies specialized in Nuxt development.',
         icon: 'i-ph-handshake-duotone'
       }, {
         label: 'Спонсоры',
         to: '/enterprise/sponsors',
-        description: 'Станьте спонсором и получите ваш логотип на нашем README на GitHub со ссылкой на ваш сайт.',
+        description: 'Help us sustain Nuxt development.',
         icon: 'i-ph-hand-heart-duotone'
       }]
     }, {

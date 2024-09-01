@@ -1,8 +1,8 @@
 navigation: false
 hero:
   cta:
-    label: Nuxt v3.12 вышел
-    to: /blog/v3-12
+    label: Nuxt v3.13 вышел
+    to: /blog/v3-13
     variant: outline
     icon: i-ph-arrow-right
     size: xs

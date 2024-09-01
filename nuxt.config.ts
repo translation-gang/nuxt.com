@@ -59,6 +59,7 @@ export default defineNuxtConfig({
     '@nuxtjs/plausible',
     '@nuxt/fonts',
     '@nuxt/eslint',
+    '@nuxt/scripts',
     '@nuxtjs/turnstile',
     '@nuxthq/studio',
     '@vueuse/nuxt',
@@ -151,9 +152,6 @@ export default defineNuxtConfig({
   },
   colorMode: {
     preference: 'dark'
-  },
-  ui: {
-    icons: ['simple-icons', 'ph', 'uil', 'heroicons', 'octicon', 'logos']
   },
   // image: {
   //   ipx: {
