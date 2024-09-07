@@ -211,5 +211,6 @@ export default defineNuxtConfig({
   },
   devtools: {
     enabled: false
-  }
+  },
+  uiPro: { license: 'oss' }
 })
