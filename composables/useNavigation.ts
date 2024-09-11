@@ -113,17 +113,17 @@ const _useNavigation = () => {
       children: [{
         label: 'Поддержка',
         to: '/enterprise/support',
-        description: 'Professional support by Nuxt experts.',
+        description: 'Профессиональная поддержка экспертов Nuxt.',
         icon: 'i-ph-lifebuoy-duotone'
       }, {
         label: 'Агентства',
         to: '/enterprise/agencies',
-        description: 'Agencies specialized in Nuxt development.',
+        description: 'Агентства, специализирующиеся на разработке Nuxt.',
         icon: 'i-ph-handshake-duotone'
       }, {
         label: 'Спонсоры',
         to: '/enterprise/sponsors',
-        description: 'Help us sustain Nuxt development.',
+        description: 'Помогите нам поддержать развитие Nuxt.',
         icon: 'i-ph-hand-heart-duotone'
       }]
     }, {
@@ -143,7 +143,7 @@ const _useNavigation = () => {
       label: 'Команда',
       to: '/team'
     }, {
-      label: 'Design Kit',
+      label: 'Набор для дизайна',
       to: '/design-kit'
     }]
   }, {
@@ -191,7 +191,7 @@ const _useNavigation = () => {
     icon: 'i-ph-users-duotone',
     to: '/team'
   }, {
-    label: 'Design Kit',
+    label: 'Набор для дизайна',
     icon: 'i-ph-palette-duotone',
     to: '/design-kit'
   }, {
