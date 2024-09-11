@@ -147,10 +147,10 @@ firebase deploy --only functions:server,hosting
 Перейдите по ссылке **Документация Nitro**, чтобы узнать больше о предустановке развертывания Firebase.
 ::
 
-## Using Cookies in production
+## Использование Cookies в продакшене
 
-When using Firebase Hosting together with Cloud Functions or Cloud Run, cookies are generally stripped from incoming requests to allow for efficient CDN cache behavior. Only the specially-named `__session` cookie is permitted to pass through to your app.
+При использовании Firebase Hosting вместе с Cloud Functions или Cloud Run куки обычно удаляются из входящих запросов, чтобы обеспечить эффективное поведение CDN-кеша. Только куки со специальным именем `__session` могут быть переданы вашему приложению.
 
 ::read-more{to="https://firebase.google.com/docs/hosting/manage-cache#using_cookies" target="\_blank"}
-For more information, refer to the **Firebase documentation**.
+Для получения дополнительной информации обратитесь к документации **Firebase**.
 ::

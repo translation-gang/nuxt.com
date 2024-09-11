@@ -1,5 +1,5 @@
-title: The Nuxt Team
-description: 'The development of Nuxt and its ecosystem is led by an international team.<br> Our committed team works every day to bring Nuxt forward.'
+title: Команда Nuxt
+description: 'Разработкой Nuxt и его экосистемы руководит международная команда.<br> Наша преданная команда каждый день работает над продвижением Nuxt.'
 navigation: false
 align: 'center'
 users:
@@ -126,15 +126,15 @@ users:
         to: https://github.com/huang-julien
         target: _blank
 cta:
-  headline: Getting Started
-  title: Start your Nuxt Journey
-  description: Learn everything you need to know, from beginner to master.
+  headline: Начало работы
+  title: Начните свое путешествие в Nuxt
+  description: Узнайте все, что вам нужно знать, от новичка до мастера.
   links:
-    - label: 'Get started'
+    - label: 'Начать'
       size: 'lg'
       color: 'black'
       to: '/docs/getting-started/introduction'
-    - label: 'Explore examples'
+    - label: 'Изучите примеры'
       size: 'lg'
       color: 'white'
       to: '/docs/examples'

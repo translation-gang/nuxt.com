@@ -60,10 +60,10 @@ useSeoMeta({
 
       <template #links>
         <UButton to="/docs/getting-started/installation" trailing-icon="i-ph-arrow-right" size="lg">
-          Get Started
+          Начать
         </UButton>
         <UButton size="lg" color="gray" variant="ghost" trailing-icon="i-ph-play-circle" @click="videoModalOpen = true">
-          Nuxt in 100 Seconds
+          Nuxt за 100 секунд
         </UButton>
 
         <UModal v-model="videoModalOpen" :ui="{ width: 'sm:max-w-4xl lg:max-w-5xl aspect-[16/9]' }">
@@ -72,7 +72,7 @@ useSeoMeta({
               width="100%"
               height="100%"
               src="https://www.youtube-nocookie.com/embed/dCxSsr5xuL8"
-              title="Nuxt in 100 Seconds by Fireship"
+              title="Nuxt за 100 секунд от Fireship"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen

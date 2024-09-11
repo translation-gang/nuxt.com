@@ -86,27 +86,27 @@ const _useNavigation = () => {
         target: '_blank'
       }]
     }, {
-      label: 'Products',
+      label: 'Продукты',
       icon: 'i-ph-sparkle-duotone',
       search: false,
       children: [{
         label: 'Nuxt UI Pro',
         to: 'https://ui.nuxt.com/pro?utm_source=nuxt-website&utm_medium=header',
-        description: 'Premium Vue components for Nuxt.',
+        description: 'Премиальные компоненты Vue для Nuxt.',
         icon: 'i-ph-layout-duotone'
       }, {
         label: 'Nuxt Studio',
         to: 'https://nuxt.studio/?utm_source=nuxt-website&utm_medium=header',
-        description: 'The Git-based CMS for Nuxt.',
+        description: 'CMS для Nuxt, основанная на Git',
         icon: 'i-ph-pen-duotone'
       }, {
         label: 'NuxtHub',
         to: 'https://hub.nuxt.com/?utm_source=nuxt-website&utm_medium=header',
-        description: 'Build, deploy & manage Nuxt apps that scale.',
+        description: 'Создавайте, развертывайте и управляйте приложениями Nuxt, которые масштабируются.',
         icon: 'i-ph-rocket-launch-duotone'
       }]
     }, {
-      label: 'Services',
+      label: 'Сервисы',
       icon: 'i-ph-buildings-duotone',
       to: '/enterprise',
       search: false,

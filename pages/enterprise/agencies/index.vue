@@ -7,15 +7,15 @@ const { data: page } = await useAsyncData(route.path, () => queryContent(route.p
 const title = page.value.head?.title || page.value.title
 const description = page.value.head?.description || page.value.description
 useSeoMeta({
-  titleTemplate: '%s · Services',
+  titleTemplate: '%s · Сервисы',
   title,
   description,
   ogDescription: description,
-  ogTitle: `${title} · Services`
+  ogTitle: `${title} · Сервисы`
 })
 
 defineOgImageComponent('Docs', {
-  headline: 'Services'
+  headline: 'Сервисы'
 })
 
 await fetchList()
@@ -28,7 +28,7 @@ await fetchList()
     <UPage id="smooth" class="pt-20 -mt-20">
       <template #left>
         <UAside>
-          <UNavigationTree :links="[{ label: 'Technical Expertise', disabled: true, children: services }, { label: 'Locations', disabled: true, children: regions }]" />
+          <UNavigationTree :links="[{ label: 'Техническая экспертиза', disabled: true, children: services }, { label: 'Местоположения', disabled: true, children: regions }]" />
         </UAside>
       </template>
 
@@ -57,7 +57,7 @@ await fetchList()
           </UPageCard>
         </UPageGrid>
 
-        <EmptyCard v-else label="No agency matches your criteria for now.">
+        <EmptyCard v-else label="На данный момент ни одно агентство не соответствует вашим критериям.">
           <UButton
             label="Clear filters"
             color="white"
@@ -70,7 +70,7 @@ await fetchList()
             target="_blank"
             color="black"
             size="md"
-            label="Submit my agency"
+            label="Отправить мое агентство"
           />
         </EmptyCard>
       </UPageBody>

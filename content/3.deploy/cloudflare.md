@@ -81,7 +81,7 @@ export default defineNuxtConfig({
 Ознакомьтесь с документацией **CloudFlare Pages**, чтобы узнать об этом подробнее.
 ::
 
-## Templates
+## Шаблоны
 
 ::card-group
   ::card
@@ -115,17 +115,17 @@ export default defineNuxtConfig({
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
-  Web application that lets you to draw and share your drawings with the world, with Cloudflare R2 & AI.
+  Веб-приложение, позволяющее рисовать и делиться своими рисунками со всем миром, с Cloudflare R2 & AI.
   ::
   ::card
   ---
   icon: i-simple-icons-github
-  title: Nuxt Image Gallery
+  title: Галерея изображений Nuxt
   to: https://github.com/flosciante/nuxt-image-gallery
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
-  An image gallery to upload, edit and share your images to the world, with Cloudflare R2.
+  Галерея изображений, позволяющая загружать, редактировать и делиться своими изображениями со всем миром, с Cloudflare R2.
   ::
 ::
 

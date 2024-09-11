@@ -315,7 +315,7 @@ sections:
       - quote: "Nuxt - это уникальный подход, сочетающий в себе отличные возможности для разработчиков с многоразовыми, полностью интегрированными функциями, которые ускоряют разработку и производительность вашего следующего сайта или приложения."
         author:
           name: 'Dominik Angerer'
-          description:  'Co-founder of Storyblok'
+          description:  'Сооснователь Storyblok'
           to: 'https://twitter.com/domangerer'
           target: '_blank'
           avatar:
@@ -324,7 +324,7 @@ sections:
       - quote: "В тот момент, когда я впервые использовал Nuxt, я влюбился в него. Помимо его масштабируемости, производительности и опыта разработчиков, команда, стоящая за ним, также фантастична. Спасибо, что разработали такой замечательный фреймворк и сделали нашу жизнь намного проще!"
         author:
           name: 'Savas Vedova'
-          description:  'Senior Frontend Engineer at GitLab'
+          description:  'Старший фронтенд-инженер в GitLab'
           to: 'https://twitter.com/savasvedova'
           target: '_blank'
           avatar:
@@ -333,7 +333,7 @@ sections:
       - quote: "Nuxt изменяет подход к веб-разработке, сочетая высокую производительность и удобный для разработчика опыт. Его гибкость в SSR и SSG, а также активное сообщество, подобное экосистеме Vue.js, делают его идеальным решением для современных веб-проектов."
         author:
           name: 'Rijk van Zanten'
-          description:  'CTO at Directus'
+          description:  'Технический директор в Directus'
           to: 'https://github.com/rijkvanzanten'
           target: '_blank'
           avatar:

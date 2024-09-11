@@ -53,7 +53,7 @@ defineOgImageComponent('Docs')
                 icon-color="red"
                 :ui="{ icon: { base: 'text-pink-500' } }"
               >
-                Sponsor
+                Спонсор
               </UButton>
             </div>
           </UPageCard>

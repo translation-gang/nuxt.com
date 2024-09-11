@@ -9,11 +9,11 @@ const { data: page } = await useAsyncData(route.path, () => queryContent(route.p
 
 const links = [{
   icon: 'i-ph-book-open-duotone',
-  label: 'Module Author Guide',
+  label: 'Руководство для авторов модулей',
   to: '/docs/guide/going-further/modules'
 }, {
   icon: 'i-ph-plus-circle-duotone',
-  label: 'List your module',
+  label: 'Составьте список модулей',
   to: 'https://github.com/nuxt/modules#addupdate-a-module',
   target: '_blank'
 }]
@@ -48,7 +48,7 @@ const { copy } = useCopyToClipboard()
           <UPageCard
             to="https://image.nuxt.com/?utm_source=nuxt_website&utm_medium=modules"
             target="_blank"
-            description="Plug-and-play image optimization."
+            description="Оптимизация изображений по принципу «подключи и работай»."
           >
             <template #title>
               Nuxt Image
@@ -59,7 +59,7 @@ const { copy } = useCopyToClipboard()
             to="https://content.nuxt.com/?utm_source=nuxt_website&utm_medium=modules"
             target="_blank"
             title="Nuxt Content"
-            description="Git-based CMS with Markdown support."
+            description="CMS на основе Git с поддержкой Markdown."
           >
             <template #title>
               Nuxt Content
@@ -69,7 +69,7 @@ const { copy } = useCopyToClipboard()
           <UPageCard
             to="https://devtools.nuxt.com/?utm_source=nuxt_website&utm_medium=modules"
             target="_blank"
-            description="Visual tools that help you to know your app."
+            description="Визуальные инструменты, которые помогут вам лучше узнать свое приложение."
           >
             <template #title>
               Nuxt DevTools
@@ -79,7 +79,7 @@ const { copy } = useCopyToClipboard()
           <UPageCard
             to="https://ui.nuxt.com/?utm_source=nuxt_website&utm_medium=modules"
             target="_blank"
-            description="Fully styled and customizable components."
+            description="Полностью стилизованные и настраиваемые компоненты."
           >
             <template #title>
               Nuxt UI
@@ -110,7 +110,7 @@ const { copy } = useCopyToClipboard()
             :model-value="q"
             name="q"
             icon="i-ph-magnifying-glass-duotone"
-            placeholder="Search..."
+            placeholder="Поиск..."
             class="w-56"
             size="md"
             autocomplete="off"
@@ -184,7 +184,7 @@ const { copy } = useCopyToClipboard()
                   :ui="{ base: '!flex' }"
                 >
                   <UIcon name="i-ph-medal-duotone" class="w-4 h-4" />
-                  <span>Official</span>
+                  <span>Официальный</span>
                 </UBadge>
 
                 <UBadge
@@ -196,7 +196,7 @@ const { copy } = useCopyToClipboard()
                   :ui="{ base: '!flex' }"
                 >
                   <UIcon name="i-ph-hand-heart-duotone" class="w-4 h-4" />
-                  <span>Sponsor</span>
+                  <span>Спонсор</span>
                 </UBadge>
               </div>
 
@@ -209,19 +209,19 @@ const { copy } = useCopyToClipboard()
 
             <UTooltip
               class="hidden lg:inline-flex absolute top-6 right-6 group-hover:opacity-100 opacity-0 transition"
-              :text="`Copy install command`"
+              :text="`Скопируйте команду установки`"
             >
               <UButton
                 icon="i-ph-package-duotone"
                 color="white"
-                @click="copy(`npx nuxi@latest module add ${module.name}`, { title: 'Command copied to clipboard:', description: `npx nuxi@latest module add ${module.name}` })"
+                @click="copy(`npx nuxi@latest module add ${module.name}`, { title: 'Команда скопирована в буфер обмена:', description: `npx nuxi@latest module add ${module.name}` })"
               />
             </UTooltip>
 
             <template #footer>
               <div class="flex items-center justify-between gap-3 -my-1 text-gray-600 dark:text-gray-300">
                 <div class="flex items-center gap-3">
-                  <UTooltip text="Monthly NPM Downloads">
+                  <UTooltip text="Ежемесячное количество загрузок NPM">
                     <NuxtLink
                       class="flex items-center gap-1"
                       :to="`https://npmjs.org/package/${module.npm}`"
@@ -261,7 +261,7 @@ const { copy } = useCopyToClipboard()
           </UPageCard>
         </UPageGrid>
 
-        <EmptyCard v-else :label="`There is no module found for <b>${q}</b> yet. Become the first one to create it!`">
+        <EmptyCard v-else :label="`Модуль пока не найден <b>${q}</b>. Станьте первым, кто его создаст!`">
           <UButton
             label="Contribute on GitHub"
             color="black"
@@ -270,7 +270,7 @@ const { copy } = useCopyToClipboard()
             size="md"
             @click="$router.replace({ query: {} })"
           />
-          <UButton to="/docs/guide/going-further/modules" color="white" size="md" label="How to create a module?" />
+          <UButton to="/docs/guide/going-further/modules" color="white" size="md" label="Как создать модуль?" />
         </EmptyCard>
       </UPageBody>
     </UPage>

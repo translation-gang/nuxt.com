@@ -1,10 +1,10 @@
 ---
-title: Design Kit
-head.description: Get the Nuxt assets such as Logo, Typography and Colors.
+title: Набор для дизайна
+head.description: Получите ассетсы Nuxt, такие, как логотип, типографика и цвета..
 description: Welcome to Nuxt design definition page. Identity was redefined by handpicking conscientiously colors, and shapes in order to express how easy & joyful Nuxt products are.
 navigation.icon: 'i-ph-palette'
 links:
-  - label: 'Nuxt Brand Kit'
+  - label: 'Фирменный набор Nuxt'
     size: 'lg'
     to: 'https://www.figma.com/community/file/1296154408275753939/nuxt-brand-kit'
     icon: 'i-simple-icons-figma'
@@ -13,47 +13,47 @@ links:
     target: '_blank'
 ---
 
-## Logo History
+## История логотипа
 
-The Nuxt logo has evolved gradually over time, but the mountain shape and wordmark have been constant elements in its design.
+Логотип Nuxt постепенно эволюционировал с течением времени, но неизменными элементами его дизайна остаются форма горы и словесный знак.
 
 ::div{class="hidden lg:block"}
-![Nuxt Logo Timeline](/assets/design-kit/timeline-light.svg){class="dark:hidden w-full"}
-![Nuxt Logo Timeline](/assets/design-kit/timeline-dark.svg){class="hidden dark:block w-full"}
+![Хронология логотипа Nuxt](/assets/design-kit/timeline-light.svg){class="dark:hidden w-full"}
+![Хронология логотипа Nuxt](/assets/design-kit/timeline-dark.svg){class="hidden dark:block w-full"}
 ::
 
 ::div{class="lg:hidden"}
-![Nuxt Logo Timeline](/assets/design-kit/timeline-mobile-light.svg){class="dark:hidden w-full"}
-![Nuxt Logo Timeline](/assets/design-kit/timeline-mobile-dark.svg){class="hidden dark:block w-full"}
+![Хронология логотипа Nuxt](/assets/design-kit/timeline-mobile-light.svg){class="dark:hidden w-full"}
+![Хронология логотипа Nuxt](/assets/design-kit/timeline-mobile-dark.svg){class="hidden dark:block w-full"}
 ::
 
-## Nuxt Logo
+## Логотип Nuxt
 
-The logo is made from two elements: the triangular mountains and the wordmark. In most cases, they should appear together as the opposite master lockup shows. The triangular mountains can be used on their own as an icon, profile picture or badge, but the wordmark should never be used without this symbol on the side.
+Логотип состоит из двух элементов: треугольных гор и словесного знака. В большинстве случаев они должны появляться вместе, как показывает противоположный мастер-лок. Треугольные горы могут использоваться самостоятельно в качестве иконки, изображения профиля или значка, но словесный знак никогда не должен использоваться без этого символа сбоку.
 
-### Icon
+### Иконка
 
 ::u-page-grid
-  :design-kit-image-card{path="icon-green" name="Green"}
-  :design-kit-image-card{path="icon-black" name="Black" background="bg-white"}
-  :design-kit-image-card{path="icon-white" name="White" background="bg-gray-950"}
+  :design-kit-image-card{path="icon-green" name="Зеленая"}
+  :design-kit-image-card{path="icon-black" name="Черная" background="bg-white"}
+  :design-kit-image-card{path="icon-white" name="Белая" background="bg-gray-950"}
 ::
 
-### Logo
+### Логотип
 
 ::u-page-grid
-  :design-kit-image-card{path="logo-green-white" name="Green & white" background="bg-gray-950" full}
-  :design-kit-image-card{path="logo-black" name="Black" background="bg-white" full}
-  :design-kit-image-card{path="logo-white" name="White" background="bg-gray-950" full}
-  :design-kit-image-card{path="logo-green-black" name="Green & black" background="bg-white" full}
+  :design-kit-image-card{path="logo-green-white" name="Зеленый и белый" background="bg-gray-950" full}
+  :design-kit-image-card{path="logo-black" name="Черный" background="bg-white" full}
+  :design-kit-image-card{path="logo-white" name="Белый" background="bg-gray-950" full}
+  :design-kit-image-card{path="logo-green-black" name="Зеленый и черный" background="bg-white" full}
 ::
 
-## Color Palette
+## Цветовая палитра
 
-Our color palette is based on our iconic Nuxt green and colours have been carefully considered to work in harmony and consistency across various media. When creating Nuxt communications, use the colour values shown to make sure your designs stay on-brand.
+Наша цветовая палитра основана на знаковом зеленом цвете Nuxt, и цвета были тщательно продуманы для гармоничного и последовательного использования в различных средствах массовой информации. При создании коммуникаций Nuxt используйте указанные значения цветов, чтобы убедиться, что ваш дизайн соответствует бренду.
 
 ::u-page-grid
-  :design-kit-color-card{background="#00DC82" name="Green"}
-  :design-kit-color-card{background="#FFFFFF" name="White"}
-  :design-kit-color-card{background="#020420" name="Gray"}
+  :design-kit-color-card{background="#00DC82" name="Зеленый"}
+  :design-kit-color-card{background="#FFFFFF" name="Белый"}
+  :design-kit-color-card{background="#020420" name="Серый"}
 ::

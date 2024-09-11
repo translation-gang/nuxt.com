@@ -15,15 +15,15 @@ website: 'https://hub.nuxt.com/?utm_source=nuxt-website&utm_medium=deploy-page'
 Интеграция с NuxtHub возможна с нулевой конфигурацией, [узнать больше](https://nitro.unjs.io/deploy#zero-config-providers).
 ::
 
-## Introduction
+## Введение
 
-NuxtHub is a deployment and administration platform for Nuxt, powered by Cloudflare.
+NuxtHub - это платформа развертывания и администрирования для Nuxt, работающая на базе Cloudflare.
 
-The main difference with the [Cloudflare](/deploy/cloudflare) deployment is that NuxtHub provides a zero-configuration deployment experience (provisioning, deployment, and administration).
+Основное отличие от развертывания [Cloudflare](/deploy/cloudflare) заключается в том, что NuxtHub обеспечивает развертывание с нулевой конфигурацией (инициализация, развертывание и администрирование).
 
-It also provides a powerful admin interface to manage your Nuxt projects (database, blob, KV, ...) as well as [remote storage](https://hub.nuxt.com/docs/getting-started/remote-storage?utm_source=nuxt-website&utm_medium=deploy-page).
+Он также предоставляет мощный интерфейс администратора для управления вашими проектами Nuxt (базами данных, блобами, KV, ...), а также [удаленным хранилищем](https://hub.nuxt.com/docs/getting-started/remote-storage?utm_source=nuxt-website&utm_medium=deploy-page).
 
-Read more on [hub.nuxt.com](https://hub.nuxt.com/?utm_source=nuxt-website&utm_medium=deploy-page).
+Подробнее на [hub.nuxt.com](https://hub.nuxt.com/?utm_source=nuxt-website&utm_medium=deploy-page).
 
 ## NuxtHub CLI
 
@@ -41,7 +41,7 @@ npx nuxthub deploy
 4. Разверните его на вашем аккаунте Cloudflare со всеми необходимыми ресурсами
 5. Предоставьте вам URL-адрес для доступа к вашему проекту
 
-See an example in video:
+Смотрите пример на видео:
 
 ::video{poster="https://res.cloudinary.com/nuxt/video/upload/v1723569534/nuxthub/nuxthub-deploy_xxs5s8.jpg" controls class="rounded dark:border dark:border-gray-700 md:w-2/3"}
   :source{src="https://res.cloudinary.com/nuxt/video/upload/v1723569534/nuxthub/nuxthub-deploy_xxs5s8.webm" type="video/webm"}
@@ -54,18 +54,18 @@ See an example in video:
 ::
 
 ::warning
-If you do your first deployment with the NuxtHub CLI, you won't be able to attach your GitHub/GitLab repository later on due to a Cloudflare limitation.
+Если вы выполните первое развертывание с помощью NuxtHub CLI, то впоследствии не сможете прикрепить свой репозиторий GitHub/GitLab из-за ограничения Cloudflare.
 ::
 
-## Deploy using Git
+## Развертывание с помощью Git
 
-1. Push your code to your git repository (GitHub or GitLab)
-2. Click on `New Project` then `Import a Git repository`
-3. Select your repository and click on `Import repository`
-4. NuxtHub will configure your project on Cloudflare Pages and deploy it
-5. Your application is deployed with a `.nuxt.dev` domain
+1. Поместите код в свой git-репозиторий (GitHub или GitLab).
+2. Нажмите на `New Project`, затем `Import a Git repository`.
+3. Выберите свой репозиторий и нажмите `Импортировать репозиторий`.
+4. NuxtHub настроит ваш проект на Cloudflare Pages и развернет его
+5. Ваше приложение будет развернуто с доменом `.nuxt.dev`.
 
-After your project has been imported and deployed, all subsequent pushes to branches will generate preview deployments and all changes made to the production branch (commonly “main”) will result in a production deployment.
+После того как ваш проект был импортирован и развернут, все последующие изменения в ветках будут генерировать предварительные развертывания, а все изменения, внесенные в продакшен ветку (обычно «main»), приведут к развертыванию на продакшене.
 
 ## Шаблоны
 
@@ -78,7 +78,7 @@ After your project has been imported and deployed, all subsequent pushes to bran
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
-  A minimal Nuxt starter running on the edge.
+Минимальный стартер Nuxt, работающий на edge.
   ::
   ::card
   ---
@@ -88,7 +88,7 @@ After your project has been imported and deployed, all subsequent pushes to bran
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
-  A starter to get started with NuxtHub features (Database, Blob, KV, ...).
+  Стартовая программа для начала работы с функциями NuxtHub (база данных, блобы, KV, ...).
   ::
   ::card
   ---
@@ -106,7 +106,7 @@ After your project has been imported and deployed, all subsequent pushes to bran
   ---
 
   icon: i-simple-icons-github
-  title: Nuxt Image Gallery
+  title: Галерея изображений Nuxt
   to: https://github.com/flosciante/nuxt-image-gallery
   target: _blank
   ui.icon.base: text-black dark:text-white
@@ -134,7 +134,7 @@ After your project has been imported and deployed, all subsequent pushes to bran
   target: _blank
   ui.icon.base: text-black dark:text-white
   ---
-  Web application that lets you to draw and share your drawings with the world, with Cloudflare R2 & AI.
+  Веб-приложение, позволяющее рисовать и делиться своими рисунками со всем миром, с Cloudflare R2 & AI.
   ::
 ::
 

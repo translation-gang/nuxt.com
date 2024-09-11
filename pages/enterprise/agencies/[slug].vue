@@ -21,21 +21,21 @@ const links = computed(() => [{
 const title = agency.value.head?.title || agency.value.title
 const description = agency.value.head?.description || agency.value.description
 useSeoMeta({
-  titleTemplate: '%s · Nuxt Agencies',
+  titleTemplate: '%s · Агентства Nuxt',
   title,
   description,
   ogDescription: description,
-  ogTitle: `${title} · Nuxt Agencies`
+  ogTitle: `${title} · Агентства Nuxt`
 })
 
 defineOgImageComponent('Docs', {
-  headline: 'Nuxt Agencies'
+  headline: 'Агентства Nuxt'
 })
 </script>
 
 <template>
   <UContainer>
-    <UPageHeader :description="agency.description" :links="links" headline="Agencies">
+    <UPageHeader :description="agency.description" :links="links" headline="Агентства">
       <template #title>
         <div class="flex items-center gap-4">
           <UColorModeAvatar :light="agency.logo.light" :dark="agency.logo.dark" size="lg" :ui="{ rounded: 'rounded-sm' }" class="-m-[4px]" />
@@ -45,7 +45,7 @@ defineOgImageComponent('Docs', {
       </template>
 
       <div class="absolute top-[68px] -left-[64px] hidden lg:flex">
-        <UTooltip text="Back to agencies">
+        <UTooltip text="Назад к агентствам">
           <UButton
             to="/enterprise/agencies"
             icon="i-ph-caret-left"
@@ -92,7 +92,7 @@ defineOgImageComponent('Docs', {
       </UPageBody>
 
       <template #right>
-        <UPageLinks v-if="agency.services?.length" title="Technical Expertise">
+        <UPageLinks v-if="agency.services?.length" title="Техническая экспертиза">
           <div class="prose dark:prose-invert -ml-1.5">
             <ul class="space-y-3">
               <li v-for="(service, index) in agency.services" :key="index" class="text-sm text-gray-500 dark:text-gray-400">
@@ -105,7 +105,7 @@ defineOgImageComponent('Docs', {
         <div v-if="agency.resources?.length">
           <UDivider type="dashed" class="my-6" />
 
-          <UPageLinks title="Resources" :links="agency.resources" />
+          <UPageLinks title="Ресурсы" :links="agency.resources" />
         </div>
       </template>
     </UPage>

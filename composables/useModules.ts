@@ -67,10 +67,10 @@ export const useModules = () => {
   // ]
 
   const sorts: Filter[] = [
-    { key: 'downloads', label: 'Downloads' },
-    { key: 'stars', label: 'Stars' },
-    { key: 'publishedAt', label: 'Updated' },
-    { key: 'createdAt', label: 'Created' }
+    { key: 'downloads', label: 'Загрузки' },
+    { key: 'stars', label: 'Звезды' },
+    { key: 'publishedAt', label: 'Обновлено' },
+    { key: 'createdAt', label: 'Создано' }
   ]
 
   const orders: Filter[] = [

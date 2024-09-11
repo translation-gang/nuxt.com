@@ -3,7 +3,7 @@ const route = useRoute()
 
 const { data: page } = await useAsyncData(route.path, () => queryContent(route.path).findOne())
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Страница не найдена', fatal: true })
 }
 
 const { data: sponsors } = await useFetch('https://api.nuxt.com/sponsors')
@@ -11,15 +11,15 @@ const { data: sponsors } = await useFetch('https://api.nuxt.com/sponsors')
 const title = page.value.head?.title || page.value.title
 const description = page.value.head?.description || page.value.description
 useSeoMeta({
-  titleTemplate: '%s · Community',
+  titleTemplate: '%s · Сообщество',
   title,
   description,
   ogDescription: description,
-  ogTitle: `${title} · Community`
+  ogTitle: `${title} · Сообщество`
 })
 
 defineOgImageComponent('Docs', {
-  headline: 'Community'
+  headline: 'Сообщество'
 })
 </script>
 

@@ -79,7 +79,7 @@ defineOgImageComponent('Docs')
 
             <UButtonGroup class="mt-3 w-full">
               <UButton
-                label="Demo"
+                label="Демо"
                 icon="i-ph-desktop-duotone"
                 :to="template.demo"
                 target="_blank"
@@ -104,7 +104,7 @@ defineOgImageComponent('Docs')
                 target="_blank"
                 :to="template.purchase"
                 color="gray"
-                label="Purchase"
+                label="Приобрести"
                 icon="i-ph-credit-card-duotone"
                 size="sm"
                 class="w-1/2 justify-center"
