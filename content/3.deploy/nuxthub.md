@@ -2,7 +2,7 @@
 title: NuxtHub
 description: 'Разверните свое Nuxt приложение на глобальных серверах вашего аккаунта Cloudflare c нулевой конфигурацией.'
 componentImg: NuxtHub
-logoSrc: '/assets/integrations/nuxthub.svg'
+logoSrc: '/assets/integrations/nuxthub-logo.svg'
 category: Хостинг
 featured: true
 nitroPreset: 'cloudflare-pages'
