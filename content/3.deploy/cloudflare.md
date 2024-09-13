@@ -16,7 +16,7 @@ website: 'https://pages.cloudflare.com/'
 ::
 
 ::important
-Checkout the [@nuxthub/core](/modules/hub) module to build full-stack Nuxt applications with Cloudflare, learn more on [hub.nuxt.com](https://hub.nuxt.com).
+Ознакомьтесь с модулем [@nuxthub/core](/modules/hub) для создания полнофункциональных Nuxt-приложений с использованием Cloudflare. Узнайте больше на [hub.nuxt.com](https://hub.nuxt.com).
 ::
 
 ### Интеграция с Git
