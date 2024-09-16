@@ -60,7 +60,7 @@ provide('navigation', navigation)
           name="i-ph-magic-wand-duotone"
           class="w-5 h-5 flex-shrink-0 pointer-events-none hidden lg:inline-block mr-1"
         />
-        <span>Learn Nuxt with a Collection of 100+ Tips!</span>
+        <span>Изучите Nuxt с коллекцией из 100+ советов!</span>
         <UButton
           label="Узнать больше"
           color="white"
