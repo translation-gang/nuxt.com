@@ -1,6 +1,9 @@
 <script lang="ts" setup>
 import type { Template } from '../types'
 
+definePageMeta({
+  heroBackground: 'opacity-80 -z-10'
+})
 const { data: page } = await useAsyncData('templates', () => queryContent('/templates').findOne())
 
 const title = page.value.head?.title || page.value.title
@@ -80,7 +83,7 @@ defineOgImageComponent('Docs')
             <UButtonGroup class="mt-3 w-full">
               <UButton
                 label="Демо"
-                icon="i-ph-desktop-duotone"
+                icon="i-ph-desktop"
                 :to="template.demo"
                 target="_blank"
                 size="sm"
@@ -105,7 +108,7 @@ defineOgImageComponent('Docs')
                 :to="template.purchase"
                 color="gray"
                 label="Приобрести"
-                icon="i-ph-credit-card-duotone"
+                icon="i-ph-credit-card"
                 size="sm"
                 class="w-1/2 justify-center"
                 :ui="{ icon: { size: { sm: 'w-4 h-4' } } }"

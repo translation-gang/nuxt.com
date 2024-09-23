@@ -27,7 +27,7 @@ Nuxt автоматически определит, что вы находите
 
 Если вы хотите добавить пользовательские редиректы, вы можете сделать это с помощью [`routeRules`](/docs/guide/concepts/rendering#hybrid-rendering) или добавив файл [`_redirects`](https://docs.netlify.com/routing/redirects/#syntax-for-the-redirects-file) в каталог `public`.
 
-::tip{color="green" icon="i-ph-check-circle-duotone"}
+::tip{color="green" icon="i-ph-check-circle"}
 Для развертывания просто запустите git-репозиторий [как вы обычно делаете для Netlify](https://docs.netlify.com/configure-builds/get-started/).
 ::
 

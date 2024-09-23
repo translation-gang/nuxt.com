@@ -2,11 +2,11 @@ head.title: Шаблоны Nuxt
 title: Шаблоны Nuxt
 navigation.title: Шаблоны
 description: 'Изучите шаблоны сообществ, чтобы начать работу за несколько секунд.'
-navigation.icon: i-ph-browsers-duotone
+navigation.icon: i-ph-browsers
 links:
   - label: 'Список шаблонов'
     to: 'https://github.com/nuxt/nuxt.com/tree/main#add-a-nuxt-template'
-    icon: 'i-ph-plus-circle-duotone'
+    icon: 'i-ph-plus-circle'
     target: '_blank'
     color: gray
     size: md

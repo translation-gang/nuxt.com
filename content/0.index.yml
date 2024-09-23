@@ -3,11 +3,7 @@ hero:
   cta:
     label: Nuxt v3.13 вышел
     to: /blog/v3-13
-    variant: outline
     icon: i-ph-arrow-right
-    size: xs
-    trailing: true
-    class: 'font-semibold hover:bg-primary-100 dark:hover:bg-primary-900 rounded-full'
 logos:
   title: 'Доверяют лучшие фронтенд-команды'
 sections:
@@ -17,15 +13,16 @@ sections:
     align: left
     links:
       - label: 'Узнайте о Views'
-        icon: i-ph-layout-duotone
+        icon: i-ph-layout
         to: '/docs/getting-started/views'
         color: black
         size: md
       - label: 'Пример Hello World'
-        icon: i-ph-app-window-duotone
+        icon: i-ph-app-window
         to: '/docs/examples/hello-world'
         color: gray
         size: md
+        variant: ghost
     slot: code
     code: |
       ```vue [app.vue]
@@ -57,24 +54,41 @@ sections:
     align: right
     links:
       - label: 'Узнайте о гибридном рендеринге'
-        icon: i-ph-rocket-launch-duotone
+        icon: i-ph-rocket-launch
         to: '/docs/guide/concepts/rendering#hybrid-rendering'
         color: black
         size: md
       - label: 'Преимущества Nuxt'
-        icon: i-ph-newspaper-duotone
+        icon: i-ph-newspaper
         to: '/blog/nuxt-on-the-edge'
         color: gray
+        variant: ghost
         size: md
     slot: code
     code: |
       ::code-group
+      ```vue [pages/index.vue]
+      <script setup>
+      // Pre-render the homepage at build time
+      defineRouteRules({
+        prerender: true
+      })
+      </script>
+
+      <template>
+        <div>
+          <h1>Homepage</h1>
+          <p>Pre-rendered at build time</p>
+        </div>
+      </template>
+      ```
       ```ts [nuxt.config.ts]
       export default defineNuxtConfig({
+        // Or specify the route rules globally
         routeRules: {
           // Домашняя страница предварительно рендерится во время сборки
           '/': { prerender: true },
-          // Страница продукта создается по требованию, перепроверяется в фоновом режиме
+          // Страницы продукта генерируется по требованию с фоновой ревалидацией
           '/products/**': { swr: true },
           // Запись в блоге создается по требованию один раз до следующего развертывания
           '/blog/**': { isr: true },
@@ -87,21 +101,6 @@ sections:
         }
       })
       ```
-      ```vue [pages/index.vue]
-      <script setup>
-      // Или задайте на уровне страницы
-      defineRouteRules({
-        prerender: true
-      })
-      </script>
-
-      <template>
-        <div>
-          <h1>Домашняя страница</h1>
-          <p>Предварительный рендеринг на этапе сборки</p>
-        </div>
-      </template>
-      ```
       ::
   - title: 'Создавайте с помощью <br><span class="text-primary">всего необходимого.</span>'
     class: 'dark:bg-gradient-to-b from-gray-900 to-gray-950'
@@ -109,51 +108,51 @@ sections:
     features:
       - title: 'Маршрутизация и лейауты.'
         description: 'Система маршрутизации на основе файлов для создания сложных представлений и интерфейсов с помощью мощного и традиционного подхода.'
-        icon: 'i-ph-signpost-duotone'
+        icon: 'i-ph-signpost'
         to: '/docs/getting-started/routing'
       - title: 'Получение данных'
         description: 'Композаблы, которые работают на сервере, получая данные для ваших компонентов и позволяя вам отображать контент различными способами.'
-        icon: ' i-ph-plugs-connected-duotone'
+        icon: ' i-ph-plugs-connected'
         to: '/docs/getting-started/data-fetching'
       - title: 'Ассеты и стили.'
         description: 'Оптимизация изображений, шрифтов и скриптов со встроенной поддержкой CSS-модулей, Sass, PostCSS, CSS-in-JS и др.'
-        icon: 'i-ph-image-duotone'
+        icon: 'i-ph-image'
         to: '/docs/getting-started/styling'
       - title: 'SEO и мета теги'
         description: 'Пригодное для продакшена и индексируемое поисковыми системами, в то же время предоставляющее ощущение приложения для конечных пользователей.'
-        icon: 'i-ph-trophy-duotone'
+        icon: 'i-ph-trophy'
         to: '/docs/getting-started/seo-meta'
       - title: 'Middleware'
         description: 'Выполнение настраиваемого кода, такого как аутентификация, локализация или A/B-тестирование перед рендерингом страницы или группы страниц.'
-        icon: 'i-ph-shield-check-duotone'
+        icon: 'i-ph-shield-check'
         to: '/docs/getting-started/routing#route-middleware'
       - title: 'Управление состоянием'
         description: 'Nuxt обеспечивает простой способ совместного использования реактивного и SSR-совместимого состояния между компонентами.'
-        icon: 'i-ph-database-duotone'
+        icon: 'i-ph-database'
         to: '/docs/getting-started/state-management'
       - title: 'Transitions'
         description: 'Создавайте плавные переходы между лейаут, страницами и компонентами с помощью встроенной поддержки transitions Vue и браузера.'
-        icon: 'i-ph-exclude-square-duotone'
+        icon: 'i-ph-exclude-square'
         to: '/docs/getting-started/transitions'
       - title: 'Обработка ошибок'
         description: 'Встроенная обработка ошибок и ведение логов помогут вам отладить приложение и обеспечить лучший пользовательский опыт.'
-        icon: 'i-ph-bug-beetle-duotone'
+        icon: 'i-ph-bug-beetle'
         to: '/docs/getting-started/error-handling'
       - title: 'Слои'
         description: 'Расширьте ваше приложение Nuxt с помощью другого приложения Nuxt для повторного использования компонентов, композиций, макетов, страниц и других элементов.'
-        icon: 'i-ph-stack-duotone'
+        icon: 'i-ph-stack'
         to: '/docs/getting-started/layers'
       - title: 'Серверные маршруты'
         description: 'Создайте API-ручки и серверные маршруты для безопасного взаимодействия с сторонними сервисами и использования их в вашем фронтенде.'
-        icon: 'i-ph-computer-tower-duotone'
+        icon: 'i-ph-computer-tower'
         to: '/docs/getting-started/server'
       - title: 'Автоимпорты'
         description: 'Nuxt автоматически импортирует вспомогательные функции, композбалы и API-интерфейсы Vue для использования во всем вашем приложении без явного импорта.'
-        icon: 'i-ph-magic-wand-duotone'
+        icon: 'i-ph-magic-wand'
         to: '/docs/guide/concepts/auto-imports'
       - title: 'TypeScript'
         description: 'Nuxt предоставляет полезные сокращения, чтобы убедиться, что вы имеете доступ к точной информации о типах при написании кода.'
-        icon: 'i-ph-file-ts-duotone'
+        icon: 'i-ph-file-ts'
         to: '/docs/guide/concepts/typescript'
   - title: 'Ускоренная доставка, благодаря<br><span class="text-primary">бесконечным интеграциям.</span>.'
     description: 'Интегрируйтесь с вашими любимыми инструментами и сервисами. Nuxt создан для гибкости и может быть расширен с помощью надежной экосистемы модулей. Подключите свое приложение к популярным headless CMS, eCommerce, базам данных или UI/UX библиотекам с помощью одной строки кода.'
@@ -161,12 +160,12 @@ sections:
     align: left
     links:
       - label: 'Исследуйте модули Nuxt'
-        icon: i-ph-puzzle-piece-duotone
+        icon: i-ph-puzzle-piece
         to: '/modules'
         color: black
         size: md
       - label: 'Узнайте больше о модулях'
-        icon: i-ph-info-duotone
+        icon: i-ph-info
         to: '/docs/guide/concepts/modules'
         color: gray
         size: md
@@ -222,7 +221,7 @@ sections:
         to: /modules/sanity
       - src: /assets/integrations/sentry.svg
         alt: Sentry
-        to: https://sentry.io/
+        to: /modules/sentry
       - src: /assets/integrations/shopify.svg
         alt: Shopify
         to: https://www.shopify.com/

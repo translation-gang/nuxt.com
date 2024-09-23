@@ -45,6 +45,20 @@ watch(() => search.value?.commandPaletteRef?.query, debounce((query: string) => 
 
 // Provide
 provide('navigation', navigation)
+
+const route = useRoute()
+const heroBackgroundClass = computed(() => route.meta?.heroBackground || '')
+const { isLoading } = useLoadingIndicator()
+const appear = ref(false)
+const appeared = ref(false)
+onMounted(() => {
+  setTimeout(() => {
+    appear.value = true
+    setTimeout(() => {
+      appeared.value = true
+    }, 1000)
+  }, 0)
+})
 </script>
 
 <template>
@@ -57,7 +71,7 @@ provide('navigation', navigation)
     >
       <div class="flex items-center gap-1">
         <UIcon
-          name="i-ph-magic-wand-duotone"
+          name="i-ph-magic-wand"
           class="w-5 h-5 flex-shrink-0 pointer-events-none hidden lg:inline-block mr-1"
         />
         <span>Изучите Nuxt с коллекцией из 100+ советов!</span>
@@ -76,7 +90,7 @@ provide('navigation', navigation)
     >
       <div class="flex items-center gap-2">
         <UIcon
-          name="i-ph-medal-duotone"
+          name="i-ph-medal"
           class="w-5 h-5 flex-shrink-0 pointer-events-none"
         />
         <span>The <span class="font-semibold">Nuxt Certification Program</span> by VueSchool is out!</span>
@@ -93,7 +107,15 @@ provide('navigation', navigation)
 
     <AppHeader :links="headerLinks" />
 
-    <UMain>
+    <UMain class="relative">
+      <HeroBackground
+        class="absolute w-full top-[1px] transition-all text-primary flex-shrink-0"
+        :class="[
+          isLoading ? 'animate-pulse' : (appear ? 'opacity-100' : 'opacity-0'),
+          appeared ? 'duration-[400ms]': 'duration-1000',
+          heroBackgroundClass
+        ]"
+      />
       <NuxtPage />
     </UMain>
 

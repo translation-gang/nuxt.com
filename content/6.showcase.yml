@@ -1,7 +1,7 @@
 title: Витрина
 head.title: Nuxt витрина
 description: Откройте для себя нашу подборку сайтов, созданных с помощью Nuxt. Эта коллекция создана на основе VueTelescope.
-navigation.icon: i-ph-projector-screen-duotone
+navigation.icon: i-ph-projector-screen
 links:
   - label: 'Chrome'
     size: 'md'

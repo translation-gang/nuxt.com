@@ -2,6 +2,9 @@
 import { withoutTrailingSlash } from 'ufo'
 import type { BlogArticle } from '~/types'
 
+definePageMeta({
+  heroBackground: 'opacity-30 -z-10'
+})
 const route = useRoute()
 const { copy } = useCopyToClipboard()
 
@@ -55,22 +58,22 @@ function copyLink() {
 }
 const links = [
   {
-    icon: 'i-ph-pen-duotone',
+    icon: 'i-ph-pen',
     label: 'Отредактируйте эту статью',
     to: `https://github.com/translation-gang/nuxt.com/edit/main/content/${article.value._file}`,
     target: '_blank'
   }, {
-    icon: 'i-ph-shooting-star-duotone',
+    icon: 'i-ph-shooting-star',
     label: 'Звезды на GitHub',
     to: 'https://go.nuxt.com/github',
     target: '_blank'
   }, {
-    icon: 'i-ph-chat-centered-text-duotone',
+    icon: 'i-ph-chat-centered-text',
     label: 'Чат в Discord',
     to: 'https://go.nuxt.com/discord',
     target: '_blank'
   }, {
-    icon: 'i-ph-hand-heart-duotone',
+    icon: 'i-ph-hand-heart',
     label: 'Стать спонсором',
     to: 'https://go.nuxt.com/sponsor',
     target: '_blank'
@@ -83,7 +86,7 @@ const links = [
     <UPage>
       <UPageHeader :title="article.title" :description="article.description" :ui="{ headline: 'flex flex-col gap-y-8 items-start' }">
         <template #headline>
-          <UBreadcrumb :links="[{ label: 'Блог', icon: 'i-ph-newspaper-duotone', to: '/blog' }, { label: article.title }]" :ui="{ wrapper: 'max-w-full' }" />
+          <UBreadcrumb :links="[{ label: 'Блог', icon: 'i-ph-newspaper', to: '/blog' }, { label: article.title }]" :ui="{ wrapper: 'max-w-full' }" />
           <div class="flex items-center space-x-2">
             <span>
               {{ article.category }}

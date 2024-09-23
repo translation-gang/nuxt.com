@@ -1,15 +1,15 @@
 navigation.title: Модули
 title: Nuxt модули
 description: Откройте для себя наш список модулей, которые помогут вам усовершенствовать ваш проект Nuxt. Создан командой и сообществом Nuxt.
-navigation.icon: i-ph-puzzle-piece-duotone
+navigation.icon: i-ph-puzzle-piece
 links:
   - label: 'Руководство для автора модуля'
-    icon: i-ph-book-open-duotone
+    icon: i-ph-book-open
     to: '/docs/guide/going-further/modules'
     color: black
     size: md
   - label: 'Список модулей'
-    icon: 'i-ph-plus-circle-duotone'
+    icon: 'i-ph-plus-circle'
     to: 'https://github.com/nuxt/modules#addupdate-a-module'
     target: '_blank'
     color: gray

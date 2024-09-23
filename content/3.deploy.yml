@@ -1,10 +1,10 @@
 navigation.title: Развертывание
 title: Развертывание приложения Nuxt
 description: Узнайте о различных способах развертывания проекта Nuxt на различных хостинг-провайдерах.
-navigation.icon: i-ph-rocket-launch-duotone
+navigation.icon: i-ph-rocket-launch
 links:
   - label: 'Руководство по развертыванию'
-    icon: i-ph-cloud-duotone
+    icon: i-ph-cloud
     to: '/docs/getting-started/deployment'
     color: black
     size: md

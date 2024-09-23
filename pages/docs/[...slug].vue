@@ -46,50 +46,21 @@ const titleTemplate = computed(() => {
 })
 
 const communityLinks = computed(() => [{
-  icon: 'i-ph-pen-duotone',
+  icon: 'i-ph-pen',
   label: 'Редактировать эту страницу',
   to: `https://github.com/translation-gang/nuxt/edit/main/docs/${page?.value?._file?.split('/').slice(1).join('/')}`,
   target: '_blank'
 }, {
-  icon: 'i-ph-shooting-star-duotone',
-  label: 'Звезды на GitHub',
-  to: 'https://go.nuxt.com/github',
-  target: '_blank'
-}, {
-  icon: 'i-ph-chat-centered-text-duotone',
+  icon: 'i-ph-chat-centered-text',
   label: 'Чат в Discord',
   to: 'https://go.nuxt.com/discord',
   target: '_blank'
 }, {
-  icon: 'i-ph-hand-heart-duotone',
+  icon: 'i-ph-hand-heart',
   label: 'Стать спонсором',
   to: 'https://go.nuxt.com/sponsor',
   target: '_blank'
 }])
-
-const ecosystemLinks = [{
-  icon: 'i-ph-buildings-duotone',
-  label: 'Корпоративная поддержка',
-  to: '/enterprise/support'
-}, {
-  icon: 'i-ph-handshake-duotone',
-  label: 'Агентства Nuxt',
-  to: '/enterprise/agencies'
-}, {
-  icon: 'i-ph-briefcase-duotone',
-  label: 'Найти работу в Nuxt',
-  to: '/enterprise/jobs'
-}, {
-  icon: 'i-ph-graduation-cap-duotone',
-  label: 'Видеокурсы',
-  to: 'https://masteringnuxt.com/nuxt3?ref=nuxt',
-  target: '_blank'
-}, {
-  label: 'Сертификация Nuxt',
-  icon: 'i-ph-medal-duotone',
-  to: 'https://certification.nuxt.com',
-  target: '_blank'
-}]
 
 const title = page.value.head?.title || page.value.title
 const description = page.value.head?.description || page.value.description
@@ -134,12 +105,6 @@ defineOgImageComponent('Docs', {
             <UDivider v-if="page.body?.toc?.links?.length" type="dashed" />
 
             <UPageLinks title="Сообщество" :links="communityLinks" />
-
-            <UDivider type="dashed" />
-
-            <UPageLinks title="Экосистема" :links="ecosystemLinks" />
-
-            <UDivider type="dashed" />
 
             <Ads />
           </div>
