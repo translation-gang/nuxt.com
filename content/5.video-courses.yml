@@ -1,7 +1,7 @@
 head.title: Видеокурсы Nuxt
 title: Видеокурсы Nuxt
 navigation.title: Видеокурсы
-description: 'Смотрите видеокурсы от сообщества, чтобы изучить Vue 3 и Nuxt 3.'.'
+description: 'Смотрите видеокурсы от сообщества, чтобы изучить Vue 3 и Nuxt 3.'
 navigation.icon: i-ph-graduation-cap
 courses:
   - name: 'Основы работы с Nuxt 3'
