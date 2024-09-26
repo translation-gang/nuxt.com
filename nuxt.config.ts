@@ -17,7 +17,7 @@ const docsSource: any = {
   name: 'nuxt-docs',
   driver: 'github',
   repo: 'translation-gang/nuxt',
-  branch: 'main',
+  branch: '3.x',
   dir: 'docs',
   prefix: '/1.docs',
   token: process.env.NUXT_GITHUB_TOKEN || ''
