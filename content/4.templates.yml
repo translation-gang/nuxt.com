@@ -3,19 +3,20 @@ title: Шаблоны Nuxt
 navigation.title: Шаблоны
 description: 'Изучите шаблоны сообществ, чтобы начать работу за несколько секунд.'
 navigation.icon: i-ph-browsers
+align: center
 links:
   - label: 'Список шаблонов'
     to: 'https://github.com/nuxt/nuxt.com/tree/main#add-a-nuxt-template'
     icon: 'i-ph-plus-circle'
     target: '_blank'
     color: gray
-    size: md
-  - label: 'Nuxt Starters'
-    to: 'https://nuxt.new'
-    icon: 'i-simple-icons-nuxtdotjs'
+    size: sm
+  - label: 'Full-stack templates'
+    to: 'https://hub.nuxt.com/templates'
     target: '_blank'
+    variant: ghost
     color: gray
-    size: md
+    size: sm
 templates:
   - name: 'Movies'
     slug: 'movies'

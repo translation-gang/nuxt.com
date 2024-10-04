@@ -3,6 +3,7 @@ title: Видеокурсы Nuxt
 navigation.title: Видеокурсы
 description: 'Смотрите видеокурсы от сообщества, чтобы изучить Vue 3 и Nuxt 3.'
 navigation.icon: i-ph-graduation-cap
+align: center
 courses:
   - name: 'Основы работы с Nuxt 3'
     slug: 'vc-nuxt-3-fundamentals'
@@ -68,7 +69,7 @@ courses:
     description: 'Глубокое погружение в Vue 3 с Эваном Ю.'
     url: 'https://www.vuemastery.com/courses/vue3-deep-dive-with-evan-you/vue3-overview?fpr=nuxt'
     badge: Премиум
-  - name: 'Nuxt 3 - краш-курс'
+  - name: 'Nuxt 3 - Краш-курс'
     slug: 'nuxt-3-crash-course-prismic'
     description: 'Раскройте возможности Prismic в качестве Headless конструктора сайтов вместе с Nuxt.'
     url: 'https://www.youtube.com/watch?v=8GmfcbuYOWE'
