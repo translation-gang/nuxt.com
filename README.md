@@ -8,9 +8,10 @@
 
 ## Настройка
 
-Убедитесь в том, что установили зависимости
+Make sure to enable corepack and install the dependencies:
 
 ```bash
+corepack enable
 pnpm install
 ```
 

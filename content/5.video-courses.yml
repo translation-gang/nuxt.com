@@ -5,6 +5,12 @@ description: 'Смотрите видеокурсы от сообщества, �
 navigation.icon: i-ph-graduation-cap
 align: center
 courses:
+  - name: 'Освоение технологии Nuxt'
+    slug: 'mastering-nuxt'
+    description: 'Полное руководство по разработке и развертыванию быстрых, готовых к продакшену приложений Nuxt 3.'
+    url: 'https://masteringnuxt.com/nuxt3'
+    badge: Премиум
+    sponsor: true
   - name: 'Основы работы с Nuxt 3'
     slug: 'vc-nuxt-3-fundamentals'
     description: 'Изучите основы с Nuxt 3 с помощью VueSchool.'
@@ -30,11 +36,6 @@ courses:
     screenshotOptions:
       delay: 1
       removeElements: ['tp-yt-iron-overlay-backdrop', 'tp-yt-paper-dialog']
-  - name: 'Освоение технологии Nuxt'
-    slug: 'mastering-nuxt'
-    description: 'Полное руководство по разработке и развертыванию быстрых, готовых к продакшену приложений Nuxt 3.'
-    url: 'https://masteringnuxt.com/nuxt3'
-    badge: Премиум
   - name: 'Реальный мир Nuxt 3'
     slug: 'vm-real-world-nuxt'
     description: 'Это практический курс по созданию веб-приложений с помощью Nuxt.'

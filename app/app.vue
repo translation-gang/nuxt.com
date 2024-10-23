@@ -66,17 +66,17 @@ onMounted(() => {
     <NuxtLoadingIndicator />
 
     <AppBanner
-      id="nuxt-cert-date"
-      to="https://certificates.dev/nuxt?utm_source=nuxt&utm_medium=website&utm_campaign=affiliate&friend=NUXT"
+      id="nuxt-nation-2024"
+      to="https://nuxtnation.com/?utm_source=nuxt&utm_medium=website&utm_campaign=banner"
     >
       <div class="flex items-center gap-1">
         <UIcon
-          name="i-ph-circle-wavy-check-duotone"
+          name="i-ph-microphone-stage-duotone"
           class="w-5 h-5 flex-shrink-0 pointer-events-none hidden sm:inline-block"
         />
-        <span><span class="hidden lg:inline">Official</span> Nuxt mid-level certification launch date announced!</span>
+        <span><span class="font-semibold">Nuxt Nation</span> conference is coming. Join us on November 12-13.</span>
         <UButton
-          label="Узнать больше"
+          label="Sign up"
           color="white"
           trailing-icon="i-ph-arrow-right"
           size="2xs"
@@ -135,3 +135,9 @@ onMounted(() => {
     </ClientOnly>
   </div>
 </template>
+
+<style>
+#kapa-widget-container {
+  visibility: hidden;
+}
+</style>
