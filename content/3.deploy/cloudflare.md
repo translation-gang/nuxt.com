@@ -65,12 +65,6 @@ export default defineNuxtConfig({
     wrangler pages deploy dist/
     ```
 
-## Отключите автоминификацию
-
-Убедитесь, что отключили минификацию HTML, CSS и JavaScript в **CloudFlare -> Speed -> Optimization -> Auto Minify**, чтобы избежать гидратации Vue.
-
-![Отключить автоматическую минификацию Cloudflare](/assets/deploy/cloudflare-auto-minify.png)
-
 ## Узнать больше
 
 ::read-more{to="https://nitro.unjs.io/deploy/providers/cloudflare" target="_blank"}
