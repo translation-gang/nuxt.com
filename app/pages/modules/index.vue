@@ -191,7 +191,7 @@ const { copy } = useCopyToClipboard()
                   <UTooltip text="Ежемесячное количество загрузок NPM">
                     <NuxtLink
                       class="flex items-center gap-1 hover:text-gray-900 hover:dark:text-white"
-                      :to="`https://npmjs.org/package/${module.npm}`"
+                      :to="`https://npm.chart.dev/${module.npm}`"
                       target="_blank"
                     >
                       <UIcon name="i-ph-arrow-circle-down" class="w-4 h-4 flex-shrink-0" />
