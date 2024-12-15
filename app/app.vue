@@ -66,19 +66,21 @@ onMounted(() => {
     <NuxtLoadingIndicator />
 
     <AppBanner
-      id="black-friday-2024-nuxt-ui"
-      to="https://ui.nuxt.com/pro/pricing?utm_source=nuxt_website&utm_medium=banner"
+      id="vue-ams-2025"
+      to="https://eventix.shop/kb2j4ewn"
     >
       <div class="flex items-center gap-1 text-black">
         <UIcon
-          name="i-ri-discount-percent-fill"
-          class="w-5 h-5 flex-shrink-0 pointer-events-none"
+          name="i-ph-microphone-stage-duotone"
+          class="w-5 h-5 flex-shrink-0 pointer-events-none hidden md:inline-flex"
         />
         <span>
-          <span class="font-bold pr-1">Black Friday Week</span>
-          <span class="font-bold dark:bg-black dark:text-white bg-white text-black px-2 py-1 rounded text-xs">20% OFF</span> on <span class="font-semibold">Nuxt UI Pro</span> until <span class="font-semibold">Dec 2nd</span></span>
+          Don't miss <span class="font-semibold">Vue.js Amsterdam</span> <span class="lg:hidden">in March </span>2025!
+          <span class="hidden lg:inline">Join 1000+ Vue developers this March and <span class="font-semibold">save 10% with code NUXT</span>.</span>
+          <span class="lg:hidden">Save 10% with code NUXT.</span>
+        </span>
         <UButton
-          label="Shop now"
+          label="Get your ticket"
           color="white"
           trailing-icon="i-ph-arrow-right"
           size="2xs"
@@ -86,26 +88,6 @@ onMounted(() => {
         />
       </div>
     </AppBanner>
-    <!-- <AppBanner
-      id="nuxt-certification-early-bird-launch"
-      to="https://certification.nuxt.com"
-    >
-      <div class="flex items-center gap-2">
-        <UIcon
-          name="i-ph-medal"
-          class="w-5 h-5 flex-shrink-0 pointer-events-none"
-        />
-        <span>The <span class="font-semibold">Nuxt Certification Program</span> by VueSchool is out!</span>
-        <UButton
-          color="white"
-          trailing-icon="i-ph-arrow-right"
-          size="2xs"
-          class="rounded-full"
-        >
-          Register
-        </UButton>
-      </div>
-    </AppBanner> -->
 
     <AppHeader :links="headerLinks" />
 
