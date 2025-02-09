@@ -98,7 +98,7 @@ const _useNavigation = () => {
         target: '_blank'
       }, {
         label: 'Nuxt Studio',
-        to: 'https://nuxt.studio/?utm_source=nuxt-website&utm_medium=header',
+        to: 'https://content.nuxt.com/studio/?utm_source=nuxt-website&utm_medium=header',
         description: 'CMS для Nuxt, основанная на Git',
         icon: 'i-ph-pen',
         target: '_blank'
@@ -110,7 +110,7 @@ const _useNavigation = () => {
         target: '_blank'
       }]
     }, {
-      label: 'Сервисы',
+      label: 'Энтерпрайс',
       icon: 'i-ph-buildings',
       to: '/enterprise',
       search: false,
@@ -158,7 +158,7 @@ const _useNavigation = () => {
       target: '_blank'
     }, {
       label: 'Nuxt Studio',
-      to: 'https://nuxt.studio/?utm_source=nuxt-website&utm_medium=footer',
+      to: 'https://content.nuxt.com/studio/?utm_source=nuxt-website&utm_medium=footer',
       target: '_blank'
     }, {
       label: 'NuxtHub',
@@ -184,7 +184,6 @@ const _useNavigation = () => {
       label: 'Ask AI',
       icon: 'i-ph-magic-wand',
       to: 'javascript:void(0);',
-      // @ts-expect-error this is not typed
       click: () => nuxtApp.$kapa?.openModal()
     },
     ...headerLinks.value.map((link) => {

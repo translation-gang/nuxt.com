@@ -53,13 +53,9 @@ npx nuxthub deploy
 Вы также можете установить [NuxtHub CLI](https://github.com/nuxt-hub/cli) глобально с помощью: `npm i -g nuxthub`.
 ::
 
-::warning
-Если вы выполните первое развертывание с помощью NuxtHub CLI, то впоследствии не сможете прикрепить свой репозиторий GitHub/GitLab из-за ограничения Cloudflare.
-::
-
 ## Развертывание с помощью Git
 
-1. Поместите код в свой git-репозиторий (GitHub или GitLab).
+1. Поместите код в свой git-репозиторий (GitHub).
 2. Нажмите на `New Project`, затем `Import a Git repository`.
 3. Выберите свой репозиторий и нажмите `Импортировать репозиторий`.
 4. NuxtHub настроит ваш проект на Cloudflare Pages и развернет его
