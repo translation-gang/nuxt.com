@@ -1,8 +1,8 @@
 navigation: false
 hero:
   cta:
-    label: Nuxt v3.14 вышел
-    to: /blog/v3-14
+    label: Nuxt UI v3 вышел
+    to: /blog/nuxt-ui-v3
     icon: i-ph-arrow-right
 logos:
   title: Доверяют лучшие фронтенд-команды
@@ -281,6 +281,7 @@ sections:
           avatar:
             src: https://ipx.nuxt.com/f_auto,s_40x40/gh_avatar/yyx990803
             srcset: https://ipx.nuxt.com/f_auto,s_80x80/gh_avatar/yyx990803 2x
+            loading: lazy
       - quote: Nuxt - это фантастический выбор для команд, создающих продукты продакшен класса в Интернете. Он нацелен на внедрение лучших практик производительности при сохранении превосходного Vue.js DX.
         author:
           name: Addy Osmani
@@ -290,6 +291,7 @@ sections:
           avatar:
             src: https://ipx.nuxt.com/f_auto,s_40x40/gh_avatar/addyosmani
             srcset: https://ipx.nuxt.com/f_auto,s_80x80/gh_avatar/addyosmani 2x
+            loading: lazy
       - quote: Nuxt стал неоценимым источником инноваций и вдохновения для разработчиков и авторов фреймворков. Это было потрясающе наблюдать, как он растет и используется в веб-проектах по всему миру.
         author:
           name: Guillermo Rauch
@@ -299,6 +301,7 @@ sections:
           avatar:
             src: https://ipx.nuxt.com/f_auto,s_40x40/gh_avatar/rauchg
             srcset: https://ipx.nuxt.com/f_auto,s_80x80/gh_avatar/rauchg 2x
+            loading: lazy
       - quote: Nuxt является выдающимся источником инноваций и вдохновения для разработчиков и авторов фреймворков. Это было невероятно наблюдать, как он развивается и используется в веб-проектах любого масштаба.
         author:
           name: Sarah Drasner
@@ -308,6 +311,7 @@ sections:
           avatar:
             src: https://ipx.nuxt.com/f_auto,s_40x40/gh_avatar/sdras
             srcset: https://ipx.nuxt.com/f_auto,s_80x80/gh_avatar/sdras 2x
+            loading: lazy
       - quote: "Nuxt - это уникальный подход, сочетающий в себе отличные возможности для разработчиков с многоразовыми, полностью интегрированными функциями, которые ускоряют разработку и производительность вашего следующего сайта или приложения.
         author:
           name: Dominik Angerer
@@ -317,6 +321,7 @@ sections:
           avatar:
             src: https://ipx.nuxt.com/f_auto,s_40x40/gh_avatar/DominikAngerer
             srcset: https://ipx.nuxt.com/f_auto,s_80x80/gh_avatar/DominikAngerer 2x
+            loading: lazy
       - quote: В тот момент, когда я впервые использовал Nuxt, я влюбился в него. Помимо его масштабируемости, производительности и опыта разработчиков, команда, стоящая за ним, также фантастична. Спасибо, что разработали такой замечательный фреймворк и сделали нашу жизнь намного проще!
         author:
           name: Savas Vedova
@@ -326,6 +331,7 @@ sections:
           avatar:
             src: https://ipx.nuxt.com/f_auto,s_40x40/gh_avatar/svedova
             srcset: https://ipx.nuxt.com/f_auto,s_80x80/gh_avatar/svedova 2x
+            loading: lazy
       - quote: Nuxt изменяет подход к веб-разработке, сочетая высокую производительность и удобный для разработчика опыт. Его гибкость в SSR и SSG, а также активное сообщество, подобное экосистеме Vue.js, делают его идеальным решением для современных веб-проектов.
         author:
           name: Rijk van Zanten
@@ -335,3 +341,4 @@ sections:
           avatar:
             src: https://ipx.nuxt.com/f_auto,s_40x40/gh_avatar/rijkvanzanten
             srcset: https://ipx.nuxt.com/f_auto,s_80x80/gh_avatar/rijkvanzanten 2x
+            loading: lazy

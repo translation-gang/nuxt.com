@@ -39,15 +39,9 @@ const dropdownItems = [
     label: 'Скопируйте логотип как SVG',
     icon: 'i-simple-icons-nuxtdotjs',
     click: () => copy(logo.value.$el.outerHTML, { title: 'Copied to clipboard' })
-  },
-  {
-    label: 'Nuxt Brand Kit',
-    icon: 'i-simple-icons-figma',
-    to: 'https://www.figma.com/community/file/1296154408275753939/nuxt-brand-kit',
-    target: '_blank'
   }],
   [{
-    label: 'Просмотреть Design Kit',
+    label: 'Просмотреть design kit',
     icon: 'i-ph-shapes',
     to: '/design-kit'
   }]

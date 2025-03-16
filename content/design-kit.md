@@ -7,7 +7,8 @@ links:
   - label: 'Фирменный набор Nuxt'
     size: 'lg'
     to: 'https://www.figma.com/community/file/1296154408275753939/nuxt-brand-kit'
-    icon: 'i-simple-icons-figma'
+    icon: 'i-logos-figma'
+    trailingIcon: 'i-ph-arrow-up-right'
     download: true
     color: 'white'
     target: '_blank'

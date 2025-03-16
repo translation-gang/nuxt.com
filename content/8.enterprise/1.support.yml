@@ -1,72 +1,72 @@
-title: 'Профессиональные услуги Nuxt'
-navigation.title: 'Поддержка'
-description: 'Получите профессиональную поддержку от экспертов по Nuxt, чтобы оптимизировать производительность вашего сайта и преодолеть любые трудности.'
-head.title: 'Профессиональные услуги Nuxt'
-head.description: 'Профессиональная поддержка и консультационные услуги по Vue и Nuxt от создателей и разработчиков Vue и Nuxt для аудита кода и оптимизации производительности.'
+title: Профессиональные услуги Nuxt
+navigation.title: Поддержка
+description: Получите профессиональную поддержку от экспертов по Nuxt, чтобы оптимизировать производительность вашего сайта и преодолеть любые трудности.
+head.title: Профессиональные услуги Nuxt
+head.description: Профессиональная поддержка и консультационные услуги по Vue и Nuxt от создателей и разработчиков Vue и Nuxt для аудита кода и оптимизации производительности.
 navigation.icon: i-ph-lifebuoy
 hero:
   links:
   - label: Поговорите с экспертом
     color: black
-    to: 'https://calendly.com/ferdinand-nuxt/nuxtlabs-ferdinand'
+    to: https://calendly.com/ferdinand-nuxt/nuxtlabs-ferdinand
     size: sm
-    target: '_blank'
+    target: _blank
 logos:
-  - light: '/assets/enterprise/support/light/malt.svg'
-    dark: '/assets/enterprise/support/dark/malt.svg'
+  - light: /assets/enterprise/support/light/malt.svg
+    dark: /assets/enterprise/support/dark/malt.svg
     width: '85'
     height: '24'
-    alt: 'malt logo'
-  - light: '/assets/enterprise/support/light/zadig-and-voltaire.svg'
-    dark: '/assets/enterprise/support/dark/zadig-and-voltaire.svg'
+    alt: malt logo
+  - light: /assets/enterprise/support/light/zadig-and-voltaire.svg
+    dark: /assets/enterprise/support/dark/zadig-and-voltaire.svg
     width: '180'
     height: '24'
-    alt: 'zadig-and-voltaire logo'
-  - light: '/assets/enterprise/support/light/adyen.svg'
-    dark: '/assets/enterprise/support/dark/adyen.svg'
+    alt: zadig-and-voltaire logo
+  - light: /assets/enterprise/support/light/adyen.svg
+    dark: /assets/enterprise/support/dark/adyen.svg
     width: '85'
     height: '24'
-    alt: 'adyen logo'
-  - light: '/assets/enterprise/support/light/world-wide-technology.svg'
-    dark: '/assets/enterprise/support/dark/world-wide-technology.svg'
+    alt: adyen logo
+  - light: /assets/enterprise/support/light/world-wide-technology.svg
+    dark: /assets/enterprise/support/dark/world-wide-technology.svg
     width: '120'
     height: '24'
-    alt: 'world-wide-technology logo'
-  - light: '/assets/enterprise/support/light/cora.svg'
-    dark: '/assets/enterprise/support/dark/cora.svg'
+    alt: world-wide-technology logo
+  - light: /assets/enterprise/support/light/cora.svg
+    dark: /assets/enterprise/support/dark/cora.svg
     width: '40'
     height: '24'
-    alt: 'cora logo'
-  - light: '/assets/enterprise/support/light/mir.svg'
-    dark: '/assets/enterprise/support/dark/mir.svg'
+    alt: cora logo
+  - light: /assets/enterprise/support/light/mir.svg
+    dark: /assets/enterprise/support/dark/mir.svg
     width: '70'
     height: '24'
-    alt: 'mir logo'
-  - light: '/assets/enterprise/support/light/tchibo.svg'
-    dark: '/assets/enterprise/support/dark/tchibo.svg'
+    alt: mir logo
+  - light: /assets/enterprise/support/light/tchibo.svg
+    dark: /assets/enterprise/support/dark/tchibo.svg
     width: '100'
     height: '24'
-    alt: 'tchibo logo'
-  - light: '/assets/enterprise/support/light/about-you.svg'
-    dark: '/assets/enterprise/support/dark/about-you.svg'
+    alt: tchibo logo
+  - light: /assets/enterprise/support/light/about-you.svg
+    dark: /assets/enterprise/support/dark/about-you.svg
     width: '150'
     height: '24'
-    alt: 'about-you logo'
-  - light: '/assets/enterprise/support/light/chillisauce.svg'
-    dark: '/assets/enterprise/support/dark/chillisauce.svg'
+    alt: about-you logo
+  - light: /assets/enterprise/support/light/chillisauce.svg
+    dark: /assets/enterprise/support/dark/chillisauce.svg
     width: '140'
     height: '20'
-    alt: 'chillisauce logo'
-  - light: '/assets/enterprise/support/light/otypo.svg'
-    dark: '/assets/enterprise/support/dark/otypo.svg'
+    alt: chillisauce logo
+  - light: /assets/enterprise/support/light/otypo.svg
+    dark: /assets/enterprise/support/dark/otypo.svg
     width: '120'
     height: '47'
-    alt: 'otypo logo'
-  - light: '/assets/enterprise/support/light/realtruck.svg'
-    dark: '/assets/enterprise/support/dark/realtruck.svg'
+    alt: otypo logo
+  - light: /assets/enterprise/support/light/realtruck.svg
+    dark: /assets/enterprise/support/dark/realtruck.svg
     width: '180'
     height: '89'
-    alt: 'realtruck logo'
+    alt: realtruck logo
 service:
   title: Наши услуги
   description: Мы предоставляем экспертные знания и рекомендации компаниям, использующим Vue и Nuxt, включая помощь с архитектурой проекта, оптимизацией производительности, лучшими практиками и устранением неполадок.
@@ -84,143 +84,159 @@ service:
       title: Индивидуальные услуги
       description: Расскажите нам, что вы ищете, и мы найдем наиболее эффективный способ помочь вам достичь ваших целей.
 expertise:
-  title: 'Высочайший уровень экспертизы'
-  description: 'Эксперты Nuxt — это члены основных команд Vue, Nuxt и Vite или выбранные ими участники.'
+  title: Высочайший уровень экспертизы
+  description: Эксперты Nuxt — это члены основных команд Vue, Nuxt и Vite или выбранные ими участники.
   logos:
-    - src: '/assets/enterprise/support/nuxt.svg'
+    - src: /assets/enterprise/support/nuxt.svg
       width: 32
       height: 32
       color: '#00DC82'
-      alt: 'nuxt logo'
-    - src: '/assets/enterprise/support/vite.svg'
+      alt: nuxt logo
+    - src: /assets/enterprise/support/vite.svg
       width: 32
       height: 32
       color: '#a256fe'
-      alt: 'vite logo'
-    - src: '/assets/enterprise/support/unjs.svg'
+      alt: vite logo
+    - src: /assets/enterprise/support/unjs.svg
       width: 32
       height: 32
       color: '#ecdb5a'
-      alt: 'unjs logo'
-    - src: '/assets/enterprise/support/vue.svg'
+      alt: unjs logo
+    - src: /assets/enterprise/support/vue.svg
       width: 32
       height: 32
       color: '#42b883'
-      alt: 'vue logo'
+      alt: vue logo
 testimonials:
-  title: 'Что говорят наши клиенты'
-  description: 'Узнайте от наших клиентов, как наши консалтинговые услуги преобразили их проекты и повысили их эффективность.'
+  title: Что говорят наши клиенты
+  description: Узнайте от наших клиентов, как наши консалтинговые услуги преобразили их проекты и повысили их эффективность.
   items:
-    - quote: "“Я настоятельно рекомендую их услуги всем, кто рассматривает Nuxt, чтобы убедиться, что вы получите все преимущества, которые он может предоставить, и что ваша команда будет следовать всем лучшим шаблонам проектирования.“"
-      author: 'James Baddiley'
-      job: 'CEO/CTO @ Chillisauce'
+    - quote: "Я настоятельно рекомендую их услуги всем, кто рассматривает Nuxt, чтобы убедиться, что вы получите все преимущества, которые он может предоставить, и что ваша команда будет следовать всем лучшим шаблонам проектирования."
+      author: James Baddiley
+      job: CEO/CTO @ Chillisauce
       logo:
-        light: '/assets/enterprise/support/light/chillisauce.svg'
-        dark: '/assets/enterprise/support/dark/chillisauce.svg'
-        alt: 'chillisauce logo'
+        light: /assets/enterprise/support/light/chillisauce.svg
+        dark: /assets/enterprise/support/dark/chillisauce.svg
+        alt: chillisauce logo
+        width: 134
+        height: 28
+        achievements:
+          - label: Migration to Nuxt
+            color: blue
+          - label: Performance optimization
+            color: orange
+          - label: Long-term support
+            color: yellow
+    - quote: "“We engaged NuxtLabs to audit our migration from Vue 2 to\_Nuxt 3. The expert identified key improvements in security, performance, and productivity, helping us get on the right track. The iterative approach allowed us to apply recommendations effectively and better understand the raised issues.“"
+      author: Jacques Jahnichen
+      job: Co-founder and CTO @ Viviarto
+      logo:
+        light: /assets/enterprise/support/viviarto.webp
+        dark: /assets/enterprise/support/viviarto.webp
+        alt: viviarto logo
         width: 134
         height: 28
       achievements:
-        - label: 'Миграция на Nuxt'
-          color: 'blue'
-        - label: 'Оптимизация производительности'
-          color: 'orange'
-        - label: 'Долгосрочная поддержка'
-          color: 'yellow'
-    - quote: "“Выбор NuxtLabs для аудита нашего проекта на Nuxt стал переломным моментом. Их подробные выводы значительно улучшили производительность нашего сайта и качество нашего кода. Мы благодарны за их поддержку и настоятельно рекомендуем их другим.“"
-      author: 'Melene Ulm'
-      job: 'Web Developer @ Mobile Industrial Robots'
+        - label: Миграция на Nuxt
+          color: blue
+        - label: Оптимизация производительности
+          color: orange
+        - label: Долгосрочная поддержка
+          color: yellow
+    - quote: “Выбор NuxtLabs для аудита нашего проекта на Nuxt стал переломным моментом. Их подробные выводы значительно улучшили производительность нашего сайта и качество нашего кода. Мы благодарны за их поддержку и настоятельно рекомендуем их другим.“
+      author: Melene Ulm
+      job: Web Developer @ Mobile Industrial Robots
       logo:
-        light: '/assets/enterprise/support/light/mir.svg'
-        dark: '/assets/enterprise/support/dark/mir.svg'
-        alt: 'mir logo'
+        light: /assets/enterprise/support/light/mir.svg
+        dark: /assets/enterprise/support/dark/mir.svg
+        alt: mir logo
         width: 54
         height: 24
       achievements:
-        - label: 'Аудит кодовой базы'
-          color: 'pink'
-        - label: 'Оптимизация производительности'
-          color: 'orange'
-        - label: 'Долгосрочная поддержка'
-          color: 'yellow'
-    - quote: "“Эксперт предоставил нам ценные отзывы, в том числе рекомендации по более эффективному использованию Nuxt и экосистемы, поднял вопросы об истории внедрения и выявил ошибки, которые мы еще не обнаружили.“"
-      author: 'Robert K Pauls'
-      job: 'Lead dev at @ ABOUT YOU group'
+        - label: Аудит кодовой базы
+          color: pink
+        - label: Оптимизация производительности
+          color: orange
+        - label: Долгосрочная поддержка
+          color: yellow
+    - quote: “Эксперт предоставил нам ценные отзывы, в том числе рекомендации по более эффективному использованию Nuxt и экосистемы, поднял вопросы об истории внедрения и выявил ошибки, которые мы еще не обнаружили.“
+      author: Robert K Pauls
+      job: 'Lead dev at @ ABOUT YOU group
       logo:
-        light: '/assets/enterprise/support/light/about-you.svg'
-        dark: '/assets/enterprise/support/dark/about-you.svg'
-        alt: 'about you logo'
+        light: /assets/enterprise/support/light/about-you.svg
+        dark: /assets/enterprise/support/dark/about-you.svg
+        alt: about you logo
         width: 120
         height: 24
       achievements:
-        - label: 'Оптимизация производительности'
-          color: 'orange'
-        - label: 'Аудит кодовой базы'
-          color: 'pink'
-    - quote: "“Они предоставили прекрасную обратную связь о том, как сделать ядро ​​нашего приложения более эффективным, а также несколько очень ценных советов по функциям, которые мы планируем реализовать в ближайшем будущем.“"
-      author: 'Maxime Casadei'
-      job: 'CEO at @NAKWEB for Otypo'
+        - label: Оптимизация производительности
+          color: orange
+        - label: Аудит кодовой базы
+          color: pink
+    - quote: “Они предоставили прекрасную обратную связь о том, как сделать ядро нашего приложения более эффективным, а также несколько очень ценных советов по функциям, которые мы планируем реализовать в ближайшем будущем.“
+      author: Maxime Casadei
+      job: CEO at @NAKWEB for Otypo
       width: 80
       height: 20
       logo:
-        light: '/assets/enterprise/support/light/otypo.svg'
-        dark: '/assets/enterprise/support/dark/otypo.svg'
-        alt: 'otypo logo'
+        light: /assets/enterprise/support/light/otypo.svg
+        dark: /assets/enterprise/support/dark/otypo.svg
+        alt: otypo logo
       achievements:
-        - label: 'Миграция на Nuxt'
-          color: 'blue'
-        - label: 'Оптимизация производительности'
-          color: 'orange'
-        - label: 'Аудит кодовой базы'
-          color: 'pink'
-    - quote: "“Работать с NuxtLabs было потрясающе. Они нашли скрытые возможности, зарытые глубоко в нашей кодовой базе. Наше корпоративное приложение теперь быстрее, безопаснее и надежнее, чем когда-либо!“"
-      author: 'Josh Deltener'
-      job: 'Director of software engineering @ RealTruck.com'
+        - label: Миграция на Nuxt
+          color: blue
+        - label: Оптимизация производительности
+          color: orange
+        - label: Аудит кодовой базы
+          color: pink
+    - quote: “Работать с NuxtLabs было потрясающе. Они нашли скрытые возможности, зарытые глубоко в нашей кодовой базе. Наше корпоративное приложение теперь быстрее, безопаснее и надежнее, чем когда-либо!“
+      author: Josh Deltener
+      job: Director of software engineering @ RealTruck.com
       logo:
-        light: '/assets/enterprise/support/light/realtruck.svg'
-        dark: '/assets/enterprise/support/dark/realtruck.svg'
-        alt: 'realtruck logo'
+        light: /assets/enterprise/support/light/realtruck.svg
+        dark: /assets/enterprise/support/dark/realtruck.svg
+        alt: realtruck logo
         width: 140
         height: 30
       achievements:
-        - label: 'Миграция на Nuxt'
-          color: 'blue'
-        - label: 'Оптимизация производительности'
-          color: 'orange'
-        - label: 'Аудит кодовой базы'
-          color: 'pink'
+        - label: Миграция на Nuxt
+          color: blue
+        - label: Оптимизация производительности
+          color: orange
+        - label: Аудит кодовой базы
+          color: pink
 project:
-  title: 'Что дальше?'
-  description: "3 простых шага для получения профессиональной поддержки и консультационных услуг от эксперта по Vue и Nuxt."
+  title: Что дальше?
+  description: 3 простых шага для получения профессиональной поддержки и консультационных услуг от эксперта по Vue и Nuxt.
   steps:
-    - title: 'Вводная встреча'
-      description: "Эта первая встреча посвящена сбору как можно большего количества информации о ваших потребностях и контексте, чтобы мы могли подобрать подходящую услугу у подходящего специалиста."
+    - title: Вводная встреча
+      description: Эта первая встреча посвящена сбору как можно большего количества информации о ваших потребностях и контексте, чтобы мы могли подобрать подходящую услугу у подходящего специалиста.
       number: 1
-    - title: 'Предложение, соответствующее вашим потребностям'
-      description: "На основе предоставленной вами информации и результатов предыдущих аналогичных консультационных проектов мы предоставим вам индивидуальное предложение, отвечающее вашим требованиям."
+    - title: Предложение, соответствующее вашим потребностям
+      description: На основе предоставленной вами информации и результатов предыдущих аналогичных консультационных проектов мы предоставим вам индивидуальное предложение, отвечающее вашим требованиям.
       number: 2
-    - title: 'Подключение эксперта по Nuxt'
-      description: "После достижения соглашения эксперт будет представлен вашей команде для начала выполнения консультационного задания."
+    - title: Подключение эксперта по Nuxt
+      description: После достижения соглашения эксперт будет представлен вашей команде для начала выполнения консультационного задания.
       number: 3
 form:
-  title: 'Свяжитесь с нами'
-  description: "Есть вопросы или нужна помощь? Заполните форму ниже, и мы свяжемся с вами как можно скорее."
+  title: Свяжитесь с нами
+  description: Есть вопросы или нужна помощь? Заполните форму ниже, и мы свяжемся с вами как можно скорее.
   name:
-    label: 'Имя'
-    placeholder: 'Джон Доу'
+    label: Имя
+    placeholder: Джон Доу
   email:
-    label: 'Электронная почта компании'
-    placeholder: 'you@example.com'
+    label: Электронная почта компании
+    placeholder: you@example.com
   company:
-    label: 'Компания'
-    placeholder: 'Название компании'
+    label: Компания
+    placeholder: Название компании
   link:
-    label: 'Ссылка'
-    placeholder: 'www.nuxt.com'
+    label: Ссылка
+    placeholder: www.nuxt.com
   body:
-    label: 'Чего мы можем вам помочь достичь?'
-    placeholder: 'Расскажите, как мы можем вам помочь'
-  info: 'Отправляя эту форму, я подтверждаю, что прочитал и понял <a class="text-gray-950 dark:text-gray-100 underline font-medium">Заявление о конфиденциальности Nuxt.</a>'
+    label: Чего мы можем вам помочь достичь?
+    placeholder: Расскажите, как мы можем вам помочь
+  info: Отправляя эту форму, я подтверждаю, что прочитал и понял <a class="text-gray-950 dark:text-gray-100 underline font-medium">Заявление о конфиденциальности Nuxt.</a>
   button:
     icon: i-ph-paper-plane-right
-    label: 'Отправить сообщение'
+    label: Отправить сообщение
