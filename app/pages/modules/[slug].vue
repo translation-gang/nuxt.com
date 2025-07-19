@@ -82,7 +82,7 @@ useSeoMeta({
 
 defineOgImageComponent('Module', {
   module: module.value,
-  headline: 'Модули Nuxt'
+  headline: 'Модули Nuxt',
   title,
   description
 })
