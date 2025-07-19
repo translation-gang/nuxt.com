@@ -2,15 +2,15 @@
 title: Набор для дизайна
 head.description: Получите ассетсы Nuxt, такие, как логотип, типографика и цвета..
 description: Welcome to Nuxt design definition page. Identity was redefined by handpicking conscientiously colors, and shapes in order to express how easy & joyful Nuxt products are.
-navigation.icon: 'i-ph-palette'
+navigation.icon: 'i-lucide-palette'
 links:
   - label: 'Фирменный набор Nuxt'
     size: 'lg'
     to: 'https://www.figma.com/community/file/1296154408275753939/nuxt-brand-kit'
     icon: 'i-logos-figma'
-    trailingIcon: 'i-ph-arrow-up-right'
+    trailingIcon: 'i-lucide-arrow-up-right'
     download: true
-    color: 'white'
+    color: 'neutral'
     target: '_blank'
 ---
 

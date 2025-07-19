@@ -1,0 +1,12 @@
+title: Агентства Nuxt
+navigation.title: Агентства
+description: Ищете надежного партнера с сильной экспертизой в разработке Nuxt? Обратитесь к нашему каталогу партнерских агентств и найдите агентство рядом с вами, обладающее необходимым набором навыков.
+head.title: Партнерские агентства Nuxt
+head.description: Обратитесь к нашему каталогу партнерских агентств и найдите агентство рядом с вами, обладающее необходимым набором навыков.
+navigation.icon: i-lucide-handshake
+links:
+  - label: 'Отправить мое агентство'
+    to: 'https://docs.google.com/forms/d/e/1FAIpQLSf85qskit5QqmGJcruGkGF0U7240Bh9MeN0pHB18UiOMWC8dA/viewform'
+    color: neutral
+    size: 'md'
+    target: '_blank'

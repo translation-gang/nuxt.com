@@ -21,7 +21,7 @@ pnpm install
 cp .env.example .env
 ```
 
-Клонируйте/сделайте форк репозитория [translation-gang/nuxt](https://github.com/translation-gang/nuxt) в нужном вам месте (но не в проекте Nuxt.com) и внутри директории `docs/`, запустите:
+Clone/Fork [nuxt/nuxt](https://github.com/translation-gang/nuxt) repo where you want (but not in the Nuxt.com project) and inside the root of the repo, run:
 
 ```bash
 pwd
@@ -33,7 +33,7 @@ pwd
 echo %cd%
 ```
 
-Скопируйте вывод команды выше и вставьте его в переменную `NUXT_DOCS_PATH` в файле `.env`.
+Скопируйте вывод команды выше и вставьте его в переменную `NUXT_PATH` в файле `.env`.
 
 ## Разработка
 
@@ -45,7 +45,7 @@ pnpm dev
 
 ### Добавьте шаблон Nuxt
 
-Чтобы добавить шаблон Nuxt в список, добавьте его в список на странице [./content/4.templates.yml](./content/4.templates.yml).
+Чтобы добавить шаблон Nuxt в список, добавьте его в папку [./content/templates](./content/templates).
 
 Обязательно запустите сервер разработки, чтобы сгенерировать скриншот для шаблона, и перейдите по адресу <http://localhost:3000/templates>, чтобы увидеть результат.
 

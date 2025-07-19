@@ -1,24 +1,23 @@
 <script setup lang="ts">
-const { footerLinks } = useNavigation()
+const { footerLinks } = useFooterLinks()
 </script>
 
 <template>
-  <UFooter
-    :ui="{
-      bottom: { wrapper: 'border-t border-gray-200 dark:border-gray-800', container: '!py-6' },
-      top: { wrapper: 'border-t border-gray-200 dark:border-gray-800', container: 'py-8 lg:py-12' }
-    }"
-  >
+  <USeparator icon="i-simple-icons-nuxtdotjs" class="h-px" />
+
+  <UFooter :ui="{ top: 'border-b border-default' }">
     <template #top>
-      <UFooterColumns :links="footerLinks">
-        <template #right>
-          <NewsletterForm />
-        </template>
-      </UFooterColumns>
+      <UContainer>
+        <UFooterColumns :columns="footerLinks">
+          <template #right>
+            <NewsletterForm />
+          </template>
+        </UFooterColumns>
+      </UContainer>
     </template>
 
     <template #left>
-      <p class="text-gray-500 dark:text-gray-400 text-sm">
+      <p class="text-muted text-sm">
         Copyright © 2016-{{ new Date().getFullYear() }} Nuxt - <NuxtLink class="hover:underline" to="https://go.nuxt.com/license" target="_blank">
           MIT License
         </NuxtLink>
@@ -26,11 +25,51 @@ const { footerLinks } = useNavigation()
     </template>
 
     <template #right>
-      <UButton aria-label="Nuxt в X" to="https://go.nuxt.com/x" target="_blank" icon="i-simple-icons-x" v-bind="($ui.button.secondary as any)" />
-      <UButton aria-label="Nuxt в BlueSky" to="https://go.nuxt.com/bluesky" target="_blank" icon="i-simple-icons-bluesky" v-bind="($ui.button.secondary as any)" />
-      <UButton aria-label="Nuxt в LinkedIn" to="https://go.nuxt.com/linkedin" target="_blank" icon="i-simple-icons-linkedin" v-bind="($ui.button.secondary as any)" />
-      <UButton aria-label="Nuxt в Discord" to="https://go.nuxt.com/discord" target="_blank" icon="i-simple-icons-discord" v-bind="($ui.button.secondary as any)" />
-      <UButton aria-label="Nuxt в GitHub" to="https://go.nuxt.com/github" target="_blank" icon="i-simple-icons-github" v-bind="($ui.button.secondary as any)" />
+      <UButton
+        color="neutral"
+        variant="ghost"
+        to="https://go.nuxt.com/x"
+        target="_blank"
+        icon="i-simple-icons-x"
+      >
+        <span class="sr-only">Nuxt в X</span>
+      </UButton>
+      <UButton
+        color="neutral"
+        variant="ghost"
+        to="https://go.nuxt.com/bluesky"
+        target="_blank"
+        icon="i-simple-icons-bluesky"
+      >
+        <span class="sr-only">Nuxt в BlueSky</span>
+      </UButton>
+      <UButton
+        color="neutral"
+        variant="ghost"
+        to="https://go.nuxt.com/linkedin"
+        target="_blank"
+        icon="i-simple-icons-linkedin"
+      >
+        <span class="sr-only">Nuxt в LinkedIn</span>
+      </UButton>
+      <UButton
+        color="neutral"
+        variant="ghost"
+        to="https://go.nuxt.com/discord"
+        target="_blank"
+        icon="i-simple-icons-discord"
+      >
+        <span class="sr-only">Nuxt в Discord</span>
+      </UButton>
+      <UButton
+        color="neutral"
+        variant="ghost"
+        to="https://go.nuxt.com/github"
+        target="_blank"
+        icon="i-simple-icons-github"
+      >
+        <span class="sr-only">Nuxt в GitHub</span>
+      </UButton>
     </template>
   </UFooter>
 </template>

@@ -1,0 +1,10 @@
+navigation.title: Развертывание
+title: Развертывание приложения Nuxt
+description: Узнайте о различных способах развертывания проекта Nuxt на различных хостинг-провайдерах.
+navigation.icon: i-lucide-rocket
+links:
+  - label: 'Руководство по развертыванию'
+    icon: i-lucide-cloud
+    to: '/docs/getting-started/deployment'
+    color: neutral
+    size: md

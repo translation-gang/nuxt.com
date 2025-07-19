@@ -1,58 +1,64 @@
 <script setup lang="ts">
-defineProps({
-  label: {
-    type: String,
-    default: 'Подпишитесь на нашу рассылку'
-  },
-  description: {
-    type: String,
-    default: 'Следите за новыми выпусками и функциями, руководствами и обновлениями сообщества.'
-  }
-})
+import * as v from 'valibot'
+import type { FormSubmitEvent } from '#ui/types'
+
+const {
+  label = 'Подпишитесь на нашу рассылку',
+  description = 'Следите за новыми выпусками и функциями, руководствами и обновлениями сообщества.'
+} = defineProps<{
+  label?: string
+  description?: string
+}>()
 
 const toast = useToast()
 
-const email = ref('')
 const loading = ref(false)
 
-function onSubmit() {
-  if (loading.value) {
-    return
-  }
+const schema = v.object({
+  email: v.pipe(v.string(), v.email('Please enter a valid email'))
+})
+
+type Schema = v.InferOutput<typeof schema>
+
+const state = reactive({
+  email: ''
+})
+
+async function onSubmit(event: FormSubmitEvent<Schema>) {
   loading.value = true
 
-  $fetch('https://api.nuxt.com/newsletter/subscribe', {
+  await $fetch('https://api.nuxt.com/newsletter/subscribe', {
     method: 'POST',
-    body: { email: email.value }
+    body: {
+      email: event.data.email
+    }
   }).then(() => {
-    toast.add({ title: 'Подписка ожидается', description: 'Пожалуйста, проверьте свою электронную почту, чтобы подтвердить подписку.', color: 'green' })
-    email.value = ''
+    toast.add({ title: 'Подписка ожидается', description: 'Пожалуйста, проверьте свою электронную почту, чтобы подтвердить подписку.', color: 'success' })
+    state.email = ''
   }).catch((err) => {
     const error = JSON.parse(err.data?.message)
     const description = error[0].message || 'Что-то пошло не так. Пожалуйста, повторите попытку позже.'
-    toast.add({ title: 'Подписка не удалась', description, color: 'red' })
-  }).finally(() => {
-    loading.value = false
+    toast.add({ title: 'Подписка не удалась', description, color: 'error' })
   })
+  loading.value = false
 }
 </script>
 
 <template>
-  <form @submit.prevent="onSubmit">
-    <UFormGroup name="email" :label="label" size="lg" :description="description" :ui="{ label: { base: 'font-semibold' }, container: 'mt-3' }">
+  <UForm :schema="schema" :state="state" @submit="onSubmit">
+    <UFormField name="email" :label="label" size="lg" :description="description" :ui="{ label: 'font-semibold', container: 'mt-3' }">
       <UInput
-        v-model="email"
+        v-model="state.email"
         type="email"
         placeholder="you@domain.com"
-        :ui="{ icon: { trailing: { pointer: '', padding: { lg: 'px-1' } } } }"
         required
         autocomplete="off"
-        class="max-w-sm"
+        class="max-w-sm w-full"
       >
         <template #trailing>
-          <UButton type="submit" size="xs" color="black" :label="loading ? 'Подписываемся' : 'Подпишись'" :loading="loading" />
+          <UButton type="submit" size="xs" color="neutral" :label="loading ? 'Подписываемся' : 'Подпишись'" :loading="loading" />
         </template>
       </UInput>
-    </UFormGroup>
-  </form>
+    </UFormField>
+  </UForm>
 </template>

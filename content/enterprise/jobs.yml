@@ -1,0 +1,11 @@
+title: Исследуйте вакансии Nuxt
+description: Просмотрите доступные вакансии для разработки с использованием Vue и Nuxt во всем мире.
+navigation.title: Вакансии
+head.title: Вакансии Nuxt
+navigation.icon: i-lucide-briefcase-business
+links:
+  - label: 'Опубликовать вакансию'
+    to: 'https://vuejobs.com/jobs/create'
+    color: neutral
+    size: md
+    target: '_blank'
