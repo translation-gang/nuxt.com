@@ -2,7 +2,7 @@ import { defineContentConfig, defineCollection, z } from '@nuxt/content'
 
 const docsV3Source = {
   cwd: process.env.NUXT_PATH ?? undefined,
-  repository: !process.env.NUXT_PATH ? 'https://github.com/nuxt/nuxt/tree/3.x' : undefined,
+  repository: !process.env.NUXT_PATH ? 'https://github.com/translation-gang/nuxt/tree/3.x' : undefined,
   include: 'docs/**/*',
   exclude: ['docs/**/*.json'],
   prefix: '/docs/3.x'
@@ -10,7 +10,7 @@ const docsV3Source = {
 
 const docsV4Source = {
   cwd: process.env.NUXT_V4_PATH ?? undefined,
-  repository: !process.env.NUXT_V4_PATH ? 'https://github.com/nuxt/nuxt/tree/main' : undefined,
+  repository: !process.env.NUXT_V4_PATH ? 'https://github.com/translation-gang/nuxt/tree/main' : undefined,
   include: 'docs/**/*',
   exclude: ['docs/**/*.json'],
   prefix: '/docs/4.x'
@@ -18,14 +18,14 @@ const docsV4Source = {
 
 const examplesV3Source = {
   cwd: process.env.NUXT_EXAMPLES_PATH ?? undefined,
-  repository: !process.env.NUXT_EXAMPLES_PATH ? 'https://github.com/nuxt/examples' : undefined,
+  repository: !process.env.NUXT_EXAMPLES_PATH ? 'https://github.com/translation-gang/examples' : undefined,
   include: '.docs/**/*',
   prefix: '/docs/3.x/4.examples'
 }
 
 const examplesV4Source = {
   cwd: process.env.NUXT_EXAMPLES_PATH ?? undefined,
-  repository: !process.env.NUXT_EXAMPLES_PATH ? 'https://github.com/nuxt/examples' : undefined,
+  repository: !process.env.NUXT_EXAMPLES_PATH ? 'https://github.com/translation-gang/examples' : undefined,
   include: '.docs/**/*',
   prefix: '/docs/4.x/4.examples'
 }
