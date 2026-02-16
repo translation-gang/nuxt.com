@@ -108,4 +108,57 @@ isProject: true
 
 ---
 
+## Деплой (подробная инструкция)
+
+Ориентир по настройке — как в официальных репозиториях:
+
+- **[nuxt/nuxt](https://github.com/nuxt/nuxt)** — ядро Nuxt и исходники документации (`docs/`). Для сборки сайта nuxt.com не деплоится сам по себе; используется локально через `NUXT_V4_PATH` при разработке и при пререндере документации.
+- **[nuxt/nuxt.com](https://github.com/nuxt/nuxt.com)** — репозиторий сайта [nuxt.com](https://nuxt.com). Деплой — именно этот репо (или форк, например translation-gang/nuxt.com).
+
+### Как настроить деплой nuxt.com (или форка) на Vercel
+
+1. **Импорт проекта**
+  - [Vercel → Add New → Project](https://vercel.com/new).
+  - Импортируйте репозиторий (например `translation-gang/nuxt.com`).
+  - Root Directory — корень репо (оставить пустым).
+  - **Framework Preset** — не переопределять вручную; Vercel определит Nuxt по зависимостям.
+  - **Output Directory** — оставить пустым (не указывать `dist`). Vercel сам определяет Nuxt и находит `.output`.
+2. **Конфигурация в репозитории**
+  - **`nuxt.config.ts`** — **НЕ** задавать `nitro.preset` вручную. Nitro автоматически определяет Vercel по env `VERCEL=1` и использует правильный пресет (нулевая конфигурация). Вывод сборки — `.output`.
+  - **`vercel.json`** — только при необходимости переопределить команды (не указывать `framework`, `outputDirectory` или `nitro.preset`):
+    ```json
+    {
+      "$schema": "https://openapi.vercel.sh/vercel.json",
+      "buildCommand": "NODE_OPTIONS='--max-old-space-size=8192' pnpm run build",
+      "installCommand": "corepack enable && corepack prepare pnpm@10.29.3 --activate && pnpm install"
+    }
+    ```
+3. **Переменные окружения в Vercel**
+  - Проект → **Settings → Environment Variables**.
+  - **Обязательные для сборки и работы:**
+
+    | Переменная              | Описание                                                                      |
+    | ----------------------- | ----------------------------------------------------------------------------- |
+    | `NUXT_SESSION_PASSWORD` | Пароль для сессий (nuxt-auth-utils). Сгенерировать: `openssl rand -base64 32` |
+    | `NUXT_PUBLIC_SITE_URL`  | URL сайта, например `https://nuxt-ru.vercel.app`                              |
+
+  - **Рекомендуемые** (без них часть страниц/API может падать при пререндере или в рантайме):
+
+    | Переменная          | Описание                                              |
+    | ------------------- | ----------------------------------------------------- |
+    | `NUXT_GITHUB_TOKEN` | GitHub Personal Access Token (модули, team, спонсоры) |
+
+  - Остальные — по необходимости: см. `.env.example` (Turnstile, Resend, Open Collective, OAuth для админки отзывов и т.д.).
+4. **NuxtHub (БД)**
+  - В проекте используется `@nuxthub/core`, БД по умолчанию — sqlite; на Vercel при деплое используется драйвер Vercel.
+  - При изменении схемы в `server/db/schema.ts`: локально выполнить `pnpm db:generate` и `pnpm db:migrate`, закоммитить миграции.
+  - Опционально: `npx nuxthub@latest login` и `npx nuxthub@latest link` для дашборда и бэкапов.
+5. **Проверка**
+  - После деплоя убедиться, что главная страница, документация и API (например `/api/sponsors`) открываются без 500.
+  - При ошибках «Missing output directory» / «dist» — убедиться, что в `vercel.json` нет `outputDirectory`/`framework`, в `nuxt.config.ts` нет `nitro.preset` (авто-определение), и в настройках проекта Vercel поле Output Directory пустое.
+
+Подробнее по шагам и переменным — раздел «Деплой на Vercel» в [README.md](./README.md) репозитория.
+
+---
+
 Полный текст плана с таблицами и чек-листами — в оригинале: `~/.cursor/plans/nuxt_russian_translation_ab28c233.plan.md`.

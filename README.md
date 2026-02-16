@@ -72,6 +72,8 @@ pnpm build
 
 ## Деплой на Vercel (фазы 1.5–1.6)
 
+Полная пошаговая инструкция (как в [nuxt/nuxt](https://github.com/nuxt/nuxt) и [nuxt/nuxt.com](https://github.com/nuxt/nuxt.com)): раздел **«Деплой (подробная инструкция)»** в [.cursor/plans/nuxt_russian_translation.plan.md](./.cursor/plans/nuxt_russian_translation.plan.md).
+
 ### Переменные окружения в Vercel
 
 В настройках проекта Vercel → Settings → Environment Variables задайте:

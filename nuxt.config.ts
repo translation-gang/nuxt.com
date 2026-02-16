@@ -329,7 +329,6 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2026-01-14',
   nitro: {
-    preset: 'vercel',
     prerender: {
       crawlLinks: true,
       ignore: [
