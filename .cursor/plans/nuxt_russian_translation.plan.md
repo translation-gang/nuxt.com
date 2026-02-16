@@ -40,7 +40,7 @@ todos:
     status: completed
   - id: phase3-getting-started
     content: "Фаза 3.1: Перевод/обновление docs/1.getting-started/ (18 файлов)"
-    status: pending
+    status: completed
   - id: phase3-directory-structure
     content: "Фаза 3.2: Перевод docs/2.directory-structure/ (28 файлов)"
     status: completed
