@@ -10,15 +10,15 @@ const [{ data: page }, { data: teams }] = await Promise.all([
   useAsyncData(kebabCase(route.path), () => queryCollection('team').first()),
   useFetch('/api/v1/teams', {
     key: 'teams',
-    default: () => ([{ name: 'Core Team', team: [], link: 'https://github.com/orgs/nuxt/teams/core' }, { name: 'Ecosystem Team', team: [], link: 'https://github.com/orgs/nuxt/teams/ecosystem' }]),
+    default: () => ([{ name: 'Основная команда', team: [], link: 'https://github.com/orgs/nuxt/teams/core' }, { name: 'Команда экосистемы', team: [], link: 'https://github.com/orgs/nuxt/teams/ecosystem' }]),
     transform: data => [
       {
-        name: 'Core Team',
+        name: 'Основная команда',
         team: data.core,
         link: 'https://github.com/orgs/nuxt/teams/core'
       },
       {
-        name: 'Ecosystem Team',
+        name: 'Команда экосистемы',
         team: data.ecosystem,
         link: 'https://github.com/orgs/nuxt/teams/ecosystem'
       }
@@ -94,7 +94,7 @@ const icons = {
                   variant="link"
                   :to="link.url"
                   :icon="icons[key] || icons.website"
-                  :alt="`Link to ${user.name}'s ${key} profile`"
+                  :alt="`Ссылка на профиль ${user.name} в ${key}`"
                   target="_blank"
                   size="sm"
                 />
@@ -102,7 +102,7 @@ const icons = {
                   :to="`https://github.com/${user.login}`"
                   color="neutral"
                   variant="link"
-                  :alt="`Link to ${user.name}'s GitHub profile`"
+                  :alt="`Профиль ${user.name} на GitHub`"
                   :icon="icons.github"
                   target="_blank"
                 />
@@ -111,7 +111,7 @@ const icons = {
                   :to="user.websiteUrl"
                   color="neutral"
                   variant="link"
-                  :alt="`Link to ${user.name}'s personal website`"
+                  :alt="`Сайт ${user.name}`"
                   :icon="icons.website"
                   target="_blank"
                 />
@@ -123,7 +123,7 @@ const icons = {
                   color="neutral"
                   variant="subtle"
                   icon="i-lucide-heart"
-                  label="Sponsor"
+                  label="Спонсор"
                   :ui="{ leadingIcon: 'text-pink-500' }"
                 />
               </div>

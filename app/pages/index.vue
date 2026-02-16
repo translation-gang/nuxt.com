@@ -31,14 +31,14 @@ function openVideoModal() {
 }
 
 const site = useSiteConfig()
-const title = 'Nuxt: The Full-Stack Vue Framework'
+const title = 'Nuxt: Full-Stack Vue-фреймворк'
 useSeoMeta({
   title,
   titleTemplate: '%s'
 })
 
 if (import.meta.server) {
-  const description = 'Build fast, production-ready web apps with Vue. File-based routing, auto-imports, and server-side rendering — all configured out of the box.'
+  const description = 'Создавайте быстрые production-ready веб-приложения на Vue. Файловая маршрутизация, автоимпорты и серверный рендеринг — всё настроено из коробки.'
   useSeoMeta({
     ogTitle: title,
     description: description,

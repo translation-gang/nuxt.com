@@ -54,7 +54,7 @@ const contributors = computed(() => {
   }))
   if (allContributors.length > 10) {
     return [...allContributors.slice(0, 10), {
-      label: 'View all contributors',
+      label: 'Все контрибьюторы',
       to: `https://github.com/${module.value.repo}/graphs/contributors`,
       external: true,
       target: '_blank',
@@ -95,7 +95,7 @@ defineOgImageComponent('Module', {
         title="Этот модуль пока несовместим с Nuxt 3"
       >
         <template #description>
-          Head over to <NuxtLink to="https://v2.nuxt.com" target="_blank" class="underline">
+          См. <NuxtLink to="https://v2.nuxt.com" target="_blank" class="underline">
             v2.nuxt.com
           </NuxtLink>
         </template>
@@ -118,7 +118,7 @@ defineOgImageComponent('Module', {
           <div>
             {{ module.npm }}
 
-            <UTooltip v-if="module.type === 'official'" text="Official module" class="tracking-normal">
+            <UTooltip v-if="module.type === 'official'" text="Официальный модуль" class="tracking-normal">
               <UIcon name="i-lucide-medal" class="size-6 text-primary" />
             </UTooltip>
           </div>
@@ -173,20 +173,20 @@ defineOgImageComponent('Module', {
         <UContentToc :links="module.readme?.toc?.links">
           <template #bottom>
             <div class="hidden lg:block space-y-6">
-              <UPageLinks title="Links" :links="links" />
+              <UPageLinks title="Ссылки" :links="links" />
 
               <USeparator type="dashed" />
 
               <UPageLinks
-                title="Details"
+                title="Подробнее"
                 :links="[
                   {
-                    label: `Updated ${publishedAgo}`,
+                    label: `Обновлено ${publishedAgo}`,
                     to: `https://github.com/${module.repo}`,
                     icon: 'i-lucide-radio'
                   },
                   {
-                    label: `Created ${createdAgo}`,
+                    label: `Создано ${createdAgo}`,
                     to: `https://github.com/${module.repo}`,
                     icon: 'i-lucide-package'
                   }
@@ -195,7 +195,7 @@ defineOgImageComponent('Module', {
 
               <UPageLinks :links="contributors">
                 <template #title>
-                  Contributors <UBadge :label="module.contributors.length.toString()" color="neutral" variant="subtle" size="sm" class="rounded-full" />
+                  Контрибьюторы <UBadge :label="module.contributors.length.toString()" color="neutral" variant="subtle" size="sm" class="rounded-full" />
                 </template>
 
                 <template #link-leading="{ link }">

@@ -8,7 +8,7 @@ const [{ data: page }, { data: courses }] = await Promise.all([
 ])
 
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Страница не найдена', fatal: true })
 }
 
 const title = page.value.title
@@ -69,7 +69,7 @@ defineOgImageComponent('Docs', {
             />
             <UBadge
               v-else
-              label="Free"
+              label="Бесплатно"
               color="info"
               variant="subtle"
               class="rounded-full"
@@ -81,7 +81,7 @@ defineOgImageComponent('Docs', {
               trailing-icon="i-lucide-arrow-right"
               size="sm"
               color="success"
-              label="Discover course"
+              label="Перейти к курсу"
             />
             <UButton
               v-else
@@ -91,7 +91,7 @@ defineOgImageComponent('Docs', {
               variant="link"
               size="sm"
               color="neutral"
-              label="Discover course"
+              label="Перейти к курсу"
             />
           </li>
         </ul>

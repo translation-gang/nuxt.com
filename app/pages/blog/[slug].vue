@@ -134,7 +134,7 @@ const links = [
             </ULink>
             <div class="flex justify-end items-center gap-1.5">
               <UButton icon="i-lucide-link" variant="ghost" color="neutral" @click="copyLink">
-                <span class="sr-only">Copy URL</span>
+                <span class="sr-only">Копировать URL</span>
                 Скопировать URL
               </UButton>
               <UButton
@@ -156,7 +156,7 @@ const links = [
         </UPageBody>
 
         <template #right>
-          <UContentToc v-if="article.body && article.body.toc" :links="article.body.toc.links" title="Table of Contents" highlight>
+          <UContentToc v-if="article.body && article.body.toc" :links="article.body.toc.links" title="Содержание" highlight>
             <template #bottom>
               <div class="hidden lg:block space-y-6">
                 <UPageLinks title="Ссылки" :links="links" />

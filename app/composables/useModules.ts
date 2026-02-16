@@ -78,8 +78,8 @@ export const useModules = () => {
   ]
 
   const orders: Filter[] = [
-    { key: 'desc', label: 'Desc', icon: 'i-lucide-arrow-down-wide-narrow' },
-    { key: 'asc', label: 'Asc', icon: 'i-lucide-arrow-up-wide-narrow' }
+    { key: 'desc', label: 'По убыванию', icon: 'i-lucide-arrow-down-wide-narrow' },
+    { key: 'asc', label: 'По возрастанию', icon: 'i-lucide-arrow-up-wide-narrow' }
   ]
 
   const categories = computed<Filter[]>(() => {

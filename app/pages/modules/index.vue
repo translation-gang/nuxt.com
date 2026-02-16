@@ -22,7 +22,7 @@ const { data: page } = await useAsyncData('modules-landing', () => queryCollecti
 if (!page.value) {
   cacheControl.value = 'no-store, no-cache, must-revalidate'
   cdnCacheControl.value = 'no-store'
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Страница не найдена', fatal: true })
 }
 
 const title = page.value.title
@@ -104,8 +104,8 @@ const copyAllInstallCommands = () => {
   const command = `npx nuxt@latest module add ${moduleNames}`
   track('Modules Bulk Install Copied', { count: modulesToAdd.value.length, modules: moduleNames })
   copy(command, {
-    title: 'Install command copied to clipboard:',
-    description: `Ready to install ${modulesToAdd.value.length} module${modulesToAdd.value.length > 1 ? 's' : ''} at once`
+    title: 'Команда установки скопирована в буфер:',
+    description: `Готово к установке ${modulesToAdd.value.length} модул${modulesToAdd.value.length === 1 ? 'я' : 'ей'}`
   })
 }
 
@@ -182,7 +182,7 @@ initializeModules()
                 variant="outline"
                 @click="replaceRoute('orderBy', selectedOrder.key === 'desc' ? 'asc' : 'desc')"
               >
-                <span class="sr-only">Sort by {{ selectedOrder.label }}</span>
+                <span class="sr-only">Сортировка: {{ selectedOrder.label }}</span>
               </UButton>
             </div>
           </div>
@@ -195,7 +195,7 @@ initializeModules()
               color="neutral"
               variant="outline"
               class="flex-1"
-              placeholder="Select category"
+              placeholder="Выберите категорию"
               @update:model-value="replaceRoute('category', $event)"
             />
             <UButton
@@ -204,7 +204,7 @@ initializeModules()
               size="lg"
               color="neutral"
               variant="outline"
-              aria-label="Clear category filter"
+              aria-label="Сбросить фильтр категории"
               @click="replaceRoute('category', '')"
             />
             <USelectMenu
@@ -246,10 +246,10 @@ initializeModules()
         <div class="flex justify-between mb-4 text-muted text-xs">
           <div class="flex items-center gap-2">
             <UIcon name="i-lucide-info" class="size-4" />
-            <span>Shift+click to select modules for bulk installation</span>
+            <span>Shift+клик — выбрать модули для массовой установки</span>
           </div>
           <ULink to="/docs/guide/modules/getting-started" class="hidden md:flex items-center gap-1">
-            Create your own module
+            Создать свой модуль
             <UIcon name="i-lucide-arrow-right" class="size-4" />
           </ULink>
         </div>
@@ -281,7 +281,7 @@ initializeModules()
 
         <EmptyCard v-else :label="`Модуль пока не найден ${q}. Станьте первым, кто его создаст!`">
           <UButton
-            label="Contribute on GitHub"
+            label="Внести вклад на GitHub"
             color="neutral"
             to="https://github.com/nuxt/modules"
             target="_blank"
@@ -305,7 +305,7 @@ initializeModules()
           <div layout class="flex justify-center mb-6">
             <div class="bg-default/80 backdrop-blur-lg rounded-full p-1 border border-default dark:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.9)] shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] flex items-center gap-4">
               <motion.div class="flex items-center gap-1">
-                <UTooltip text="Copy install command">
+                <UTooltip text="Скопировать команду установки">
                   <Motion
                     :press="{
                       scale: 0.99
@@ -319,12 +319,12 @@ initializeModules()
                       class="font-medium rounded-full"
                       @click="copyAllInstallCommands"
                     >
-                      Install {{ modulesToAdd.length }} module{{ modulesToAdd.length > 1 ? 's' : '' }}
+                      Установить {{ modulesToAdd.length }} модул{{ modulesToAdd.length === 1 ? 'ь' : 'ей' }}
                     </UButton>
                   </Motion>
                 </UTooltip>
 
-                <UTooltip text="Clear selection">
+                <UTooltip text="Очистить выбор">
                   <Motion
                     :press="{
                       scale: 0.99

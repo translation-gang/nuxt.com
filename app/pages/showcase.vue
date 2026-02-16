@@ -8,7 +8,7 @@ const [{ data: page }, { data: home }] = await Promise.all([
   useAsyncData('home', () => queryCollection('index').first())
 ])
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Страница не найдена', fatal: true })
 }
 
 const stats = useStats()
@@ -23,7 +23,7 @@ useSeoMeta({
   ogTitle: title
 })
 defineOgImageComponent('Docs', {
-  headline: 'Resources',
+  headline: 'Ресурсы',
   title,
   description
 })
@@ -54,7 +54,7 @@ onMounted(() => {
                   #1
                 </h3>
                 <p class="text-sm text-muted">
-                  Vue Framework
+                  Vue-фреймворк
                 </p>
               </div>
               <div class="flex flex-col items-center">

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { data: page } = await useAsyncData('blog-landing', () => queryCollection('landing').path('/blog').first())
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Страница не найдена', fatal: true })
 }
 definePageMeta({
   heroBackground: 'opacity-70 -z-10'
@@ -26,7 +26,7 @@ useSeoMeta({
   ogTitle: page.value.title
 })
 defineOgImageComponent('Docs', {
-  headline: 'Blog',
+  headline: 'Блог',
   title: page.value.title,
   description: page.value.description
 })
@@ -77,7 +77,7 @@ await fetchList()
               height: (index === 0 ? 378 : 246),
               alt: `${article.title} image`
             }"
-            :date="formatDateByLocale('en', article.date)"
+            :date="formatDateByLocale('ru', article.date)"
             :authors="article.authors.map(author => ({ ...author, avatar: { ...author.avatar, alt: `${author.name} avatar` } }))"
             :badge="{ label: article.category, color: 'primary', variant: 'subtle' }"
             :variant="index === 0 ? 'outline' : 'subtle'"

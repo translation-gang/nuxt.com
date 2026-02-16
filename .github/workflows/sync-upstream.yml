@@ -1,4 +1,4 @@
-name: Check upstream changes
+name: Sync upstream (nuxt.com)
 
 on:
   schedule:
@@ -8,6 +8,9 @@ on:
 jobs:
   check-upstream:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
     steps:
       - uses: actions/checkout@v4
         with:
@@ -19,6 +22,36 @@ jobs:
           git fetch upstream main
 
       - name: List changed files
+        id: diff
         run: |
           echo "## Изменённые файлы в upstream" >> $GITHUB_STEP_SUMMARY
-          git diff HEAD..upstream/main --stat >> $GITHUB_STEP_SUMMARY || echo "Нет изменений" >> $GITHUB_STEP_SUMMARY
+          CHANGED=$(git diff HEAD..upstream/main --name-only)
+          if [ -n "$CHANGED" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "$CHANGED" >> $GITHUB_STEP_SUMMARY
+            {
+              echo "## Изменения в upstream (nuxt/nuxt.com)"
+              echo ""
+              echo "Обнаружены отличия от ветки \`main\` upstream. Рекомендуется провести синхронизацию и при необходимости обновить переводы."
+              echo ""
+              echo "### Изменённые файлы"
+              echo '```'
+              echo "$CHANGED"
+              echo '```'
+              echo ""
+              echo "---"
+              echo "*Workflow: [Sync upstream](https://github.com/${{ github.repository }}/actions/workflows/sync-upstream.yml)*"
+            } > upstream-changes.md
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "Нет изменений" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Create issue if upstream changed
+        if: steps.diff.outputs.has_changes == 'true'
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: "[sync] В upstream nuxt.com есть изменения"
+          content-filepath: upstream-changes.md
+          labels: translation,sync
+          token: ${{ secrets.GITHUB_TOKEN }}

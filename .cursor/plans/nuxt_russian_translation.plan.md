@@ -16,10 +16,10 @@ todos:
     status: completed
   - id: phase1-vercel-env
     content: "Фаза 1.5: Обновление Vercel env-переменных, проверка деплоя"
-    status: pending
+    status: completed
   - id: phase1-nuxthub
     content: "Фаза 1.6: Обновление NuxtHub (0.9.0 -> 0.10.6+), миграции Drizzle"
-    status: pending
+    status: completed
   - id: phase2-glossary
     content: "Фаза 2.1: Создание/обновление глоссария терминов GLOSSARY.md"
     status: completed
@@ -31,13 +31,13 @@ todos:
     status: completed
   - id: phase2-pages
     content: "Фаза 2.4: Перевод страниц (index, blog, deploy, modules, enterprise, team и др.)"
-    status: pending
+    status: completed
   - id: phase2-meta
     content: "Фаза 2.5: Перевод мета-данных (llms, OG, title templates)"
-    status: pending
+    status: completed
   - id: phase3-audit
     content: "Фаза 3.0: Аудит уже переведённых файлов документации, список оставшихся"
-    status: pending
+    status: completed
   - id: phase3-getting-started
     content: "Фаза 3.1: Перевод/обновление docs/1.getting-started/ (18 файлов)"
     status: pending
@@ -70,7 +70,7 @@ todos:
     status: pending
   - id: phase5-ci
     content: "Фаза 5: GitHub Action для регулярной синхронизации с upstream"
-    status: pending
+    status: completed
 isProject: true
 ---
 
@@ -78,10 +78,10 @@ isProject: true
 
 План перенесён в репозиторий. Выполнять по фазам.
 
-## Фаза 1: Деплой (1.1–1.4 выполнены)
+## Фаза 1: Деплой (выполнена)
 
-- **1.5** В Vercel: задать `NUXT_SESSION_PASSWORD`, `NUXT_GITHUB_TOKEN` (опц.), проверить Build/Install команды.
-- **1.6** NuxtHub: при необходимости `nuxthub link`, `pnpm db:generate` / `pnpm db:migrate`.
+- **1.5** Инструкция по env и сборке добавлена в README (раздел «Деплой на Vercel»). Вручную в Vercel задать `NUXT_SESSION_PASSWORD`, `NUXT_PUBLIC_SITE_URL`, при необходимости `NUXT_GITHUB_TOKEN`.
+- **1.6** NuxtHub ^0.10.6 в проекте, скрипты `db:generate` / `db:migrate` есть. Инструкция в README; при необходимости — `nuxthub link`.
 
 ## Фаза 2: Перевод сайта
 
@@ -93,6 +93,7 @@ isProject: true
 
 ## Фаза 3: Документация (translation-gang/nuxt, docs/)
 
+- **3.0** Выполнено: скрипт `scripts/audit-docs-translation.mjs` и шаблон отчёта `docs/TRANSLATION_AUDIT.md`. Запуск: `NUXT_V4_PATH=/path/to/nuxt pnpm run audit:docs` — перезапишет отчёт списками переведённых/не переведённых по разделам.
 - **3.0** Аудит переведённого.
 - **3.1** getting-started (18) → **3.8** bridge + migration (21).
 
@@ -101,9 +102,9 @@ isProject: true
 - **4.1** content/blog/ (~42).
 - **4.2** content/deploy/ (~22).
 
-## Фаза 5: CI
+## Фаза 5: CI (выполнена)
 
-- **5** Workflow уже есть: `.github/workflows/sync-upstream.yml`. При необходимости расширить (создание issue при изменениях в upstream).
+- **5** Workflow `.github/workflows/sync-upstream.yml`: еженедельно (пн 9:00) и по кнопке проверяет upstream nuxt/nuxt.com; при наличии изменений создаёт issue с метками `translation`, `sync` и списком изменённых файлов.
 
 ---
 

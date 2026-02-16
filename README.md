@@ -70,6 +70,46 @@ pnpm dev:full
 pnpm build
 ```
 
+## Деплой на Vercel (фазы 1.5–1.6)
+
+### Переменные окружения в Vercel
+
+В настройках проекта Vercel → Settings → Environment Variables задайте:
+
+**Обязательные для сборки и работы:**
+
+| Переменная | Описание |
+|------------|----------|
+| `NUXT_SESSION_PASSWORD` | Пароль для шифрования сессий (nuxt-auth-utils). Сгенерировать: `openssl rand -base64 32` |
+| `NUXT_PUBLIC_SITE_URL` | URL сайта, например `https://nuxt-ru.vercel.app` |
+
+**Рекомендуемые (иначе часть страниц/API будет падать при пререндере или в рантайме):**
+
+| Переменная | Описание |
+|------------|----------|
+| `NUXT_GITHUB_TOKEN` | GitHub Personal Access Token с доступом к репозиторию (для модулей, team, stats) |
+
+**Опционально:** см. `.env.example` (Turnstile, Resend, Open Collective, OAuth для админки отзывов и т.д.).
+
+### Сборка в Vercel
+
+Используются настройки из `vercel.json`:
+
+- **Build Command:** `NODE_OPTIONS='--max-old-space-size=8192' pnpm run build`
+- **Install Command:** `corepack enable && corepack prepare pnpm@10.29.3 --activate && pnpm install`
+
+При необходимости их можно переопределить в Vercel → Settings → General.
+
+### NuxtHub (1.6)
+
+- В проекте уже используется `@nuxthub/core` ^0.10.6, БД — sqlite (для продакшена на Vercel используется драйвер Vercel).
+- Если меняете схему БД в `server/db/schema.ts`, локально выполните:
+  ```bash
+  pnpm db:generate
+  pnpm db:migrate
+  ```
+- Привязка проекта к NuxtHub (если нужен дашборд/бэкап): `npx nuxthub@latest login` и `npx nuxthub@latest link`.
+
 ### Evals для MCP-сервера
 
 Для запуска evals убедитесь, что dev-сервер запущен, создайте API-ключ на https://vercel.com/ai-gateway и добавьте `AI_GATEWAY_API_KEY` в `.env`. Затем: `pnpm eval` или `pnpm eval:ui`.

@@ -9,12 +9,12 @@ const route = useRoute()
 
 const { data: agency } = await useAsyncData(kebabCase(route.path), () => queryCollection('agencies').path(route.path).first())
 if (!agency.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Agency not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Агентство не найдено', fatal: true })
 }
 
 const links = computed(() => agency.value
   ? [{
-      label: `Visit ${agency.value.title}`,
+      label: `Перейти на сайт ${agency.value.title}`,
       color: 'neutral' as const,
       size: 'md' as const,
       variant: 'solid' as const,

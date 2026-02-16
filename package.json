@@ -20,7 +20,8 @@
     "eval": "evalite",
     "eval:ui": "evalite serve",
     "db:generate": "nuxt hub database generate",
-    "db:migrate": "nuxt hub database migrate"
+    "db:migrate": "nuxt hub database migrate",
+    "audit:docs": "node scripts/audit-docs-translation.mjs"
   },
   "dependencies": {
     "@iconify-json/heroicons": "^1.2.3",

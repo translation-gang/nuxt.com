@@ -8,7 +8,7 @@ const [{ data: page }, { data: templates }] = await Promise.all([
 ])
 
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Страница не найдена', fatal: true })
 }
 
 const title = page.value.title

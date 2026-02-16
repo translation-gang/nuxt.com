@@ -7,7 +7,7 @@ const { fetchList, providers } = useHostingProviders()
 
 const { data: page } = await useAsyncData('deploy-landing', () => queryCollection('landing').path('/deploy').first())
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Страница не найдена', fatal: true })
 }
 
 const title = page.value.title
@@ -22,7 +22,7 @@ useSeoMeta({
 })
 
 defineOgImageComponent('Docs', {
-  title: 'Deploy Nuxt',
+  title: 'Развёртывание Nuxt',
   description
 })
 
@@ -41,7 +41,7 @@ await fetchList()
             :items="providers.map(provider => ({
               label: provider.title,
               to: provider.path,
-              badge: provider.sponsor ? 'Sponsor' : undefined
+              badge: provider.sponsor ? 'Спонсор' : undefined
             })).sort((a, b) => a.label.localeCompare(b.label))"
           />
         </UPageAside>
@@ -69,7 +69,7 @@ await fetchList()
               class="shine absolute top-4 right-4 sm:top-6 sm:right-6"
               variant="subtle"
               color="important"
-              label="Sponsor"
+              label="Спонсор"
             />
             <template #title>
               {{ deployment.title }}

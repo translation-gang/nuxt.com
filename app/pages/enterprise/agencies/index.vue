@@ -9,7 +9,7 @@ const { filteredAgencies, fetchList, services, regions } = useEnterpriseAgencies
 
 const { data: page } = await useAsyncData('agencies-landing', () => queryCollection('landing').path('/enterprise/agencies').first())
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Страница не найдена', fatal: true })
 }
 
 const title = page.value.title
@@ -30,8 +30,8 @@ defineOgImageComponent('Docs', {
 
 const navigation = computed(() => {
   return [
-    { title: 'Technical Expertise', children: services.value, path: '/enterprise/agencies' },
-    { title: 'Locations', children: regions.value, path: '/enterprise/agencies' }
+    { title: 'Техническая экспертиза', children: services.value, path: '/enterprise/agencies' },
+    { title: 'Регионы', children: regions.value, path: '/enterprise/agencies' }
   ] as unknown as ContentNavigationLink[]
 })
 
@@ -81,7 +81,7 @@ await fetchList()
 
         <EmptyCard v-else label="На данный момент ни одно агентство не соответствует вашим критериям.">
           <UButton
-            label="Clear filters"
+            label="Сбросить фильтры"
             color="neutral"
             variant="subtle"
             trailing-icon="i-lucide-circle-x"

@@ -6,21 +6,21 @@ const { fetchList, filteredJobs } = useEnterpriseJobs()
 
 const { data: page } = await useAsyncData('jobs-landing', () => queryCollection('landing').path('/enterprise/jobs').first())
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Страница не найдена', fatal: true })
 }
 
 const title = page.value.head?.title || page.value.title
 const description = page.value.head?.description || page.value.description
 useSeoMeta({
-  titleTemplate: '%s · Enterprise',
+  titleTemplate: '%s · Энтерпрайс',
   title,
   description,
   ogDescription: description,
-  ogTitle: `${title} · Enterprise`
+  ogTitle: `${title} · Энтерпрайс`
 })
 
 defineOgImageComponent('Docs', {
-  headline: 'Enterprise',
+  headline: 'Энтерпрайс',
   title,
   description
 })
