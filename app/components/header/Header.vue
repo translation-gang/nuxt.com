@@ -9,7 +9,7 @@ const { track } = useAnalytics()
 
 const logoContextMenuItems = [
   [{
-    label: 'Copy logo as SVG',
+    label: 'Скопировать логотип как SVG',
     icon: 'i-simple-icons-nuxtdotjs',
     onSelect() {
       track('Logo Action', { action: 'Copy SVG' })
@@ -24,7 +24,7 @@ const logoContextMenuItems = [
     }
   }],
   [{
-    label: 'Browse design kit',
+    label: 'Набор дизайна',
     icon: 'i-lucide-shapes',
     to: '/design-kit',
     onSelect: () => track('Logo Action', { action: 'Browse Design Kit' })
@@ -65,13 +65,13 @@ function trackGitHubClick() {
     />
 
     <template #right>
-      <UTooltip text="Search" :kbds="['meta', 'K']">
+      <UTooltip text="Поиск" :kbds="['meta', 'K']">
         <UContentSearchButton @click="trackSearchOpen" />
       </UTooltip>
 
       <UColorModeButton />
 
-      <UTooltip text="GitHub Stars">
+      <UTooltip text="Звёзды на GitHub">
         <UButton
           icon="i-simple-icons-github"
           to="https://go.nuxt.com/github"

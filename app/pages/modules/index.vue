@@ -128,11 +128,11 @@ initializeModules()
       }"
     >
       <template #title>
-        Build faster with <span class="text-primary">{{ modules.length }}+</span> Nuxt Modules
+        Разработка быстрее с <span class="text-primary">{{ modules.length }}+</span> модулями Nuxt
       </template>
 
       <template #description>
-        Discover our list of modules to supercharge your Nuxt project. Created and maintained by more than {{ stats.contributors.toString() }} people from the Nuxt team and community.
+        Откройте для себя модули для ускорения вашего проекта. Созданы и поддерживаются более чем {{ stats.contributors.toString() }} участниками команды Nuxt и сообщества.
       </template>
 
       <template #links>

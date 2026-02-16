@@ -16,7 +16,7 @@ function _useHeaderLinks() {
       active: route.path.startsWith(to) || route.path.startsWith(`/deploy`),
       children: [{
         label: 'Начало',
-        description: 'Learn how to get started with Nuxt to build your first app.',
+        description: 'Узнайте, как начать работу с Nuxt и создать первое приложение.',
         icon: 'i-lucide-rocket',
         to: `${to}/getting-started/installation`,
         active: route.path.startsWith(`${to}/getting-started`)
@@ -34,7 +34,7 @@ function _useHeaderLinks() {
         active: route.path.startsWith(`${to}/guide`) && !route.path.startsWith(`${to}/guide/directory-structure`)
       }, {
         label: 'API',
-        description: 'Explore the Nuxt components, composables, utilities and more.',
+        description: 'Компоненты, композаблы, утилиты и прочее API Nuxt.',
         icon: 'i-lucide-code-xml',
         to: `${to}/api`,
         active: route.path.startsWith(`${to}/api`)

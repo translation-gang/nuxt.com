@@ -1,0 +1,24 @@
+name: Check upstream changes
+
+on:
+  schedule:
+    - cron: '0 9 * * 1'
+  workflow_dispatch:
+
+jobs:
+  check-upstream:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Fetch upstream
+        run: |
+          git remote add upstream https://github.com/nuxt/nuxt.com.git || true
+          git fetch upstream main
+
+      - name: List changed files
+        run: |
+          echo "## Изменённые файлы в upstream" >> $GITHUB_STEP_SUMMARY
+          git diff HEAD..upstream/main --stat >> $GITHUB_STEP_SUMMARY || echo "Нет изменений" >> $GITHUB_STEP_SUMMARY

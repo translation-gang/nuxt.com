@@ -37,7 +37,7 @@ const {
           class="flex items-center gap-3 py-2"
           role="status"
           aria-live="polite"
-          aria-label="Feedback submitted successfully"
+          aria-label="Отзыв успешно отправлен"
         >
           <motion.div
             :initial="{ scale: 0 }"
@@ -54,10 +54,10 @@ const {
             :transition="{ delay: 0.2, duration: 0.3 }"
           >
             <div class="text-sm font-medium text-highlighted">
-              Thank you for your feedback!
+              Спасибо за ваш отзыв!
             </div>
             <div class="text-xs text-muted mt-1">
-              Your input helps us improve the documentation.
+              Ваш отзыв помогает улучшать документацию.
             </div>
           </motion.div>
         </motion.div>
@@ -69,7 +69,7 @@ const {
           <fieldset>
             <motion.div layout class="flex items-center gap-3">
               <motion.legend id="feedback-legend" layout class="text-sm font-medium text-highlighted whitespace-nowrap">
-                Was this helpful?
+                Был ли материал полезен?
               </motion.legend>
 
               <motion.div
@@ -108,7 +108,7 @@ const {
               :transition="{ duration: 0.3, ease: 'easeInOut' }"
               class="overflow-hidden"
               role="region"
-              aria-label="Additional feedback form"
+              aria-label="Форма дополнительного отзыва"
             >
               <motion.div
                 :initial="{ opacity: 0 }"
@@ -119,20 +119,20 @@ const {
                 <UForm :state="formState" :schema="feedbackFormSchema" @submit="submitFeedback">
                   <UFormField name="feedback">
                     <label for="feedback-textarea" class="sr-only">
-                      Additional feedback (optional)
+                      Дополнительный отзыв (необязательно)
                     </label>
                     <UTextarea
                       id="feedback-textarea"
                       ref="textareaRef"
                       v-model="formState.feedback"
                       class="w-full rounded-xl text-sm leading-relaxed resize-vertical"
-                      placeholder="Share your thoughts... (optional)"
+                      placeholder="Поделитесь мыслями... (необязательно)"
                       :rows="4"
                       autoresize
                       aria-describedby="feedback-help"
                     />
                     <div id="feedback-help" class="sr-only">
-                      Provide additional details about your experience with this page
+                      Добавьте подробности о вашем опыте работы с этой страницей
                     </div>
                   </UFormField>
                   <div class="flex items-center mt-2">
@@ -142,7 +142,7 @@ const {
                         :disabled="isSubmitting"
                         type="submit"
                         class="focus:outline-0"
-                        :aria-label="isSubmitting ? 'Sending feedback...' : 'Send feedback'"
+                        :aria-label="isSubmitting ? 'Отправка отзыва...' : 'Отправить отзыв'"
                       >
                         <motion.span
                           class="flex items-center"
@@ -173,7 +173,7 @@ const {
                             }"
                             :transition="{ duration: 0.2, ease: 'easeInOut' }"
                           >
-                            {{ isSubmitting ? 'Sending...' : 'Send' }}
+                            {{ isSubmitting ? 'Отправка...' : 'Отправить' }}
                           </motion.span>
                         </motion.span>
                       </UButton>
@@ -190,9 +190,9 @@ const {
         aria-live="polite"
         class="sr-only"
       >
-        <span v-if="isSubmitting">Sending your feedback...</span>
+        <span v-if="isSubmitting">Отправка отзыва...</span>
         <span v-else-if="isExpanded && formState.rating">
-          Feedback form expanded. You can now add additional comments.
+          Форма отзыва открыта. Можно добавить комментарий.
         </span>
       </div>
     </motion.div>

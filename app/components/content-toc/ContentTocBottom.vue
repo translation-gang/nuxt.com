@@ -17,7 +17,7 @@ defineProps<Props>()
 
 <template>
   <USeparator v-if="hasLinks" type="dashed" />
-  <UPageLinks title="Community" :links="communityLinks" />
+  <UPageLinks title="Сообщество" :links="communityLinks" />
   <USeparator type="dashed" />
   <SocialLinks />
   <Ads />

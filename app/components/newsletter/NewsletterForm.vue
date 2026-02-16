@@ -16,7 +16,7 @@ const { track } = useAnalytics()
 const loading = ref(false)
 
 const schema = v.object({
-  email: v.pipe(v.string(), v.email('Please enter a valid email'))
+  email: v.pipe(v.string(), v.email('Введите корректный email'))
 })
 
 type Schema = v.InferOutput<typeof schema>

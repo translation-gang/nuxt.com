@@ -17,10 +17,10 @@ export interface FeedbackOption {
 }
 
 export const FEEDBACK_OPTIONS: FeedbackOption[] = [
-  { emoji: '🤩', label: 'Very helpful', value: 'very-helpful', score: 4 },
-  { emoji: '🙂', label: 'Helpful', value: 'helpful', score: 3 },
-  { emoji: '☹️', label: 'Not helpful', value: 'not-helpful', score: 2 },
-  { emoji: '😰', label: 'Confusing', value: 'confusing', score: 1 }
+  { emoji: '🤩', label: 'Очень полезно', value: 'very-helpful', score: 4 },
+  { emoji: '🙂', label: 'Полезно', value: 'helpful', score: 3 },
+  { emoji: '☹️', label: 'Не полезно', value: 'not-helpful', score: 2 },
+  { emoji: '😰', label: 'Непонятно', value: 'confusing', score: 1 }
 ]
 
 export interface FeedbackSubmission {
@@ -65,7 +65,7 @@ export const feedbackFormSchema = z.object({
     const trimmed = val.trim()
     return trimmed === '' || trimmed.length >= 10
   }, {
-    message: 'Please provide at least 10 characters or leave the field empty'
+    message: 'Укажите не менее 10 символов или оставьте поле пустым'
   })
 })
 

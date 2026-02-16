@@ -1,6 +1,6 @@
-title: 'Real-world Web Applications built with Nuxt'
-head.title: Nuxt Showcase
-description: Explore inspiring websites, apps, and digital experiences made by developers and companies around the world.
+title: 'Реальные веб-приложения на Nuxt'
+head.title: Примеры Nuxt
+description: Вдохновляющие сайты, приложения и цифровой опыт от разработчиков и компаний со всего мира.
 navigation.icon: i-lucide-projector
 websites:
   - name: Louis Vuitton

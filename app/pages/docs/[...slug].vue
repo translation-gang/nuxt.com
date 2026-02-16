@@ -284,12 +284,12 @@ function refreshHeading(opened: boolean) {
               @update:open="refreshHeading"
             >
               <UButton
-                label="On this page"
+                label="На этой странице"
                 trailing-icon="i-lucide-chevron-right"
                 color="neutral"
                 variant="link"
                 size="xs"
-                aria-label="Open on this page"
+                aria-label="Открыть содержание страницы"
                 class="-m-4"
               />
               <template #body>

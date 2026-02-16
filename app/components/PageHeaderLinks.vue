@@ -10,40 +10,40 @@ const mdPath = computed(() => `${site.url}/raw${route.path}.md`)
 
 const items = [
   [{
-    label: 'Copy Markdown link',
+    label: 'Скопировать ссылку Markdown',
     icon: 'i-lucide-link',
     onSelect() {
       track('Page Action', { action: 'Copy Markdown Link' })
       copy(mdPath.value)
       toast.add({
-        title: 'Copied to clipboard',
+        title: 'Скопировано в буфер',
         icon: 'i-lucide-check-circle'
       })
     }
   },
   {
-    label: 'View as Markdown',
+    label: 'Открыть как Markdown',
     icon: 'i-simple-icons:markdown',
     target: '_blank',
     to: `/raw${route.path}.md`,
     onSelect: () => track('Page Action', { action: 'View as Markdown' })
   },
   {
-    label: 'Open in ChatGPT',
+    label: 'Открыть в ChatGPT',
     icon: 'i-simple-icons:openai',
     target: '_blank',
     to: `https://chatgpt.com/?hints=search&q=${encodeURIComponent(`Read ${mdPath.value} so I can ask questions about it.`)}`,
     onSelect: () => track('Page Action', { action: 'Open in ChatGPT' })
   },
   {
-    label: 'Open in Claude',
+    label: 'Открыть в Claude',
     icon: 'i-simple-icons:anthropic',
     target: '_blank',
     to: `https://claude.ai/new?q=${encodeURIComponent(`Read ${mdPath.value} so I can ask questions about it.`)}`,
     onSelect: () => track('Page Action', { action: 'Open in Claude' })
   }], [
     {
-      label: 'Copy MCP URL',
+      label: 'Скопировать MCP URL',
       icon: 'i-lucide-link',
       onSelect() {
         track('Page Action', { action: 'Copy MCP URL' })
@@ -55,7 +55,7 @@ const items = [
       }
     },
     {
-      label: 'Add MCP Server',
+      label: 'Добавить MCP-сервер',
       icon: 'i-simple-icons:cursor',
       target: '_blank',
       to: `/mcp/deeplink`,
@@ -75,7 +75,7 @@ async function copyPage() {
 <template>
   <UFieldGroup>
     <UButton
-      label="Copy page"
+      label="Скопировать страницу"
       :icon="copied ? 'i-lucide-clipboard-check' : 'i-lucide-clipboard'"
       color="neutral"
       variant="soft"
@@ -104,7 +104,7 @@ async function copyPage() {
         color="neutral"
         variant="soft"
         class="border-l border-muted"
-        aria-label="Open copy options"
+        aria-label="Открыть опции копирования"
         :ui="{
           leadingIcon: 'size-3.5'
         }"

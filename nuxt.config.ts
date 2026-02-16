@@ -389,31 +389,31 @@ export default defineNuxtConfig({
     provider: 'ipx'
   },
   llms: {
-    domain: 'https://nuxt.com',
-    title: 'Nuxt Docs',
-    description: 'Nuxt is an open source framework that makes web development intuitive and powerful. Create performant and production-grade full-stack web apps and websites with confidence.',
+    domain: 'https://nuxt-ru.vercel.app',
+    title: 'Документация Nuxt',
+    description: 'Nuxt — фреймворк с открытым исходным кодом для интуитивной и мощной веб-разработки. Создавайте производительные full-stack приложения с уверенностью.',
     full: {
-      title: 'Nuxt Docs',
-      description: 'The complete Nuxt documentation and blog posts written in Markdown (MDC syntax).'
+      title: 'Документация Nuxt',
+      description: 'Полная документация Nuxt и посты блога на Markdown (MDC синтаксис).'
     },
     sections: [
       {
-        title: 'Nuxt v4 Documentation',
+        title: 'Документация Nuxt v4',
         contentCollection: 'docsv4',
         contentFilters: [{ field: 'extension', operator: '=', value: 'md' }]
       },
       {
-        title: 'Deployment Guides',
+        title: 'Гайды по развёртыванию',
         contentCollection: 'deploy',
         contentFilters: [{ field: 'extension', operator: '=', value: 'md' }]
       },
       {
-        title: 'Nuxt v3 Documentation',
+        title: 'Документация Nuxt v3',
         contentCollection: 'docsv3',
         contentFilters: [{ field: 'extension', operator: '=', value: 'md' }]
       },
       {
-        title: 'Blog',
+        title: 'Блог',
         contentCollection: 'blog',
         contentFilters: [{ field: 'extension', operator: '=', value: 'md' }]
       }
