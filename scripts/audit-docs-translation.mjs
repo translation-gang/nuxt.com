@@ -14,7 +14,7 @@
 import { readdir, readFile, mkdir, writeFile } from 'node:fs/promises'
 import { join, relative } from 'node:path'
 
-const CYRILLIC = /[а-яА-ЯёЁ]/
+const CYRILLIC = /\p{Script=Cyrillic}/u
 
 const SECTIONS = [
   { id: '1.getting-started', name: 'Getting Started', planFiles: 18 },
@@ -76,7 +76,6 @@ async function main() {
 
   const files = await findMdFiles(docsDir)
   const bySection = {}
-  const results = []
 
   for (const file of files) {
     const section = getSection(file)
@@ -100,7 +99,7 @@ async function main() {
   out.push('| Раздел | Переведено | Не переведено | Всего |')
   out.push('|--------|------------|---------------|-------|')
 
-  for (const { id, name, planFiles } of SECTIONS) {
+  for (const { id, name } of SECTIONS) {
     const data = bySection[id] || { translated: [], notTranslated: [] }
     const total = data.translated.length + data.notTranslated.length
     out.push(`| ${name} (${id}) | ${data.translated.length} | ${data.notTranslated.length} | ${total} |`)
@@ -149,7 +148,7 @@ async function main() {
   console.log('Отчёт записан:', reportPath)
 }
 
-main().catch(err => {
+main().catch((err) => {
   console.error(err)
   process.exit(1)
 })
