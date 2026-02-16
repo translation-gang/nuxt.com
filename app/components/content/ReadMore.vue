@@ -13,7 +13,7 @@ const props = defineProps({
   }
 })
 
-const createBreadcrumb = (link: string = 'Missing link') => {
+const createBreadcrumb = (link: string = 'Нет ссылки') => {
   if (link.startsWith('http')) {
     return link
   }

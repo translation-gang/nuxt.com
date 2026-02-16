@@ -45,7 +45,7 @@ function copyValue() {
             '!text-primary cursor-default': copied,
             'cursor-copy': !copied
           }"
-          aria-label="copy button"
+          aria-label="Копировать"
           @click="copyValue"
         />
       </template>

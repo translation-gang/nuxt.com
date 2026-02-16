@@ -8,7 +8,7 @@ const { copy } = useClipboard()
 
 function copyLink() {
   copy(props.background, {
-    title: 'Copied to clipboard',
+    title: 'Скопировано в буфер',
     icon: 'i-lucide-copy-check'
   })
 }
@@ -22,7 +22,7 @@ function copyLink() {
       <h5 class="font-semibold text-highlighted text-base">
         {{ name }}
       </h5>
-      <UButton variant="link" label="Copy" size="sm" @click="copyLink" />
+      <UButton variant="link" label="Копировать" size="sm" @click="copyLink" />
     </div>
     <p class="text-muted text-sm">
       {{ background }}

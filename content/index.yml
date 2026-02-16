@@ -2,7 +2,7 @@ hero:
   title: 'Full-Stack Vue-фреймворк'
   description: Создавайте быстрые веб-приложения на Vue. Файловая маршрутизация, автоимпорты и серверный рендеринг — всё настроено из коробки.
   tabs:
-    - title: Minimal
+    - title: Минимальный
       icon: i-lucide-leaf
       content: |
         ::code-tree{defaultValue="app/app.vue" class="lg:rounded-r-none lg:border-r-0 dark:[--ui-border-muted:var(--color-gray-800)] my-0!"}
@@ -40,7 +40,7 @@ hero:
         }
         ```
         ::
-    - title: Routing
+    - title: Маршрутизация
       icon: i-lucide-milestone
       content: |
         ::code-tree{defaultValue="app/pages/index.vue" class="lg:rounded-r-none lg:border-r-0 dark:[--ui-border-muted:var(--color-gray-800)] my-0!"}
@@ -79,7 +79,7 @@ hero:
         }
         ```
         ::
-    - title: Data Fetching
+    - title: Получение данных
       icon: i-lucide-unplug
       content: |
         ::code-tree{defaultValue="app/pages/index.vue" class="lg:rounded-r-none lg:border-r-0 dark:[--ui-border-muted:var(--color-gray-800)] my-0!"}
@@ -130,7 +130,7 @@ hero:
         }
         ```
         ::
-    - title: Auto-Imports
+    - title: Автоимпорты
       icon: i-lucide-wand-sparkles
       content: |
         ::code-tree{defaultValue="app/app.vue" class="lg:rounded-r-none lg:border-r-0 dark:[--ui-border-muted:var(--color-gray-800)] my-0!"}
@@ -181,7 +181,7 @@ hero:
         }
         ```
         ::
-    - title: API Routes
+    - title: API-маршруты
       icon: i-lucide-pc-case
       content: |
         ::code-tree{defaultValue="server/api/hello.ts" class="lg:rounded-r-none lg:border-r-0 dark:[--ui-border-muted:var(--color-gray-800)] my-0!"}

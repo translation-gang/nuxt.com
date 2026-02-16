@@ -23,14 +23,14 @@ const turnstile = useTemplateRef<NuxtTurnstile>('turnstile')
 const token = ref()
 
 const schema = v.object({
-  name: v.pipe(v.string(), v.minLength(1, 'Name is required')),
+  name: v.pipe(v.string(), v.minLength(1, 'Укажите имя')),
   email: v.pipe(
     v.string(),
-    v.minLength(1, 'Email is required'),
-    v.email('Please enter a valid email')
+    v.minLength(1, 'Укажите email'),
+    v.email('Введите корректный email')
   ),
-  company: v.pipe(v.string(), v.minLength(1, 'Company is required')),
-  body: v.pipe(v.string(), v.minLength(1, 'Message is required'))
+  company: v.pipe(v.string(), v.minLength(1, 'Укажите компанию')),
+  body: v.pipe(v.string(), v.minLength(1, 'Укажите сообщение'))
 })
 
 type Schema = v.InferOutput<typeof schema>
@@ -75,11 +75,11 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       state.company = ''
       state.body = ''
       showTurnstile.value = false
-      toast.add({ title: 'Email sent', description: 'We will do everything possible to respond to you as quickly as possible', color: 'success' })
+      toast.add({ title: 'Письмо отправлено', description: 'Мы постараемся ответить как можно скорее', color: 'success' })
     })
     .catch((e) => {
-      const description = e.data?.message || 'Something went wrong. Please try again later.'
-      toast.add({ title: 'Email sending failed', description, color: 'error' })
+      const description = e.data?.message || 'Что-то пошло не так. Попробуйте позже.'
+      toast.add({ title: 'Не удалось отправить письмо', description, color: 'error' })
     })
     .finally(() => {
       loading.value = false

@@ -27,7 +27,7 @@ const date = computed(() => {
 function copyInstallCommand(moduleName: string) {
   track('Module Install Command Copied', { module: moduleName })
   const command = `npx nuxt@latest module add ${moduleName}`
-  copy(command, { title: 'Command copied to clipboard:', description: command })
+  copy(command, { title: 'Команда скопирована в буфер:', description: command })
 }
 
 function toggleModule(module: Module) {
@@ -50,12 +50,12 @@ function handleCardClick(event: MouseEvent) {
 const items = computed(() => [
   [
     {
-      label: isAdded ? 'Remove module' : 'Add module',
+      label: isAdded ? 'Удалить модуль' : 'Добавить модуль',
       icon: isAdded ? 'i-lucide-minus' : 'i-lucide-plus',
       onSelect: () => toggleModule(module)
     },
     {
-      label: 'Copy install command',
+      label: 'Скопировать команду установки',
       icon: 'i-lucide-terminal',
       onSelect: () => copyInstallCommand(module.name)
     }
@@ -63,18 +63,18 @@ const items = computed(() => [
   [
     {
       icon: 'i-lucide-book',
-      label: 'Documentation',
+      label: 'Документация',
       to: `${module.website}?utm_source=nuxt.com&utm_medium=aside-module&utm_campaign=nuxt.com`,
       target: '_blank'
     },
     {
-      label: 'View on GitHub',
+      label: 'Открыть на GitHub',
       icon: 'i-lucide-github',
       to: `https://github.com/${module.repo}`,
       target: '_blank'
     },
     {
-      label: 'View on npm',
+      label: 'Открыть на npm',
       icon: 'i-lucide-package',
       to: `https://npm.chart.dev/${module.npm}`,
       target: '_blank'
@@ -116,7 +116,7 @@ const items = computed(() => [
         class="shine absolute top-4 right-4 sm:top-6 sm:right-6"
         variant="subtle"
         color="primary"
-        label="Official"
+        label="Официальный"
       />
 
       <UBadge
@@ -124,7 +124,7 @@ const items = computed(() => [
         class="shine absolute top-4 right-4 sm:top-6 sm:right-6"
         variant="subtle"
         color="important"
-        label="Sponsor"
+        label="Спонсор"
       />
 
       <template #footer>
@@ -132,7 +132,7 @@ const items = computed(() => [
 
         <div class="flex items-center justify-between gap-3 -my-1 text-muted">
           <div class="flex items-center gap-3 flex-wrap">
-            <UTooltip text="Monthly NPM Downloads">
+            <UTooltip text="Загрузки NPM в месяц">
               <NuxtLink
                 class="flex items-center gap-1 hover:text-highlighted"
                 :to="`https://npm.chart.dev/${module.npm}`"
@@ -143,7 +143,7 @@ const items = computed(() => [
               </NuxtLink>
             </UTooltip>
 
-            <UTooltip text="GitHub Stars">
+            <UTooltip text="Звёзды на GitHub">
               <NuxtLink
                 class="flex items-center gap-1 hover:text-highlighted"
                 :to="`https://github.com/${module.repo}`"
@@ -154,7 +154,7 @@ const items = computed(() => [
               </NuxtLink>
             </UTooltip>
 
-            <UTooltip v-if="selectedSort.key === 'publishedAt'" :text="`Updated ${formatDateByLocale('en', module.stats.publishedAt)}`">
+            <UTooltip v-if="selectedSort.key === 'publishedAt'" :text="`Обновлено ${formatDateByLocale('ru', module.stats.publishedAt)}`">
               <NuxtLink
                 class="flex items-center gap-1 hover:text-highlighted"
                 :to="`https://github.com/${module.repo}`"
@@ -165,7 +165,7 @@ const items = computed(() => [
               </NuxtLink>
             </UTooltip>
 
-            <UTooltip v-if="selectedSort.key === 'createdAt'" :text="`Created ${formatDateByLocale('en', module.stats.createdAt)}`">
+            <UTooltip v-if="selectedSort.key === 'createdAt'" :text="`Создано ${formatDateByLocale('ru', module.stats.createdAt)}`">
               <NuxtLink
                 class="flex items-center gap-1 hover:text-highlighted"
                 :to="`https://github.com/${module.repo}`"
@@ -178,7 +178,7 @@ const items = computed(() => [
           </div>
 
           <div class="flex items-center gap-2">
-            <UTooltip v-if="showAddButton" :text="isAdded ? 'Remove module' : 'Add module'">
+            <UTooltip v-if="showAddButton" :text="isAdded ? 'Удалить модуль' : 'Добавить модуль'">
               <UButton
                 :icon="isAdded ? 'i-lucide-check' : 'i-lucide-plus'"
                 color="neutral"
@@ -186,10 +186,10 @@ const items = computed(() => [
                 variant="outline"
                 @click="toggleModule(module)"
               >
-                <span class="sr-only">{{ isAdded ? 'Remove module' : 'Add module' }}</span>
+                <span class="sr-only">{{ isAdded ? 'Удалить модуль' : 'Добавить модуль' }}</span>
               </UButton>
             </UTooltip>
-            <UTooltip text="Copy install command">
+            <UTooltip text="Скопировать команду установки">
               <UButton
                 icon="i-lucide-terminal"
                 color="neutral"
@@ -197,7 +197,7 @@ const items = computed(() => [
                 variant="outline"
                 @click="copyInstallCommand(module.name)"
               >
-                <span class="sr-only">Copy command to install {{ module.name }}</span>
+                <span class="sr-only">Скопировать команду установки {{ module.name }}</span>
               </UButton>
             </UTooltip>
           </div>

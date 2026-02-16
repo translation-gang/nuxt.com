@@ -15,8 +15,8 @@ const logoContextMenuItems = [
       track('Logo Action', { action: 'Copy SVG' })
       if (logo.value) {
         copy(logo.value.$el.outerHTML, {
-          title: 'Nuxt logo copied as SVG',
-          description: 'You can now paste it into your project',
+          title: 'Логотип Nuxt скопирован как SVG',
+          description: 'Теперь можно вставить его в проект',
           icon: 'i-lucide-circle-check',
           color: 'success'
         })
@@ -43,7 +43,7 @@ function trackGitHubClick() {
 <template>
   <UHeader :ui="{ left: 'min-w-0 items-end' }" class="flex flex-col">
     <template #left>
-      <NuxtLink to="/" aria-label="Back to home">
+      <NuxtLink to="/" aria-label="На главную">
         <UContextMenu :items="logoContextMenuItems" size="xs">
           <NuxtLogo ref="logo" class="block w-auto h-6" />
         </UContextMenu>

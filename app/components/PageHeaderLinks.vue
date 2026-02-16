@@ -49,7 +49,7 @@ const items = [
         track('Page Action', { action: 'Copy MCP URL' })
         copy(`https://nuxt.com/mcp`)
         toast.add({
-          title: 'Copied to clipboard',
+          title: 'Скопировано в буфер',
           icon: 'i-lucide-check-circle'
         })
       }
