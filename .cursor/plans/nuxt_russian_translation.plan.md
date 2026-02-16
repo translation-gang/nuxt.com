@@ -43,7 +43,7 @@ todos:
     status: pending
   - id: phase3-directory-structure
     content: "Фаза 3.2: Перевод docs/2.directory-structure/ (28 файлов)"
-    status: pending
+    status: completed
   - id: phase3-guide-concepts
     content: "Фаза 3.3: Перевод docs/3.guide/1.concepts/ (9 файлов)"
     status: pending

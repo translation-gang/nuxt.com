@@ -129,8 +129,11 @@ useSeoMeta({
   title
 })
 
-// Pre-render the markdown path + add it to alternate links
-prerenderRoutes([joinURL('/raw', `${path.value}.md`)])
+// Pre-render the markdown path + add it to alternate links (skip virtual dir index paths that cause 500)
+const rawPath = joinURL('/raw', `${path.value}.md`)
+if (!path.value.includes('_dir')) {
+  prerenderRoutes([rawPath])
+}
 useHead({
   link: [
     {
