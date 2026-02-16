@@ -99,10 +99,8 @@ export const github = {
   async fetchTeam(event: H3Event, org: string, teamName: string) {
     const token = useRuntimeConfig(event).github.token
     if (!token) {
-      throw createError({
-        statusCode: 500,
-        message: 'Missing NUXT_GITHUB_TOKEN env variable'
-      })
+      console.warn('Missing NUXT_GITHUB_TOKEN: team data unavailable')
+      return []
     }
 
     const key = `github:team:${org}:${teamName}`
@@ -177,17 +175,10 @@ export const github = {
 
 export function githubHeaders(event: H3Event, headers: Record<string, string> = {}) {
   const token = useRuntimeConfig(event).github.token
-  if (!token) {
-    throw createError({
-      statusCode: 500,
-      message: 'Missing NUXT_GITHUB_TOKEN env variable'
-    })
-  }
-
   return {
     'Accept': 'application/vnd.github.v3+json',
     'User-Agent': 'nuxt-api',
-    'Authorization': `token ${token}`,
+    ...(token && !headers.Authorization ? { Authorization: `token ${token}` } : {}),
     ...headers
   }
 }
