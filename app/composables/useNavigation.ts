@@ -1,3 +1,4 @@
+import type { CommandPaletteGroup } from '@nuxt/ui'
 import { createSharedComposable } from '@vueuse/core'
 
 function _useHeaderLinks() {
@@ -12,19 +13,25 @@ function _useHeaderLinks() {
       icon: 'i-lucide-book-marked',
       to,
       search: false,
-      active: route.path.startsWith(to),
+      active: route.path.startsWith(to) || route.path.startsWith(`/deploy`),
       children: [{
         label: 'Начало',
         description: 'Learn how to get started with Nuxt to build your first app.',
         icon: 'i-lucide-rocket',
-        to: `${to}/getting-started`,
+        to: `${to}/getting-started/installation`,
         active: route.path.startsWith(`${to}/getting-started`)
       }, {
+        label: 'Структура',
+        description: 'Структура директорий проекта Nuxt.',
+        icon: 'i-lucide-folder-open',
+        to: `${to}/directory-structure`,
+        active: route.path.startsWith(`${to}/directory-structure`)
+      }, {
         label: 'Руководство',
-        description: 'Get the key concepts, directory structure and best practices.',
+        description: 'Ключевые концепции, структура и лучшие практики.',
         icon: 'i-lucide-book-open',
         to: `${to}/guide`,
-        active: route.path.startsWith(`${to}/guide`)
+        active: route.path.startsWith(`${to}/guide`) && !route.path.startsWith(`${to}/guide/directory-structure`)
       }, {
         label: 'API',
         description: 'Explore the Nuxt components, composables, utilities and more.',
@@ -32,8 +39,14 @@ function _useHeaderLinks() {
         to: `${to}/api`,
         active: route.path.startsWith(`${to}/api`)
       }, {
+        label: 'Деплой',
+        description: 'Разверните проект Nuxt где угодно.',
+        icon: 'i-lucide-cloud',
+        to: '/deploy',
+        active: route.path.startsWith('/deploy')
+      }, {
         label: 'Примеры',
-        description: 'Откройте для себя и изучите официальные и общественные примеры.',
+        description: 'Официальные и общественные примеры.',
         icon: 'i-lucide-app-window-mac',
         to: `${to}/examples`,
         active: route.path.startsWith(`${to}/examples`)
@@ -45,43 +58,31 @@ function _useHeaderLinks() {
         active: route.path.startsWith(`${to}/community`)
       }]
     }, {
-      label: 'Интеграции',
+      label: 'Модули',
+      icon: 'i-lucide-puzzle',
       to: '/modules',
-      icon: 'i-lucide-unplug',
-      search: false,
-      active: route.path.startsWith('/modules') || route.path.startsWith('/deploy'),
-      children: [{
-        label: 'Модули',
-        description: 'Усильте свой проект Nuxt модулями.',
-        icon: 'i-lucide-puzzle',
-        to: '/modules'
-      }, {
-        label: 'Хостинг',
-        description: 'Разверните свой проект Nuxt в любом месте.',
-        icon: 'i-lucide-rocket',
-        to: '/deploy'
-      }]
+      description: 'Расширьте проект Nuxt модулями.'
+    }, {
+      label: 'Шаблоны',
+      icon: 'i-lucide-app-window',
+      description: 'Начните следующий проект с шаблона Nuxt.',
+      to: '/templates'
     }, {
       label: 'Ресурсы',
       icon: 'i-lucide-library',
-      to: '/templates',
+      to: '/showcase',
       search: false,
-      active: route.path.startsWith('/templates') || route.path.startsWith('/video-courses') || route.path.startsWith('/showcase'),
+      active: route.path.startsWith('/video-courses') || route.path.startsWith('/showcase'),
       children: [{
-        label: 'Шаблоны',
-        icon: 'i-lucide-app-window',
-        description: 'Начните свой следующий проект с шаблона Nuxt.',
-        to: '/templates'
+        label: 'Витрина',
+        description: 'Проекты, созданные на Nuxt.',
+        icon: 'i-lucide-presentation',
+        to: '/showcase'
       }, {
         label: 'Видеокурсы',
         description: 'Изучайте Nuxt с помощью видеокурсов.',
         icon: 'i-lucide-graduation-cap',
         to: '/video-courses'
-      }, {
-        label: 'Витрина',
-        description: 'Discover and explore projects built with Nuxt.',
-        icon: 'i-lucide-presentation',
-        to: '/showcase'
       }, {
         label: 'Сертификация Nuxt',
         description: 'Получите сертификат компетентности.',
@@ -90,30 +91,7 @@ function _useHeaderLinks() {
         target: '_blank'
       }]
     }, {
-      label: 'Продукты',
-      icon: 'i-lucide-sparkle',
-      search: false,
-      children: [{
-        label: 'Nuxt UI Pro',
-        to: 'https://ui.nuxt.com/pro?utm_source=nuxt-website&utm_medium=header',
-        description: 'Build faster with premium components for Vue or Nuxt.',
-        icon: 'i-lucide-panels-top-left',
-        target: '_blank'
-      }, {
-        label: 'Nuxt Studio',
-        to: 'https://content.nuxt.com/studio/?utm_source=nuxt-website&utm_medium=header',
-        description: 'Edit your Nuxt Content website with a visual editor.',
-        icon: 'i-lucide-pen',
-        target: '_blank'
-      }, {
-        label: 'NuxtHub',
-        to: 'https://hub.nuxt.com/?utm_source=nuxt-website&utm_medium=header',
-        description: 'Deploy & manage full-stack Nuxt apps that scale.',
-        icon: 'i-lucide-rocket',
-        target: '_blank'
-      }]
-    }, {
-      label: 'Энтерпрайс',
+      label: 'Энтерпрайз',
       icon: 'i-lucide-building-2',
       to: '/enterprise',
       search: false,
@@ -159,19 +137,16 @@ const footerLinks = [{
     to: '/design-kit'
   }]
 }, {
-  label: 'Продукты',
+  label: 'Обзор',
   children: [{
-    label: 'Nuxt UI Pro',
-    to: 'https://ui.nuxt.com/pro?utm_source=nuxt-website&utm_medium=footer',
-    target: '_blank'
+    label: 'Modules',
+    to: 'https://nuxt.com/modules'
   }, {
-    label: 'Nuxt Studio',
-    to: 'https://content.nuxt.com/studio/?utm_source=nuxt-website&utm_medium=footer',
-    target: '_blank'
+    label: 'Templates',
+    to: 'https://nuxt.com/templates'
   }, {
-    label: 'NuxtHub',
-    to: 'https://hub.nuxt.com/?utm_source=nuxt-website&utm_medium=footer',
-    target: '_blank'
+    label: 'Showcase',
+    to: 'https://nuxt.com/showcase'
   }]
 }, {
   label: 'Enterprise',
@@ -192,153 +167,117 @@ export const useFooterLinks = () => ({ footerLinks })
 const _useNavigation = () => {
   const nuxtApp = useNuxtApp()
   const searchTerm = ref<string>('')
+  const { track } = useAnalytics()
 
   const { headerLinks } = useHeaderLinks()
   const { footerLinks } = useFooterLinks()
+  const { modules } = useModules()
+  const { providers } = useHostingProviders()
 
-  const searchLinks = computed(() => [
-    {
-      label: 'Ask AI',
-      icon: 'i-lucide-wand',
-      to: 'javascript:void(0);',
-      onSelect: () => nuxtApp.$kapa?.openModal()
+  const searchLinks = computed(() => [{
+    label: 'Спросите ИИ',
+    icon: 'i-lucide-wand',
+    to: 'javascript:void(0);',
+    onSelect: () => {
+      track('Ask AI Opened', { source: 'search-links' })
+      nuxtApp.$kapa?.openModal()
+    }
+  }, ...headerLinks.value.map((link) => {
+    // Remove `/docs` and `/enterprise` links from command palette
+    if (link.search === false) {
+      return {
+        label: link.label,
+        icon: link.icon,
+        children: link.children
+      }
+    }
+    return link
+  }).filter(Boolean), {
+    label: 'Команда',
+    icon: 'i-lucide-users',
+    to: '/team'
+  }, {
+    label: 'Набор для дизайна',
+    icon: 'i-lucide-palette',
+    to: '/design-kit'
+  }, {
+    label: 'Рассылка',
+    icon: 'i-lucide-mail',
+    to: '/newsletter'
+  }, {
+    label: 'Исходный код',
+    icon: 'i-lucide-code',
+    to: 'https://github.com/nuxt/nuxt.com',
+    target: '_blank'
+  }])
+
+  const modulesItems = computed(() => modules.value.map(module => ({
+    id: `module-${module.name}`,
+    label: module.npm,
+    suffix: module.description,
+    avatar: {
+      src: moduleImage(module.icon),
+      ui: {
+        root: 'rounded-none bg-transparent'
+      }
     },
-    ...headerLinks.value.map((link) => {
-      // Remove `/docs` and `/enterprise` links from command palette
-      if (link.search === false) {
-        return {
-          label: link.label,
-          icon: link.icon,
-          children: link.children
+    to: `/modules/${module.name}`,
+    // Store searchable fields for filtering
+    _searchFields: [module.name, module.npm, module.repo].filter(Boolean)
+  })))
+
+  const hostingItems = computed(() => providers.value.map(hosting => ({
+    id: `hosting-${hosting.path}`,
+    label: hosting.title,
+    suffix: hosting.description,
+    icon: hosting.logoIcon,
+    avatar: hosting.logoSrc
+      ? {
+          src: hosting.logoSrc,
+          ui: {
+            root: 'rounded-none bg-transparent'
+          }
         }
+      : undefined,
+    to: hosting.path,
+    // Store searchable fields for filtering
+    _searchFields: [hosting.title].filter(Boolean)
+  })))
+
+  const searchGroups = computed<CommandPaletteGroup[]>(() => [{
+    id: 'ask-ai-search',
+    label: 'ИИ',
+    ignoreFilter: true,
+    postFilter: (searchTerm: string, items: any[]) => {
+      if (!searchTerm) {
+        return []
       }
-      return link
-    }).filter((link): link is NonNullable<typeof link> => Boolean(link)), {
-      label: 'Команда',
-      icon: 'i-lucide-users',
-      to: '/team'
-    }, {
-      label: 'Набор для дизайна',
-      icon: 'i-lucide-palette',
-      to: '/design-kit'
-    }, {
-      label: 'Рассылка',
-      icon: 'i-lucide-mail',
-      to: '/newsletter'
-    }])
-
-  type SearchGroup = {
-    id: string
-    label: string
-    icon?: string
-    items: Array<{
-      id: string
-      label: string
-      suffix?: string
-      icon?: string
-      avatar?: {
-        src?: string
-        ui?: {
-          root: string
-        }
-      }
-      to: string
-      onSelect?: () => Promise<void>
-    }>
-  }
-
-  const searchGroups = computed<SearchGroup[]>(() => {
-    const aiGroup: SearchGroup = {
-      id: 'ask-ai-search',
-      label: 'ИИ',
-      icon: 'i-lucide-wand',
-      items: []
-    }
-
-    const modulesGroup: SearchGroup = {
-      id: 'modules-search',
-      label: 'Modules',
-      items: []
-    }
-
-    const hostingGroup: SearchGroup = {
-      id: 'hosting-search',
-      label: 'Hosting',
-      items: []
-    }
-
-    const groups = [aiGroup, modulesGroup, hostingGroup]
-
-    if (!searchTerm.value) {
-      return groups
-    }
-
-    aiGroup.items = [{
-      id: `ask-ai-${searchTerm.value}`,
-      label: `Спросите ИИ о "${searchTerm.value}"`,
+      return items
+    },
+    items: [{
+      label: 'Спросите ИИ',
       icon: 'i-lucide-wand',
       to: 'javascript:void(0);',
       onSelect() {
-        return nuxtApp.$kapa.openModal(searchTerm.value)
+        track('Ask AI Opened', { source: 'search-palette', query: searchTerm.value })
+        nuxtApp.$kapa?.openModal(searchTerm.value)
       }
     }]
+  }, {
+    id: 'modules-search',
+    label: 'Модули',
+    items: modulesItems.value
+  }, {
+    id: 'hosting-search',
+    label: 'Хостинг',
+    items: hostingItems.value
+  }])
 
-    const loadModules = async () => {
-      const { modules, fetchList } = useModules()
-      if (!modules.value.length) {
-        await fetchList()
-      }
-
-      modulesGroup.items = modules.value
-        .filter(module => ['name', 'npm', 'repo'].map(field => module[field as keyof typeof module]).filter(Boolean).some(value => typeof value === 'string' && value.search(searchTextRegExp(searchTerm.value)) !== -1))
-        .map(module => ({
-          id: `module-${module.name}`,
-          label: module.npm,
-          suffix: module.description,
-          avatar: {
-            src: moduleImage(module.icon),
-            ui: {
-              root: 'rounded-none bg-transparent'
-            }
-          },
-          to: `/modules/${module.name}`
-        }))
+  watchDebounced(searchTerm, (term) => {
+    if (term) {
+      track('Search Performed', { term })
     }
-
-    const loadHosting = async () => {
-      const { providers, fetchList } = useHostingProviders()
-      if (!providers.value.length) {
-        await fetchList()
-      }
-
-      hostingGroup.items = providers.value
-        .filter(hosting => ['title'].map(field => hosting[field as keyof typeof hosting]).filter(Boolean).some(value => typeof value === 'string' && value.search(searchTextRegExp(searchTerm.value)) !== -1))
-        .map(hosting => ({
-          id: `hosting-${hosting.path}`,
-          label: hosting.title,
-          suffix: hosting.description,
-          icon: hosting.logoIcon,
-          avatar: hosting.logoSrc
-            ? {
-                src: hosting.logoSrc,
-                ui: {
-                  root: 'rounded-none bg-transparent'
-                }
-              }
-            : undefined,
-          to: hosting.path
-        }))
-    }
-
-    onMounted(() => {
-      Promise.all([
-        loadModules(),
-        loadHosting()
-      ]).catch(error => console.error('Error loading search results:', error))
-    })
-
-    return groups
-  })
+  }, { debounce: 500 })
 
   return {
     searchTerm,

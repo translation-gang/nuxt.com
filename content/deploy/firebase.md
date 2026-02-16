@@ -63,16 +63,16 @@ export default defineNuxtConfig({
 
 1. Установите последнюю версию Firebase CLI.
 
-    ```bash [Terminal]
-    npm install -g firebase-tools@latest
-    ```
+```bash [Terminal]
+npm install -g firebase-tools@latest
+```
 
 2. Инициализируйте ваш проект Firebase
 
-    ```bash [Terminal]
-    firebase login
-    firebase init hosting
-    ```
+```bash [Terminal]
+firebase login
+firebase init hosting
+```
 
 ::note
 При появлении запроса вы можете указать `.output/public` в качестве публичной директории. На следующем шаге **не** конфигурируйте проект как одностраничное приложение.

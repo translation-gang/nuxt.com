@@ -1,10 +1,13 @@
 <a href="https://nuxt.com"><img width="1200" alt="Nuxt Website" src="./public/website.jpg"></a>
 
-# <https://nuxt-ru.vercel.app>
+[![Install in Cursor](https://nuxt.com/mcp/badge.svg)](https://nuxt.com/mcp/deeplink)
+[![Install in VSCode](https://nuxt.com/mcp/badge.svg?ide=vscode)](https://nuxt.com/mcp/deeplink?ide=vscode)
+
+# nuxt-ru.vercel.app
 
 Добро пожаловать на сайт-репозиторий Nuxt, доступный по адресу [https://nuxt-ru.vercel.app](https://nuxt-ru.vercel.app).
 
-[![Nuxt UI Pro](https://img.shields.io/badge/Made%20with-Nuxt%20UI%20Pro-00DC82?logo=nuxt.js&labelColor=020420)](https://ui.nuxt.com/pro)
+[![Nuxt UI](https://img.shields.io/badge/Made%20with-Nuxt%20UI-00DC82?logo=nuxt.js&labelColor=020420)](https://ui.nuxt.com)
 
 ## Настройка
 
@@ -33,7 +36,7 @@ pwd
 echo %cd%
 ```
 
-Скопируйте вывод команды выше и вставьте его в переменную `NUXT_PATH` в файле `.env`.
+Скопируйте вывод команды выше и вставьте его в переменные `NUXT_V3_PATH` и `NUXT_V4_PATH` в файле `.env`.
 
 ## Разработка
 
@@ -43,7 +46,13 @@ echo %cd%
 pnpm dev
 ```
 
-### Добавьте шаблон Nuxt
+Чтобы запустить сервер разработки с полной подгрузкой контента (модули, API и т.д.):
+
+```bash
+pnpm dev:full
+```
+
+### Добавление шаблона Nuxt
 
 Чтобы добавить шаблон Nuxt в список, добавьте его в папку [./content/templates](./content/templates).
 
@@ -55,15 +64,15 @@ pnpm dev
 
 ## Продакшен
 
-Для того, чтобы собрать приложение для продакшена, вам необходимо иметь лицензию [Nuxt UI Pro](https://ui.nuxt.com/pro) и установить переменную `NUXT_UI_PRO_LICENSE` в файле `.env`.
-
-Обратите внимание, что это не требуется для запуска в разработке и внесения вклада на сайт Nuxt или в документацию.
-
 Соберите production-приложение:
 
 ```bash
-pnpm generate
+pnpm build
 ```
+
+### Evals для MCP-сервера
+
+Для запуска evals убедитесь, что dev-сервер запущен, создайте API-ключ на https://vercel.com/ai-gateway и добавьте `AI_GATEWAY_API_KEY` в `.env`. Затем: `pnpm eval` или `pnpm eval:ui`.
 
 ## Лицензия
 

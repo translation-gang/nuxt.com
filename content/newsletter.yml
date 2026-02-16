@@ -10,7 +10,7 @@ cta:
     - label: 'Начало работы'
       size: 'lg'
       color: 'neutral'
-      to: '/docs/getting-started/introduction'
+      to: '/docs/getting-started/installation'
     - label: 'Изучите примеры'
       size: 'lg'
       color: 'neutral'

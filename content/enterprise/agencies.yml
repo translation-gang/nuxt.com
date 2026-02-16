@@ -5,8 +5,8 @@ head.title: Партнерские агентства Nuxt
 head.description: Обратитесь к нашему каталогу партнерских агентств и найдите агентство рядом с вами, обладающее необходимым набором навыков.
 navigation.icon: i-lucide-handshake
 links:
-  - label: 'Отправить мое агентство'
-    to: 'https://docs.google.com/forms/d/e/1FAIpQLSf85qskit5QqmGJcruGkGF0U7240Bh9MeN0pHB18UiOMWC8dA/viewform'
+  - label: 'Стать партнёром'
+    to: 'https://opencollective.com/nuxtjs/contribute/agency-partner-93555'
     color: neutral
     size: 'md'
     target: '_blank'

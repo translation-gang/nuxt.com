@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Module } from '~/types'
+import type { Module } from '#shared/types'
 import { ModuleProseA, ModuleProseKbd, ModuleProseImg } from '#components'
 
 definePageMeta({
@@ -7,7 +7,7 @@ definePageMeta({
 })
 const route = useRoute()
 
-const { data: module } = await useFetch<Module>(`https://api.nuxt.com/modules/${route.params.slug}`, { key: `module-${route.params.slug}` })
+const { data: module } = await useFetch<Module>(`/api/v1/modules/${route.params.slug}`, { key: `module-${route.params.slug}` })
 if (!module.value) {
   throw createError({ statusCode: 404, statusMessage: 'Модуль не найден', fatal: true })
 }
@@ -135,8 +135,8 @@ defineOgImageComponent('Module', {
 
         <span class="hidden lg:block text-muted">&bull;</span>
 
-        <UTooltip text="Звезды GitHub">
-          <NuxtLink class="flex items-center gap-1.5" :to="`https://github.com/${module.repo}`" target="_blank">
+        <UTooltip text="Звёзды GitHub">
+          <NuxtLink class="flex items-center gap-1.5" :to="`https://github.com/${(module.repo || '').split('#')[0]}`" target="_blank">
             <UIcon name="i-lucide-star" class="size-5 shrink-0" />
             <span class="text-sm font-medium">{{ formatNumber(module.stats.stars || 0) }} звезд</span>
           </NuxtLink>
@@ -145,7 +145,7 @@ defineOgImageComponent('Module', {
         <span class="hidden lg:block text-muted">&bull;</span>
 
         <UTooltip text="Последняя версия">
-          <NuxtLink class="flex items-center gap-1.5" :to="`${module.github}/releases`" target="_blank">
+          <NuxtLink class="flex items-center gap-1.5" :to="`${(module.github || '').split('/tree/main/')[0]}/releases`" target="_blank">
             <UIcon name="i-lucide-tag" class="size-5 shrink-0" />
             <span class="text-sm font-medium">v{{ module.stats.version }}</span>
           </NuxtLink>
@@ -170,7 +170,7 @@ defineOgImageComponent('Module', {
       </UPageBody>
 
       <template #right>
-        <UContentToc>
+        <UContentToc :links="module.readme?.toc?.links">
           <template #bottom>
             <div class="hidden lg:block space-y-6">
               <UPageLinks title="Links" :links="links" />

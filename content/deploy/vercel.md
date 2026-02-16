@@ -6,6 +6,7 @@ logoSrc: '/assets/integrations/vercel.svg'
 category: Хостинг
 nitroPreset: 'vercel'
 website: 'https://vercel.com/'
+sponsor: true
 ---
 
 ::tip
@@ -21,9 +22,9 @@ website: 'https://vercel.com/'
 3. Vercel определит, что вы используете Nitro, и включит правильные настройки для развертывания.
 4. Ваше приложение развернуто!
 
-После того как проект импортирован и развернут, все последующие изменения в ветках будут генерировать [Preview Deployments](https://vercel.com/docs/concepts/deploy/environments#preview), а все изменения, внесенные в Production Branch (обычно «main»), приведут к [Production Deployment](https://vercel.com/docs/concepts/deploy/environments#production).
+После того как проект импортирован и развернут, все последующие изменения в ветках будут генерировать [Preview Deployments](https://vercel.com/docs/deployments/environments#preview-environment-pre-production), а все изменения в Production Branch (обычно «main») приведут к [Production Deployment](https://vercel.com/docs/deployments/environments#production-environment).
 
-Узнайте больше о [Интеграции с Git в Vercel](https://vercel.com/docs/concepts/git).
+Узнайте больше об [интеграции Vercel с Git](https://vercel.com/docs/git).
 
 ## Vercel Edge функции
 
@@ -91,7 +92,7 @@ export default defineEventHandler(async (event) => {
 
 ## Пользовательская конфигурация вывода сборки
 
-Вы можете предоставить дополнительную [конфигурацию вывода сборки](https://vercel.com/docs/build-output-api/v3), используя ключ `nitro.vercel.config` внутри `nuxt.config.ts`. Она будет объединена со встроенной, автоматически генерируемой конфигурацией.
+Вы можете предоставить дополнительную [конфигурацию вывода сборки](https://vercel.com/docs/build-output-api) с помощью ключа `nitro.vercel.config` в `nuxt.config.ts`. Она будет объединена со встроенной конфигурацией.
 
 ## Шаблоны
 

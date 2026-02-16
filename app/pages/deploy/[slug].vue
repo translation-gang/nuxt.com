@@ -5,6 +5,8 @@ definePageMeta({
   heroBackground: 'opacity-30 -z-10'
 })
 const route = useRoute()
+const { fetchList, providers } = useHostingProviders()
+await fetchList()
 
 const [{ data: provider }, { data: surround }] = await Promise.all([
   useAsyncData(`${kebabCase(route.path)}-provider`, () => queryCollection('deploy').path(route.path).first()),
@@ -62,7 +64,7 @@ if (provider.value?.nitroPreset) {
 links.push({
   icon: 'i-lucide-pen',
   label: 'Редактировать эту страницу',
-  to: `https://github.com/translation-gang/nuxt.com/edit/main/content/3.deploy/${route.params.slug}.md`,
+  to: `https://github.com/translation-gang/nuxt.com/edit/main/content/deploy/${route.params.slug}.md`,
   target: '_blank'
 })
 </script>
@@ -70,6 +72,19 @@ links.push({
 <template>
   <UContainer v-if="provider">
     <UPage>
+      <template #left>
+        <UPageAside>
+          <UNavigationMenu
+            variant="pill"
+            highlight
+            orientation="vertical"
+            :items="providers.map(provider => ({
+              label: provider.title,
+              to: provider.path
+            }))"
+          />
+        </UPageAside>
+      </template>
       <UPageHeader
         :description="provider.description"
         :ui="{ headline: 'mb-8' }"
@@ -81,7 +96,7 @@ links.push({
         <template #title>
           <div class="flex items-center gap-4">
             <UIcon v-if="provider.logoIcon" :name="provider.logoIcon" class="w-10" />
-            <NuxtImg v-else :src="provider.logoSrc" class="size-10" />
+            <NuxtImg v-else :src="provider.logoSrc" width="40" height="40" class="size-10" />
 
             <span>{{ provider.title }}</span>
           </div>
