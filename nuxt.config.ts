@@ -333,7 +333,8 @@ export default defineNuxtConfig({
       crawlLinks: true,
       ignore: [
         route => route.startsWith('/modules/'),
-        route => route.startsWith('/admin')
+        route => route.startsWith('/admin'),
+        route => route.includes('_dir') // виртуальные индексные пути контента, /raw/.../_dir.md дают 500
       ],
       autoSubfolderIndex: false
     }
