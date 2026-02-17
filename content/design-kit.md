@@ -1,7 +1,7 @@
 ---
 title: Набор для дизайна
 head.description: Получите ассетсы Nuxt, такие, как логотип, типографика и цвета..
-description: Welcome to Nuxt design definition page. Identity was redefined by handpicking conscientiously colors, and shapes in order to express how easy & joyful Nuxt products are.
+description: Страница фирменного стиля Nuxt. Идентичность переосмыслена через тщательно подобранные цвета и формы, чтобы передать, насколько просты и приятны продукты Nuxt.
 navigation.icon: 'i-lucide-palette'
 links:
   - label: 'Фирменный набор Nuxt'
