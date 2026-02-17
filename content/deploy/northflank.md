@@ -1,21 +1,21 @@
 ---
 title: Northflank
-description: 'Deploy your Nuxt Application to Northflank infrastructure.'
+description: 'Разверните приложение Nuxt в инфраструктуре Northflank.'
 logoSrc: '/assets/integrations/northflank.svg'
-category: Hosting
+category: Хостинг
 nitroPreset: 'node'
 website: 'https://www.northflank.com/'
 ---
 
-Nuxt supports deploying on [Northflank](https://www.northflank.com) with minimal configuration.
+Nuxt поддерживает развёртывание на [Northflank](https://www.northflank.com) с минимальной настройкой.
 
-## Setup
+## Настройка
 
-1. Link your [Git provider](https://northflank.com/docs/v1/application/getting-started/link-your-git-account) and [create a new project](https://northflank.com/docs/v1/application/getting-started/create-a-project) in Northflank.
+1. Подключите [провайдера Git](https://northflank.com/docs/v1/application/getting-started/link-your-git-account) и [создайте новый проект](https://northflank.com/docs/v1/application/getting-started/create-a-project) в Northflank.
    
-2. In your project, create a [Service](https://northflank.com/docs/v1/application/getting-started/build-and-deploy-your-code) and connect it to your Nuxt repository.
+2. В проекте создайте [Service](https://northflank.com/docs/v1/application/getting-started/build-and-deploy-your-code) и привяжите его к репозиторию Nuxt.
 
-3. Ensure your package.json includes a start script that runs the Nuxt production server.
+3. Убедитесь, что в package.json есть скрипт start для запуска production-сервера Nuxt.
   ```json [package.json]
   {
     "scripts": {
@@ -24,8 +24,8 @@ Nuxt supports deploying on [Northflank](https://www.northflank.com) with minimal
   }
   ```
 
-4. Click "Create Service" to build and deploy your Nuxt app.
+4. Нажмите «Create Service», чтобы собрать и развернуть приложение Nuxt.
 
 ::read-more{to="https://northflank.com/docs" target="_blank"}
-For more information, refer to the **Northflank documentation**.
+Подробнее в **документации Northflank**.
 ::

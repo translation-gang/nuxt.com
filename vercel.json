@@ -1,6 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "NODE_OPTIONS='--max-old-space-size=8192' pnpm run build",
-  "installCommand": "corepack enable && corepack prepare pnpm@10.29.3 --activate && pnpm install",
-  "outputDirectory": ".output/public"
+  "installCommand": "corepack enable && corepack prepare pnpm@10.29.3 --activate && pnpm install"
 }

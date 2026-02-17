@@ -49,25 +49,25 @@ todos:
     status: completed
   - id: phase3-guide-rest
     content: "Фаза 3.4: Перевод docs/3.guide/ остальное (31 файл)"
-    status: pending
+    status: completed
   - id: phase3-api-composables
     content: "Фаза 3.5: Перевод docs/4.api/2.composables/ (28 файлов)"
-    status: pending
+    status: completed
   - id: phase3-api-rest
     content: "Фаза 3.6: Перевод docs/4.api/ остальное (~77 файлов)"
-    status: pending
+    status: completed
   - id: phase3-community
     content: "Фаза 3.7: Перевод docs/5.community/ (6 файлов)"
-    status: pending
+    status: completed
   - id: phase3-bridge-migration
     content: "Фаза 3.8: Перевод docs/6.bridge/ и docs/7.migration/ (21 файл)"
-    status: pending
+    status: completed
   - id: phase4-blog
     content: "Фаза 4.1: Перевод блог-постов content/blog/ (~42 файла)"
-    status: pending
+    status: completed
   - id: phase4-deploy
     content: "Фаза 4.2: Перевод деплой-гайдов content/deploy/ (~22 файла)"
-    status: pending
+    status: completed
   - id: phase5-ci
     content: "Фаза 5: GitHub Action для регулярной синхронизации с upstream"
     status: completed

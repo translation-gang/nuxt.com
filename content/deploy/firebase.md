@@ -7,32 +7,32 @@ nitroPreset: 'firebase'
 website: 'https://firebase.google.com/'
 ---
 
-## Firebase App Hosting (recommended)
+## Firebase App Hosting (рекомендуется)
 
 ::note
-You will need to be on the [**Blaze plan**](https://firebase.google.com/pricing) (Pay as you go) to get started.
+Для начала работы потребуется тариф [**Blaze**](https://firebase.google.com/pricing) (оплата по мере использования).
 ::
 
 :read-more{title="Firebase App Hosting" to="https://firebase.google.com/docs/app-hosting"}
 
-### Project Setup
+### Настройка проекта
 
-1. Go to the Firebase [console](https://console.firebase.google.com/) and set up a new project.
-2. Select **Build > App Hosting** from the sidebar.
-    - You may need to upgrade your billing plan at this step.
-3. Click **Get Started**.
-    - Choose a region.
-    - Import a GitHub repository (you’ll need to link your GitHub account).
-    - Configure deployment settings (project root directory and branch), and enable automatic rollouts.
-    - Choose a unique ID for your backend.
-4. Click Finish & Deploy to create your first rollout.
+1. Откройте [консоль Firebase](https://console.firebase.google.com/) и создайте новый проект.
+2. В боковом меню выберите **Build > App Hosting**.
+    - На этом шаге может потребоваться обновить тариф.
+3. Нажмите **Get Started**.
+    - Выберите регион.
+    - Импортируйте репозиторий GitHub (нужно привязать аккаунт GitHub).
+    - Настройте развёртывание (корневая директория и ветка), включите автоматические выкатывания.
+    - Задайте уникальный ID для бэкенда.
+4. Нажмите Finish & Deploy для первого выкатывания.
 
-When you deploy with Firebase App Hosting, the App Hosting preset will be run automatically at build time.
+При развёртывании через Firebase App Hosting пресет App Hosting запускается автоматически при сборке.
 
-## Firebase функции (deprecated)
+## Firebase функции (устарело)
 
 ::important
-This deployment method is deprecated and is not recommended. Firebase App Hosting is the recommended way to deploy Nuxt apps on Firebase.
+Этот способ развёртывания устарел и не рекомендуется. Рекомендуется использовать Firebase App Hosting для развёртывания Nuxt на Firebase.
 ::
 
 Чтобы использовать более новое и рекомендуемое поколение функций Firebase, установите опцию `firebase.gen` в значение `2`:
@@ -161,9 +161,9 @@ export default defineNuxtConfig({
 Подробнее об этом можно прочитать в **Firebase Docs**.
 ::
 
-## Other Cloud Functions
+## Другие Cloud Functions
 
-Вы можете получить предупреждение о том, что другие облачные функции будут удалены при развертывании проекта Nuxt. Это происходит потому, что Nitro развернет весь ваш проект в функции firebase. Если вы хотите развернуть только ваш проект Nuxt, вы можете использовать флаг `--only`:
+Вы можете получить предупреждение о том, что другие облачные функции будут удалены при развёртывании проекта Nuxt. Это происходит потому, что Nitro развернет весь ваш проект в функции firebase. Если вы хотите развернуть только ваш проект Nuxt, вы можете использовать флаг `--only`:
 
 ```bash
 firebase deploy --only functions:server,hosting
@@ -181,10 +181,9 @@ firebase deploy --only functions:server,hosting
 Для получения дополнительной информации обратитесь к документации **Firebase**.
 ::
 
-## Working with Environment Variables
+## Переменные окружения
 
-To set environment variables for your Firebase functions, you need to copy the `.env` file to the `.output/server` directory.
-You can do this by adding a `postbuild` script to your `package.json`, that will automatically run after the build command:
+Чтобы задать переменные окружения для функций Firebase, скопируйте файл `.env` в директорию `.output/server`. Можно добавить скрипт `postbuild` в `package.json` — он выполнится после сборки:
 
 ```json [package.json]
 {
@@ -195,5 +194,5 @@ You can do this by adding a `postbuild` script to your `package.json`, that will
 ```
 
 ::read-more{to="https://firebase.google.com/docs/functions/config-env?gen=2nd#env-variables" target="\_blank"}
-For more information, refer to the **Firebase documentation**.
+Подробнее в **документации Firebase**.
 ::

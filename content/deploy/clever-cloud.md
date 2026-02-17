@@ -1,26 +1,26 @@
 ---
 title: Clever Cloud
-description: 'Deploy your Nuxt Application to Clever Cloud infrastructure.'
+description: 'Разверните приложение Nuxt в инфраструктуре Clever Cloud.'
 logoSrc: '/assets/integrations/clever-cloud.svg'
-category: Hosting
+category: Хостинг
 nitroPreset: 'node_server'
 website: 'https://www.clever-cloud.com/'
 ---
 
-Nuxt supports deploying on [Clever Cloud](https://www.clever-cloud.com/) with minimal configuration.
+Nuxt поддерживает развёртывание на [Clever Cloud](https://www.clever-cloud.com/) с минимальной настройкой.
 
-## Deploy Clever Cloud from the Console
+## Развёртывание из консоли Clever Cloud
 
-To deploy your Nuxt project to Clever Cloud, you will need to create a **new application**. The application wizard will walk you through the necessary configuration steps.
+Чтобы развернуть проект Nuxt в Clever Cloud, создайте **новое приложение**. Мастер проведёт через необходимые шаги настройки.
 
-1. From the lateral menubar, click **Create > An application**
-2. Choose how to deploy: **Create an application from a local repository** or **Create an application from a GitHub repository**
-3. Select a **Node.js** application, or a **static one**.
-4. Set up the minimal size for your instance and scalability options. Nuxt app must be deployed with a minimum size of **XS** instance for **Node.js** application and **nano** instance for **static one**. The build process, however, will need to be configured later with at least an M instance size to ensure it can handle the resource requirements. Depending on your project’s specifications and dependencies, you may need to adjust further as you monitor the metrics from the **Overview** page.
-5. Select a **region** to deploy your instance.
-6. Skip connecting **Add-ons** to your Clever application unless you’re using a database.
-7. Inject **environment variables**:
-  - For **Node.js**
+1. В боковом меню выберите **Create > An application**.
+2. Выберите способ развёртывания: **Create an application from a local repository** или **Create an application from a GitHub repository**.
+3. Выберите приложение **Node.js** или **статическое**.
+4. Задайте минимальный размер инстанса и опции масштабирования. Приложение Nuxt нужно разворачивать с размером не менее **XS** для **Node.js** и **nano** для **статического**. Для процесса сборки позже потребуется настроить размер не менее **M**, чтобы хватало ресурсов. В зависимости от проекта и зависимостей может понадобиться корректировка по метрикам на странице **Overview**.
+5. Выберите **регион** развёртывания.
+6. Пункт **Add-ons** можно пропустить, если база данных не используется.
+7. Задайте **переменные окружения**:
+  - Для **Node.js**
 
 ::code-group{sync="pm"}
 
@@ -46,14 +46,14 @@ CC_RUN_COMMAND="node .output/server/index.mjs"
 
 ::
 
-  - For a **static application**
+  - Для **статического приложения**
 
 ::note
-If [`ssr: false` is set in `nuxt.config.ts`](https://nuxt.com/docs/4.x/getting-started/deployment#static-hosting) **or** if your project contains dynamic routes that cannot be pre-rendered, you should :
-1. Use a **Static Apache** application
-2. Create a [`.htaccess`](https://www.clever.cloud/developers/doc/applications/static-apache/#serving-indexhtml-for-spa-single-page-application-routers) file that redirects all routes to `index.html` to ensure proper routing for your SPA.
+Если в `nuxt.config.ts` задано [`ssr: false`](https://nuxt.com/docs/4.x/getting-started/deployment#static-hosting) **или** в проекте есть динамические маршруты, которые нельзя предварительно отрендерить:
+1. Используйте приложение **Static Apache**.
+2. Создайте файл [`.htaccess`](https://www.clever.cloud/developers/doc/applications/static-apache/#serving-indexhtml-for-spa-single-page-application-routers), перенаправляющий все маршруты на `index.html` для корректной работы SPA.
 
-Otherwise, you can use the default **Static HTML** application.
+В остальных случаях подойдёт приложение **Static HTML** по умолчанию.
 ::
 
 ::code-group{sync="pm"}
@@ -88,11 +88,11 @@ CC_POST_BUILD_HOOK=bun generate
 
 ::
 
-8. Navigate to the application **Information** menu and enable the **enable dedicated build instance** option on a minimal instance of type **M**.
-9. **Deploy!** If you’re deploying from **GitHub**, your deployment should start automatically. If you’re using **Git**, show [this docs](https://www.clever-cloud.com/developers/doc/quickstart/#choose-how-to-deploy).
+8. В меню приложения **Information** включите опцию **enable dedicated build instance** с минимальным инстансом типа **M**.
+9. **Разверните.** При развёртывании из **GitHub** деплой запустится автоматически. При использовании **Git** см. [документацию](https://www.clever-cloud.com/developers/doc/quickstart/#choose-how-to-deploy).
 
-## Learn more
+## Узнать больше
 
 ::read-more{to="https://developers.clever-cloud.com/guides/nuxt" target="_blank"}
-Clever Cloud documentation for deploying Nuxt
+Документация Clever Cloud по развёртыванию Nuxt
 ::

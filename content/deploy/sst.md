@@ -1,34 +1,34 @@
 ---
 title: SST
-description: 'Deploy your Nuxt Application to AWS with SST.'
+description: 'Разверните приложение Nuxt в AWS с помощью SST.'
 logoSrc: '/assets/integrations/sst.svg'
-category: Hosting
+category: Хостинг
 nitroPreset: 'aws-lambda'
 website: 'https://sst.dev/'
 ---
 
-Nuxt supports deploying on [SST](https://sst.dev/) with minimal configuration.
+Nuxt поддерживает развёртывание на [SST](https://sst.dev/) с минимальной настройкой.
 
-## Quick start
+## Быстрый старт
 
-1. Create a Nuxt project.
-2. Init SST in your project.
+1. Создайте проект Nuxt.
+2. Инициализируйте SST в проекте:
    ```bash
    npx sst@latest init
    ```
-3. It should detect that your are using Nuxt and ask you to update your `nuxt.config.ts` file.
+3. SST определит использование Nuxt и предложит обновить `nuxt.config.ts`:
    ```ts
    nitro: {
      preset: 'aws-lambda'
    }
    ```
-4. Once you are ready to deploy, run.
+4. Для развёртывания выполните:
    ```bash
    npx sst deploy --stage production
    ```
 
-You can [read the full Nuxt on SST tutorial here](https://sst.dev/docs/start/aws/nuxt).
+Подробный туториал: [Nuxt на SST](https://sst.dev/docs/start/aws/nuxt).
 
-## More options
+## Дополнительно
 
-You can also deploy Nuxt to a container using SST. Head over to the [SST docs to learn more](https://sst.dev/docs/start/aws/nuxt).
+Nuxt можно развернуть и в контейнере через SST. Подробнее — в [документации SST](https://sst.dev/docs/start/aws/nuxt).
