@@ -88,6 +88,7 @@
     "evalite": "1.0.0-beta.15",
     "happy-dom": "^20.6.1",
     "nuxt-content-twoslash": "^0.1.2",
+    "nuxt-yandex-metrika": "^2.0.2",
     "playwright": "^1.58.2",
     "shiki": "^3.22.0",
     "twoslash": "^0.3.6",

@@ -195,6 +195,9 @@ importers:
       nuxt-content-twoslash:
         specifier: ^0.1.2
         version: 0.1.2(@nuxtjs/mdc@0.20.1(magicast@0.5.2))(magicast@0.5.2)
+      nuxt-yandex-metrika:
+        specifier: ^2.0.2
+        version: 2.0.2(@nuxt/scripts@0.13.2(@types/youtube@0.1.2)(@unhead/vue@2.1.4(vue@3.5.28(typescript@5.9.3)))(@vercel/functions@3.4.2)(db0@0.3.4(@libsql/client@0.17.0)(better-sqlite3@12.6.2)(drizzle-orm@0.45.1(@cloudflare/workers-types@4.20260212.0)(@libsql/client@0.17.0)(@opentelemetry/api@1.9.0)(better-sqlite3@12.6.2)))(ioredis@5.9.2)(magicast@0.5.2)(typescript@5.9.3)(vue@3.5.28(typescript@5.9.3)))(magicast@0.5.2)(typescript@5.9.3)(vue@3.5.28(typescript@5.9.3))
       playwright:
         specifier: ^1.58.2
         version: 1.58.2
@@ -2381,6 +2384,10 @@ packages:
   '@poppinss/utils@6.10.1':
     resolution: {integrity: sha512-da+MMyeXhBaKtxQiWPfy7+056wk3lVIhioJnXHXkJ2/OHDaZfFcyKHNl1R06sdYO8lIRXcXdoZ6LO2ARmkAREA==}
     engines: {node: '>=18.16.0'}
+
+  '@prleasing/utility@5.0.1':
+    resolution: {integrity: sha512-U0/1p6qbUQpeNse4HL0pMkUN8AvPRwCanta3tccRnm6iQD09kxbA+sOaPMxZsShm/lG7BsB9/H61stAqp2P40w==}
+    engines: {node: '>=20.11.0'}
 
   '@puppeteer/browsers@2.12.0':
     resolution: {integrity: sha512-Xuq42yxcQJ54ti8ZHNzF5snFvtpgXzNToJ1bXUGQRaiO8t+B6UM8sTUJfvV+AJnqtkJU/7hdy6nbKyA12aHtRw==}
@@ -5020,6 +5027,9 @@ packages:
   date-fns@4.1.0:
     resolution: {integrity: sha512-Ukq0owbQXxa/U3EGtsdVBkR1w7KOQ5gIBqdH2hkvknzZPYvBxb/aa6E8L7tmjFtkwZBu3UXBbjIgPo/Ez4xaNg==}
 
+  dayjs@1.11.19:
+    resolution: {integrity: sha512-t5EcLVS6QPBNqM2z8fakk/NKel+Xzshgt8FFKAn+qwlD1pzZWxh0nVCrvFK7ZDb6XucZeF9z8C7CBWTRIVApAw==}
+
   db0@0.3.4:
     resolution: {integrity: sha512-RiXXi4WaNzPTHEOu8UPQKMooIbqOEyqA1t7Z6MsdxSCeb8iUC9ko3LcmsLmeUt2SM5bctfArZKkRQggKZz7JNw==}
     peerDependencies:
@@ -6656,6 +6666,9 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
+  libphonenumber-js@1.12.37:
+    resolution: {integrity: sha512-rDU6bkpuMs8YRt/UpkuYEAsYSoNuDEbrE41I3KNvmXREGH6DGBJ8Wbak4by29wNOQ27zk4g4HL82zf0OGhwRuw==}
+
   libsql@0.5.22:
     resolution: {integrity: sha512-NscWthMQt7fpU8lqd7LXMvT9pi+KhhmTHAJWUB/Lj6MWa0MKFv0F2V4C6WKKpjCVZl0VwcDz4nOI3CyaT1DDiA==}
     cpu: [x64, arm64, wasm32, arm]
@@ -7343,6 +7356,11 @@ packages:
 
   nuxt-site-config@3.2.19:
     resolution: {integrity: sha512-OUGfo8aJWbymheyb9S2u78ADX73C9qBf8u6BwEJiM82JBhvJTEduJBMlK8MWeh3x9NF+/YX4AYsY5hjfQE5jGA==}
+
+  nuxt-yandex-metrika@2.0.2:
+    resolution: {integrity: sha512-2QjZLwPyeI1QP2iBqGYcgxjfM8Iwe9YddPyj2XgW9+d5UgXX0SsGg6IoYo3kpjYW51luolijq4ciOdeCWcbK+g==}
+    peerDependencies:
+      '@nuxt/scripts': ^0.13.2
 
   nuxt@4.3.1:
     resolution: {integrity: sha512-bl+0rFcT5Ax16aiWFBFPyWcsTob19NTZaDL5P6t0MQdK63AtgS6fN6fwvwdbXtnTk6/YdCzlmuLzXhSM22h0OA==}
@@ -12091,6 +12109,11 @@ snapshots:
       safe-stable-stringify: 2.5.0
       secure-json-parse: 4.1.0
 
+  '@prleasing/utility@5.0.1':
+    dependencies:
+      dayjs: 1.11.19
+      libphonenumber-js: 1.12.37
+
   '@puppeteer/browsers@2.12.0':
     dependencies:
       debug: 4.4.3
@@ -14723,6 +14746,8 @@ snapshots:
 
   date-fns@4.1.0: {}
 
+  dayjs@1.11.19: {}
+
   db0@0.3.4(@libsql/client@0.17.0)(better-sqlite3@12.6.2)(drizzle-orm@0.45.1(@cloudflare/workers-types@4.20260212.0)(@libsql/client@0.17.0)(@opentelemetry/api@1.9.0)(better-sqlite3@12.6.2)):
     optionalDependencies:
       '@libsql/client': 0.17.0
@@ -16514,6 +16539,8 @@ snapshots:
     dependencies:
       isomorphic.js: 0.2.5
 
+  libphonenumber-js@1.12.37: {}
+
   libsql@0.5.22:
     dependencies:
       '@neon-rs/load': 0.0.4
@@ -17513,6 +17540,20 @@ snapshots:
     transitivePeerDependencies:
       - magicast
       - vite
+      - vue
+
+  nuxt-yandex-metrika@2.0.2(@nuxt/scripts@0.13.2(@types/youtube@0.1.2)(@unhead/vue@2.1.4(vue@3.5.28(typescript@5.9.3)))(@vercel/functions@3.4.2)(db0@0.3.4(@libsql/client@0.17.0)(better-sqlite3@12.6.2)(drizzle-orm@0.45.1(@cloudflare/workers-types@4.20260212.0)(@libsql/client@0.17.0)(@opentelemetry/api@1.9.0)(better-sqlite3@12.6.2)))(ioredis@5.9.2)(magicast@0.5.2)(typescript@5.9.3)(vue@3.5.28(typescript@5.9.3)))(magicast@0.5.2)(typescript@5.9.3)(vue@3.5.28(typescript@5.9.3)):
+    dependencies:
+      '@nuxt/kit': 4.3.1(magicast@0.5.2)
+      '@nuxt/scripts': 0.13.2(@types/youtube@0.1.2)(@unhead/vue@2.1.4(vue@3.5.28(typescript@5.9.3)))(@vercel/functions@3.4.2)(db0@0.3.4(@libsql/client@0.17.0)(better-sqlite3@12.6.2)(drizzle-orm@0.45.1(@cloudflare/workers-types@4.20260212.0)(@libsql/client@0.17.0)(@opentelemetry/api@1.9.0)(better-sqlite3@12.6.2)))(ioredis@5.9.2)(magicast@0.5.2)(typescript@5.9.3)(vue@3.5.28(typescript@5.9.3))
+      '@prleasing/utility': 5.0.1
+      '@vueuse/core': 14.2.1(vue@3.5.28(typescript@5.9.3))
+      consola: 3.4.2
+      defu: 6.1.4
+      valibot: 1.2.0(typescript@5.9.3)
+    transitivePeerDependencies:
+      - magicast
+      - typescript
       - vue
 
   nuxt@4.3.1(@libsql/client@0.17.0)(@parcel/watcher@2.5.6)(@types/node@25.2.3)(@vercel/functions@3.4.2)(@vue/compiler-sfc@3.5.28)(better-sqlite3@12.6.2)(cac@6.7.14)(db0@0.3.4(@libsql/client@0.17.0)(better-sqlite3@12.6.2)(drizzle-orm@0.45.1(@cloudflare/workers-types@4.20260212.0)(@libsql/client@0.17.0)(@opentelemetry/api@1.9.0)(better-sqlite3@12.6.2)))(drizzle-orm@0.45.1(@cloudflare/workers-types@4.20260212.0)(@libsql/client@0.17.0)(@opentelemetry/api@1.9.0)(better-sqlite3@12.6.2))(eslint@9.39.2(jiti@2.6.1))(ioredis@5.9.2)(lightningcss@1.31.1)(magicast@0.5.2)(optionator@0.9.4)(rolldown@1.0.0-beta.57)(rollup@4.57.1)(terser@5.46.0)(typescript@5.9.3)(vite@8.0.0-beta.14(@types/node@25.2.3)(esbuild@0.25.12)(jiti@2.6.1)(terser@5.46.0)(yaml@2.8.2))(vue-tsc@3.2.4(typescript@5.9.3))(yaml@2.8.2):

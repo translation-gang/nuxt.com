@@ -23,8 +23,19 @@ export default defineNuxtConfig({
     'nuxt-charts',
     'nuxt-auth-utils',
     '@nuxtjs/mcp-toolkit',
-    '@nuxt/hints'
+    '@nuxt/hints',
+    'nuxt-yandex-metrika'
   ],
+  yandexMetrika: {
+    id: '106876068',
+    options: {
+      webvisor: true,
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      ecommerce: 'dataLayer'
+    }
+  },
   $development: {
     site: {
       url: 'http://localhost:3000'
