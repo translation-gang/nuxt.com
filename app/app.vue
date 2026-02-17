@@ -74,13 +74,13 @@ onMounted(() => {
 <template>
   <UApp>
     <noscript>
-    <div>
+      <div>
       <img
-        src="https://mc.yandex.ru/watch/106876068"
-        style="position:absolute; left:-9999px;"
-        alt=""
+      src="https://mc.yandex.ru/watch/106876068"
+      style="position:absolute; left:-9999px;"
+      alt=""
       >
-    </div>
+      </div>
     </noscript>
     <NuxtLoadingIndicator color="var(--ui-primary)" />
 
