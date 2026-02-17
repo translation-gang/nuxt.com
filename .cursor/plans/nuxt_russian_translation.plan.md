@@ -46,7 +46,7 @@ todos:
     status: completed
   - id: phase3-guide-concepts
     content: "Фаза 3.3: Перевод docs/3.guide/1.concepts/ (9 файлов)"
-    status: pending
+    status: completed
   - id: phase3-guide-rest
     content: "Фаза 3.4: Перевод docs/3.guide/ остальное (31 файл)"
     status: pending
@@ -124,8 +124,8 @@ isProject: true
   - **Framework Preset** — не переопределять вручную; Vercel определит Nuxt по зависимостям.
   - **Output Directory** — оставить пустым (не указывать `dist`). Vercel сам определяет Nuxt и находит `.output`.
 2. **Конфигурация в репозитории**
-  - **`nuxt.config.ts`** — **НЕ** задавать `nitro.preset` вручную. Nitro автоматически определяет Vercel по env `VERCEL=1` и использует правильный пресет (нулевая конфигурация). Вывод сборки — `.output`.
-  - **`vercel.json`** — только при необходимости переопределить команды (не указывать `framework`, `outputDirectory` или `nitro.preset`):
+  - `**nuxt.config.ts**` — **НЕ** задавать `nitro.preset` вручную. Nitro автоматически определяет Vercel по env `VERCEL=1` и использует правильный пресет (нулевая конфигурация). Вывод сборки — `.output`.
+  - `**vercel.json**` — только при необходимости переопределить команды (не указывать `framework`, `outputDirectory` или `nitro.preset`):
     ```json
     {
       "$schema": "https://openapi.vercel.sh/vercel.json",

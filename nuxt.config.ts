@@ -335,7 +335,8 @@ export default defineNuxtConfig({
         route => route.startsWith('/modules/'),
         route => route.startsWith('/admin'),
         route => route.includes('_dir'), // виртуальные индексные пути контента, /raw/.../_dir.md дают 500
-        route => route === '/llms-full.txt' // nuxt-llms генерирует маршрут, при пререндере возможен 500
+        route => route === '/llms-full.txt', // nuxt-llms генерирует маршрут, при пререндере возможен 500
+        route => route.startsWith('/__og-image__/') // OG-картинки при пререндере дают 500, генерируются по запросу
       ],
       autoSubfolderIndex: false
     }
