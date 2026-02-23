@@ -25,7 +25,8 @@ export default defineConfig({
             nuxt: {
               overrides: {
                 ogImage: { enabled: false },
-                experimental: { viteEnvironmentApi: false }
+                experimental: { viteEnvironmentApi: false },
+                yandexMetrika: { id: '' }
               }
             }
           }

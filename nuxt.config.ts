@@ -54,16 +54,6 @@ export default defineNuxtConfig({
       }
     }
   },
-  yandexMetrika: {
-    id: '106876068',
-    options: {
-      webvisor: true,
-      clickmap: true,
-      trackLinks: true,
-      accurateTrackBounce: true,
-      ecommerce: 'dataLayer'
-    }
-  },
   devtools: {
     enabled: true
   },
@@ -455,5 +445,15 @@ export default defineNuxtConfig({
     enableInDev: false,
     // Do not throw when twoslash fails, the typecheck should be down in github.com/nuxt/nuxt's CI
     throws: false
+  },
+  yandexMetrika: {
+    id: '106876068',
+    options: {
+      webvisor: true,
+      clickmap: true,
+      trackLinks: true,
+      accurateTrackBounce: true,
+      ecommerce: 'dataLayer'
+    }
   }
 })

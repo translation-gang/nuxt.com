@@ -4,7 +4,7 @@ test.describe('Modules Page', () => {
   test('loads successfully with module listing', async ({ page, goto }) => {
     await goto('/modules')
 
-    await expect(page).toHaveTitle(/Modules/i)
+    await expect(page).toHaveTitle(/(Modules|Модули)/i)
 
     await expect(page.getByRole('heading', { level: 1 }).first()).toBeVisible()
 
@@ -51,7 +51,7 @@ test.describe('Modules Page', () => {
     expect(page.url()).toContain('category=')
 
     // Verify we're still on modules page
-    await expect(page).toHaveTitle(/Modules/i)
+    await expect(page).toHaveTitle(/(Modules|Модули)/i)
     expect(await moduleLinks.count()).toBeLessThanOrEqual(count)
   })
 

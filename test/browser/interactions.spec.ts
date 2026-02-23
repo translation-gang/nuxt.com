@@ -4,7 +4,8 @@ test.describe('User Interactions', () => {
   test('CTA buttons on homepage navigate correctly', async ({ page, goto }) => {
     await goto('/')
 
-    const ctaLink = page.getByRole('link').filter({ hasText: /get.?started/i }).first()
+    // CTA может быть "Get started" (EN) или "Начать" (RU)
+    const ctaLink = page.getByRole('link').filter({ hasText: /get.?started|начать/i }).first()
 
     await expect(ctaLink).toBeVisible()
     await ctaLink.click()
