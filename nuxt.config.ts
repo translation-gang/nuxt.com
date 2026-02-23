@@ -24,7 +24,7 @@ export default defineNuxtConfig({
     'nuxt-auth-utils',
     '@nuxtjs/mcp-toolkit',
     '@nuxt/hints',
-    'nuxt-yandex-metrika'
+    ...(process.env.VITEST ? [] : ['nuxt-yandex-metrika'])
   ],
   $development: {
     site: {
