@@ -139,14 +139,14 @@ const footerLinks = [{
 }, {
   label: 'Обзор',
   children: [{
-    label: 'Modules',
-    to: 'https://nuxt.com/modules'
-  }, {
     label: 'Templates',
-    to: 'https://nuxt.com/templates'
+    to: '/templates'
   }, {
     label: 'Showcase',
-    to: 'https://nuxt.com/showcase'
+    to: '/showcase'
+  }, {
+    label: 'AI Evals',
+    to: '/evals'
   }]
 }, {
   label: 'Enterprise',
@@ -182,17 +182,15 @@ const _useNavigation = () => {
       track('Ask AI Opened', { source: 'search-links' })
       nuxtApp.$kapa?.openModal()
     }
-  }, ...headerLinks.value.map((link) => {
-    // Remove `/docs` and `/enterprise` links from command palette
+  }, ...headerLinks.value.flatMap((link) => {
     if (link.search === false) {
-      return {
-        label: link.label,
-        icon: link.icon,
-        children: link.children
-      }
+      return (link.children || []).map(child => ({
+        ...child,
+        label: `${link.label} > ${child.label}`
+      }))
     }
-    return link
-  }).filter(Boolean), {
+    return [link]
+  }), {
     label: 'Команда',
     icon: 'i-lucide-users',
     to: '/team'
@@ -200,6 +198,10 @@ const _useNavigation = () => {
     label: 'Набор для дизайна',
     icon: 'i-lucide-palette',
     to: '/design-kit'
+  }, {
+    label: 'Оценки ИИ',
+    icon: 'i-lucide-brain',
+    to: '/evals'
   }, {
     label: 'Рассылка',
     icon: 'i-lucide-mail',

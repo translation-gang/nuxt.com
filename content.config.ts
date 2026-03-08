@@ -16,6 +16,14 @@ const docsV4Source = {
   prefix: '/docs/4.x'
 }
 
+const docsV5Source = {
+  cwd: process.env.NUXT_V5_PATH ?? undefined,
+  repository: !process.env.NUXT_V5_PATH ? 'https://github.com/nuxt/nuxt/tree/main' : undefined,
+  include: 'docs/**/*',
+  exclude: ['docs/**/*.json'],
+  prefix: '/docs/5.x'
+}
+
 const examplesV3Source = {
   cwd: process.env.NUXT_EXAMPLES_PATH ?? undefined,
   repository: !process.env.NUXT_EXAMPLES_PATH ? 'https://github.com/translation-gang/examples' : undefined,
@@ -28,6 +36,13 @@ const examplesV4Source = {
   repository: !process.env.NUXT_EXAMPLES_PATH ? 'https://github.com/translation-gang/examples' : undefined,
   include: '.docs/**/*',
   prefix: '/docs/4.x/4.examples'
+}
+
+const examplesV5Source = {
+  cwd: process.env.NUXT_EXAMPLES_PATH ?? undefined,
+  repository: !process.env.NUXT_EXAMPLES_PATH ? 'https://github.com/nuxt/examples' : undefined,
+  include: '.docs/**/*',
+  prefix: '/docs/5.x/4.examples'
 }
 
 const Image = z.object({
@@ -194,6 +209,14 @@ export default defineContentConfig({
         sponsors: PageSection.extend({
           cta: Button
         })
+      })
+    }),
+    docsv5: defineCollection({
+      type: 'page',
+      source: [docsV5Source, examplesV5Source],
+      schema: z.object({
+        titleTemplate: z.string().optional(),
+        links: z.array(Button)
       })
     }),
     docsv4: defineCollection({
@@ -420,6 +443,15 @@ export default defineContentConfig({
           avatar: Image,
           links: z.array(Link)
         }))
+      })
+    }),
+    evals: defineCollection({
+      type: 'data',
+      source: 'evals.yml',
+      schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        githubUrl: z.string().url()
       })
     })
   }
