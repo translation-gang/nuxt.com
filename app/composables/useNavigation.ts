@@ -139,17 +139,17 @@ const footerLinks = [{
 }, {
   label: 'Обзор',
   children: [{
-    label: 'Templates',
+    label: 'Шаблоны',
     to: '/templates'
   }, {
-    label: 'Showcase',
+    label: 'Витрина',
     to: '/showcase'
   }, {
-    label: 'AI Evals',
+    label: 'Оценки ИИ',
     to: '/evals'
   }]
 }, {
-  label: 'Enterprise',
+  label: 'Энтерпрайз',
   children: [{
     label: 'Поддержка',
     to: '/enterprise/support'

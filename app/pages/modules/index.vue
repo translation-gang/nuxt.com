@@ -128,8 +128,8 @@ Steps:
 4. Verify the setup is correct by checking that the modules are properly registered`
   track('Modules Agent Prompt Copied', { count: modulesToAdd.value.length, modules: moduleNames })
   copy(prompt, {
-    title: 'Agent prompt copied to clipboard!',
-    description: `Prompt ready for ${modulesToAdd.value.length} module${modulesToAdd.value.length > 1 ? 's' : ''}`,
+    title: 'Промпт агента скопирован в буфер обмена',
+    description: `Промпт готов для ${modulesToAdd.value.length} модул${modulesToAdd.value.length === 1 ? 'я' : 'ей'}`,
     icon: 'i-custom-ai'
   })
 }

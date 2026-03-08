@@ -39,7 +39,7 @@ interface ModelRow {
 
 const { data: page } = await useAsyncData('evals', () => queryCollection('evals').first())
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+  throw createError({ statusCode: 404, statusMessage: 'Страница не найдена', fatal: true })
 }
 
 const title = page.value.title
@@ -73,7 +73,7 @@ const allResults = computed<ModelRow[]>(() => {
     const successes = evals.filter(e => e.result.success).length
     rows.push({
       model: experiment?.modelName || experimentName,
-      agent: experiment?.agentHarness || 'Unknown',
+      agent: experiment?.agentHarness || 'Неизвестно',
       totalEvals: evals.length,
       successRate: evals.length ? Math.round((successes / evals.length) * 100) : 0,
       evals
@@ -99,7 +99,7 @@ const filteredResults = computed(() => {
 const formattedDate = computed(() => {
   if (!rawData?.metadata?.exportedAt) return ''
   const date = new Date(rawData.metadata.exportedAt)
-  return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })
+  return date.toLocaleDateString('ru-RU', { month: 'long', day: 'numeric', year: 'numeric' })
 })
 
 // Model icon mapping (matched by lowercase prefix of model name)
@@ -148,7 +148,7 @@ const columns: TableColumn<ModelRow>[] = [
       'icon': 'i-lucide-chevron-right',
       'square': true,
       'size': 'sm',
-      'aria-label': 'Expand',
+      'aria-label': 'Развернуть',
       'ui': {
         leadingIcon: ['transition-transform', row.getIsExpanded() ? 'duration-200 rotate-90' : '']
       },
@@ -161,7 +161,7 @@ const columns: TableColumn<ModelRow>[] = [
   },
   {
     accessorKey: 'model',
-    header: 'Model',
+    header: 'Модель',
     cell: ({ row }) => h('div', { class: 'flex items-center gap-2' }, [
       h(UAvatar, { icon: getModelIcon(row.original.model), size: 'sm', class: 'ring ring-default ring-inset' }),
       h('span', {}, row.original.model)
@@ -169,11 +169,11 @@ const columns: TableColumn<ModelRow>[] = [
   },
   {
     accessorKey: 'agent',
-    header: 'Agent'
+    header: 'Агент'
   },
   {
     accessorKey: 'totalEvals',
-    header: 'Total Evals',
+    header: 'Всего оценок',
     meta: {
       class: {
         th: 'text-center',
@@ -183,7 +183,7 @@ const columns: TableColumn<ModelRow>[] = [
   },
   {
     accessorKey: 'successRate',
-    header: 'Success Rate',
+    header: 'Успешность',
     meta: {
       class: {
         th: 'text-right',
@@ -198,11 +198,11 @@ const columns: TableColumn<ModelRow>[] = [
 const evalColumns: TableColumn<EvalResultItem>[] = [
   {
     accessorKey: 'evalPath',
-    header: 'Evaluation'
+    header: 'Оценка'
   },
   {
     id: 'score',
-    header: 'Result',
+    header: 'Результат',
     meta: {
       class: {
         th: 'text-center',
@@ -212,11 +212,11 @@ const evalColumns: TableColumn<EvalResultItem>[] = [
     cell: ({ row }) => h(UBadge, {
       color: row.original.result.success ? 'success' : 'error',
       variant: 'subtle'
-    }, () => row.original.result.success ? 'Pass' : 'Fail')
+    }, () => row.original.result.success ? 'Пройдено' : 'Не пройдено')
   },
   {
     id: 'duration',
-    header: 'Duration',
+    header: 'Длительность',
     meta: {
       class: {
         th: 'text-right',
@@ -243,7 +243,7 @@ const evalColumns: TableColumn<EvalResultItem>[] = [
         <UButton
           :to="page.githubUrl"
           icon="i-simple-icons-github"
-          label="View on GitHub"
+          label="Открыть на GitHub"
           target="_blank"
           color="neutral"
           variant="ghost"
@@ -251,7 +251,7 @@ const evalColumns: TableColumn<EvalResultItem>[] = [
 
         <USeparator orientation="vertical" class="h-6" />
 
-        <span class="text-sm font-medium">Last run date: <span class="text-muted font-normal">{{ formattedDate }}</span></span>
+        <span class="text-sm font-medium">Дата последнего запуска: <span class="text-muted font-normal">{{ formattedDate }}</span></span>
       </template>
     </UPageHero>
 
@@ -259,14 +259,14 @@ const evalColumns: TableColumn<EvalResultItem>[] = [
       <UContainer class="max-w-6xl">
         <div class="flex items-center justify-between mb-4">
           <h2 class="text-2xl font-bold">
-            Agent Performance Results
+            Результаты оценки агентов
           </h2>
 
           <USelectMenu
             v-model="selectedAgents"
             :items="agents"
             multiple
-            placeholder="All Agents"
+            placeholder="Все агенты"
             color="neutral"
             variant="subtle"
             class="w-52 bg-elevated/50 hover:bg-elevated data-[state=open]:bg-elevated group"
