@@ -325,13 +325,13 @@ const chartTitle = computed(() => {
 const chartDescription = computed(() => {
   switch (chartType.value) {
     case 'line':
-      return 'Track selected pages satisfaction over time'
+      return 'Удовлетворённость выбранных страниц во времени'
     case 'compare':
-      return 'Compare feedback distribution across pages'
+      return 'Сравнение распределения отзывов по страницам'
     case 'overall':
-      return 'Global documentation satisfaction evolution'
+      return 'Общая динамика удовлетворённости документацией'
     default:
-      return 'Track selected pages satisfaction over time'
+      return 'Удовлетворённость выбранных страниц во времени'
   }
 })
 
@@ -349,9 +349,9 @@ const chartIcon = computed(() => {
 })
 
 const availableChartTypes = [
-  { value: 'line' as const, label: 'Line', icon: 'i-lucide-trending-up' },
-  { value: 'compare' as const, label: 'Compare', icon: 'i-lucide-bar-chart-4' },
-  { value: 'overall' as const, label: 'Overall', icon: 'i-lucide-activity' }
+  { value: 'line' as const, label: 'Линейный', icon: 'i-lucide-trending-up' },
+  { value: 'compare' as const, label: 'Сравнение', icon: 'i-lucide-bar-chart-4' },
+  { value: 'overall' as const, label: 'Общий', icon: 'i-lucide-activity' }
 ]
 
 function togglePageSelection(pagePath: string) {
@@ -552,7 +552,7 @@ function selectWorstPages(count: number) {
           <div class="mb-4">
             <UInput
               v-model="pageSearchQuery"
-              placeholder="Search pages..."
+              placeholder="Поиск страниц..."
               icon="i-lucide-search"
               class="w-full"
               :ui="{ trailing: 'pe-1' }"
@@ -563,7 +563,7 @@ function selectWorstPages(count: number) {
                   variant="link"
                   size="sm"
                   icon="i-lucide-circle-x"
-                  aria-label="Clear input"
+                  aria-label="Очистить"
                   @click="pageSearchQuery = ''"
                 />
               </template>

@@ -15,16 +15,16 @@
       <UNavigationMenu
         :items="[
           {
-            label: 'Docs'
+            label: 'Документация'
           },
           {
-            label: 'Components'
+            label: 'Компоненты'
           },
           {
             label: 'Figma'
           },
           {
-            label: 'Releases'
+            label: 'Релизы'
           }
         ]"
       />
@@ -32,7 +32,7 @@
       <template #right>
         <UColorModeButton />
 
-        <UTooltip text="Open on GitHub" :kbds="['meta', 'G']">
+        <UTooltip text="Открыть на GitHub" :kbds="['meta', 'G']">
           <UButton
             color="neutral"
             variant="ghost"
@@ -45,16 +45,16 @@
       </template>
     </UHeader>
     <UPageHero
-      title="Nuxt UI - Starter"
-      description="Nuxt UI is a free and open-source UI library for Nuxt applications. Create beautiful & responsive applications in minutes."
+      title="Nuxt UI — Стартовый шаблон"
+      description="Nuxt UI — бесплатная UI-библиотека для приложений Nuxt. Создавайте адаптивные приложения за минуты."
       :links="[{
-        label: 'Get started',
+        label: 'Начать',
         to: 'https://ui.nuxt.com/getting-started/installation/nuxt',
         target: '_blank',
         trailingIcon: 'i-lucide-arrow-right',
         size: 'xl'
       }, {
-        label: 'Use this template',
+        label: 'Использовать шаблон',
         to: 'https://github.com/nuxt-ui-pro/starter',
         target: '_blank',
         icon: 'i-simple-icons-github',
@@ -66,67 +66,67 @@
 
     <UPageSection
       id="features"
-      title="The freedom to build anything"
-      description="Nuxt UI ships with a comprehensive set of components that cover a wide range of use-cases. Carefully crafted to reduce boilerplate code without sacrificing flexibility."
+      title="Свобода создавать что угодно"
+      description="Nuxt UI включает набор компонентов на все случаи. Меньше шаблонного кода без потери гибкости."
       :features="[{
         icon: 'i-lucide-wrench',
-        title: 'Fully customizable',
-        description: 'Customize any component through the App Config or fine-tune specific instances with the ui prop for maximum flexibility.'
+        title: 'Полная настройка',
+        description: 'Настраивайте компоненты через App Config или точечно через проп ui.'
       }, {
         icon: 'i-lucide-square-stack',
-        title: 'Powerful slot system',
-        description: 'Take full control of component layouts and content with Vue\'s comprehensive slot system for maximum flexibility.'
+        title: 'Мощная система слотов',
+        description: 'Полный контроль над разметкой и контентом через слоты Vue.'
       }, {
         icon: 'i-lucide-smartphone',
-        title: 'Mobile-first & responsive',
-        description: 'Built with a mobile-first approach, all components automatically adapt to any screen size while maintaining a polished look.'
+        title: 'Mobile-first и адаптивность',
+        description: 'Компоненты подстраиваются под любой экран и остаются аккуратными.'
       }]"
     />
 
-    <UPageSection title="Pricing">
+    <UPageSection title="Тарифы">
       <UPricingPlans
         :plans="[
           {
             title: 'Starter',
-            description: 'Perfect for personal projects and small teams.',
-            price: 'Free',
+            description: 'Для личных проектов и небольших команд.',
+            price: 'Бесплатно',
             features: [
-              'All 110+ components',
-              'Complete Figma kit',
-              '12 free templates',
-              'Community support'
+              'Более 110 компонентов',
+              'Полный Figma-набор',
+              '12 бесплатных шаблонов',
+              'Поддержка сообщества'
             ],
             button: {
-              label: 'Get started'
+              label: 'Начать'
             }
           },
           {
             title: 'Pro',
-            description: 'Enhanced features for growing businesses.',
+            description: 'Расширенные возможности для растущего бизнеса.',
             price: '$19',
-            billingCycle: '/month',
+            billingCycle: '/мес.',
             features: [
-              'Everything in Starter',
-              'Priority support',
-              'Advanced templates',
-              'Custom components'
+              'Всё из Starter',
+              'Приоритетная поддержка',
+              'Расширенные шаблоны',
+              'Кастомные компоненты'
             ],
             button: {
-              label: 'Get started'
+              label: 'Начать'
             }
           },
           {
             title: 'Enterprise',
-            description: 'Tailored solutions for large organizations.',
-            price: 'Custom',
+            description: 'Решения для крупных организаций.',
+            price: 'По запросу',
             features: [
-              'Everything in Pro',
-              'Dedicated support',
-              'Custom development',
-              'SLA guarantee'
+              'Всё из Pro',
+              'Выделенная поддержка',
+              'Кастомная разработка',
+              'SLA'
             ],
             button: {
-              label: 'Contact us',
+              label: 'Связаться с нами',
               variant: 'outline'
             }
           }
@@ -136,11 +136,11 @@
 
     <UPageSection>
       <UPageCTA
-        title="Start with Nuxt UI today!"
-        description="Nuxt UI is a free and open-source UI library for Nuxt applications."
+        title="Начните с Nuxt UI уже сегодня!"
+        description="Nuxt UI — бесплатная UI-библиотека с открытым исходным кодом для Nuxt."
         variant="subtle"
         :links="[{
-          label: 'Get started',
+          label: 'Начать',
           to: 'https://ui.nuxt.com/getting-started/installation/nuxt',
           target: '_blank',
           icon: 'i-lucide-arrow-right',
@@ -168,10 +168,10 @@
             label: 'Figma Kit'
           },
           {
-            label: 'Playground'
+            label: 'Песочница'
           },
           {
-            label: 'Releases'
+            label: 'Релизы'
           }
         ]"
         variant="link"

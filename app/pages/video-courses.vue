@@ -22,7 +22,7 @@ useSeoMeta({
   ogTitle: title
 })
 defineOgImageComponent('Docs', {
-  headline: 'Resources',
+  headline: 'Ресурсы',
   title,
   description
 })

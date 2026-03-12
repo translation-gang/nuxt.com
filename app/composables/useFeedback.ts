@@ -157,8 +157,8 @@ export function useFeedbackDelete() {
       })
 
       toast.add({
-        title: 'Feedback deleted',
-        description: 'The feedback has been successfully removed',
+        title: 'Отзыв удалён',
+        description: 'Отзыв успешно удалён',
         color: 'success',
         icon: 'i-lucide-check'
       })
@@ -167,8 +167,8 @@ export function useFeedbackDelete() {
     } catch (error) {
       console.error('Failed to delete feedback:', error)
       toast.add({
-        title: 'Failed to delete feedback',
-        description: 'Please try again later',
+        title: 'Не удалось удалить отзыв',
+        description: 'Попробуйте позже',
         color: 'error',
         icon: 'i-lucide-circle-alert'
       })
@@ -246,8 +246,8 @@ export function useFeedbackForm(options: UseFeedbackFormOptions) {
       track('Feedback Submitted', { rating: formState.rating, hasComment: !!formState.feedback.trim() })
     } catch {
       toast.add({
-        title: 'Failed to submit feedback',
-        description: 'Please try again later',
+        title: 'Не удалось отправить отзыв',
+        description: 'Попробуйте позже',
         color: 'error',
         icon: 'i-lucide-circle-alert'
       })

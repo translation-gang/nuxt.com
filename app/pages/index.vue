@@ -481,10 +481,10 @@ onMounted(() => {
 
     <UPageSection
       id="showcase"
-      headline="Showcase"
-      title="Real-world Web Applications built with Nuxt"
+      headline="Витрина"
+      title="Реальные веб-приложения на Nuxt"
       :links="[{
-        label: 'View all websites',
+        label: 'Все сайты',
         to: '/showcase',
         color: 'neutral',
         size: 'md'

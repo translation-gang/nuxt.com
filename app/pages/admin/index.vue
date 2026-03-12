@@ -5,10 +5,10 @@ definePageMeta({
 })
 
 useSeoMeta({
-  title: 'Feedback Analytics Admin',
-  description: 'Feedback Analytics Admin',
-  ogTitle: 'Feedback Analytics Admin',
-  ogDescription: 'Feedback Analytics Admin'
+  title: 'Админка: аналитика отзывов',
+  description: 'Админка: аналитика отзывов',
+  ogTitle: 'Админка: аналитика отзывов',
+  ogDescription: 'Админка: аналитика отзывов'
 })
 </script>
 

@@ -18,7 +18,7 @@ const rating = computed(() => getRatingFromFeedback(props.feedback))
 const isDeleting = ref(false)
 
 async function handleDelete() {
-  if (!confirm('Are you sure you want to delete this feedback?')) {
+  if (!confirm('Удалить этот отзыв?')) {
     return
   }
 

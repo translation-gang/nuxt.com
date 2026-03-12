@@ -89,7 +89,7 @@ const breadcrumb = computed(() => {
 
   if (path.value.startsWith(`${version.value.path}/bridge`) || path.value.startsWith(`${version.value.path}/migration`)) {
     links.unshift({
-      label: 'Upgrade Guide',
+      label: 'Руководство по обновлению',
       to: `${version.value.path}/getting-started/upgrade`
     })
   }
@@ -116,7 +116,7 @@ const communityLinks = [{
   target: '_blank'
 }, {
   icon: 'i-lucide-award',
-  label: 'Nuxt Certification',
+  label: 'Сертификация Nuxt',
   to: 'https://certification.nuxt.com',
   target: '_blank'
 }]
@@ -217,16 +217,16 @@ function refreshHeading(opened: boolean) {
                   color="neutral"
                   to="https://github.com/nuxt/nuxt/issues/new/choose"
                   target="_blank"
-                  label="Report an issue"
+                  label="Сообщить об ошибке"
                 />
-                or
+                или
                 <UButton
                   size="sm"
                   variant="link"
                   color="neutral"
                   :to="editLink"
                   target="_blank"
-                  label="Edit this page on GitHub"
+                  label="Редактировать на GitHub"
                 />
               </div>
             </USeparator>
@@ -255,12 +255,12 @@ function refreshHeading(opened: boolean) {
               }"
             >
               <UButton
-                label="Menu"
+                label="Меню"
                 icon="i-lucide-text-align-start"
                 color="neutral"
                 variant="link"
                 size="xs"
-                aria-label="Open navigation"
+                aria-label="Открыть навигацию"
                 class="-m-4"
               />
               <template #body>

@@ -91,7 +91,7 @@ links.push({
         :ui="{ headline: 'mb-8' }"
       >
         <template #headline>
-          <UBreadcrumb :items="[{ label: 'Deploy', to: '/deploy' }, { label: provider.title }]" class="max-w-full" />
+          <UBreadcrumb :items="[{ label: 'Деплой', to: '/deploy' }, { label: provider.title }]" class="max-w-full" />
         </template>
 
         <template #title>

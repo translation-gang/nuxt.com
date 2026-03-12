@@ -17,7 +17,7 @@ const mobileNavigation = computed<ContentNavigationItem[]>(() => {
       }))
     } as ContentNavigationItem)),
     {
-      title: 'Design Kit',
+      title: 'Набор для дизайна',
       icon: 'i-lucide-palette',
       path: '/design-kit'
     }

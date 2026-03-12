@@ -24,19 +24,19 @@ const items = computed<DropdownMenuItem[][]>(() => [
   ],
   [
     {
-      label: 'Export Feedback',
+      label: 'Экспорт отзывов',
       icon: 'i-lucide-download',
       onClick: handleExportFeedback
     },
     {
-      label: 'Export Analytics',
+      label: 'Экспорт аналитики',
       icon: 'i-lucide-bar-chart',
       onClick: handleExportPageAnalytics
     }
   ],
   [
     {
-      label: 'Logout',
+      label: 'Выйти',
       icon: 'i-lucide-log-out',
       onClick: logout
     }
@@ -126,7 +126,7 @@ function useAdminTable() {
   const columns: TableColumn<PageAnalytic>[] = [
     {
       accessorKey: 'path',
-      header: 'Page',
+      header: 'Страница',
       cell: ({ row }) => {
         const page = row.original
         return h('div', { class: 'flex flex-col' }, [
@@ -142,7 +142,7 @@ function useAdminTable() {
         return h(UButton, {
           color: 'neutral',
           variant: 'ghost',
-          label: 'Positive',
+          label: 'Положительные',
           icon: isSorted
             ? isSorted === 'asc'
               ? 'i-lucide-arrow-up-narrow-wide'
@@ -165,7 +165,7 @@ function useAdminTable() {
         return h(UButton, {
           color: 'neutral',
           variant: 'ghost',
-          label: 'Negative',
+          label: 'Отрицательные',
           icon: isSorted
             ? isSorted === 'asc'
               ? 'i-lucide-arrow-up-narrow-wide'
@@ -188,7 +188,7 @@ function useAdminTable() {
         return h(UButton, {
           color: 'neutral',
           variant: 'ghost',
-          label: 'Score',
+          label: 'Оценка',
           icon: isSorted
             ? isSorted === 'asc'
               ? 'i-lucide-arrow-up-narrow-wide'
@@ -213,7 +213,7 @@ function useAdminTable() {
         return h(UButton, {
           color: 'neutral',
           variant: 'ghost',
-          label: 'Total',
+          label: 'Всего',
           icon: isSorted
             ? isSorted === 'asc'
               ? 'i-lucide-arrow-up-narrow-wide'
@@ -234,7 +234,7 @@ function useAdminTable() {
         return h(UButton, {
           color: 'neutral',
           variant: 'ghost',
-          label: 'Created',
+          label: 'Создано',
           icon: isSorted
             ? isSorted === 'asc'
               ? 'i-lucide-arrow-up-narrow-wide'
@@ -245,7 +245,7 @@ function useAdminTable() {
         })
       },
       cell: ({ row }) => {
-        const date = row.original.createdAt.toLocaleDateString('en-US', {
+        const date = row.original.createdAt.toLocaleDateString('ru', {
           month: 'short',
           day: 'numeric',
           year: '2-digit'
@@ -262,7 +262,7 @@ function useAdminTable() {
         return h(UButton, {
           color: 'neutral',
           variant: 'ghost',
-          label: 'Last Update',
+          label: 'Обновлено',
           icon: isSorted
             ? isSorted === 'asc'
               ? 'i-lucide-arrow-up-narrow-wide'
@@ -273,7 +273,7 @@ function useAdminTable() {
         })
       },
       cell: ({ row }) => {
-        const date = row.original.updatedAt.toLocaleDateString('en-US', {
+        const date = row.original.updatedAt.toLocaleDateString('ru', {
           month: 'short',
           day: 'numeric',
           hour: '2-digit',
@@ -345,10 +345,10 @@ watch(currentPage, () => {
           <FeedbackStatCard
             icon="i-lucide-message-circle"
             :value="globalStats.total"
-            label="Total"
+            label="Всего"
             :popover-stats="{
-              trend: `${Math.round(globalStats.total / 7)} per day average`,
-              details: 'Total feedback responses across all pages'
+              trend: `В среднем ${Math.round(globalStats.total / 7)} в день`,
+              details: 'Всего отзывов по всем страницам'
             }"
           />
 
@@ -356,11 +356,11 @@ watch(currentPage, () => {
             icon="i-lucide-thumbs-up"
             icon-color="text-success"
             :value="globalStats.positive"
-            label="Positive"
+            label="Положительные"
             :popover-stats="{
-              percentage: `${globalStats.positivePercentage}% of total`,
-              trend: `${globalStats.positivePercentage >= 70 ? '📈 Excellent' : globalStats.positivePercentage >= 50 ? '✅ Good' : '📉 Needs work'}`,
-              details: 'Very helpful + Helpful responses'
+              percentage: `${globalStats.positivePercentage}% от общего`,
+              trend: `${globalStats.positivePercentage >= 70 ? '📈 Отлично' : globalStats.positivePercentage >= 50 ? '✅ Хорошо' : '📉 Требует доработки'}`,
+              details: 'Очень полезно + Полезно'
             }"
           />
 
@@ -368,11 +368,11 @@ watch(currentPage, () => {
             icon="i-lucide-thumbs-down"
             icon-color="text-error"
             :value="globalStats.negative"
-            label="Negative"
+            label="Отрицательные"
             :popover-stats="{
-              percentage: `${100 - globalStats.positivePercentage}% of total`,
-              trend: `${globalStats.negative <= 2 ? '🟢 Low volume' : globalStats.negative <= 5 ? '🟡 Moderate' : '🔴 High volume'}`,
-              details: 'Not helpful + Confusing responses'
+              percentage: `${100 - globalStats.positivePercentage}% от общего`,
+              trend: `${globalStats.negative <= 2 ? '🟢 Мало' : globalStats.negative <= 5 ? '🟡 Умеренно' : '🔴 Много'}`,
+              details: 'Не полезно + Запутанно'
             }"
           />
 
@@ -380,11 +380,11 @@ watch(currentPage, () => {
             icon="i-lucide-target"
             icon-color="text-primary"
             :value="`${globalStats.averageScore}/4`"
-            label="Avg Score"
+            label="Средняя оценка"
             :popover-stats="{
-              percentage: `${Math.round(globalStats.averageScore / 4 * 100)}% satisfaction`,
-              trend: `${globalStats.averageScore >= 3.5 ? '🎯 Excellent' : globalStats.averageScore >= 3.0 ? '👍 Good' : '⚠️ Needs work'}`,
-              details: 'Weighted average of all ratings'
+              percentage: `${Math.round(globalStats.averageScore / 4 * 100)}% удовлетворённости`,
+              trend: `${globalStats.averageScore >= 3.5 ? '🎯 Отлично' : globalStats.averageScore >= 3.0 ? '👍 Хорошо' : '⚠️ Требует доработки'}`,
+              details: 'Взвешенное среднее всех оценок'
             }"
           />
         </div>
@@ -396,25 +396,25 @@ watch(currentPage, () => {
         <div class="border-t border-default pt-6">
           <div class="flex sm:items-center justify-between flex-col sm:flex-row mb-4 gap-4">
             <h2 class="text-xl font-semibold">
-              Feedback by Page
+              Отзывы по страницам
             </h2>
             <div class="flex items-center gap-2">
               <UInput
                 v-model="globalFilter"
                 class="flex-1 max-w-sm"
-                placeholder="Search pages..."
+                placeholder="Поиск страниц..."
                 icon="i-lucide-search"
               />
-              <UTooltip text="Reset filters" :content="{ side: 'top' }">
+              <UTooltip text="Сбросить фильтры" :content="{ side: 'top' }">
                 <UButton
                   color="neutral"
                   variant="outline"
                   icon="i-lucide-filter-x"
-                  aria-label="Reset filters"
+                  aria-label="Сбросить фильтры"
                   @click="resetFilters"
                 />
               </UTooltip>
-              <UTooltip text="Show only v3 pages" :content="{ side: 'top' }">
+              <UTooltip text="Только страницы v3" :content="{ side: 'top' }">
                 <UButton
                   :color="versionFilter === 'v3' ? 'primary' : 'neutral'"
                   :variant="versionFilter === 'v3' ? 'solid' : 'outline'"
@@ -422,7 +422,7 @@ watch(currentPage, () => {
                   @click="filterByVersion('v3')"
                 />
               </UTooltip>
-              <UTooltip text="Show only v4 pages" :content="{ side: 'top' }">
+              <UTooltip text="Только страницы v4" :content="{ side: 'top' }">
                 <UButton
                   :color="versionFilter === 'v4' ? 'primary' : 'neutral'"
                   :variant="versionFilter === 'v4' ? 'solid' : 'outline'"
@@ -511,11 +511,11 @@ watch(currentPage, () => {
               icon="i-lucide-target"
               icon-color="text-primary"
               :value="`${selectedPage.averageScore}/4`"
-              label="Average Score"
+              label="Средняя оценка"
               :popover-stats="{
-                percentage: `${Math.round(selectedPage.averageScore / 4 * 100)}% satisfaction`,
-                trend: `${selectedPage.averageScore >= 3.5 ? '🎯 Excellent' : selectedPage.averageScore >= 3.0 ? '👍 Good' : '⚠️ Poor'}`,
-                details: `Based on ${selectedPage.total} ${selectedPage.total === 1 ? 'response' : 'responses'}`
+                percentage: `${Math.round(selectedPage.averageScore / 4 * 100)}% удовлетворённости`,
+                trend: `${selectedPage.averageScore >= 3.5 ? '🎯 Отлично' : selectedPage.averageScore >= 3.0 ? '👍 Хорошо' : '⚠️ Плохо'}`,
+                details: `На основе ${selectedPage.total} ${selectedPage.total === 1 ? 'ответа' : 'ответов'}`
               }"
             />
 
@@ -523,10 +523,10 @@ watch(currentPage, () => {
               icon="i-lucide-message-circle"
               icon-color="text-muted"
               :value="selectedPage.total"
-              label="Responses"
+              label="Ответы"
               :popover-stats="{
-                trend: `${selectedPage.total === 1 ? 'Single feedback' : 'Multiple feedbacks'}`,
-                details: 'Total number of user feedback submissions for this page'
+                trend: `${selectedPage.total === 1 ? 'Один отзыв' : 'Несколько отзывов'}`,
+                details: 'Всего отзывов по этой странице'
               }"
             />
 
@@ -534,11 +534,11 @@ watch(currentPage, () => {
               icon="i-lucide-thumbs-up"
               icon-color="text-success"
               :value="selectedPage.positive"
-              label="Positive"
+              label="Положительные"
               :popover-stats="{
-                percentage: `${selectedPage.positivePercentage}% of responses`,
-                trend: `${selectedPage.positivePercentage >= 70 ? '📈 Excellent' : selectedPage.positivePercentage >= 50 ? '✅ Good' : '📉 Poor'}`,
-                details: 'Users found this page helpful'
+                percentage: `${selectedPage.positivePercentage}% ответов`,
+                trend: `${selectedPage.positivePercentage >= 70 ? '📈 Отлично' : selectedPage.positivePercentage >= 50 ? '✅ Хорошо' : '📉 Плохо'}`,
+                details: 'Страница полезна пользователям'
               }"
             />
 
@@ -546,11 +546,11 @@ watch(currentPage, () => {
               icon="i-lucide-thumbs-down"
               icon-color="text-error"
               :value="selectedPage.negative"
-              label="Negative"
+              label="Отрицательные"
               :popover-stats="{
-                percentage: `${100 - selectedPage.positivePercentage}% of responses`,
-                trend: `${selectedPage.negative <= 1 ? '🟢 Low' : selectedPage.negative <= 3 ? '🟡 Moderate' : '🔴 High'}`,
-                details: 'Users found issues with this page'
+                percentage: `${100 - selectedPage.positivePercentage}% ответов`,
+                trend: `${selectedPage.negative <= 1 ? '🟢 Мало' : selectedPage.negative <= 3 ? '🟡 Умеренно' : '🔴 Много'}`,
+                details: 'Пользователи нашли проблемы на странице'
               }"
             />
           </div>
@@ -558,7 +558,7 @@ watch(currentPage, () => {
           <div class="space-y-3 sm:space-y-4">
             <h4 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4 flex items-center gap-2">
               <UIcon name="i-lucide-message-square" class="size-4 sm:size-5" />
-              Individual Feedback
+              Отдельные отзывы
             </h4>
             <div class="space-y-3 sm:space-y-4">
               <div ref="feedbackContainer" class="space-y-2 sm:space-y-3 max-h-[300px] sm:max-h-[400px] overflow-y-auto">

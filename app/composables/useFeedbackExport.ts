@@ -15,7 +15,7 @@ export function useFeedbackExport() {
 
   function convertToCSV(data: FeedbackItem[]): string {
     if (!data || data.length === 0) {
-      return 'No data to export'
+      return 'Нет данных для экспорта'
     }
 
     const headers = [
@@ -82,16 +82,16 @@ export function useFeedbackExport() {
       downloadCSV(csvContent, filename)
 
       toast.add({
-        title: 'Export successful',
-        description: `${feedbackData.length} feedback entries exported to ${filename}`,
+        title: 'Экспорт выполнен',
+        description: `${feedbackData.length} отзывов экспортировано в ${filename}`,
         color: 'success',
         icon: 'i-lucide-download'
       })
     } catch (error) {
       console.error('Export failed:', error)
       toast.add({
-        title: 'Export failed',
-        description: 'Unable to export feedback data. Please try again.',
+        title: 'Ошибка экспорта',
+        description: 'Не удалось экспортировать данные. Попробуйте позже.',
         color: 'error',
         icon: 'i-lucide-circle-alert'
       })
@@ -102,8 +102,8 @@ export function useFeedbackExport() {
     try {
       if (!pageAnalytics || pageAnalytics.length === 0) {
         toast.add({
-          title: 'No data to export',
-          description: 'No page analytics data available for export.',
+          title: 'Нет данных для экспорта',
+          description: 'Нет данных аналитики страниц для экспорта.',
           color: 'warning',
           icon: 'i-lucide-info'
         })
@@ -144,16 +144,16 @@ export function useFeedbackExport() {
       downloadCSV(csvContent, filename)
 
       toast.add({
-        title: 'Export successful',
-        description: `${pageAnalytics.length} page analytics exported to ${filename}`,
+        title: 'Экспорт выполнен',
+        description: `${pageAnalytics.length} записей аналитики экспортировано в ${filename}`,
         color: 'success',
         icon: 'i-lucide-download'
       })
     } catch (error) {
       console.error('Export failed:', error)
       toast.add({
-        title: 'Export failed',
-        description: 'Unable to export page analytics. Please try again.',
+        title: 'Ошибка экспорта',
+        description: 'Не удалось экспортировать аналитику. Попробуйте позже.',
         color: 'error',
         icon: 'i-lucide-circle-alert'
       })

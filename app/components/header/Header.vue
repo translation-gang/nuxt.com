@@ -80,7 +80,7 @@ function trackGitHubClick() {
           color="neutral"
           square
           :label="stats ? formatNumber(stats.stars) : '...'"
-          aria-label="Nuxt on GitHub"
+          aria-label="Nuxt на GitHub"
           :ui="{
             label: 'hidden sm:inline-flex'
           }"

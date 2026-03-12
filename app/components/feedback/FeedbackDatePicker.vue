@@ -14,11 +14,11 @@ const formattedDateRange = computed(() => {
 })
 
 const ranges = [
-  { label: 'Last 7 days', preset: 'week' as const },
-  { label: 'Last 30 days', preset: 'month' as const },
-  { label: 'Last 3 months', preset: '3months' as const },
-  { label: 'Last 6 months', preset: '6months' as const },
-  { label: 'Last year', preset: 'year' as const }
+  { label: 'Последние 7 дней', preset: 'week' as const },
+  { label: 'Последние 30 дней', preset: 'month' as const },
+  { label: 'Последние 3 месяца', preset: '3months' as const },
+  { label: 'Последние 6 месяцев', preset: '6months' as const },
+  { label: 'Последний год', preset: 'year' as const }
 ]
 
 const toCalendarDate = (date: Date) => {

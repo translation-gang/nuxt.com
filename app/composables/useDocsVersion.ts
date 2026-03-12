@@ -11,7 +11,7 @@ interface Version {
 
 const versions: Version[] = [
   {
-    label: 'Version 5',
+    label: 'Версия 5',
     shortTag: 'v5',
     branch: 'main',
     tagColor: 'warning',
@@ -19,7 +19,7 @@ const versions: Version[] = [
     collection: 'docsv5'
   },
   {
-    label: 'Version 4',
+    label: 'Версия 4',
     shortTag: 'v4',
     branch: '4.x',
     tagColor: 'primary',
@@ -27,7 +27,7 @@ const versions: Version[] = [
     collection: 'docsv4'
   },
   {
-    label: 'Version 3',
+    label: 'Версия 3',
     shortTag: 'v3',
     branch: '3.x',
     tagColor: 'neutral',
@@ -35,7 +35,7 @@ const versions: Version[] = [
     collection: 'docsv3'
   },
   {
-    label: 'Version 2',
+    label: 'Версия 2',
     shortTag: 'v2',
     branch: '2.x',
     tagColor: 'neutral',

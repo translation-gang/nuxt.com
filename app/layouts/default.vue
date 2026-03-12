@@ -26,7 +26,7 @@ onMounted(() => {
       close
       :actions="[
         {
-          label: 'Claim offer',
+          label: 'Получить предложение',
           color: 'neutral',
           variant: 'outline',
           trailingIcon: 'i-lucide-arrow-right',

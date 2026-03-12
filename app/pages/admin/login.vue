@@ -25,14 +25,14 @@ const errorType = route.query.error as string
       :transition="{ duration: 0.5, delay: 0.2 }"
       class="absolute top-8 left-8 z-10"
     >
-      <UTooltip text="Back to home">
+      <UTooltip text="На главную">
         <UButton
           icon="i-lucide-arrow-left"
           to="/"
           size="lg"
           color="neutral"
           variant="subtle"
-          aria-label="Back to home"
+          aria-label="На главную"
         />
       </UTooltip>
     </motion.div>
@@ -62,10 +62,10 @@ const errorType = route.query.error as string
             :transition="{ duration: 0.5, delay: 0.2 }"
           >
             <h1 class="text-3xl font-bold bg-gradient-to-r from-neutral-900 to-neutral-600 dark:from-white dark:to-neutral-300 bg-clip-text text-transparent mb-2">
-              Analytics Dashboard
+              Панель аналитики
             </h1>
             <p class="text-muted">
-              Sign in to access Nuxt.com feedback analytics
+              Войдите для доступа к аналитике отзывов Nuxt.com
             </p>
           </motion.div>
         </div>
@@ -84,8 +84,8 @@ const errorType = route.query.error as string
               class="mb-6"
             >
               <UAlert
-                title="Access Denied"
-                description="Only Nuxt core team members can access this page."
+                title="Доступ запрещён"
+                description="Только участники команды Nuxt имеют доступ к этой странице."
                 icon="i-lucide-shield-x"
                 color="error"
                 variant="subtle"
@@ -95,10 +95,10 @@ const errorType = route.query.error as string
             <div class="space-y-6">
               <div class="text-center">
                 <h2 class="text-xl font-semibold mb-2">
-                  Welcome back
+                  С возвращением
                 </h2>
                 <p class="text-sm text-muted">
-                  Continue with your GitHub account to access the dashboard
+                  Войдите через GitHub для доступа к панели
                 </p>
               </div>
 
@@ -110,7 +110,7 @@ const errorType = route.query.error as string
                 <UButton
                   to="/api/auth/github"
                   icon="i-simple-icons-github"
-                  label="Continue with GitHub"
+                  label="Войти через GitHub"
                   color="neutral"
                   variant="solid"
                   size="lg"

@@ -39,11 +39,11 @@ function stateChange(event: { data: number }) {
         size="sm"
         color="info"
         variant="soft"
-        title="Click to load"
-        description="Clicking the video will load the YouTube iframe and start the video."
+        title="Нажмите для загрузки"
+        description="По нажатию загрузится YouTube-плеер и начнётся воспроизведение."
       />
       <UButton v-if="isLoaded && !isPlaying" @click="play">
-        Play Video
+        Смотреть видео
       </UButton>
     </div>
   </div>

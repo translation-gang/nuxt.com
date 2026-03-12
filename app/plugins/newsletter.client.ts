@@ -8,9 +8,9 @@ export default defineNuxtPlugin(() => {
         method: 'POST',
         body: { email, confirmation }
       }).then(() => {
-        toast.add({ title: 'Subscription succeed', description: 'You have been successfully subscribed to Nuxt newsletter.', color: 'success' })
+        toast.add({ title: 'Подписка оформлена', description: 'Вы успешно подписались на рассылку Nuxt.', color: 'success' })
       }).catch((err) => {
-        toast.add({ title: 'Subscription failed', description: err.data?.message || '', color: 'error' })
+        toast.add({ title: 'Ошибка подписки', description: err.data?.message || '', color: 'error' })
       })
     }
   })
