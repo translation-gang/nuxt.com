@@ -114,7 +114,18 @@ function _useHeaderLinks() {
     }, {
       label: 'Блог',
       icon: 'i-lucide-newspaper',
-      to: '/blog'
+      to: '/blog',
+      children: [{
+        label: 'Блог',
+        to: '/blog',
+        description: 'Новости и обновления о Nuxt.',
+        icon: 'i-lucide-newspaper'
+      }, {
+        label: 'Список изменений',
+        to: '/changelog',
+        description: 'Последние релизы Nuxt и официальных модулей.',
+        icon: 'i-lucide-history'
+      }]
     }]
   })
 
