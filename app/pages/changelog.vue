@@ -5,8 +5,8 @@ definePageMeta({
   heroBackground: 'opacity-0'
 })
 
-const title = 'Changelog'
-const description = 'Discover the latest releases from Nuxt and the official modules.'
+const title = 'Список изменений'
+const description = 'Последние релизы Nuxt и официальных модулей.'
 
 useSeoMeta({
   titleTemplate: '%s',
@@ -16,7 +16,7 @@ useSeoMeta({
   ogTitle: title
 })
 defineOgImageComponent('Docs', {
-  headline: 'Changelog',
+  headline: 'Список изменений',
   title,
   description
 })
@@ -39,7 +39,7 @@ const repoLinks = computed(() => {
 })
 
 function formatDate(date: string) {
-  return new Date(date).toLocaleDateString('en', {
+  return new Date(date).toLocaleDateString('ru', {
     year: 'numeric',
     month: 'short',
     day: 'numeric'
@@ -49,8 +49,8 @@ function formatDate(date: string) {
 function copyRelease(release: Release) {
   const md = `# ${release.title}\n\n${release.markdown}`
   copy(md, {
-    title: 'Release notes copied!',
-    description: `${release.title} markdown copied to clipboard.`,
+    title: 'Заметки о релизе скопированы!',
+    description: `Markdown релиза ${release.title} скопирован в буфер обмена.`,
     icon: 'i-lucide-clipboard-check'
   })
 }
@@ -66,7 +66,7 @@ function copyRelease(release: Release) {
           {{ title }}
         </h1>
         <p class="text-lg/7 text-muted max-w-sm mt-4">
-          Latest changes, improvements, and fixes across Nuxt core and the official modules.
+          Последние изменения, улучшения и исправления в Nuxt и официальных модулях.
         </p>
 
         <div class="flex items-center gap-1 mt-8 -ms-2.5">
@@ -81,7 +81,7 @@ function copyRelease(release: Release) {
           <UButton
             to="/blog"
             icon="i-lucide-newspaper"
-            label="Blog"
+            label="Блог"
             variant="ghost"
             color="neutral"
           />
@@ -139,7 +139,7 @@ function copyRelease(release: Release) {
                 </NuxtLink>
               </div>
               <UButton
-                label="Copy release"
+                label="Копировать релиз"
                 size="xs"
                 color="neutral"
                 variant="link"
@@ -170,7 +170,7 @@ function copyRelease(release: Release) {
                   icon="i-lucide-chevron-down"
                   color="neutral"
                   variant="outline"
-                  label="Expand release"
+                  label="Развернуть"
                   class="group"
                   @click="openStates[release.tag] = true"
                 />
@@ -182,7 +182,7 @@ function copyRelease(release: Release) {
                 icon="i-lucide-chevron-up"
                 color="neutral"
                 variant="outline"
-                label="Collapse release"
+                label="Свернуть"
                 @click="openStates[release.tag] = false"
               />
             </div>
