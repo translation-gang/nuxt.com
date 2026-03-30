@@ -419,12 +419,16 @@ export default defineNuxtConfig({
         route => route.includes('_dir'), // виртуальные индексные пути контента, /raw/.../_dir.md дают 500
         route => route === '/llms-full.txt', // nuxt-llms генерирует маршрут, при пререндере возможен 500
         route => route.startsWith('/__og-image__/'), // OG-картинки при пререндере дают 500, генерируются по запросу
-        // Документация: при сборке без NUXT_V4_PATH или при расхождении путей коллекция отдаёт 404
+        // Документация: при сборке без NUXT_V*_PATH или при расхождении путей коллекция отдаёт 404
         route => route === '/docs/4.x/directory-structure/app/pages',
+        route => route === '/docs/5.x/directory-structure/app/pages',
         route => route === '/docs/4.x/guide/ai/mcp',
+        route => route === '/docs/5.x/guide/ai/mcp',
         route => route === '/docs/4.x/guide/directory-structure/app-config',
+        route => route === '/docs/5.x/guide/directory-structure/app-config',
         route => route === '/docs/3.x/directory-structure',
-        route => route === '/docs/4.x/directory-structure'
+        route => route === '/docs/4.x/directory-structure',
+        route => route === '/docs/5.x/directory-structure'
       ],
       autoSubfolderIndex: false
     }
