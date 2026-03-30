@@ -102,7 +102,7 @@ const breadcrumb = computed(() => {
 
   return links
 })
-const editLink = computed(() => `https://github.com/nuxt/nuxt/edit/${version.value.branch}/${page?.value?.stem?.replace(/docs\/\d\.x/, 'docs')}.${page?.value?.extension}`)
+const editLink = computed(() => `https://github.com/translation-gang/nuxt/edit/${version.value.branch}/${page?.value?.stem?.replace(/docs\/\d\.x/, 'docs')}.${page?.value?.extension}`)
 
 const communityLinks = [{
   icon: 'i-lucide-heart',
@@ -215,7 +215,7 @@ function refreshHeading(opened: boolean) {
                   size="sm"
                   variant="link"
                   color="neutral"
-                  to="https://github.com/nuxt/nuxt/issues/new/choose"
+                  to="https://github.com/translation-gang/nuxt/issues/new/choose"
                   target="_blank"
                   label="Сообщить об ошибке"
                 />
