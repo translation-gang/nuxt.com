@@ -412,8 +412,14 @@ export default defineNuxtConfig({
   compatibilityDate: '2026-01-14',
   nitro: {
     prerender: {
+      // Vercel: 2 vCPU; меньше параллельных SSR снижает 500 при пререндере тяжёлых страниц доки
+      concurrency: Number(process.env.NUXT_PRERENDER_CONCURRENCY) || (process.env.VERCEL ? 2 : 8),
+      // Временный обход: на Vercel задать NUXT_PRERENDER_RELAX=1, если остаются единичные 404 в логах
+      failOnError: process.env.NUXT_PRERENDER_RELAX !== '1',
       crawlLinks: true,
       ignore: [
+        route => route.startsWith('/raw/'), // сырой markdown — не HTML-страницы, при prerender часто 404/500
+        route => route === '/mcp' || route.startsWith('/mcp/'),
         route => route.startsWith('/modules/'),
         route => route.startsWith('/admin'),
         route => route.includes('_dir'), // виртуальные индексные пути контента, /raw/.../_dir.md дают 500
