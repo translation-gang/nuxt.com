@@ -18,7 +18,7 @@ const docsV4Source = {
 
 const docsV5Source = {
   cwd: process.env.NUXT_V5_PATH ?? undefined,
-  repository: !process.env.NUXT_V5_PATH ? 'https://github.com/nuxt/nuxt/tree/main' : undefined,
+  repository: !process.env.NUXT_V5_PATH ? 'https://github.com/translation-gang/nuxt/tree/main' : undefined,
   include: 'docs/**/*',
   exclude: ['docs/**/*.json'],
   prefix: '/docs/5.x'
@@ -40,7 +40,7 @@ const examplesV4Source = {
 
 const examplesV5Source = {
   cwd: process.env.NUXT_EXAMPLES_PATH ?? undefined,
-  repository: !process.env.NUXT_EXAMPLES_PATH ? 'https://github.com/nuxt/examples' : undefined,
+  repository: !process.env.NUXT_EXAMPLES_PATH ? 'https://github.com/translation-gang/examples' : undefined,
   include: '.docs/**/*',
   prefix: '/docs/5.x/4.examples'
 }

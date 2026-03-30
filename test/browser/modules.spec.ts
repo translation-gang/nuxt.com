@@ -19,19 +19,16 @@ test.describe('Modules Page', () => {
     await expect(searchInput).toBeVisible()
     await expect(searchInput).toBeEditable()
 
+    const moduleLinks = page.locator('a[href^="/modules/"]')
+
     // type a nonexistent module name to test filtering
     await searchInput.fill('nonexistent-module-xyz')
-    await page.waitForLoadState('networkidle')
+    // Avoid networkidle: SPAs often never reach it (analytics, HMR, polling).
+    await expect(moduleLinks).toHaveCount(0, { timeout: 15_000 })
 
-    // Verify that no module links are visible after filtering
-    const moduleLinks = page.locator('a[href^="/modules/"]')
-    expect(await moduleLinks.count()).toBe(0)
-
-    // Clear the search input
+    // Clear the search input (filter may be debounced)
     await searchInput.fill('')
-
-    // Verify that module links are visible again
-    expect(await moduleLinks.count()).toBeGreaterThanOrEqual(0)
+    await expect.poll(async () => moduleLinks.count(), { timeout: 15_000 }).toBeGreaterThan(0)
   })
 
   test('has category filters', async ({ page, goto }) => {
