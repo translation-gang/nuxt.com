@@ -118,7 +118,7 @@ export default defineNuxtConfig({
     '/docs/3.x/getting-started/introduction': { prerender: true },
     '/docs/4.x/getting-started/introduction': { prerender: true },
     '/docs/5.x/getting-started/introduction': { prerender: true },
-    '/modules': { prerender: true },
+    '/modules': { isr: false, prerender: false },
     '/modules/**': { isr: 60 * 60 },
     '/changelog': { isr: 60 * 60 },
     // API
@@ -383,6 +383,7 @@ export default defineNuxtConfig({
     '/docs/5.x/examples/composables/use-head': { redirect: '/docs/4.x/examples/features/meta-tags', prerender: false },
     '/docs/4.x/getting-started/directory-structure': { redirect: '/docs/4.x/directory-structure', prerender: false },
     '/docs/5.x/getting-started/directory-structure': { redirect: '/docs/4.x/directory-structure', prerender: false },
+    '/docs/3.x/guide/going-further/modules': { redirect: '/docs/3.x/guide/modules/getting-started', prerender: false },
     '/docs/4.x/guide/going-further/modules': { redirect: '/docs/4.x/guide/modules', prerender: false },
     '/docs/5.x/guide/going-further/modules': { redirect: '/docs/4.x/guide/modules', prerender: false },
     '/docs/4.x/guide/concepts/rendering-modes': { redirect: '/docs/4.x/guide/concepts/rendering', prerender: false },
