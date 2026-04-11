@@ -67,8 +67,9 @@ const contributors = computed(() => {
 
 const title = module.value.npm
 const description = module.value.description || 'Модуль Nuxt'
-const publishedAgo = useTimeAgo(module.value.stats.publishedAt)
-const createdAgo = useTimeAgo(module.value.stats.createdAt)
+const timeAgoOptions = { locale: 'ru' } as const
+const publishedAgo = useTimeAgo(module.value.stats.publishedAt, timeAgoOptions)
+const createdAgo = useTimeAgo(module.value.stats.createdAt, timeAgoOptions)
 
 useSeoMeta({
   titleTemplate: '%s · Модули Nuxt',

@@ -23,8 +23,9 @@ const { copy } = useClipboard()
 const { selectedSort } = useModules()
 const { track } = useAnalytics()
 
-const publishedAgo = useTimeAgo(() => props.module.stats.publishedAt)
-const createdAgo = useTimeAgo(() => props.module.stats.createdAt)
+const timeAgoOptions = { locale: 'ru' } as const
+const publishedAgo = useTimeAgo(() => props.module.stats.publishedAt, timeAgoOptions)
+const createdAgo = useTimeAgo(() => props.module.stats.createdAt, timeAgoOptions)
 
 const relativeDate = computed(() =>
   selectedSort.value.key === 'publishedAt' ? publishedAgo.value : createdAgo.value
@@ -32,8 +33,8 @@ const relativeDate = computed(() =>
 
 const staticModuleDate = computed(() =>
   selectedSort.value.key === 'publishedAt'
-    ? formatDateByLocale('en', props.module.stats.publishedAt)
-    : formatDateByLocale('en', props.module.stats.createdAt)
+    ? formatDateByLocale('ru', props.module.stats.publishedAt)
+    : formatDateByLocale('ru', props.module.stats.createdAt)
 )
 
 function copyInstallCommand(moduleName: string) {

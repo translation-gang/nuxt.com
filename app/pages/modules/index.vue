@@ -104,20 +104,20 @@ const copyAllInstallCommands = () => {
 const copyAgentPrompt = () => {
   const modulesList = modulesToAdd.value.map((m) => {
     const lines = [`- ${m.npm}: ${m.description}`]
-    if (m.website) lines.push(`  Docs: ${m.website}`)
+    if (m.website) lines.push(`  Документация: ${m.website}`)
     if (m.repo) lines.push(`  GitHub: https://github.com/${m.repo}`)
     return lines.join('\n')
   }).join('\n')
   const moduleNames = modulesToAdd.value.map(m => m.name).join(' ')
-  const prompt = `Install and configure the following Nuxt modules in my project:
+  const prompt = `Установи и настрой в моём проекте следующие модули Nuxt:
 
 ${modulesList}
 
-Steps:
-1. Run \`npx nuxt@latest module add ${moduleNames}\` to install all modules at once
-2. For each module, read its documentation and add the recommended configuration in \`nuxt.config.ts\`
-3. List any required environment variables in \`.env.example\` without filling in actual values
-4. Verify the setup is correct by checking that the modules are properly registered`
+Шаги:
+1. Выполни \`npx nuxt@latest module add ${moduleNames}\`, чтобы установить все модули одной командой
+2. Для каждого модуля изучи документацию и добавь рекомендуемую конфигурацию в \`nuxt.config.ts\`
+3. Укажи необходимые переменные окружения в \`.env.example\` без реальных значений
+4. Убедись, что модули корректно зарегистрированы`
   track('Modules Agent Prompt Copied', { count: modulesToAdd.value.length, modules: moduleNames })
   copy(prompt, {
     title: 'Промпт агента скопирован в буфер обмена',
