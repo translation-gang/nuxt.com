@@ -409,7 +409,8 @@ export default defineNuxtConfig({
     '/docs/5.x/robots.txt': { redirect: '/robots.txt', prerender: false },
     '/deploy/nuxthub': { redirect: '/deploy/vercel', prerender: false }
   },
-  sourcemap: true,
+  // На Vercel sourcemap сильно раздувает память (Rollup + prerender с тяжёлым server.mjs).
+  sourcemap: process.env.VERCEL ? false : true,
   experimental: {
     extractAsyncDataHandlers: true,
     viewTransition: true,
