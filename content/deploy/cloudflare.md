@@ -125,6 +125,6 @@ npx wrangler pages deploy dist/
 
 ## Узнать больше
 
-::read-more{to="https://nitro.unjs.io/deploy/providers/cloudflare" target="_blank"}
+::read-more{to="https://v2.nitro.build/deploy/providers/cloudflare" target="_blank"}
 Ознакомьтесь с **документацией Nitro**, чтобы узнать больше о предварительной настройке развертывания cloudflare.
 ::

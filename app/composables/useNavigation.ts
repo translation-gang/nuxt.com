@@ -176,9 +176,9 @@ const footerLinks = [{
 export const useFooterLinks = () => ({ footerLinks })
 
 const _useNavigation = () => {
-  const nuxtApp = useNuxtApp()
   const searchTerm = ref<string>('')
   const { track } = useAnalytics()
+  const { open: openAgent } = useNuxtAgent()
 
   const { headerLinks } = useHeaderLinks()
   const { footerLinks } = useFooterLinks()
@@ -186,12 +186,12 @@ const _useNavigation = () => {
   const { providers } = useHostingProviders()
 
   const searchLinks = computed(() => [{
-    label: 'Спросите ИИ',
+    label: 'Ask Agent',
     icon: 'i-lucide-wand',
     to: 'javascript:void(0);',
     onSelect: () => {
-      track('Ask AI Opened', { source: 'search-links' })
-      nuxtApp.$kapa?.openModal()
+      track('Nuxt Agent Opened', { source: 'search-links' })
+      openAgent()
     }
   }, ...headerLinks.value.flatMap((link) => {
     if (link.search === false) {
@@ -268,12 +268,12 @@ const _useNavigation = () => {
       return items
     },
     items: [{
-      label: 'Спросите ИИ',
+      label: 'Ask Agent',
       icon: 'i-lucide-wand',
       to: 'javascript:void(0);',
       onSelect() {
-        track('Ask AI Opened', { source: 'search-palette', query: searchTerm.value })
-        nuxtApp.$kapa?.openModal(searchTerm.value)
+        track('Nuxt Agent Opened', { source: 'search-palette', query: searchTerm.value })
+        openAgent(searchTerm.value)
       }
     }]
   }, {
