@@ -2,6 +2,7 @@ import { createResolver } from 'nuxt/kit'
 import { parseMdc } from './helpers/mdc-parser.mjs'
 
 const { resolve } = createResolver(import.meta.url)
+const vercelBuild = Boolean(process.env.VERCEL)
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -410,7 +411,9 @@ export default defineNuxtConfig({
     '/deploy/nuxthub': { redirect: '/deploy/vercel', prerender: false }
   },
   // На Vercel sourcemap сильно раздувает память (Rollup + prerender с тяжёлым server.mjs).
-  sourcemap: process.env.VERCEL ? false : true,
+  sourcemap: vercelBuild
+    ? { server: false, client: false }
+    : true,
   experimental: {
     extractAsyncDataHandlers: true,
     viewTransition: true,
@@ -423,9 +426,11 @@ export default defineNuxtConfig({
   },
   compatibilityDate: '2026-01-14',
   nitro: {
+    // Иначе Nitro всё ещё может тянуть карты и раздувать пик памяти при сборке.
+    sourceMap: !vercelBuild,
     prerender: {
-      // Vercel: 2 vCPU; меньше параллельных SSR снижает 500 при пререндере тяжёлых страниц доки
-      concurrency: Number(process.env.NUXT_PRERENDER_CONCURRENCY) || (process.env.VERCEL ? 2 : 8),
+      // Vercel: меньше параллельных SSR — меньше RAM при пререндере (раньше OOM после Vite).
+      concurrency: Number(process.env.NUXT_PRERENDER_CONCURRENCY) || (vercelBuild ? 1 : 8),
       // Временный обход: на Vercel задать NUXT_PRERENDER_RELAX=1, если остаются единичные 404 в логах
       failOnError: process.env.NUXT_PRERENDER_RELAX !== '1',
       crawlLinks: true,
@@ -459,7 +464,11 @@ export default defineNuxtConfig({
   vite: {
     optimizeDeps: {
       exclude: ['vue-chrts']
-    }
+    },
+    // Явно: иначе плагины вроде nuxt:tree-shake-composables всё ещё участвуют в цепочке sourcemap.
+    build: vercelBuild
+      ? { sourcemap: false }
+      : {}
   },
   typescript: {
     strict: false,
