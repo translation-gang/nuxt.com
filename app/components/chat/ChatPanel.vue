@@ -8,39 +8,39 @@ const { chat, input, votes, vote, canClear, onSubmit, askQuestion, clearMessages
 const suggestions = [
   {
     icon: 'i-lucide-rocket',
-    title: 'Start a project',
-    description: 'Pick a starter template',
-    question: 'Show me available starter templates'
+    title: 'Начать проект',
+    description: 'Выбрать стартовый шаблон',
+    question: 'Покажи доступные стартовые шаблоны'
   },
   {
     icon: 'i-lucide-lock',
-    title: 'Add auth',
-    description: 'User authentication setup',
-    question: 'How do I add authentication to my Nuxt app?'
+    title: 'Добавить авторизацию',
+    description: 'Настройка аутентификации',
+    question: 'Как добавить авторизацию в мое Nuxt-приложение?'
   },
   {
     icon: 'i-lucide-layers',
-    title: 'Rendering',
-    description: 'SSR, SSG, ISR & more',
-    question: 'What are the available rendering modes in Nuxt?'
+    title: 'Рендеринг',
+    description: 'SSR, SSG, ISR и многое другое',
+    question: 'Какие режимы рендеринга доступны в Nuxt?'
   },
   {
     icon: 'i-lucide-database',
-    title: 'Database',
-    description: 'Connect a database',
-    question: 'How do I connect a database to my Nuxt app?'
+    title: 'База данных',
+    description: 'Подключить базу данных',
+    question: 'Как подключить базу данных к моему Nuxt-приложению?'
   },
   {
     icon: 'i-lucide-cloud',
-    title: 'Deploy',
-    description: 'Ship to production',
-    question: 'How do I deploy my Nuxt app?'
+    title: 'Деплой',
+    description: 'Вывести в продакшн',
+    question: 'Как задеплоить мое Nuxt-приложение?'
   },
   {
     icon: 'i-lucide-sparkles',
-    title: 'What\'s new',
-    description: 'Latest in Nuxt 4',
-    question: 'What\'s new in Nuxt 4?'
+    title: 'Что нового',
+    description: 'Последнее в Nuxt 4',
+    question: 'Что нового в Nuxt 4?'
   }
 ]
 </script>
@@ -49,7 +49,7 @@ const suggestions = [
   <div class="flex-1 flex flex-col min-h-0 relative">
     <div class="absolute top-0 inset-x-0 z-10 backdrop-blur pointer-events-none">
       <div class="flex items-center justify-between px-3 py-2 pointer-events-auto">
-        <UTooltip text="Back to nuxt.com">
+        <UTooltip text="Вернуться на nuxt.com">
           <NuxtLink to="/" class="flex items-baseline gap-1.5 text-muted hover:text-highlighted transition-colors" @click="collapseToSidebar">
             <UIcon name="i-lucide-arrow-left" class="size-4" />
             <NuxtLogo class="h-4.5 w-auto" />
@@ -57,7 +57,7 @@ const suggestions = [
         </UTooltip>
 
         <div class="flex items-center gap-1.5">
-          <UTooltip v-if="canClear" text="New conversation">
+          <UTooltip v-if="canClear" text="Новый разговор">
             <UButton
               icon="i-lucide-list-x"
               color="neutral"
@@ -79,10 +79,10 @@ const suggestions = [
           </div>
           <div class="text-center">
             <h1 class="text-2xl sm:text-3xl font-semibold text-highlighted tracking-tight">
-              What can I help you with?
+              Чем могу помочь?
             </h1>
             <p class="text-base text-muted mt-2 max-w-lg mx-auto">
-              Ask anything or explore docs, modules, deployment, and more.
+              Спросите что угодно или изучите документацию, модули, деплой и многое другое.
             </p>
           </div>
         </div>
@@ -90,13 +90,13 @@ const suggestions = [
         <div class="w-full max-w-2xl flex flex-col gap-6">
           <div v-if="rateLimitReached" class="flex items-center justify-center gap-2 py-4 text-sm text-muted">
             <UIcon name="i-lucide-clock" class="size-4 shrink-0" />
-            <span>Daily limit reached. Try again tomorrow.</span>
+            <span>Достигнут дневной лимит. Попробуйте снова завтра.</span>
           </div>
           <UChatPrompt
             v-else
             v-model="input"
             :error="chat.error"
-            placeholder="Ask anything…"
+            placeholder="Спросите что угодно…"
             variant="subtle"
             :rows="2"
             :maxrows="5"
@@ -106,7 +106,7 @@ const suggestions = [
             @submit="onSubmit"
           >
             <template #footer>
-              <UTooltip v-if="usage" text="Daily messages remaining">
+              <UTooltip v-if="usage" text="Осталось сообщений на сегодня">
                 <span class="text-xs text-dimmed" :class="usage.remaining <= 5 ? 'text-warning' : ''">
                   {{ usage.remaining }}/{{ usage.limit }}
                 </span>

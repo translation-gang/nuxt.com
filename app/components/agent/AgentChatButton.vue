@@ -9,7 +9,7 @@ function handleToggle() {
 </script>
 
 <template>
-  <UTooltip text="Agent">
+  <UTooltip text="Агент">
     <UButton
       icon="i-custom-ai"
       color="neutral"

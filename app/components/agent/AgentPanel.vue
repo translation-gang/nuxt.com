@@ -61,14 +61,14 @@ defineShortcuts({
   >
     <template #title>
       <span class="inline-flex items-center gap-2 min-w-0">
-        <span class="truncate">Agent</span>
+        <span class="truncate">Агент</span>
         <UBadge variant="subtle" size="sm" class="shrink-0">
           Beta
         </UBadge>
       </span>
     </template>
     <template #actions>
-      <UTooltip v-if="canClear" text="Clear chat">
+      <UTooltip v-if="canClear" text="Очистить чат">
         <UButton
           icon="i-lucide-list-x"
           color="neutral"
@@ -76,7 +76,7 @@ defineShortcuts({
           @click="clearMessages"
         />
       </UTooltip>
-      <UTooltip text="Open full screen">
+      <UTooltip text="Открыть на полный экран">
         <UButton
           icon="i-lucide-maximize-2"
           color="neutral"
@@ -87,12 +87,12 @@ defineShortcuts({
     </template>
 
     <template #close>
-      <UTooltip text="Close" :kbds="['meta', 'i']">
+      <UTooltip text="Закрыть" :kbds="['meta', 'i']">
         <UButton
           icon="i-lucide-panel-right-close"
           color="neutral"
           variant="ghost"
-          aria-label="Close"
+          aria-label="Закрыть"
           @click="isOpen = false"
         />
       </UTooltip>
@@ -134,14 +134,14 @@ defineShortcuts({
   >
     <template #title>
       <span class="inline-flex items-center gap-2 min-w-0">
-        <span class="truncate">Agent</span>
+        <span class="truncate">Агент</span>
         <UBadge variant="subtle" size="sm" class="shrink-0">
           Beta
         </UBadge>
       </span>
     </template>
     <template #actions>
-      <UTooltip v-if="canClear" text="Clear chat">
+      <UTooltip v-if="canClear" text="Очистить чат">
         <UButton
           icon="i-lucide-list-x"
           color="neutral"
@@ -149,7 +149,7 @@ defineShortcuts({
           @click="clearMessages"
         />
       </UTooltip>
-      <UTooltip text="Open full screen">
+      <UTooltip text="Открыть на полный экран">
         <UButton
           icon="i-lucide-maximize-2"
           color="neutral"
@@ -160,12 +160,12 @@ defineShortcuts({
     </template>
 
     <template #close>
-      <UTooltip text="Close" :kbds="['meta', 'i']">
+      <UTooltip text="Закрыть" :kbds="['meta', 'i']">
         <UButton
           icon="i-lucide-panel-right-close"
           color="neutral"
           variant="ghost"
-          aria-label="Close"
+          aria-label="Закрыть"
           @click="isOpen = false"
         />
       </UTooltip>
