@@ -65,24 +65,24 @@ function copyInit() {
 
     <div class="flex items-center gap-1.5 px-3 py-1.5 border-t border-default">
       <div class="flex items-center gap-1 @xs:gap-2.5 flex-1">
-        <NuxtLink v-if="demo" :to="demo" target="_blank" aria-label="Open demo" class="flex items-center gap-1 text-muted hover:text-default transition-colors">
+        <NuxtLink v-if="demo" :to="demo" target="_blank" aria-label="Открыть демо" class="flex items-center gap-1 text-muted hover:text-default transition-colors">
           <UIcon name="i-lucide-laptop" class="size-3.5" />
-          <span class="hidden @xs:inline text-[11px]">Demo</span>
+          <span class="hidden @xs:inline text-[11px]">Демо</span>
         </NuxtLink>
-        <NuxtLink v-if="repo" :to="`https://github.com/${repo}`" target="_blank" aria-label="Open on GitHub" class="flex items-center gap-1 text-muted hover:text-default transition-colors">
+        <NuxtLink v-if="repo" :to="`https://github.com/${repo}`" target="_blank" aria-label="Открыть на GitHub" class="flex items-center gap-1 text-muted hover:text-default transition-colors">
           <UIcon name="i-simple-icons-github" class="size-3.5" />
           <span class="hidden @xs:inline text-[11px]">GitHub</span>
         </NuxtLink>
-        <NuxtLink v-if="purchase" :to="purchase" target="_blank" aria-label="Purchase" class="flex items-center gap-1 text-muted hover:text-default transition-colors">
+        <NuxtLink v-if="purchase" :to="purchase" target="_blank" aria-label="Купить" class="flex items-center gap-1 text-muted hover:text-default transition-colors">
           <UIcon name="i-lucide-credit-card" class="size-3.5" />
-          <span class="hidden @xs:inline text-[11px]">Purchase</span>
+          <span class="hidden @xs:inline text-[11px]">Купить</span>
         </NuxtLink>
       </div>
 
       <UButton
         v-if="initCommand"
         icon="i-lucide-terminal"
-        label="Init"
+        label="Инициализировать"
         size="xs"
         color="primary"
         variant="soft"

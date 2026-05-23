@@ -36,7 +36,7 @@ const contextPathLabel = computed(() => props.currentPage?.replace(/^\//, '') ??
         class="flex items-center gap-2 border-b border-default px-4 py-2.5"
       >
         <div class="min-w-0 flex-1 flex items-center gap-1.5 text-xs">
-          <span class="shrink-0 text-dimmed">Agent is using</span>
+          <span class="shrink-0 text-dimmed">Агент использует</span>
           <img
             src="/icon.png"
             alt=""
@@ -47,14 +47,14 @@ const contextPathLabel = computed(() => props.currentPage?.replace(/^\//, '') ??
             :title="currentPage ?? undefined"
           >{{ contextPathLabel }}</span>
         </div>
-        <UTooltip text="Stop using this page as context" :kbds="['tab']">
+        <UTooltip text="Перестать использовать эту страницу как контекст" :kbds="['tab']">
           <UButton
             icon="i-lucide-x"
             color="neutral"
             variant="ghost"
             size="sm"
             class="shrink-0 text-dimmed hover:text-default -me-1"
-            aria-label="Stop using this page as context"
+            aria-label="Перестать использовать эту страницу как контекст"
             @click="$emit('dismissPageContext')"
           />
         </UTooltip>
@@ -63,14 +63,14 @@ const contextPathLabel = computed(() => props.currentPage?.replace(/^\//, '') ??
 
     <div v-if="rateLimitReached" class="flex items-center gap-2 px-4 py-3 text-sm text-muted">
       <UIcon name="i-lucide-clock" class="size-4 shrink-0" />
-      <span>Daily limit reached. Try again tomorrow.</span>
+      <span>Достигнут дневной лимит. Попробуйте снова завтра.</span>
     </div>
 
     <UChatPrompt
       v-else
       v-model="input"
       :error="chat.error"
-      placeholder="Ask anything…"
+      placeholder="Спросите что угодно…"
       variant="naked"
       size="sm"
       :rows="2"
@@ -82,7 +82,7 @@ const contextPathLabel = computed(() => props.currentPage?.replace(/^\//, '') ??
     >
       <template #footer>
         <div class="flex items-center gap-2 text-xs text-dimmed">
-          <UTooltip v-if="currentPage && !pageContextEnabled" text="Use page as context" :kbds="['tab']">
+          <UTooltip v-if="currentPage && !pageContextEnabled" text="Использовать страницу как контекст" :kbds="['tab']">
             <UButton
               type="button"
               icon="i-lucide-file-plus"
@@ -90,14 +90,14 @@ const contextPathLabel = computed(() => props.currentPage?.replace(/^\//, '') ??
               variant="ghost"
               size="sm"
               class="-my-1 -mx-1.5 text-dimmed hover:text-default"
-              aria-label="Use page as context"
+              aria-label="Использовать страницу как контекст"
               @click.stop="$emit('addPageContext')"
             />
           </UTooltip>
 
           <USeparator v-if="currentPage && !pageContextEnabled" orientation="vertical" class="h-4" />
 
-          <UTooltip v-if="usage" text="Daily messages remaining">
+          <UTooltip v-if="usage" text="Осталось сообщений на сегодня">
             <span :class="usage.remaining <= 5 ? 'text-warning' : ''">
               {{ usage.remaining }}/{{ usage.limit }}
             </span>

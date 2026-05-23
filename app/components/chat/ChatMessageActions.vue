@@ -22,10 +22,10 @@ const textContent = computed(() => {
 
 <template>
   <div class="flex items-center gap-0.5">
-    <UTooltip :text="copied ? 'Copied' : 'Copy'">
+    <UTooltip :text="copied ? 'Скопировано' : 'Копировать'">
       <UButton
         :icon="copied ? 'i-lucide-check' : 'i-lucide-copy'"
-        :aria-label="copied ? 'Copied' : 'Copy response'"
+        :aria-label="copied ? 'Скопировано' : 'Копировать ответ'"
         color="neutral"
         variant="ghost"
         size="xs"
@@ -33,10 +33,10 @@ const textContent = computed(() => {
       />
     </UTooltip>
 
-    <UTooltip text="Good response">
+    <UTooltip text="Хороший ответ">
       <UButton
         icon="i-lucide-thumbs-up"
-        aria-label="Mark response as helpful"
+        aria-label="Отметить ответ как полезный"
         :aria-pressed="vote === true ? 'true' : 'false'"
         :color="vote === true ? 'success' : 'neutral'"
         variant="ghost"
@@ -45,10 +45,10 @@ const textContent = computed(() => {
       />
     </UTooltip>
 
-    <UTooltip text="Bad response">
+    <UTooltip text="Плохой ответ">
       <UButton
         icon="i-lucide-thumbs-down"
-        aria-label="Mark response as not helpful"
+        aria-label="Отметить ответ как неполезный"
         :aria-pressed="vote === false ? 'true' : 'false'"
         :color="vote === false ? 'error' : 'neutral'"
         variant="ghost"
