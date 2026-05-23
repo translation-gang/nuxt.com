@@ -43,7 +43,7 @@ function copyInit() {
         <span class="text-sm font-semibold text-highlighted truncate">{{ name }}</span>
         <UBadge
           v-if="badge === 'Premium'"
-          label="Premium"
+          label="Премиум"
           color="info"
           variant="subtle"
           size="sm"
@@ -51,7 +51,7 @@ function copyInit() {
         />
         <UBadge
           v-else-if="badge === 'Freemium'"
-          label="Freemium"
+          label="Фримиум"
           color="success"
           variant="subtle"
           size="sm"
