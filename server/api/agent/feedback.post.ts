@@ -123,7 +123,7 @@ export default defineEventHandler(async (event) => {
 
   const issue = response.data?.issueCreate?.issue
   if (!issue?.url) {
-    throw createError({ statusCode: 500, statusMessage: 'Не удалось создать issue в Linear' })
+    throw createError({ statusCode: 500, statusMessage: 'Не удалось создать задачу в Linear' })
   }
 
   return { url: issue.url }

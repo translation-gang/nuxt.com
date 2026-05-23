@@ -7,7 +7,7 @@ export default defineCachedEventHandler(async (event) => {
 
   const title = index?.hero?.title?.replace(/\s+/g, ' ').trim() || 'Nuxt'
   const description = index?.hero?.description?.replace(/\s+/g, ' ').trim()
-    || 'Full-Stack Vue-фреймворк. Создавайте быстрые production-ready веб-приложения с уверенностью.'
+    || 'Полнофункциональный Vue-фреймворк. Создавайте быстрые веб-приложения, готовые к продакшену, с уверенностью.'
 
   const featureBullets = (index?.features?.features ?? [])
     .map(feature => `- **${feature.title}**: ${feature.description}`)

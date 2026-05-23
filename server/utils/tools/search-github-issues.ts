@@ -76,7 +76,7 @@ export function createSearchGitHubIssuesTool(event: H3Event) {
           }))
         }
       } catch (error) {
-        return { error: `GitHub search failed: ${(error as Error).message}` }
+        return { error: `Не удалось выполнить поиск на GitHub: ${(error as Error).message}` }
       }
     }
   })

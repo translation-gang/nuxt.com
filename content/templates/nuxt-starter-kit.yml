@@ -1,8 +1,8 @@
 name: 'Nuxt Starter Kit'
 slug: 'nuxt-starter-kit'
-description: 'Full-stack стартер Nuxt на Nuxt UI Pro и NuxtHub.'
+description: 'Полнофункциональный стартер Nuxt на Nuxt UI Pro и NuxtHub.'
 demo: 'https://demo.nuxtstarterkit.com'
 purchase: 'https://nuxtstarterkit.com'
 screenshotUrl: 'https://nuxtstarterkit.com'
-badge: 'Premium'
+badge: 'Премиум'
 featured: true

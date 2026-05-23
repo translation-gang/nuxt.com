@@ -1,5 +1,5 @@
 name: 'Happy Paws'
 slug: 'happy-paws'
-description: 'Full-stack приложение для усыновления питомцев с Nuxt SEO и Tailwind CSS.'
+description: 'Полнофункциональное приложение для усыновления питомцев с Nuxt SEO и Tailwind CSS.'
 repo: 'pinegrow/happy-paws-with-nuxt-tailwindcss'
 demo: 'https://happy-paws-with-nuxt-tailwindcss.netlify.app/'

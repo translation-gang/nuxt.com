@@ -12,7 +12,7 @@ export default defineAppConfig({
       {
         category: 'Возможности',
         items: [
-          'useFetch vs useAsyncData?',
+          'useFetch или useAsyncData — что выбрать?',
           'Как работает файловая маршрутизация?',
           'Как подключить базу данных к моему Nuxt-приложению?'
         ]

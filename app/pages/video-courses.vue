@@ -15,7 +15,7 @@ const title = page.value.title
 const description = page.value.description
 
 function badgeLabel(badge: string) {
-  if (badge === 'Premium') {
+  if (badge === 'Premium' || badge === 'Премиум') {
     return 'Премиум'
   }
   return badge

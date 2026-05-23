@@ -24,7 +24,7 @@ export function createShowBlogPostTool(event: H3Event) {
       )
 
       if (!post) {
-        return { error: `Blog post matching "${title}" not found` }
+        return { error: `Статья блога по запросу «${title}» не найдена` }
       }
 
       return {

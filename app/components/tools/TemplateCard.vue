@@ -42,7 +42,7 @@ function copyInit() {
       <div class="flex items-center gap-2">
         <span class="text-sm font-semibold text-highlighted truncate">{{ name }}</span>
         <UBadge
-          v-if="badge === 'Premium'"
+          v-if="badge === 'Premium' || badge === 'Премиум'"
           label="Премиум"
           color="info"
           variant="subtle"
@@ -50,7 +50,7 @@ function copyInit() {
           class="rounded-full"
         />
         <UBadge
-          v-else-if="badge === 'Freemium'"
+          v-else-if="badge === 'Freemium' || badge === 'Фримиум'"
           label="Фримиум"
           color="success"
           variant="subtle"

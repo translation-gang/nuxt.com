@@ -7,6 +7,7 @@ const { track } = useAnalytics()
 const isCopying = ref(false)
 
 const mdPath = computed(() => `${site.url}/raw${route.path}.md`)
+const externalAiPrompt = computed(() => `Прочитай ${mdPath.value}, чтобы я мог задать вопросы по этому материалу.`)
 
 const items = [
   [{
@@ -32,14 +33,14 @@ const items = [
     label: 'Открыть в ChatGPT',
     icon: 'i-simple-icons:openai',
     target: '_blank',
-    to: `https://chatgpt.com/?hints=search&q=${encodeURIComponent(`Read ${mdPath.value} so I can ask questions about it.`)}`,
+    to: `https://chatgpt.com/?hints=search&q=${encodeURIComponent(externalAiPrompt.value)}`,
     onSelect: () => track('Page Action', { action: 'Open in ChatGPT' })
   },
   {
     label: 'Открыть в Claude',
     icon: 'i-simple-icons:anthropic',
     target: '_blank',
-    to: `https://claude.ai/new?q=${encodeURIComponent(`Read ${mdPath.value} so I can ask questions about it.`)}`,
+    to: `https://claude.ai/new?q=${encodeURIComponent(externalAiPrompt.value)}`,
     onSelect: () => track('Page Action', { action: 'Open in Claude' })
   }], [
     {

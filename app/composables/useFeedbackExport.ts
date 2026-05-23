@@ -19,7 +19,7 @@ export function useFeedbackExport() {
     }
 
     const headers = [
-      'ID',
+      'Идентификатор',
       'Оценка',
       'Балл',
       'Метка оценки',

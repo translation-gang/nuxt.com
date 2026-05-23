@@ -13,10 +13,10 @@ useHead({
 
 useSeoMeta({
   ogTitle: 'Агент Nuxt · Nuxt',
-  ogDescription: 'Nuxt Agent помогает изучать документацию — спрашивайте о Nuxt, модулях, деплое и многом другом.',
+  ogDescription: 'Агент Nuxt помогает изучать документацию — спрашивайте о Nuxt, модулях, деплое и многом другом.',
   ogImage: joinURL(site.url, '/nuxt-agent.jpg'),
   twitterTitle: 'Агент Nuxt · Nuxt',
-  twitterDescription: 'Nuxt Agent помогает изучать документацию — спрашивайте о Nuxt, модулях, деплое и многом другом.',
+  twitterDescription: 'Агент Nuxt помогает изучать документацию — спрашивайте о Nuxt, модулях, деплое и многом другом.',
   twitterImage: joinURL(site.url, '/nuxt-agent.jpg')
 })
 useCanonical()

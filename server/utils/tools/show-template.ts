@@ -35,7 +35,7 @@ export function createShowTemplateTool(event: H3Event) {
       }).filter(Boolean)
 
       if (!results.length) {
-        return { error: `No templates found matching: ${names.join(', ')}` }
+        return { error: `Шаблоны не найдены: ${names.join(', ')}` }
       }
 
       return { templates: results }

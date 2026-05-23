@@ -42,17 +42,17 @@ Netlify Edge Functions использует Deno и мощную среду вы
 SERVER_PRESET=netlify_edge
 ```
 
-## On-demand Builders
+## Сборщики по запросу (On-demand Builders)
 
-On-demand Builders — это serverless-функции для генерации контента по запросу; результат автоматически кэшируется в Edge CDN Netlify.
+Сборщики по запросу (On-demand Builders) — это serverless-функции для генерации контента по запросу; результат автоматически кэшируется в Edge CDN Netlify.
 
 Они позволяют создавать страницы при первом посещении пользователем и затем отдавать их из кэша до следующего деплоя.
 
 ::read-more{to="https://docs.netlify.com/configure-builds/on-demand-builders/" target="_blank"}
-Подробнее о Netlify on-demand builders
+Подробнее о сборщиках по запросу Netlify
 ::
 
-Установите следующую переменную окружения, чтобы включить on-demand builders:
+Установите следующую переменную окружения, чтобы включить сборщики по запросу:
 
 ```bash
 SERVER_PRESET=netlify_builder

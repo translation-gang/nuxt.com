@@ -31,7 +31,7 @@ function openVideoModal() {
 }
 
 const site = useSiteConfig()
-const title = 'Nuxt: Full-Stack Vue-фреймворк'
+const title = 'Nuxt: полнофункциональный Vue-фреймворк'
 const description = 'Создавайте быстрые production-ready веб-приложения на Vue. Файловая маршрутизация, автоимпорты и серверный рендеринг — всё настроено из коробки.'
 useSeoMeta({
   titleTemplate: '%s',
@@ -126,7 +126,7 @@ onMounted(() => {
       }"
     >
       <template #title>
-        Full-Stack<br><span class="text-primary">Vue-фреймворк</span>
+        Полнофункциональный<br><span class="text-primary">Vue-фреймворк</span>
       </template>
 
       <template #description>

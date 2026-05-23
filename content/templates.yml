@@ -12,7 +12,7 @@ links:
     variant: solid
     color: neutral
     size: md
-  - label: 'Full-stack шаблоны'
+  - label: 'Полнофункциональные шаблоны'
     to: 'https://hub.nuxt.com/templates'
     target: '_blank'
     variant: subtle

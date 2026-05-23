@@ -46,7 +46,7 @@ function trackTemplateAction(action: 'Demo' | 'GitHub' | 'Purchase') {
         </p>
         <div class="flex shrink-0 gap-1">
           <UBadge
-            v-if="template.badge === 'Premium'"
+            v-if="template.badge === 'Premium' || template.badge === 'Премиум'"
             label="Премиум"
             color="info"
             variant="subtle"
@@ -54,7 +54,7 @@ function trackTemplateAction(action: 'Demo' | 'GitHub' | 'Purchase') {
             class="rounded-full"
           />
           <UBadge
-            v-else-if="template.badge === 'Freemium'"
+            v-else-if="template.badge === 'Freemium' || template.badge === 'Фримиум'"
             label="Фримиум"
             color="success"
             variant="subtle"

@@ -22,7 +22,7 @@ sponsor: true
 3. Vercel определит, что вы используете Nitro, и включит правильные настройки для развертывания.
 4. Ваше приложение развернуто!
 
-После того как проект импортирован и развернут, все последующие изменения в ветках будут генерировать [Preview Deployments](https://vercel.com/docs/deployments/environments#preview-environment-pre-production), а все изменения в Production Branch (обычно «main») приведут к [Production Deployment](https://vercel.com/docs/deployments/environments#production-environment).
+После импорта и развертывания проекта все последующие push в ветки будут создавать **предпросмотровые деплои** (Preview Deployments), а изменения в **продакшн-ветке** (обычно `main`) приведут к **продакшн-деплою** (Production Deployment).
 
 Узнайте больше об [интеграции Vercel с Git](https://vercel.com/docs/git).
 
@@ -44,7 +44,7 @@ SERVER_PRESET=vercel_edge
 
 Или обновите команду сборки на `nuxt build --preset=vercel_edge`.
 
-## Vercel KV Storage
+## Хранилище Vercel KV
 
 Вы можете легко использовать [Vercel KV Storage](https://vercel.com/docs/storage/vercel-kv) с [Nuxt Server Storage](/docs/guide/directory-structure/server#server-storage).
 

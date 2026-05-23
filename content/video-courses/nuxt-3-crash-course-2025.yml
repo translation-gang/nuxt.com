@@ -1,6 +1,6 @@
 name: 'Nuxt 3 — быстрый курс 2025'
 slug: 'nuxt-3-crash-course-2025'
-description: 'Быстрый старт с Nuxt — layouts, pages, data fetching, API routes и многое другое'
+description: 'Быстрый старт с Nuxt — layouts, страницы, загрузка данных, API-маршруты и многое другое'
 url: 'https://www.youtube.com/watch?v=RhZZ0whiuT8'
 screenshotOptions:
   delay: 1

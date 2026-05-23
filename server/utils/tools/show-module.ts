@@ -52,12 +52,12 @@ export const showModuleTool = tool({
     }
 
     if (!data) {
-      return { error: `Module "${name}" not found` }
+      return { error: `Модуль «${name}» не найден` }
     }
 
     const catalogName = data.name
     if (typeof catalogName !== 'string' || !catalogName.trim()) {
-      return { error: `Module "${name}" returned an invalid response` }
+      return { error: `Модуль «${name}» вернул некорректный ответ` }
     }
 
     const stats = data.stats as Record<string, unknown> | undefined

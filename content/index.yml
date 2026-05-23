@@ -1,5 +1,5 @@
 hero:
-  title: 'Full-Stack Vue-фреймворк'
+  title: 'Полнофункциональный Vue-фреймворк'
   description: Создавайте быстрые веб-приложения на Vue. Файловая маршрутизация, автоимпорты и серверный рендеринг — всё настроено из коробки.
   tabs:
     - title: Минимальный
@@ -353,7 +353,7 @@ foundation:
         to: https://rspack.dev
     - id: nitro
       title: Сервер Nitro
-      description: Nuxt использует Nitro как серверный движок для создания универсальных full-stack приложений, готовых к развёртыванию на любой платформе.
+      description: Nuxt использует Nitro как серверный движок для создания универсальных полнофункциональных приложений, готовых к развёртыванию на любой платформе.
       logo: i-custom-nitro
       color: '#FB848E'
       gradient: 'bg-gradient-to-br from-[#FB848E]/10 from-5% via-transparent via-50% to-transparent'
@@ -370,7 +370,7 @@ modules:
       color: neutral
       trailing: true
 testimonial:
-  quote: "Nuxt предлагает убедительное решение и отличную экосистему для создания производительных и SEO-дружественных fullstack Vue-приложений. Возможность выбора между SSR и SSG — вишенка на торте."
+  quote: "Nuxt предлагает убедительное решение и отличную экосистему для создания производительных и SEO-дружественных полнофункциональных Vue-приложений. Возможность выбора между SSR и SSG — вишенка на торте."
   author:
     name: 'Evan You'
     description: 'Создатель Vue.js и Vite'

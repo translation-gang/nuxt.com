@@ -1,6 +1,6 @@
 name: 'Supastarter'
 slug: 'supastarter'
-description: 'Готовый к продакшену SaaS-стартер с auth, i18n, биллингом и платежами.'
+description: 'Готовый к продакшену SaaS-стартер с аутентификацией, i18n, биллингом и платежами.'
 demo: 'https://nuxt-demo.supastarter.dev'
 purchase: 'https://supastarter.dev/products/starter-kits/nuxt?aff=J0Emk'
-badge: 'Premium'
+badge: 'Премиум'

@@ -58,7 +58,7 @@ zerops:
 
 Теперь вы можете запустить [конвейер сборки и развертывания с помощью Zerops CLI](#building-deploying-your-app) или подключить сервис приложений к вашему репозиторию [GitHub](https://docs.zerops.io/references/github-integration/) / [GitLab](https://docs.zerops.io/references/gitlab-integration) из детализации сервиса.
 
-## SSR Node.js
+## SSR на Node.js
 
 Проекты и сервисы можно добавлять либо с помощью [мастера добавления проекта](https://app.zerops.io/dashboard/project-add), либо импортировать с помощью YAML-структуры:
 

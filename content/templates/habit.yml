@@ -1,5 +1,5 @@
 name: 'Habit'
 slug: 'habit'
-description: 'Full-stack приложение для привычек с аутентификацией и SQL-базой данных.'
+description: 'Полнофункциональное приложение для привычек с аутентификацией и SQL-базой данных.'
 repo: 'zackha/habit'
 demo: 'https://habit.nuxt.dev/'

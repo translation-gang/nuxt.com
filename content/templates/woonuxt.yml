@@ -1,5 +1,5 @@
 name: 'WooNuxt'
 slug: 'woonuxt'
-description: 'Headless eCommerce на WooCommerce и Nuxt.'
+description: 'eCommerce без привязки к CMS (headless) на WooCommerce и Nuxt.'
 repo: 'scottyzen/woonuxt'
 demo: 'https://v3.woonuxt.com'

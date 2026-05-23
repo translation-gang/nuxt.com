@@ -151,7 +151,7 @@ function getModelIcon(model: string): string {
 
 // Format duration from ms to seconds
 function formatDuration(ms: number): string {
-  return `${(ms / 1000).toFixed(2)}s`
+  return `${(ms / 1000).toFixed(2)} с`
 }
 
 // Expanded rows state

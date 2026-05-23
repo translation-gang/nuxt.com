@@ -22,7 +22,7 @@ export function createShowHostingTool(event: H3Event) {
       )
 
       if (!provider) {
-        return { error: `Hosting provider "${name}" not found` }
+        return { error: `Провайдер хостинга «${name}» не найден` }
       }
 
       return {
