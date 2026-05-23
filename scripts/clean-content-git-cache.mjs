@@ -8,5 +8,5 @@ import { join } from 'node:path'
 
 const dir = join(process.cwd(), '.data', 'content')
 if (existsSync(dir)) {
-  rmSync(dir, { recursive: true, force: true })
+  rmSync(dir, { recursive: true, force: true, maxRetries: 3, retryDelay: 100 })
 }
