@@ -91,7 +91,7 @@ defineOgImage('Docs.takumi', {
         <span v-if="agency.link" class="hidden lg:block text-muted">&bull;</span>
         <NuxtLink v-if="agency.link" :to="agency.link" target="_blank" class="flex items-center gap-1.5 hover:text-primary">
           <UIcon name="i-lucide-link" class="size-5" />
-          <span class="text-sm font-medium">Website</span>
+          <span class="text-sm font-medium">Сайт</span>
         </NuxtLink>
       </div>
     </UPageHeader>

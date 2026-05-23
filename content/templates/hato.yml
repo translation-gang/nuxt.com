@@ -1,6 +1,6 @@
 name: 'Hato'
 slug: 'hato'
-description: 'Discover Hato, the sleek portfolio website perfect for freelancers, photographers, and artists made with Nuxt UI'
+description: 'Hato — стильный сайт-портфолио для фрилансеров, фотографов и художников на Nuxt UI'
 badge: 'Free'
 repo: 'cesswhite/hato-minimal-template'
 demo: 'https://hato-template.vercel.app/'

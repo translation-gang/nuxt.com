@@ -87,7 +87,7 @@ const {
                       ? 'border-primary bg-primary/20 hover:bg-primary/30 grayscale-0'
                       : 'border-default bg-accented/20 hover:border-accented/70 hover:bg-accented/80'
                   ]"
-                  :aria-label="`Rate as ${option.label}`"
+                  :aria-label="`Оценить как ${option.label}`"
                   role="radio"
                   :aria-checked="formState.rating === option.value"
                   @click="handleRatingSelect(option.value)"

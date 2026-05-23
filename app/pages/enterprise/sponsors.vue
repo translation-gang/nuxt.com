@@ -95,8 +95,8 @@ defineOgImage('Docs.takumi', {
             </div>
             <div v-else class="flex flex-wrap gap-8">
               <NuxtLink v-for="(sponsor, index) in value" :key="index" :to="sponsor.sponsorUrl" target="_blank" class="inline-flex">
-                <span class="sr-only">Visit {{ sponsor.sponsorName }} profile</span>
-                <UAvatar :src="sponsor.sponsorLogo" size="lg" :alt="`${sponsor.sponsorName} avatar`" />
+                <span class="sr-only">Перейти в профиль {{ sponsor.sponsorName }}</span>
+                <UAvatar :src="sponsor.sponsorLogo" size="lg" :alt="`Аватар ${sponsor.sponsorName}`" />
               </NuxtLink>
             </div>
           </div>

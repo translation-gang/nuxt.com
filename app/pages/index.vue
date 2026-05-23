@@ -126,7 +126,7 @@ onMounted(() => {
       }"
     >
       <template #title>
-        The Full-Stack<br><span class="text-primary">Vue Framework</span>
+        Full-Stack<br><span class="text-primary">Vue-фреймворк</span>
       </template>
 
       <template #description>
@@ -361,7 +361,7 @@ onMounted(() => {
                   {{ formatNumber(stats.monthlyDownloads) }}
                 </span>
                 <p class="text-sm">
-                  Monthly downloads
+                  Скачиваний в месяц
                 </p>
               </div>
             </div>
@@ -377,7 +377,7 @@ onMounted(() => {
                   {{ formatNumber(stats.stars) }}
                 </span>
                 <p class="text-sm">
-                  GitHub Stars
+                  Звёзды на GitHub
                 </p>
               </div>
             </div>
@@ -408,7 +408,7 @@ onMounted(() => {
                 <span class="font-medium">
                   {{ page.stats.x }}
                 </span>
-                <p>Followers</p>
+                <p>Подписчики</p>
               </div>
             </div>
           </UPageCard>
@@ -422,7 +422,7 @@ onMounted(() => {
                 <span class="font-medium">
                   {{ page.stats.discord }}
                 </span>
-                <p>Members</p>
+                <p>Участники</p>
               </div>
             </div>
           </UPageCard>

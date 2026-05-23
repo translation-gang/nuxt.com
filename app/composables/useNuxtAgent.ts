@@ -15,7 +15,7 @@ function normalizeFaqQuestions(questions: FaqQuestions): FaqCategory[] {
 
   if (typeof questions[0] === 'string') {
     return [{
-      category: 'Questions',
+      category: 'Вопросы',
       items: questions as string[]
     }]
   }

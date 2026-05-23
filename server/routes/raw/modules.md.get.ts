@@ -3,15 +3,15 @@ export default defineCachedEventHandler(async (event) => {
   const modules = await fetchModules(event) || []
 
   const lines: string[] = [
-    '# Nuxt Modules',
+    '# Модули Nuxt',
     '',
-    `> ${modules.length}+ modules to supercharge your [Nuxt](https://nuxt.com) project.`,
+    `> ${modules.length}+ модулей для вашего проекта [Nuxt](https://nuxt.com).`,
     ''
   ]
 
   const categories = new Map<string, typeof modules>()
   for (const mod of modules) {
-    const cat = mod.category || 'Uncategorized'
+    const cat = mod.category || 'Без категории'
     if (!categories.has(cat)) categories.set(cat, [])
     categories.get(cat)!.push(mod)
   }
@@ -27,7 +27,7 @@ export default defineCachedEventHandler(async (event) => {
 
       lines.push(`### ${mod.npm}`, '')
       lines.push(mod.description, '')
-      lines.push(`Install: \`npx nuxt@latest module add ${mod.name}\``, '')
+      lines.push(`Установка: \`npx nuxt@latest module add ${mod.name}\``, '')
       lines.push(links, '')
     }
   }

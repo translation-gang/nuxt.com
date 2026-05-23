@@ -1,6 +1,6 @@
-name: 'Mastering Nuxt'
+name: 'Освоение Nuxt'
 slug: 'mastering-nuxt'
-description: 'The complete guide to developing and deploying fast, production-ready Nuxt 3 apps.'
+description: 'Полное руководство по разработке и деплою быстрых production-ready приложений на Nuxt 3.'
 url: 'https://masteringnuxt.com/nuxt3'
 badge: Premium
 sponsor: true 

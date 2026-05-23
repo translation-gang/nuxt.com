@@ -10,7 +10,7 @@ export async function isCoreTeamMember(login: string): Promise<boolean> {
   if (!coreMembers || !Array.isArray(coreMembers)) {
     throw createError({
       statusCode: 500,
-      statusMessage: 'Failed to fetch core team members.'
+      statusMessage: 'Не удалось загрузить участников core-команды.'
     })
   }
   return coreMembers.some(member => member.login.toLowerCase() === login)

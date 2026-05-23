@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
   const authHeader = getHeader(event, 'authorization')
 
   if (!secret || authHeader !== `Bearer ${secret}`) {
-    throw createError({ statusCode: 401, statusMessage: 'Unauthorized' })
+    throw createError({ statusCode: 401, statusMessage: 'Не авторизован' })
   }
 
   const chatsThreshold = new Date()

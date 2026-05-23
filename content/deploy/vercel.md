@@ -113,7 +113,7 @@ export default defineEventHandler(async (event) => {
   ::card
   ---
   icon: i-simple-icons-github
-  title: Nuxt on the Edge on Vercel
+  title: Nuxt на Edge в Vercel
   to: https://github.com/pi0/nuxt-on-the-edge
   target: _blank
   ui.icon.base: text-black dark:text-white

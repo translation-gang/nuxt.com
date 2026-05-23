@@ -1,5 +1,5 @@
-name: 'Portfolio'
+name: 'Портфолио'
 slug: 'nuxt-ui-portfolio'
-description: "A portfolio template with a clean and modern design."
+description: "Шаблон портфолио с чистым современным дизайном."
 repo: 'nuxt-ui-templates/portfolio'
 demo: 'https://portfolio-template.nuxt.dev'

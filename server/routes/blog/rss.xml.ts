@@ -7,14 +7,14 @@ export default defineEventHandler(async (event: H3Event) => {
   const baseUrl = 'https://nuxt.com'
   const siteUrl = joinURL(baseUrl, 'blog')
   const feed = new Feed({
-    title: 'The Nuxt Blog',
-    description: 'News and updates about Nuxt.',
+    title: 'Блог Nuxt',
+    description: 'Новости и обновления Nuxt.',
     id: siteUrl,
     link: siteUrl,
-    language: 'en',
+    language: 'ru',
     image: joinURL(baseUrl, 'icon.png'),
     favicon: joinURL(baseUrl, 'favicon.png'),
-    copyright: `Copyright © 2016-${new Date().getFullYear()} Nuxt All Rights Reserved`,
+    copyright: `© 2016–${new Date().getFullYear()} Nuxt. Все права защищены.`,
     feedLinks: {
       rss: `${siteUrl}/rss.xml`
     }

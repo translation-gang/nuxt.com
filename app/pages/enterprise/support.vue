@@ -12,11 +12,11 @@ const title = page.value?.title
 const description = page.value?.description
 
 useSeoMeta({
-  titleTemplate: '%s · Enterprise',
+  titleTemplate: '%s · Для бизнеса',
   title,
   description,
   ogDescription: description,
-  ogTitle: `${title} · Enterprise`,
+  ogTitle: `${title} · Для бизнеса`,
   ogImage: '/assets/enterprise/support/social-card.png'
 })
 useCanonical()

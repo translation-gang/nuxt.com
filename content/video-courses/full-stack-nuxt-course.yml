@@ -1,6 +1,6 @@
-name: 'Full Stack Nuxt Course'
+name: 'Full Stack курс по Nuxt'
 slug: 'full-stack-nuxt-course'
-description: 'Full Stack app with Nuxt, Vue, Better Auth, Drizzle, Tailwind, DaisyUI, MapLibre'
+description: 'Full Stack приложение на Nuxt, Vue, Better Auth, Drizzle, Tailwind, DaisyUI и MapLibre'
 url: 'https://www.youtube.com/watch?v=DK93dqmJJYg'
 screenshotOptions:
   delay: 1

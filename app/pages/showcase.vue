@@ -63,7 +63,7 @@ onMounted(() => {
                   {{ formatNumber(stats.stars) }}
                 </h3>
                 <p class="text-sm text-muted">
-                  GitHub Stars
+                  Звёзды на GitHub
                 </p>
               </div>
               <div class="flex flex-col items-center">
@@ -71,7 +71,7 @@ onMounted(() => {
                   {{ formatNumber(stats.monthlyDownloads) }}
                 </h3>
                 <p class="text-sm text-muted">
-                  Monthly Downloads
+                  Загрузок в месяц
                 </p>
               </div>
             </div>

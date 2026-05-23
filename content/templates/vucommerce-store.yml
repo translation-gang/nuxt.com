@@ -1,5 +1,5 @@
-name: 'eCommerce Store (Vuetify)'
+name: 'Интернет-магазин (Vuetify)'
 slug: 'vucommerce-store'
-description: 'A responsive e-commerce store with Vuetify components.'
+description: 'Адаптивный интернет-магазин с компонентами Vuetify.'
 repo: 'pinegrow/pg-nuxt-vuetify-tailwindcss'
 demo: 'https://pg-nuxt-vuetify-tailwindcss.netlify.app/'

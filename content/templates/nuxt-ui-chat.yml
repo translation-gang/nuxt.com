@@ -1,6 +1,6 @@
-name: 'AI Chatbot'
+name: 'AI-чатбот'
 slug: 'nuxt-ui-chat'
-description: "Full-featured AI Chatbot with authentication & chat history."
+description: "Полнофункциональный AI-чатбот с аутентификацией и историей сообщений."
 repo: 'nuxt-ui-templates/chat'
 demo: 'https://chat-template.nuxt.dev'
 featured: true

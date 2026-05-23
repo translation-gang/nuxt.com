@@ -1,5 +1,5 @@
-name: 'Nuxt 3 Middleware'
+name: 'Middleware в Nuxt 3'
 slug: 'vm-nuxt-middleware'
-description: 'Learn to Nuxt middleware to handle authentication, redirection, and custom logic like a pro.'
+description: 'Освойте middleware Nuxt для аутентификации, редиректов и кастомной логики.'
 url: 'https://www.vuemastery.com/courses/nuxt-3-middleware/middleware-introduction?fpr=nuxt'
 badge: Premium 

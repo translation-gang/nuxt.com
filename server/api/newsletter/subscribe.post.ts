@@ -11,7 +11,7 @@ export default eventHandler(async (event) => {
   if (!apiKey || !audienceId) {
     throw createError({
       statusCode: 500,
-      message: 'Missing Resend configuration'
+      message: 'Не настроена конфигурация Resend'
     })
   }
 
@@ -21,7 +21,7 @@ export default eventHandler(async (event) => {
   const { data: contact } = await resend.contacts.get({ audienceId, id: email })
   if (contact && !contact.unsubscribed) {
     throw createError({
-      message: 'You are already subscribed to the newsletter ❤️',
+      message: 'Вы уже подписаны на рассылку ❤️',
       statusCode: 400
     })
   }
@@ -33,7 +33,7 @@ export default eventHandler(async (event) => {
   const { error } = await resend.emails.send({
     from: 'Nuxt Team <team@newsletter.nuxt.com>',
     to: email,
-    subject: 'Confirm your email address',
+    subject: 'Подтвердите ваш email',
     template: {
       id: 'confirm-newsletter',
       variables: {
@@ -45,7 +45,7 @@ export default eventHandler(async (event) => {
   if (error) {
     throw createError({
       statusCode: 400,
-      message: error.message || 'Failed to send confirmation email. Please try again.'
+      message: error.message || 'Не удалось отправить письмо подтверждения. Попробуйте снова.'
     })
   }
 

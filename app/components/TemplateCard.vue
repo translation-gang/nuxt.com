@@ -47,7 +47,7 @@ function trackTemplateAction(action: 'Demo' | 'GitHub' | 'Purchase') {
         <div class="flex shrink-0 gap-1">
           <UBadge
             v-if="template.badge === 'Premium'"
-            :label="template.badge"
+            label="Премиум"
             color="info"
             variant="subtle"
             size="sm"
@@ -55,7 +55,7 @@ function trackTemplateAction(action: 'Demo' | 'GitHub' | 'Purchase') {
           />
           <UBadge
             v-else-if="template.badge === 'Freemium'"
-            :label="template.badge"
+            label="Фримиум"
             color="success"
             variant="subtle"
             size="sm"

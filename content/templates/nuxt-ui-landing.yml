@@ -1,5 +1,5 @@
-name: 'Landing'
+name: 'Лендинг'
 slug: 'nuxt-ui-landing'
-description: "A landing page template made with Nuxt UI."
+description: "Шаблон лендинга на Nuxt UI."
 repo: 'nuxt-ui-templates/landing'
 demo: 'https://landing-template.nuxt.dev'

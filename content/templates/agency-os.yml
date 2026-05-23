@@ -1,5 +1,5 @@
 name: 'Agency OS'
 slug: 'agency-os'
-description: 'The open source operating system for digital agencies.'
+description: 'Операционная система с открытым исходным кодом для digital-агентств.'
 repo: 'directus-community/agency-os'
 demo: 'https://www.agencyos.dev/'

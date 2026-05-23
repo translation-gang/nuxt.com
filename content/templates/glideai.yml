@@ -1,6 +1,6 @@
 name: 'Glide.ai'
 slug: 'glideai'
-description: 'A dark, modern, website template powered by Nuxt and Prismic.'
+description: 'Тёмный современный шаблон сайта на Nuxt и Prismic.'
 demo: 'https://prismic-demo-glideai.nuxt.dev'
 screenshotUrl: 'https://prismic-demo-glideai.nuxt.dev'
 screenshotOptions:

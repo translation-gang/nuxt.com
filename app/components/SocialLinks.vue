@@ -17,7 +17,7 @@ function trackSocialClick(platform: string) {
       size="xs"
       @click="trackSocialClick('Discord')"
     >
-      <span class="sr-only">Nuxt on Discord</span>
+      <span class="sr-only">Nuxt в Discord</span>
     </UButton>
     <UButton
       icon="i-simple-icons-bluesky"
@@ -28,7 +28,7 @@ function trackSocialClick(platform: string) {
       size="xs"
       @click="trackSocialClick('Bluesky')"
     >
-      <span class="sr-only">Nuxt on Bluesky</span>
+      <span class="sr-only">Nuxt в Bluesky</span>
     </UButton>
     <UButton
       icon="i-simple-icons-x"
@@ -39,7 +39,7 @@ function trackSocialClick(platform: string) {
       size="xs"
       @click="trackSocialClick('X')"
     >
-      <span class="sr-only">Nuxt on X</span>
+      <span class="sr-only">Nuxt в X</span>
     </UButton>
     <UButton
       icon="i-simple-icons-github"
@@ -50,7 +50,7 @@ function trackSocialClick(platform: string) {
       size="xs"
       @click="trackSocialClick('GitHub')"
     >
-      <span class="sr-only">Nuxt on GitHub</span>
+      <span class="sr-only">Nuxt в GitHub</span>
     </UButton>
   </div>
 </template>

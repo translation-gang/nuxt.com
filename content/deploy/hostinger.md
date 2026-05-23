@@ -1,28 +1,28 @@
 ---
 title: Hostinger
-description: 'Deploy your Nuxt Application to Hostinger Node.js Hosting.'
+description: 'Разверните приложение Nuxt на Hostinger Node.js Hosting.'
 componentImg: Hostinger
 logoSrc: '/assets/integrations/hostinger.svg'
-category: Hosting
+category: Хостинг
 nitroPreset: 'node-server'
 website: 'https://www.hostinger.com/'
 ---
-## Deploy using Git
+## Развертывание через Git
 
-1. Push your code to a GitHub repository.
-2. Log in to [hPanel](https://hpanel.hostinger.com), go to **Websites** and click **Add Website**.
-3. Select **Node.js Apps**, then choose **Import Git Repository**.
-4. Authorize Hostinger to access your GitHub account and select your repository.
-5. Hostinger will automatically detect your Nuxt app and suggest build settings.
-6. Click **Deploy** — your application will be built and go live automatically.
+1. Отправьте код в репозиторий GitHub.
+2. Войдите в [hPanel](https://hpanel.hostinger.com), перейдите в **Websites** и нажмите **Add Website**.
+3. Выберите **Node.js Apps**, затем **Import Git Repository**.
+4. Разрешите Hostinger доступ к вашему аккаунту GitHub и выберите репозиторий.
+5. Hostinger автоматически определит приложение Nuxt и предложит настройки сборки.
+6. Нажмите **Deploy** — приложение будет собрано и опубликовано автоматически.
 
-After deployment, every push to your repository will trigger a new build and redeploy your application automatically.
+После развертывания каждый push в репозиторий запускает новую сборку и автоматически обновляет приложение.
 
-## Deploy by uploading files
+## Развертывание через загрузку файлов
 
-1. Compress your project files into a `.zip` archive.
-2. In hPanel, go to **Websites → Add Website → Node.js Apps**, then select **Upload your website files**.
-3. Upload the `.zip` file and confirm the build settings.
-4. Click **Deploy**.
+1. Упакуйте файлы проекта в архив `.zip`.
+2. В hPanel перейдите в **Websites → Add Website → Node.js Apps**, затем выберите **Upload your website files**.
+3. Загрузите файл `.zip` и подтвердите настройки сборки.
+4. Нажмите **Deploy**.
 
-Learn more about [Node.js deployments](https://www.hostinger.com/support/how-to-deploy-a-nodejs-website-in-hostinger/) on Hostinger.
+Подробнее о [развертывании Node.js](https://www.hostinger.com/support/how-to-deploy-a-nodejs-website-in-hostinger/) на Hostinger.

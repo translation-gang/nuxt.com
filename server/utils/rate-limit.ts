@@ -39,7 +39,7 @@ export async function consumeAgentRateLimit(event: H3Event): Promise<{ used: num
     if (used > DAILY_LIMIT) {
       throw createError({
         statusCode: 429,
-        message: `You've reached the daily limit of ${DAILY_LIMIT} messages. Try again tomorrow.`
+        message: `Вы достигли дневного лимита в ${DAILY_LIMIT} сообщений. Попробуйте снова завтра.`
       })
     }
     return { used, remaining: DAILY_LIMIT - used, limit: DAILY_LIMIT }

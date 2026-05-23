@@ -1,6 +1,6 @@
-name: 'Movies'
+name: 'Фильмы'
 slug: 'movies'
-description: 'A TMDB client built with Nuxt and View Transitions.'
+description: 'Клиент TMDB на Nuxt с View Transitions.'
 repo: 'nuxt/movies'
 featured: true
 demo: 'https://movies.nuxt.space'

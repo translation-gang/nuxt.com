@@ -87,7 +87,7 @@
       <UPricingPlans
         :plans="[
           {
-            title: 'Starter',
+            title: 'Стартовый',
             description: 'Для личных проектов и небольших команд.',
             price: 'Бесплатно',
             features: [
@@ -106,7 +106,7 @@
             price: '$19',
             billingCycle: '/мес.',
             features: [
-              'Всё из Starter',
+              'Всё из Стартового',
               'Приоритетная поддержка',
               'Расширенные шаблоны',
               'Кастомные компоненты'
@@ -158,14 +158,14 @@
     <UFooter>
       <template #left>
         <p class="text-muted text-sm">
-          Copyright © {{ new Date().getFullYear() }}
+          Авторские права © {{ new Date().getFullYear() }}
         </p>
       </template>
 
       <UNavigationMenu
         :items="[
           {
-            label: 'Figma Kit'
+            label: 'Набор Figma'
           },
           {
             label: 'Песочница'

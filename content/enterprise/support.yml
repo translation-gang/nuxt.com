@@ -15,57 +15,57 @@ logos:
     dark: /assets/enterprise/support/dark/malt.svg
     width: '85'
     height: '24'
-    alt: malt logo
+    alt: Логотип Malt
   - light: /assets/enterprise/support/light/zadig-and-voltaire.svg
     dark: /assets/enterprise/support/dark/zadig-and-voltaire.svg
     width: '180'
     height: '24'
-    alt: zadig-and-voltaire logo
+    alt: Логотип Zadig & Voltaire
   - light: /assets/enterprise/support/light/adyen.svg
     dark: /assets/enterprise/support/dark/adyen.svg
     width: '85'
     height: '24'
-    alt: adyen logo
+    alt: Логотип Adyen
   - light: /assets/enterprise/support/light/world-wide-technology.svg
     dark: /assets/enterprise/support/dark/world-wide-technology.svg
     width: '120'
     height: '24'
-    alt: world-wide-technology logo
+    alt: Логотип World Wide Technology
   - light: /assets/enterprise/support/light/cora.svg
     dark: /assets/enterprise/support/dark/cora.svg
     width: '40'
     height: '24'
-    alt: cora logo
+    alt: Логотип Cora
   - light: /assets/enterprise/support/light/mir.svg
     dark: /assets/enterprise/support/dark/mir.svg
     width: '70'
     height: '24'
-    alt: mir logo
+    alt: Логотип Mir
   - light: /assets/enterprise/support/light/tchibo.svg
     dark: /assets/enterprise/support/dark/tchibo.svg
     width: '100'
     height: '24'
-    alt: tchibo logo
+    alt: Логотип Tchibo
   - light: /assets/enterprise/support/light/about-you.svg
     dark: /assets/enterprise/support/dark/about-you.svg
     width: '150'
     height: '24'
-    alt: about-you logo
+    alt: Логотип ABOUT YOU
   - light: /assets/enterprise/support/light/chillisauce.svg
     dark: /assets/enterprise/support/dark/chillisauce.svg
     width: '140'
     height: '20'
-    alt: chillisauce logo
+    alt: Логотип Chillisauce
   - light: /assets/enterprise/support/light/otypo.svg
     dark: /assets/enterprise/support/dark/otypo.svg
     width: '120'
     height: '47'
-    alt: otypo logo
+    alt: Логотип Otypo
   - light: /assets/enterprise/support/light/realtruck.svg
     dark: /assets/enterprise/support/dark/realtruck.svg
     width: '180'
     height: '89'
-    alt: realtruck logo
+    alt: Логотип RealTruck
 service:
   title: Наши услуги
   description: Мы предоставляем экспертные знания и рекомендации компаниям, использующим Vue и Nuxt, включая помощь с архитектурой проекта, оптимизацией производительности, лучшими практиками и устранением неполадок.
@@ -90,49 +90,49 @@ expertise:
       width: 32
       height: 32
       color: '#00DC82'
-      alt: nuxt logo
+      alt: Логотип Nuxt
     - src: /assets/enterprise/support/vite.svg
       width: 32
       height: 32
       color: '#a256fe'
-      alt: vite logo
+      alt: Логотип Vite
     - src: /assets/enterprise/support/unjs.svg
       width: 32
       height: 32
       color: '#ecdb5a'
-      alt: unjs logo
+      alt: Логотип UnJS
     - src: /assets/enterprise/support/vue.svg
       width: 32
       height: 32
       color: '#42b883'
-      alt: vue logo
+      alt: Логотип Vue
 testimonials:
   title: Что говорят наши клиенты
   description: Узнайте от наших клиентов, как наши консалтинговые услуги преобразили их проекты и повысили их эффективность.
   items:
     - quote: "Я настоятельно рекомендую их услуги всем, кто рассматривает Nuxt, чтобы убедиться, что вы получите все преимущества, которые он может предоставить, и что ваша команда будет следовать всем лучшим шаблонам проектирования."
       author: James Baddiley
-      job: CEO/CTO @ Chillisauce
+      job: CEO/CTO в Chillisauce
       logo:
         light: /assets/enterprise/support/light/chillisauce.svg
         dark: /assets/enterprise/support/dark/chillisauce.svg
-        alt: chillisauce logo
+        alt: Логотип Chillisauce
         width: 134
         height: 28
       achievements:
-        - label: 'Migration to Nuxt'
+        - label: 'Миграция на Nuxt'
           color: 'info'
-        - label: 'Performance optimization'
+        - label: 'Оптимизация производительности'
           color: 'warning'
-        - label: 'Long-term support'
+        - label: 'Долгосрочная поддержка'
           color: 'success'
-    - quote: "“Choosing NuxtLabs for an audit of our Nuxt project was a game-changer. Their detailed insights significantly enhanced our site's performance and the quality of our code. We're grateful for their support and highly recommend them to others.“"
+    - quote: "«Выбор NuxtLabs для аудита нашего проекта на Nuxt стал переломным моментом. Их подробные выводы значительно улучшили производительность нашего сайта и качество кода. Мы благодарны за поддержку и настоятельно рекомендуем их другим.»"
       author: Jacques Jahnichen
-      job: Co-founder and CTO @ Viviarto
+      job: Сооснователь и CTO в Viviarto
       logo:
         light: /assets/enterprise/support/light/viviarto.svg
         dark: /assets/enterprise/support/dark/viviarto.svg
-        alt: viviarto logo
+        alt: Логотип Viviarto
         width: 134
         height: 28
       achievements:
@@ -144,11 +144,11 @@ testimonials:
           color: warning
     - quote: “Выбор NuxtLabs для аудита нашего проекта на Nuxt стал переломным моментом. Их подробные выводы значительно улучшили производительность нашего сайта и качество нашего кода. Мы благодарны за их поддержку и настоятельно рекомендуем их другим.“
       author: Melene Ulm
-      job: Web Developer @ Mobile Industrial Robots
+      job: Веб-разработчик в Mobile Industrial Robots
       logo:
         light: /assets/enterprise/support/light/mir.svg
         dark: /assets/enterprise/support/dark/mir.svg
-        alt: mir logo
+        alt: Логотип Mir
         width: 54
         height: 24
       achievements:
@@ -160,11 +160,11 @@ testimonials:
           color: 'success'
     - quote: "“Эксперт предоставил нам ценные отзывы, в том числе рекомендации по более эффективному использованию Nuxt и экосистемы, поднял вопросы об истории внедрения и выявил ошибки, которые мы еще не обнаружили.“"
       author: 'Robert K Pauls'
-      job: 'Lead dev at @ ABOUT YOU group'
+      job: 'Ведущий разработчик в ABOUT YOU group'
       logo:
         light: /assets/enterprise/support/light/about-you.svg
         dark: /assets/enterprise/support/dark/about-you.svg
-        alt: about you logo
+        alt: Логотип ABOUT YOU
         width: 120
         height: 24
       achievements:
@@ -174,13 +174,13 @@ testimonials:
           color: 'important'
     - quote: "“Они предоставили прекрасную обратную связь о том, как сделать ядро нашего приложения более эффективным, а также несколько очень ценных советов по функциям, которые мы планируем реализовать в ближайшем будущем.“"
       author: 'Maxime Casadei'
-      job: 'CEO at @NAKWEB for Otypo'
+      job: 'CEO в NAKWEB (Otypo)'
       width: 80
       height: 20
       logo:
         light: /assets/enterprise/support/light/otypo.svg
         dark: /assets/enterprise/support/dark/otypo.svg
-        alt: otypo logo
+        alt: Логотип Otypo
       achievements:
         - label: 'Миграция на Nuxt'
           color: 'info'
@@ -190,11 +190,11 @@ testimonials:
           color: 'important'
     - quote: "“Работать с NuxtLabs было потрясающе. Они нашли скрытые возможности, зарытые глубоко в нашей кодовой базе. Наше корпоративное приложение теперь быстрее, безопаснее и надежнее, чем когда-либо!“"
       author: 'Josh Deltener'
-      job: 'Director of software engineering @ RealTruck.com'
+      job: 'Директор по разработке ПО в RealTruck.com'
       logo:
         light: /assets/enterprise/support/light/realtruck.svg
         dark: /assets/enterprise/support/dark/realtruck.svg
-        alt: realtruck logo
+        alt: Логотип RealTruck
         width: 140
         height: 30
       achievements:
@@ -225,7 +225,7 @@ form:
     placeholder: Джон Доу
   email:
     label: Электронная почта компании
-    placeholder: you@example.com
+    placeholder: вы@example.com
   company:
     label: Компания
     placeholder: Название компании

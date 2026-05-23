@@ -1,5 +1,5 @@
-name: 'Changelog'
+name: 'История изменений'
 slug: 'nuxt-ui-changelog'
-description: "A changelog template powered by GitHub Releases made with Nuxt UI."
+description: "Шаблон истории изменений на GitHub Releases и Nuxt UI."
 repo: 'nuxt-ui-templates/changelog'
 demo: 'https://changelog-template.nuxt.dev'

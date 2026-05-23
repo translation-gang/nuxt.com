@@ -63,7 +63,7 @@ defineShortcuts({
       <span class="inline-flex items-center gap-2 min-w-0">
         <span class="truncate">Агент</span>
         <UBadge variant="subtle" size="sm" class="shrink-0">
-          Beta
+          Бета
         </UBadge>
       </span>
     </template>
@@ -136,7 +136,7 @@ defineShortcuts({
       <span class="inline-flex items-center gap-2 min-w-0">
         <span class="truncate">Агент</span>
         <UBadge variant="subtle" size="sm" class="shrink-0">
-          Beta
+          Бета
         </UBadge>
       </span>
     </template>

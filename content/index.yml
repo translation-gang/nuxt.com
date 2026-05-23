@@ -13,7 +13,7 @@ hero:
 
         <template>
           <h1>
-            Hello Nuxt {{ version }}!
+            Привет, Nuxt {{ version }}!
           </h1>
         </template>
 
@@ -46,15 +46,15 @@ hero:
         ::code-tree{defaultValue="app/pages/index.vue" class="lg:rounded-r-none lg:border-r-0 dark:[--ui-border-muted:var(--color-gray-800)] my-0!"}
         ```vue [app/pages/index.vue]
         <template>
-          <h1>Index page</h1>
+          <h1>Главная страница</h1>
           <NuxtLink to="/blog/hello-world">
-            Go to blog post
+            К записи блога
           </NuxtLink>
         </template>
         ```
         ```vue [app/pages/blog/[slug\\].vue]
         <template>
-          <h1>Blog post {{ $route.params.slug }}</h1>
+          <h1>Запись блога {{ $route.params.slug }}</h1>
         </template>
         ```
         ```vue [app/app.vue]
@@ -91,7 +91,7 @@ hero:
         <template>
           <h1>{{ page.title }}</h1>
           <NuxtLink to="/blog/hello-world">
-            Go to blog post
+            К записи блога
           </NuxtLink>
         </template>
         ```
@@ -104,7 +104,7 @@ hero:
         <template>
           <h1>{{ post.title }}</h1>
           <NuxtLink to="/">
-            Go to home
+            На главную
           </NuxtLink>
         </template>
         ```
@@ -142,10 +142,10 @@ hero:
 
         <template>
           <main>
-            <h1>Demo with auto imports</h1>
+            <h1>Демо с автоимпортами</h1>
             <form @submit.prevent="hello">
               <MyInput v-model="message" />
-              <button type="submit">Say Hello</button>
+              <button type="submit">Сказать «Привет»</button>
             </form>
           </main>
         </template>
@@ -160,8 +160,8 @@ hero:
         </template>
         ```
         ```ts [app/composables/say-hello.ts]
-        export function sayHello(message = 'World') {
-          alert(`Hello ${upperCase(message)}!`)
+        export function sayHello(message = 'Мир') {
+          alert(`Привет, ${upperCase(message)}!`)
         }
         ```
         ```json [package.json]
@@ -221,7 +221,7 @@ hero:
         ```ts [server/api/hello.ts]
         export default defineEventHandler((event) => {
           return {
-            message: 'Hello World'
+            message: 'Привет, мир!'
           }
         })
         ```
@@ -446,7 +446,7 @@ support:
     - title: Миграция на Nuxt
       description: Успешная и безболезненная миграция от начала до развёртывания.
       icon: i-lucide-circle-arrow-up
-    - title: Nuxt Workshop
+    - title: Воркшоп Nuxt
       description: Развивайте команду экспертов через обучение и поддержку.
       icon: i-lucide-school
   companies:

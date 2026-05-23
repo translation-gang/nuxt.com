@@ -39,25 +39,25 @@ withDefaults(defineProps<Props>(), {
         <div class="flex items-center gap-2 mb-3">
           <UIcon :name="icon" :class="`size-5 ${iconColor}`" />
           <h3 class="font-semibold">
-            {{ label }} Details
+            Подробнее: {{ label }}
           </h3>
         </div>
 
         <div class="space-y-2 text-sm">
           <div v-if="popoverStats?.percentage" class="flex justify-between">
-            <span class="text-muted">Percentage:</span>
+            <span class="text-muted">Доля:</span>
             <span class="font-medium">{{ popoverStats.percentage }}</span>
           </div>
 
           <div v-if="popoverStats?.trend" class="flex justify-between">
-            <span class="text-muted">Status:</span>
+            <span class="text-muted">Статус:</span>
             <span class="font-medium">
               {{ popoverStats.trend }}
             </span>
           </div>
 
           <div v-if="popoverStats?.lastPeriod" class="flex justify-between">
-            <span class="text-muted">Last 7 days:</span>
+            <span class="text-muted">За 7 дней:</span>
             <span class="font-medium">{{ popoverStats.lastPeriod }}</span>
           </div>
 

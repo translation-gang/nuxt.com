@@ -1,6 +1,6 @@
 name: 'Nuxt Deno KV'
 slug: 'nuxt-deno-kv'
-description: 'A collaborative todo-list app built with Deno KV and Nuxt.'
+description: 'Совместное todo-приложение на Deno KV и Nuxt.'
 repo: 'atinux/nuxt-deno-kv'
 demo: 'https://nuxt-todos-kv.deno.dev'
 badge: 'Freemium'

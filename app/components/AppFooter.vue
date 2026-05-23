@@ -18,8 +18,8 @@ const { footerLinks } = useFooterLinks()
 
     <template #left>
       <p class="text-muted text-sm">
-        Copyright © 2016-{{ new Date().getFullYear() }} Nuxt - <NuxtLink class="hover:underline" to="https://go.nuxt.com/license" target="_blank">
-          MIT License
+        Авторские права © 2016-{{ new Date().getFullYear() }} Nuxt — <NuxtLink class="hover:underline" to="https://go.nuxt.com/license" target="_blank">
+          лицензия MIT
         </NuxtLink>
       </p>
     </template>

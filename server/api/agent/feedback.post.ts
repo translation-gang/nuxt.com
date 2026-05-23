@@ -80,12 +80,12 @@ export default defineEventHandler(async (event) => {
     .limit(1)
 
   if (!chat || chat.fingerprint !== fingerprint) {
-    throw createError({ statusCode: 403, statusMessage: 'Forbidden' })
+    throw createError({ statusCode: 403, statusMessage: 'Доступ запрещён' })
   }
 
   const { apiKey, teamId, projectId } = useRuntimeConfig(event).linear
   if (!apiKey || !teamId || !projectId) {
-    throw createError({ statusCode: 503, statusMessage: 'Linear integration not configured' })
+    throw createError({ statusCode: 503, statusMessage: 'Интеграция с Linear не настроена' })
   }
 
   const transcript = buildTranscript(chat.messages as StoredMessage[])
@@ -123,7 +123,7 @@ export default defineEventHandler(async (event) => {
 
   const issue = response.data?.issueCreate?.issue
   if (!issue?.url) {
-    throw createError({ statusCode: 500, statusMessage: 'Failed to create Linear issue' })
+    throw createError({ statusCode: 500, statusMessage: 'Не удалось создать issue в Linear' })
   }
 
   return { url: issue.url }

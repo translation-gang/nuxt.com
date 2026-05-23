@@ -19,11 +19,11 @@ export const useEnterpriseJobs = () => {
   const mapRemote = (remoteType: string) => {
     switch (remoteType) {
       case 'ONLY':
-        return 'Remote Only'
+        return 'Только удалённо'
       case 'ALLOWED':
-        return 'Remote Allowed'
+        return 'Удалённая работа возможна'
       default:
-        return 'Onsite'
+        return 'В офисе'
     }
   }
 

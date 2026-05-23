@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
     .limit(1)
 
   if (!chat || chat.fingerprint !== fingerprint) {
-    throw createError({ statusCode: 403, statusMessage: 'Forbidden' })
+    throw createError({ statusCode: 403, statusMessage: 'Доступ запрещён' })
   }
 
   if (isUpvoted === undefined) {

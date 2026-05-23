@@ -11,14 +11,14 @@ export default eventHandler(async (event) => {
   if (!apiKey || !audienceId) {
     throw createError({
       statusCode: 500,
-      message: 'Missing Resend configuration'
+      message: 'Не настроена конфигурация Resend'
     })
   }
 
   if (generateConfirmation(event, email) !== confirmation) {
     throw createError({
       statusCode: 400,
-      message: 'Confirmation code is invalid.'
+      message: 'Код подтверждения недействителен.'
     })
   }
 
@@ -32,7 +32,7 @@ export default eventHandler(async (event) => {
   if (error) {
     throw createError({
       statusCode: 400,
-      message: error.message || 'Failed to subscribe. Please try again.'
+      message: error.message || 'Не удалось оформить подписку. Попробуйте снова.'
     })
   }
 

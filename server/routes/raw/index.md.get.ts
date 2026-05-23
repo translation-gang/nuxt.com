@@ -7,7 +7,7 @@ export default defineCachedEventHandler(async (event) => {
 
   const title = index?.hero?.title?.replace(/\s+/g, ' ').trim() || 'Nuxt'
   const description = index?.hero?.description?.replace(/\s+/g, ' ').trim()
-    || 'The Intuitive Vue Framework. Build performant and production-grade full-stack web apps and websites with confidence.'
+    || 'Full-Stack Vue-фреймворк. Создавайте быстрые production-ready веб-приложения с уверенностью.'
 
   const featureBullets = (index?.features?.features ?? [])
     .map(feature => `- **${feature.title}**: ${feature.description}`)
@@ -27,11 +27,11 @@ export default defineCachedEventHandler(async (event) => {
 
 ${description}
 
-## Features
+## Возможности
 
 ${featureBullets}
 
-## Getting started
+## Начало работы
 
 \`\`\`bash
 npx nuxi@latest init <project-name>
@@ -40,32 +40,32 @@ npm install
 npm run dev
 \`\`\`
 
-- Introduction: <${domain}/raw/docs/${CURRENT_DOCS_VERSION}/getting-started/introduction.md>
-- Installation: <${domain}/raw/docs/${CURRENT_DOCS_VERSION}/getting-started/installation.md>
-- Configuration: <${domain}/raw/docs/${CURRENT_DOCS_VERSION}/getting-started/configuration.md>
+- Введение: <${domain}/raw/docs/${CURRENT_DOCS_VERSION}/getting-started/introduction.md>
+- Установка: <${domain}/raw/docs/${CURRENT_DOCS_VERSION}/getting-started/installation.md>
+- Конфигурация: <${domain}/raw/docs/${CURRENT_DOCS_VERSION}/getting-started/configuration.md>
 
-## Explore
+## Обзор
 
-- Documentation: <${domain}/docs>
-- Modules: <${domain}/raw/modules.md>
-- Templates: <${domain}/templates>
-- Showcase: <${domain}/showcase>
-- Deploy: <${domain}/deploy>
-- Blog: <${domain}/blog/rss.xml>
-- Changelog: <${domain}/changelog/rss.xml>
-- Team: <${domain}/team>
-- Sitemap (XML): <${domain}/sitemap.xml>
-- Sitemap (Markdown): <${domain}/sitemap.md>
-- LLMs index: <${domain}/llms.txt>
-- Full LLMs documentation: <${domain}/llms-full.txt>
+- Документация: <${domain}/docs>
+- Модули: <${domain}/raw/modules.md>
+- Шаблоны: <${domain}/templates>
+- Витрина: <${domain}/showcase>
+- Деплой: <${domain}/deploy>
+- Блог: <${domain}/blog/rss.xml>
+- История изменений: <${domain}/changelog/rss.xml>
+- Команда: <${domain}/team>
+- Карта сайта (XML): <${domain}/sitemap.xml>
+- Карта сайта (Markdown): <${domain}/sitemap.md>
+- Индекс LLMs: <${domain}/llms.txt>
+- Полная документация LLMs: <${domain}/llms-full.txt>
 
-## Resources for Agents
+## Ресурсы для агентов
 
-- MCP Server Card: <${domain}/.well-known/mcp/server-card.json>
+- Карточка MCP-сервера: <${domain}/.well-known/mcp/server-card.json>
 - MCP endpoint: <${domain}/mcp>
-- API Catalog: <${domain}/.well-known/api-catalog>
+- Каталог API: <${domain}/.well-known/api-catalog>
 
-## Community
+## Сообщество
 
 - GitHub: <https://github.com/nuxt/nuxt>
 - Discord: <https://chat.nuxt.dev>

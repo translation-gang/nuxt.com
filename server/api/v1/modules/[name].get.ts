@@ -12,7 +12,7 @@ export default defineCachedEventHandler(async (event) => {
   if (!module) {
     throw createError({
       statusCode: 404,
-      message: `Module ${name} not found`
+      message: `Модуль ${name} не найден`
     })
   }
 

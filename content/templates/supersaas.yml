@@ -1,6 +1,6 @@
 name: 'SuperSaaS'
 slug: 'supersaas'
-description: 'Nuxt 3 Fullstack Starter Kit with Auth, DB, Payment, Files & Emails'
+description: 'Fullstack-стартер Nuxt 3 с Auth, DB, платежами, файлами и email'
 demo: 'https://supersaas.dev/?aff=J0Emk'
 purchase: 'https://supersaas.dev/?aff=J0Emk'
 badge: 'Premium'

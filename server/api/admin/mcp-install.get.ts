@@ -2,14 +2,14 @@ export default defineEventHandler(async (event) => {
   const { user } = await requireUserSession(event)
 
   if (!user?.login || !(await isAuthorizedAdmin(user.login))) {
-    throw createError({ statusCode: 403, statusMessage: 'Admin access required' })
+    throw createError({ statusCode: 403, statusMessage: 'Требуются права администратора' })
   }
 
   const { mcpAdminToken } = useRuntimeConfig(event)
   if (!mcpAdminToken) {
     throw createError({
       statusCode: 503,
-      statusMessage: 'MCP admin token is not configured (NUXT_MCP_ADMIN_TOKEN env variable).'
+      statusMessage: 'Токен MCP admin не настроен (переменная окружения NUXT_MCP_ADMIN_TOKEN).'
     })
   }
 

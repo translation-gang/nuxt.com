@@ -5,7 +5,7 @@ export default cachedEventHandler(async (event) => {
   if (!teamName || !validTeams.includes(teamName)) {
     return createError({
       statusCode: 404,
-      message: 'Not Found'
+      message: 'Не найдено'
     })
   }
 

@@ -43,7 +43,7 @@ defineOgImage('Docs.takumi', {
       <UPageBody>
         <div v-if="featuredTemplates.length" class="mb-24">
           <h2 class="text-2xl font-semibold mb-4 text-highlighted">
-            Featured
+            Избранные
           </h2>
           <UPageGrid class="lg:grid-cols-3 xl:grid-cols-4">
             <TemplateCard
@@ -57,7 +57,7 @@ defineOgImage('Docs.takumi', {
 
         <div>
           <h2 class="text-2xl font-semibold mb-4 text-highlighted">
-            Other
+            Другие
           </h2>
           <UPageGrid class="lg:grid-cols-3 xl:grid-cols-4">
             <TemplateCard

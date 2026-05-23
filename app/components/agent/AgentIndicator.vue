@@ -32,7 +32,7 @@ function nextStep() {
   }
 }
 
-const statusMessages = ['Thinking...', 'Searching...', 'Reading...', 'Analyzing...']
+const statusMessages = ['Думаю...', 'Ищу...', 'Читаю...', 'Анализирую...']
 const currentIndex = ref(0)
 const displayedText = ref(statusMessages[0]!)
 const chars = 'abcdefghijklmnopqrstuvwxyz'

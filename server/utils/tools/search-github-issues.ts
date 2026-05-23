@@ -56,7 +56,7 @@ export function createSearchGitHubIssuesTool(event: H3Event) {
         const data = await $fetch<GitHubSearchResult>(url, { headers, timeout: 5000 })
 
         if (!data.items?.length) {
-          return { total: 0, issues: [], message: 'No matching issues found.' }
+          return { total: 0, issues: [], message: 'Подходящие issues не найдены.' }
         }
 
         return {

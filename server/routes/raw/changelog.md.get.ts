@@ -3,16 +3,16 @@ export default defineCachedEventHandler(async (event) => {
   const releases = await fetchRawReleases() || []
 
   const lines: string[] = [
-    '# Nuxt Changelog',
+    '# История изменений Nuxt',
     '',
-    '> Latest releases from Nuxt and official modules.',
+    '> Последние релизы Nuxt и официальных модулей.',
     ''
   ]
 
   for (const release of releases.slice(0, 20)) {
     const date = new Date(release.date).toISOString().split('T')[0]
     lines.push(`## ${release.title} (${release.repo}) - ${date}`, '')
-    lines.push(`[Release notes](${release.url})`, '')
+    lines.push(`[Заметки к релизу](${release.url})`, '')
     lines.push(release.markdown, '')
     lines.push('---', '')
   }

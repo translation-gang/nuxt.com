@@ -103,7 +103,7 @@ const overallChartData = computed(() => {
 
     const entry: any = {
       date: dateStr,
-      day: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+      day: date.toLocaleDateString('ru', { month: 'short', day: 'numeric' })
     }
 
     if (hasValidData.value && dailyScores[dateStr] && dailyScores[dateStr].length > 0) {
@@ -132,7 +132,7 @@ const timeBasedChartData = computed(() => {
       date.setDate(date.getDate() - i)
       data.push({
         date: date.toISOString().split('T')[0],
-        day: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' }),
+        day: date.toLocaleDateString('ru', { month: 'short', day: 'numeric' }),
         placeholder: 0
       })
     }
@@ -175,7 +175,7 @@ const timeBasedChartData = computed(() => {
 
     const entry: any = {
       date: dateStr,
-      day: date.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+      day: date.toLocaleDateString('ru', { month: 'short', day: 'numeric' })
     }
 
     for (const page of selectedPages) {
@@ -248,7 +248,7 @@ const chartCategories = computed(() => {
   if (chartType.value === 'overall') {
     return {
       average: {
-        name: 'Overall Rating',
+        name: 'Общая оценка',
         color: '#3b82f6'
       }
     }
@@ -257,7 +257,7 @@ const chartCategories = computed(() => {
   if (selectedPagePaths.value.length === 0 || !props.pageAnalytics) {
     return {
       placeholder: {
-        name: 'No Pages Selected',
+        name: 'Страницы не выбраны',
         color: '#6b7280'
       }
     }
@@ -298,27 +298,27 @@ const yFormatter = (value: number) => {
 
 const dateRangeLabel = computed(() => {
   if (chartType.value === 'compare') {
-    return `Selected Pages (${selectedPagePaths.value.length})`
+    return `Выбранные страницы (${selectedPagePaths.value.length})`
   }
 
   const daysDiff = Math.ceil((dateRange.value.end.getTime() - dateRange.value.start.getTime()) / (1000 * 60 * 60 * 24))
-  if (daysDiff <= 7) return `Last ${daysDiff} days`
-  if (daysDiff <= 31) return `Last ${daysDiff} days`
-  if (daysDiff <= 93) return `Last ${Math.round(daysDiff / 30)} months`
-  if (daysDiff <= 186) return `Last ${Math.round(daysDiff / 30)} months`
-  return `Last ${Math.round(daysDiff / 365)} year${daysDiff > 730 ? 's' : ''}`
+  if (daysDiff <= 7) return `Последние ${daysDiff} дн.`
+  if (daysDiff <= 31) return `Последние ${daysDiff} дн.`
+  if (daysDiff <= 93) return `Последние ${Math.round(daysDiff / 30)} мес.`
+  if (daysDiff <= 186) return `Последние ${Math.round(daysDiff / 30)} мес.`
+  return `Последний${daysDiff > 730 ? 'е' : ''} ${Math.round(daysDiff / 365)} ${daysDiff > 730 ? 'года' : 'год'}`
 })
 
 const chartTitle = computed(() => {
   switch (chartType.value) {
     case 'line':
-      return 'Rating Evolution'
+      return 'Динамика оценок'
     case 'compare':
-      return 'Page Comparison'
+      return 'Сравнение страниц'
     case 'overall':
-      return 'Overall Documentation Rating'
+      return 'Общая оценка документации'
     default:
-      return 'Rating Evolution'
+      return 'Динамика оценок'
   }
 })
 
@@ -596,7 +596,7 @@ function selectWorstPages(count: number) {
                     {{ page.total }}
                   </div>
                   <div class="text-muted text-xs">
-                    resp.
+                    отз.
                   </div>
                 </div>
                 <div class="text-center">
@@ -604,7 +604,7 @@ function selectWorstPages(count: number) {
                     {{ page.score.toFixed(1) }}/4
                   </div>
                   <div class="text-muted text-xs">
-                    score
+                    оценка
                   </div>
                 </div>
               </div>
@@ -613,7 +613,7 @@ function selectWorstPages(count: number) {
             <div v-if="availablePages.length === 0" class="text-center py-8">
               <UIcon name="i-lucide-search-x" class="size-8 text-muted mx-auto mb-2" />
               <p class="text-sm text-muted">
-                No pages found matching your search
+                Страницы по вашему запросу не найдены
               </p>
             </div>
           </div>

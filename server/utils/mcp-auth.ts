@@ -18,12 +18,12 @@ declare module 'h3' {
 export function requireMcpAdminToken(event: H3Event): void {
   const config = useRuntimeConfig(event)
   if (!config.mcpAdminToken) {
-    throw createError({ statusCode: 503, statusMessage: 'MCP admin authentication is not configured' })
+    throw createError({ statusCode: 503, statusMessage: 'Аутентификация MCP admin не настроена' })
   }
 
   const auth = getHeader(event, 'authorization')
   if (auth !== `Bearer ${config.mcpAdminToken}`) {
-    throw createError({ statusCode: 401, statusMessage: 'Unauthorized' })
+    throw createError({ statusCode: 401, statusMessage: 'Не авторизован' })
   }
 
   event.context.mcpAdmin = true

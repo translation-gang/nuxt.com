@@ -115,7 +115,7 @@ const communityLinks = [{
   target: '_blank'
 }, {
   icon: 'i-lucide-chef-hat',
-  label: 'Master Nuxt',
+  label: 'Освоить Nuxt',
   to: 'https://masteringnuxt.com/nuxt3',
   target: '_blank'
 }, {

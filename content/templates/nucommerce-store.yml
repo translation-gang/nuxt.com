@@ -1,5 +1,5 @@
-name: 'eCommerce Store (Nuxt UI)'
+name: 'Интернет-магазин (Nuxt UI)'
 slug: 'nucommerce-store'
-description: 'A e-commerce store with Nuxt UI components and dynamic pages.'
+description: 'Интернет-магазин с компонентами Nuxt UI и динамическими страницами.'
 repo: 'pinegrow/pg-nuxtui'
 demo: 'https://pg-nuxtui.netlify.app/'

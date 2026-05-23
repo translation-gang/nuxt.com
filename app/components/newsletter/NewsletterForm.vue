@@ -52,7 +52,7 @@ async function onSubmit(event: FormSubmitEvent<Schema>) {
       <UInput
         v-model="state.email"
         type="email"
-        placeholder="you@domain.com"
+        placeholder="вы@example.com"
         required
         autocomplete="off"
         class="max-w-sm w-full"

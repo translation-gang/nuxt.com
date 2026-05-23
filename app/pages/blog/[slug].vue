@@ -152,7 +152,7 @@ const links = [
                 color="neutral"
                 target="_blank"
               >
-                <span class="sr-only">Nuxt on {{ link.label }}</span>
+                <span class="sr-only">Nuxt в {{ link.label }}</span>
               </UButton>
             </div>
           </div>

@@ -90,7 +90,7 @@ const isRangeSelected = (preset: 'week' | 'month' | '3months' | '6months' | 'yea
             {{ formattedDateRange }}
           </template>
           <template v-else>
-            Pick a date range
+            Выберите диапазон дат
           </template>
         </span>
 

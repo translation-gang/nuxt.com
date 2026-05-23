@@ -1,18 +1,18 @@
 import { queryCollection } from '@nuxt/content/server'
 
 const STATIC_LINKS = [
-  { title: 'Home', path: '/' },
-  { title: 'Documentation', path: '/docs' },
-  { title: 'Modules', path: '/modules' },
-  { title: 'Templates', path: '/templates' },
-  { title: 'Showcase', path: '/showcase' },
-  { title: 'Deploy', path: '/deploy' },
-  { title: 'Changelog', path: '/changelog' },
-  { title: 'Blog', path: '/blog' },
-  { title: 'Team', path: '/team' },
-  { title: 'Newsletter', path: '/newsletter' },
-  { title: 'Design Kit', path: '/design-kit' },
-  { title: 'Video Courses', path: '/video-courses' }
+  { title: 'Главная', path: '/' },
+  { title: 'Документация', path: '/docs' },
+  { title: 'Модули', path: '/modules' },
+  { title: 'Шаблоны', path: '/templates' },
+  { title: 'Витрина', path: '/showcase' },
+  { title: 'Деплой', path: '/deploy' },
+  { title: 'История изменений', path: '/changelog' },
+  { title: 'Блог', path: '/blog' },
+  { title: 'Команда', path: '/team' },
+  { title: 'Рассылка', path: '/newsletter' },
+  { title: 'Набор для дизайна', path: '/design-kit' },
+  { title: 'Видеокурсы', path: '/video-courses' }
 ]
 
 export default defineEventHandler(async (event) => {
@@ -34,24 +34,24 @@ export default defineEventHandler(async (event) => {
   ])
 
   const lines: string[] = [
-    '# Nuxt Sitemap',
+    '# Карта сайта Nuxt',
     '',
-    '> Markdown index of every page on nuxt.com. Append `.md` to any docs/blog/deploy URL (or set `Accept: text/markdown`) to retrieve the markdown source.',
+    '> Markdown-индекс всех страниц nuxt.com. Добавьте `.md` к любому URL docs/blog/deploy (или укажите `Accept: text/markdown`), чтобы получить исходник в Markdown.',
     '',
-    '## Pages',
+    '## Страницы',
     ''
   ]
   for (const link of STATIC_LINKS) {
     lines.push(`- [${link.title}](${domain}${link.path})`)
   }
 
-  lines.push('', '## Documentation', '')
+  lines.push('', '## Документация', '')
   for (const doc of docsv4) lines.push(`- [${doc.title}](${domain}${doc.path}.md)`)
 
-  lines.push('', '## Deploy providers', '')
+  lines.push('', '## Провайдеры деплоя', '')
   for (const provider of deploy) lines.push(`- [${provider.title}](${domain}${provider.path}.md)`)
 
-  lines.push('', '## Blog', '')
+  lines.push('', '## Блог', '')
   for (const post of (blog as Array<{ path: string, title: string, date?: string }>)) {
     const date = post.date ? ` _(${post.date})_` : ''
     lines.push(`- [${post.title}](${domain}${post.path}.md)${date}`)

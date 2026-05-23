@@ -14,6 +14,13 @@ if (!page.value) {
 const title = page.value.title
 const description = page.value.description
 
+function badgeLabel(badge: string) {
+  if (badge === 'Premium') {
+    return 'Премиум'
+  }
+  return badge
+}
+
 useSeoMeta({
   titleTemplate: '%s',
   title,
@@ -64,7 +71,7 @@ defineOgImage('Docs.takumi', {
             </p>
             <UBadge
               v-if="course.badge"
-              :label="course.badge"
+              :label="badgeLabel(course.badge)"
               variant="subtle"
               class="rounded-full"
             />

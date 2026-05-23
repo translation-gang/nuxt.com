@@ -48,7 +48,7 @@ async function handleDelete() {
           <div class="flex items-center gap-3 text-xs text-muted">
             <span class="flex items-center gap-1">
               <UIcon name="i-lucide-calendar" class="size-3" />
-              {{ new Date(feedback.updatedAt).toLocaleDateString('en-US', {
+              {{ new Date(feedback.updatedAt).toLocaleDateString('ru-RU', {
                 month: 'short',
                 day: 'numeric',
                 year: 'numeric',
@@ -78,7 +78,7 @@ async function handleDelete() {
       "{{ feedback.feedback }}"
     </div>
     <div v-else class="text-sm text-muted italic">
-      No additional comment provided
+      Комментарий не указан
     </div>
   </div>
 </template>

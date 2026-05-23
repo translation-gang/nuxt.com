@@ -6,14 +6,14 @@ export default defineCachedEventHandler(async (event) => {
   const changelogUrl = joinURL(baseUrl, 'changelog')
 
   const feed = new Feed({
-    title: 'Nuxt Changelog',
-    description: 'Latest releases from Nuxt and official modules.',
+    title: 'История изменений Nuxt',
+    description: 'Последние релизы Nuxt и официальных модулей.',
     id: changelogUrl,
     link: changelogUrl,
-    language: 'en',
+    language: 'ru',
     image: joinURL(baseUrl, 'icon.png'),
     favicon: joinURL(baseUrl, 'favicon.png'),
-    copyright: `Copyright © 2016-${new Date().getFullYear()} Nuxt All Rights Reserved`,
+    copyright: `© 2016–${new Date().getFullYear()} Nuxt. Все права защищены.`,
     feedLinks: {
       rss: joinURL(baseUrl, 'changelog/rss.xml')
     }
@@ -26,7 +26,7 @@ export default defineCachedEventHandler(async (event) => {
       title: `${release.title} (${release.repo})`,
       id: release.url,
       link: release.url,
-      description: `New release ${release.tag} for ${release.repo}`,
+      description: `Новый релиз ${release.tag} для ${release.repo}`,
       content: release.markdown,
       date: new Date(release.date),
       category: [{ name: release.repo.split('/')[1]! }]

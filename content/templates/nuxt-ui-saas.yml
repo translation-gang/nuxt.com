@@ -1,5 +1,5 @@
 name: 'SaaS'
 slug: 'nuxt-ui-saas'
-description: "A SaaS template made with Nuxt UI."
+description: "SaaS-шаблон на Nuxt UI."
 repo: 'nuxt-ui-templates/saas'
 demo: 'https://saas-template.nuxt.dev'

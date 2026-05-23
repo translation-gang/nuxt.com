@@ -2,27 +2,27 @@ export default defineAppConfig({
   agent: {
     faqQuestions: [
       {
-        category: 'Getting Started',
+        category: 'Начало работы',
         items: [
-          'Show me available starter templates',
-          'What\'s new in Nuxt 4?',
-          'How do I add authentication to my Nuxt app?'
+          'Покажи доступные стартовые шаблоны',
+          'Что нового в Nuxt 4?',
+          'Как добавить авторизацию в мое Nuxt-приложение?'
         ]
       },
       {
-        category: 'Features',
+        category: 'Возможности',
         items: [
           'useFetch vs useAsyncData?',
-          'How does file-based routing work?',
-          'How do I connect a database to my Nuxt app?'
+          'Как работает файловая маршрутизация?',
+          'Как подключить базу данных к моему Nuxt-приложению?'
         ]
       },
       {
-        category: 'Deploy & Explore',
+        category: 'Деплой и изучение',
         items: [
-          'How do I deploy my Nuxt app?',
-          'What are the available rendering modes?',
-          'How do I add SEO meta tags in Nuxt?'
+          'Как задеплоить мое Nuxt-приложение?',
+          'Какие режимы рендеринга доступны?',
+          'Как добавить SEO meta-теги в Nuxt?'
         ]
       }
     ]

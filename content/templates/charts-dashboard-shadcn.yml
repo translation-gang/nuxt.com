@@ -1,6 +1,6 @@
-name: 'Charts Dashboard shadcn/vue'
+name: 'Дашборд shadcn/vue'
 slug: 'nuxt-charts-dashboard-shadcn-vue'
-description: 'A beautiful dashboard template built with shadcn/vue and Nuxt Charts.'
+description: 'Красивый шаблон дашборда на shadcn/vue и Nuxt Charts.'
 demo: 'https://nuxt-shadcn-dashboard-demo.nuxtcharts.com/monitor?via=nuxt' 
 purchase: 'https://nuxtcharts.com/templates/nuxt-shadcn-dashboard?via=nuxt'
 badge: 'Premium'

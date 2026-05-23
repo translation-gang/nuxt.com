@@ -121,7 +121,7 @@ const errorType = route.query.error as string
 
               <div class="text-center pt-4 border-t border-default">
                 <p class="text-xs text-muted">
-                  Restricted access • Core team members only
+                  Ограниченный доступ • только для core-команды
                 </p>
               </div>
             </div>

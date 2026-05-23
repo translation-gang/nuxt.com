@@ -1,6 +1,6 @@
-name: 'Charts Dashboard'
+name: 'Дашборд с графиками'
 slug: 'nuxt-charts-dashboard'
-description: 'A Nuxt Charts dashboard template built with Nuxt UI.'
+description: 'Шаблон дашборда на Nuxt Charts и Nuxt UI.'
 demo: 'https://nuxt-dashboard-demo.nuxtcharts.com?via=nuxt'
 purchase: 'https://nuxtcharts.com/dashboard?via=nuxt'
 badge: 'Premium'

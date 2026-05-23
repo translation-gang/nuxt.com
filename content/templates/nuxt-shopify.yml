@@ -1,5 +1,5 @@
-name: 'Nuxt Shopify Template'
+name: 'Шаблон Nuxt Shopify'
 slug: 'nuxt-shopify'
-description: 'Shopify template using Nuxt 4 and Nuxt UI.'
+description: 'Шаблон Shopify на Nuxt 4 и Nuxt UI.'
 repo: 'nuxt-modules/shopify'
 demo: 'https://nuxt-shopify.vercel.app/'

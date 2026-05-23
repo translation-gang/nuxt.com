@@ -8,15 +8,15 @@ definePageMeta({
 const site = useSiteConfig()
 
 useHead({
-  title: 'Nuxt Agent'
+  title: 'Агент Nuxt'
 })
 
 useSeoMeta({
-  ogTitle: 'Nuxt Agent · Nuxt',
-  ogDescription: 'The Nuxt Agent helps you explore the documentation — ask about Nuxt, modules, deployment, and more.',
+  ogTitle: 'Агент Nuxt · Nuxt',
+  ogDescription: 'Nuxt Agent помогает изучать документацию — спрашивайте о Nuxt, модулях, деплое и многом другом.',
   ogImage: joinURL(site.url, '/nuxt-agent.jpg'),
-  twitterTitle: 'Nuxt Agent · Nuxt',
-  twitterDescription: 'The Nuxt Agent helps you explore the documentation — ask about Nuxt, modules, deployment, and more.',
+  twitterTitle: 'Агент Nuxt · Nuxt',
+  twitterDescription: 'Nuxt Agent помогает изучать документацию — спрашивайте о Nuxt, модулях, деплое и многом другом.',
   twitterImage: joinURL(site.url, '/nuxt-agent.jpg')
 })
 useCanonical()

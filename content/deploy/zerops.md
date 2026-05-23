@@ -3,7 +3,7 @@ title: Zerops
 description: "Разверните приложение Nuxt в инфраструктуре Zerops."
 componentImg: Zerops
 logoSrc: "/assets/integrations/zerops.svg"
-category: Hosting
+category: Хостинг
 NuxtPreset: "zerops"
 website: "https://zerops.io"
 ---
@@ -14,7 +14,7 @@ website: "https://zerops.io"
 :read-more{title="Zerops" to="https://zerops.io"}
 
 ::tip
-**Nuxt x Zerops Quickrun ✨**
+**Быстрый старт Nuxt x Zerops ✨**
 :br
 Хотите протестировать работу Nuxt на Zerops, ничего не устанавливая и не настраивая? Использование репозиториев [Zerops x Nuxt - Static](https://github.com/zeropsio/recipe-nuxt-static) или [Zerops x Nuxt - SSR on Node.js](https://github.com/zeropsio/recipe-nuxt-nodejs) вы можете развернуть пример приложения Nuxt одним щелчком мыши.
 ::
@@ -121,4 +121,4 @@ zcli push
 
 Ваш код может быть развернут автоматически при каждом коммите или новом теге, если подключить сервис к вашему репозиторию [GitHub](https://docs.zerops.io/references/gitlab-integration) / [GitLab](https://docs.zerops.io/references/gitlab-integration). Это соединение можно настроить в деталях сервиса.
 
-:read-more{title="Zerops Documentation" to="https://docs.zerops.io/"}
+:read-more{title="Документация Zerops" to="https://docs.zerops.io/"}

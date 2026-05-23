@@ -27,10 +27,10 @@ const displayTitle = computed(() => {
 const installCommand = computed(() => `npx nuxt@latest module add ${props.slug}`)
 
 const agentPrompt = computed(() => {
-  const lines = [`Install and configure the Nuxt module **${props.npm || props.slug}**: ${props.description || ''}`]
-  if (props.website) lines.push(`Docs: ${props.website}`)
+  const lines = [`Установи и настрой модуль Nuxt **${props.npm || props.slug}**: ${props.description || ''}`]
+  if (props.website) lines.push(`Документация: ${props.website}`)
   if (props.repo) lines.push(`GitHub: https://github.com/${props.repo}`)
-  lines.push(`\nSteps:\n1. Run \`${installCommand.value}\`\n2. Read the module documentation and add recommended configuration in \`nuxt.config.ts\`\n3. List any required environment variables in \`.env.example\` without filling in actual values`)
+  lines.push(`\nШаги:\n1. Выполни \`${installCommand.value}\`\n2. Изучи документацию модуля и добавь рекомендуемую конфигурацию в \`nuxt.config.ts\`\n3. Перечисли необходимые переменные окружения в \`.env.example\` без заполнения реальных значений`)
   return lines.join('\n')
 })
 

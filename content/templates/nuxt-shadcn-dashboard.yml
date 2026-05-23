@@ -1,6 +1,6 @@
-name: 'Nuxt Shadcn Dashboard'
+name: 'Nuxt Shadcn — дашборд'
 slug: 'nuxt-shadcn-dashboard'
-description: 'Shadcn Dashboard built with Nuxt'
+description: 'Дашборд на Shadcn, созданный с Nuxt'
 screenshotUrl: 'https://nuxt-shadcn-dashboard.vercel.app/'
 repo: 'dianprata/nuxt-shadcn-dashboard'
 demo: 'https://nuxt-shadcn-dashboard.vercel.app/'

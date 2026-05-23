@@ -1,6 +1,6 @@
-name: 'Editor'
+name: 'Редактор'
 slug: 'nuxt-ui-editor'
-description: "Notion-like TipTap editor with AI completion and real-time collaboration."
+description: "TipTap-редактор в стиле Notion с AI-дополнением и совместной работой в реальном времени."
 repo: 'nuxt-ui-templates/editor'
 demo: 'https://editor-template.nuxt.dev'
 featured: true

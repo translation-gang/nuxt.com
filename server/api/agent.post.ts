@@ -93,14 +93,14 @@ function buildSystemPrompt(pagePath: string | null): string {
 export default defineEventHandler(async (event) => {
   const raw = await readBody(event) as { messages?: unknown } | null
   if (!raw || !Array.isArray(raw.messages)) {
-    throw createError({ statusCode: 400, statusMessage: 'Invalid request body' })
+    throw createError({ statusCode: 400, statusMessage: 'Некорректное тело запроса' })
   }
 
   const validated = await safeValidateUIMessages({ messages: raw.messages })
   if (validated.success === false) {
     throw createError({
       statusCode: 400,
-      statusMessage: validated.error.message || 'Invalid messages'
+      statusMessage: validated.error.message || 'Некорректные сообщения'
     })
   }
 
