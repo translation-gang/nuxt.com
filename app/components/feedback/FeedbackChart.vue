@@ -199,7 +199,7 @@ const timeBasedChartData = computed(() => {
 
 const comparisonChartData = computed(() => {
   if (!hasValidData.value || selectedPagePaths.value.length === 0 || !props.pageAnalytics) {
-    return [{ page: 'No Data', positive: 0, negative: 0 }]
+    return [{ page: 'Нет данных', positive: 0, negative: 0 }]
   }
 
   return props.pageAnalytics
@@ -226,7 +226,7 @@ const chartCategories = computed(() => {
   if (!hasValidData.value) {
     return {
       placeholder: {
-        name: 'No Data Available',
+        name: 'Нет данных',
         color: '#6b7280'
       }
     }
@@ -235,11 +235,11 @@ const chartCategories = computed(() => {
   if (chartType.value === 'compare') {
     return {
       positive: {
-        name: 'Positive',
+        name: 'Положительные',
         color: 'var(--ui-success)'
       },
       negative: {
-        name: 'Negative',
+        name: 'Отрицательные',
         color: 'var(--ui-error)'
       }
     }

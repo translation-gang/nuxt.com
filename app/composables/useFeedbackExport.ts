@@ -20,16 +20,16 @@ export function useFeedbackExport() {
 
     const headers = [
       'ID',
-      'Rating',
-      'Score',
-      'Rating Label',
-      'Feedback',
-      'Page Path',
-      'Page Title',
-      'Page Stem',
-      'Country',
-      'Created At',
-      'Updated At'
+      'Оценка',
+      'Балл',
+      'Метка оценки',
+      'Отзыв',
+      'Путь страницы',
+      'Заголовок страницы',
+      'Стем страницы',
+      'Страна',
+      'Создано',
+      'Обновлено'
     ]
 
     const rows = data.map((item) => {
@@ -39,7 +39,7 @@ export function useFeedbackExport() {
         item.id,
         item.rating,
         ratingOption?.score || 0,
-        ratingOption?.label || 'Unknown',
+        ratingOption?.label || 'Неизвестно',
         `"${(item.feedback || '').replace(/"/g, '""')}"`, // Escape quotes
         item.path,
         `"${item.title.replace(/"/g, '""')}"`, // Escape quotes
@@ -111,15 +111,15 @@ export function useFeedbackExport() {
       }
 
       const headers = [
-        'Page Path',
-        'Page Title',
-        'Total Feedback',
-        'Positive Feedback',
-        'Negative Feedback',
-        'Average Score',
-        'Positive Percentage',
-        'Created At',
-        'Updated At'
+        'Путь страницы',
+        'Заголовок страницы',
+        'Всего отзывов',
+        'Положительных отзывов',
+        'Отрицательных отзывов',
+        'Средний балл',
+        'Процент положительных',
+        'Создано',
+        'Обновлено'
       ]
 
       const rows = pageAnalytics.map(page => [

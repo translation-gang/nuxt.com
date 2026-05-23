@@ -70,23 +70,23 @@ export interface PlaygroundCardData {
 }
 
 function getToolMessage(state: ToolState, toolName: string, toolInput: Record<string, string | undefined>) {
-  const searchVerb = state === 'output-available' ? 'Searched' : 'Searching'
-  const readVerb = state === 'output-available' ? 'Read' : 'Reading'
-  const foundVerb = state === 'output-available' ? 'Found' : 'Finding'
+  const searchVerb = state === 'output-available' ? 'Поиск завершен' : 'Поиск'
+  const readVerb = state === 'output-available' ? 'Прочитано' : 'Чтение'
+  const foundVerb = state === 'output-available' ? 'Найдено' : 'Поиск'
 
   return {
-    'list-documentation-pages': `${searchVerb} documentation${toolInput.search ? ` · ${toolInput.search}` : ''}`,
+    'list-documentation-pages': `${searchVerb} документации${toolInput.search ? ` · ${toolInput.search}` : ''}`,
     'get-documentation-page': `${readVerb} ${toolInput.path || '...'}`,
-    'get-getting-started-guide': `${readVerb} getting started`,
-    'get-blog-post': `${readVerb} ${toolInput.path || 'blog post'}`,
-    'get-deploy-provider': `${readVerb} ${toolInput.path || 'deploy guide'}`,
-    'get-changelog': `${searchVerb} changelog${toolInput.repo ? ` · ${toolInput.repo}` : ''}`,
-    'list-modules': `${searchVerb} modules${toolInput.search ? ` · ${toolInput.search}` : ''}`,
-    'get-module': `${readVerb} module ${toolInput.slug || '...'}`,
-    'show_template': `${foundVerb} templates`,
-    'show_blog_post': `${foundVerb} blog post`,
-    'show_hosting': `${foundVerb} hosting provider`,
-    'open_playground': `${state === 'output-available' ? 'Generated' : 'Generating'} playground`
+    'get-getting-started-guide': `${readVerb} начало работы`,
+    'get-blog-post': `${readVerb} ${toolInput.path || 'пост блога'}`,
+    'get-deploy-provider': `${readVerb} ${toolInput.path || 'гайд по деплою'}`,
+    'get-changelog': `${searchVerb} списка изменений${toolInput.repo ? ` · ${toolInput.repo}` : ''}`,
+    'list-modules': `${searchVerb} модулей${toolInput.search ? ` · ${toolInput.search}` : ''}`,
+    'get-module': `${readVerb} модуля ${toolInput.slug || '...'}`,
+    'show_template': `${foundVerb} шаблоны`,
+    'show_blog_post': `${foundVerb} пост блога`,
+    'show_hosting': `${foundVerb} провайдер хостинга`,
+    'open_playground': `${state === 'output-available' ? 'Создано' : 'Создание'} песочницы`
   }[toolName] || `${searchVerb} ${toolName}`
 }
 
