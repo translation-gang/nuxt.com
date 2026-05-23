@@ -70,7 +70,7 @@ export default defineNuxtConfig({
   site: {
     name: 'Nuxt',
     url: 'https://nuxt.com',
-    description: 'Build fast, production-ready web apps with Vue. File-based routing, auto-imports, and server-side rendering — all configured out of the box.',
+    description: 'Создавайте быстрые production-ready веб-приложения на Vue. Файловая маршрутизация, автоимпорты и серверный рендеринг — всё настроено из коробки.',
     defaultLocale: 'en'
   },
   colorMode: {
