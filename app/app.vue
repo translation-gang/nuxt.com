@@ -23,7 +23,7 @@ onNuxtReady(() => {
 })
 
 useHead({
-  titleTemplate: title => title ? `${title} · Nuxt` : 'Nuxt: The Intuitive Web Framework',
+  titleTemplate: title => title ? `${title} · Nuxt` : 'Nuxt: Интуитивный веб-фреймворк',
   meta: [
     { key: 'theme-color', name: 'theme-color', content: color }
   ]
@@ -38,7 +38,7 @@ if (import.meta.server) {
       { rel: 'icon', type: 'image/png', href: '/icon.png' }
     ],
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ru'
     }
   })
   useSeoMeta({

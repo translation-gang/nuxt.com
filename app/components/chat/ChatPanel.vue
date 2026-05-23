@@ -178,13 +178,13 @@ const suggestions = [
       <div class="mx-auto w-full max-w-3xl px-4 sm:px-6">
         <div v-if="rateLimitReached" class="flex items-center justify-center gap-2 py-4 text-sm text-muted">
           <UIcon name="i-lucide-clock" class="size-4 shrink-0" />
-          <span>Daily limit reached. Try again tomorrow.</span>
+          <span>Достигнут дневной лимит. Попробуйте снова завтра.</span>
         </div>
         <UChatPrompt
           v-else
           v-model="input"
           :error="chat.error"
-          placeholder="Ask anything…"
+          placeholder="Спросите что угодно…"
           variant="subtle"
           :rows="2"
           :maxrows="8"

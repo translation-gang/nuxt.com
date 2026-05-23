@@ -59,7 +59,7 @@ function getMessagePagePath(message: UIMessage): string | null {
     <template v-else-if="isToolUIPart(part)">
       <UChatTool
         v-if="getToolName(part) === 'web_search'"
-        :text="isToolStreaming(part) ? 'Searching the web...' : 'Searched the web'"
+        :text="isToolStreaming(part) ? 'Поиск в интернете...' : 'Поиск в интернете завершен'"
         :suffix="getSearchQuery(part)"
         :streaming="isToolStreaming(part)"
         chevron="leading"
@@ -68,7 +68,7 @@ function getMessagePagePath(message: UIMessage): string | null {
       </UChatTool>
       <template v-else-if="getToolName(part) === 'show_module'">
         <UChatTool
-          :text="isToolStreaming(part) ? 'Loading module...' : (part.state === 'output-available' && isValidModuleCardData(part.output) ? 'Found module' : 'Module not found')"
+          :text="isToolStreaming(part) ? 'Загрузка модуля...' : (part.state === 'output-available' && isValidModuleCardData(part.output) ? 'Модуль найден' : 'Модуль не найден')"
           icon="i-lucide-box"
           :streaming="isToolStreaming(part)"
         />
@@ -79,7 +79,7 @@ function getMessagePagePath(message: UIMessage): string | null {
       </template>
       <template v-else-if="getToolName(part) === 'show_template'">
         <UChatTool
-          :text="isToolStreaming(part) ? 'Loading templates...' : (part.state === 'output-available' && part.output && !(part.output as Record<string, unknown>).error && hasTemplatesOutput(part.output) ? 'Found templates' : 'Templates not found')"
+          :text="isToolStreaming(part) ? 'Загрузка шаблонов...' : (part.state === 'output-available' && part.output && !(part.output as Record<string, unknown>).error && hasTemplatesOutput(part.output) ? 'Шаблоны найдены' : 'Шаблоны не найдены')"
           icon="i-lucide-layout-template"
           :streaming="isToolStreaming(part)"
         />
@@ -96,7 +96,7 @@ function getMessagePagePath(message: UIMessage): string | null {
       </template>
       <template v-else-if="getToolName(part) === 'show_blog_post'">
         <UChatTool
-          :text="isToolStreaming(part) ? 'Finding blog post...' : (part.state === 'output-available' && part.output && !(part.output as Record<string, unknown>).error ? 'Found blog post' : 'Blog post not found')"
+          :text="isToolStreaming(part) ? 'Поиск поста блога...' : (part.state === 'output-available' && part.output && !(part.output as Record<string, unknown>).error ? 'Пост блога найден' : 'Пост блога не найден')"
           icon="i-lucide-newspaper"
           :streaming="isToolStreaming(part)"
         />
@@ -107,7 +107,7 @@ function getMessagePagePath(message: UIMessage): string | null {
       </template>
       <template v-else-if="getToolName(part) === 'show_hosting'">
         <UChatTool
-          :text="isToolStreaming(part) ? 'Loading provider...' : (part.state === 'output-available' && part.output && !(part.output as Record<string, unknown>).error ? 'Found provider' : 'Provider not found')"
+          :text="isToolStreaming(part) ? 'Загрузка провайдера...' : (part.state === 'output-available' && part.output && !(part.output as Record<string, unknown>).error ? 'Провайдер найден' : 'Провайдер не найден')"
           icon="i-lucide-server"
           :streaming="isToolStreaming(part)"
         />
@@ -118,7 +118,7 @@ function getMessagePagePath(message: UIMessage): string | null {
       </template>
       <template v-else-if="getToolName(part) === 'open_playground'">
         <UChatTool
-          :text="isToolStreaming(part) ? 'Generating playground...' : 'Playground ready'"
+          :text="isToolStreaming(part) ? 'Создание песочницы...' : 'Песочница готова'"
           icon="i-simple-icons-stackblitz"
           :streaming="isToolStreaming(part)"
         />
@@ -129,7 +129,7 @@ function getMessagePagePath(message: UIMessage): string | null {
       </template>
       <template v-else-if="getToolName(part) === 'report_issue'">
         <UChatTool
-          :text="isToolStreaming(part) ? 'Preparing feedback form...' : 'Help us improve'"
+          :text="isToolStreaming(part) ? 'Подготовка формы обратной связи...' : 'Помогите нам улучшиться'"
           icon="i-lucide-message-circle-warning"
           :streaming="isToolStreaming(part)"
         />
