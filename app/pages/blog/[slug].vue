@@ -31,13 +31,13 @@ useSeoMeta({
   title,
   description,
   ogDescription: description,
-  ogTitle: `${title} · Nuxt Блог`
+  ogTitle: `${title} · Nuxt Блог`,
+  ...(article.value.image ? { ogImage: article.value.image } : {})
 })
+useCanonical(`${route.path}.md`)
 
-if (article.value.image) {
-  defineOgImage({ url: article.value.image })
-} else {
-  defineOgImageComponent('Docs', {
+if (!article.value.image) {
+  defineOgImage('Docs.takumi', {
     headline: 'Блог',
     title,
     description
@@ -130,7 +130,7 @@ const links = [
         :ui="isAgentDocked ? {
           center: 'lg:col-span-10',
           right: 'lg:hidden'
-        } : undefined"
+        } : { root: 'lg:grid-cols-12', center: 'lg:col-span-9', right: 'lg:col-span-3' }"
       >
         <UPageBody>
           <ContentRenderer v-if="article.body" :value="article" />

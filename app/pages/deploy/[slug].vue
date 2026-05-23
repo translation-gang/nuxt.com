@@ -5,6 +5,7 @@ definePageMeta({
   heroBackground: 'opacity-30 -z-10'
 })
 const route = useRoute()
+const { isAgentDocked } = useNuxtAgent()
 const { fetchList, providers } = useHostingProviders()
 await fetchList()
 
@@ -31,8 +32,9 @@ useSeoMeta({
   ogDescription: description,
   ogTitle: `Разверните Nuxt в ${title}`
 })
+useCanonical(`${route.path}.md`)
 
-defineOgImageComponent('Docs', {
+defineOgImage('Docs.takumi', {
   headline: 'Развернуть в',
   title,
   description
@@ -104,7 +106,12 @@ links.push({
         </template>
       </UPageHeader>
 
-      <UPage>
+      <UPage
+        :ui="isAgentDocked ? {
+          center: 'lg:col-span-10',
+          right: 'lg:hidden'
+        } : { root: 'lg:grid-cols-12', center: 'lg:col-span-9', right: 'lg:col-span-3' }"
+      >
         <UPageBody>
           <ContentRenderer v-if="provider && provider.body" :value="provider" />
 
@@ -114,7 +121,7 @@ links.push({
         </UPageBody>
 
         <template #right>
-          <UContentToc :links="provider.body.toc?.links || []">
+          <UContentToc v-if="!isAgentDocked" :links="provider.body.toc?.links || []">
             <template #bottom>
               <div class="hidden lg:block space-y-6">
                 <USeparator v-if="links?.length && provider.body?.toc?.links?.length" type="dashed" />

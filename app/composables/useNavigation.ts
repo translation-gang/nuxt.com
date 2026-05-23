@@ -1,6 +1,15 @@
 import type { CommandPaletteGroup } from '@nuxt/ui'
 import { createSharedComposable } from '@vueuse/core'
 
+// Stable reference so the deep watcher inside `useFuse` doesn't rebuild
+// the entire Fuse index on every reactive flush.
+const searchFuse = {
+  resultLimit: 25,
+  fuseOptions: {
+    threshold: 0
+  }
+}
+
 function _useHeaderLinks() {
   const route = useRoute()
   const { version } = useDocsVersion()
@@ -114,6 +123,7 @@ function _useHeaderLinks() {
     }, {
       label: 'Блог',
       icon: 'i-lucide-newspaper',
+      search: false,
       to: '/blog',
       children: [{
         label: 'Блог',
@@ -228,15 +238,14 @@ const _useNavigation = () => {
     id: `module-${module.name}`,
     label: module.npm,
     suffix: module.description,
+    downloads: module.stats?.downloads ?? 0,
     avatar: {
       src: moduleImage(module.icon),
       ui: {
         root: 'rounded-none bg-transparent'
       }
     },
-    to: `/modules/${module.name}`,
-    // Store searchable fields for filtering
-    _searchFields: [module.name, module.npm, module.repo].filter(Boolean)
+    to: `/modules/${module.name}`
   })))
 
   const hostingItems = computed(() => providers.value.map(hosting => ({
@@ -252,12 +261,24 @@ const _useNavigation = () => {
           }
         }
       : undefined,
-    to: hosting.path,
-    // Store searchable fields for filtering
-    _searchFields: [hosting.title].filter(Boolean)
+    to: hosting.path
   })))
 
   const searchGroups = computed<CommandPaletteGroup[]>(() => [{
+    id: 'modules-search',
+    label: 'Modules',
+    items: modulesItems.value,
+    postFilter: (searchTerm: string, items: any[]) => {
+      if (!searchTerm) {
+        return [...items].sort((a, b) => (b.downloads ?? 0) - (a.downloads ?? 0))
+      }
+      return items
+    }
+  }, {
+    id: 'hosting-search',
+    label: 'Hosting',
+    items: hostingItems.value
+  }, {
     id: 'ask-ai-search',
     label: 'ИИ',
     ignoreFilter: true,
@@ -276,14 +297,6 @@ const _useNavigation = () => {
         openAgent(searchTerm.value)
       }
     }]
-  }, {
-    id: 'modules-search',
-    label: 'Модули',
-    items: modulesItems.value
-  }, {
-    id: 'hosting-search',
-    label: 'Хостинг',
-    items: hostingItems.value
   }])
 
   watchDebounced(searchTerm, (term) => {
@@ -297,7 +310,8 @@ const _useNavigation = () => {
     headerLinks,
     footerLinks,
     searchLinks,
-    searchGroups
+    searchGroups,
+    searchFuse
   }
 }
 

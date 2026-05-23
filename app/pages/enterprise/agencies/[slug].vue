@@ -34,8 +34,9 @@ useSeoMeta({
   ogDescription: description,
   ogTitle: `${title} · Агентства Nuxt`
 })
+useCanonical()
 
-defineOgImageComponent('Docs', {
+defineOgImage('Docs.takumi', {
   headline: 'Агентства Nuxt',
   title,
   description

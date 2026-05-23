@@ -18,8 +18,9 @@ useSeoMeta({
   ogDescription: description,
   ogTitle: `${title} · Энтерпрайс`
 })
+useCanonical()
 
-defineOgImageComponent('Docs', {
+defineOgImage('Docs.takumi', {
   headline: 'Энтерпрайс',
   title,
   description

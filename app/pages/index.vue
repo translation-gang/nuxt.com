@@ -32,20 +32,33 @@ function openVideoModal() {
 
 const site = useSiteConfig()
 const title = 'Nuxt: Full-Stack Vue-фреймворк'
+const description = 'Build fast, production-ready web apps with Vue. File-based routing, auto-imports, and server-side rendering — all configured out of the box.'
 useSeoMeta({
+  titleTemplate: '%s',
   title,
-  titleTemplate: '%s'
+  description
 })
+useCanonical('/raw/index.md')
 
 if (import.meta.server) {
-  const description = 'Создавайте быстрые production-ready веб-приложения на Vue. Файловая маршрутизация, автоимпорты и серверный рендеринг — всё настроено из коробки.'
+  prerenderRoutes(['/raw/index.md'])
+
   useSeoMeta({
     ogTitle: title,
-    description: description,
     ogDescription: description,
     ogImage: joinURL(site.url, '/new-social.jpg'),
     twitterImage: joinURL(site.url, '/new-social.jpg')
   })
+
+  useSchemaOrg([
+    defineSoftwareApp({
+      name: 'Nuxt',
+      description,
+      operatingSystem: 'Cross-platform',
+      applicationCategory: 'DeveloperApplication',
+      offers: { '@type': 'Offer', 'price': '0', 'priceCurrency': 'USD' }
+    })
+  ])
 }
 
 const tabs = computed(() => page.value?.hero.tabs.map(tab => ({

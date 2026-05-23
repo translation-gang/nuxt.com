@@ -22,6 +22,7 @@ export default defineNuxtConfig({
     '@nuxthub/core',
     'nuxt-charts',
     'nuxt-auth-utils',
+    'nuxt-schema-org',
     '@nuxtjs/mcp-toolkit',
     '@nuxt/hints',
     '@vercel/analytics',
@@ -66,6 +67,12 @@ export default defineNuxtConfig({
     layoutTransition: false
   },
   css: ['~/assets/css/main.css'],
+  site: {
+    name: 'Nuxt',
+    url: 'https://nuxt.com',
+    description: 'Build fast, production-ready web apps with Vue. File-based routing, auto-imports, and server-side rendering — all configured out of the box.',
+    defaultLocale: 'en'
+  },
   colorMode: {
     preference: 'dark'
   },
@@ -121,16 +128,42 @@ export default defineNuxtConfig({
   },
   routeRules: {
     // Pre-render
-    '/': { prerender: true },
+    '/': {
+      prerender: true,
+      headers: {
+        // Relative URIs per RFC 8288 — agents resolve them against the request
+        // origin, so this works on production, preview deploys, and localhost.
+        Link: [
+          '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
+          '</.well-known/mcp/server-card.json>; rel="service-desc"; type="application/json"; title="MCP Server Card"',
+          '</llms.txt>; rel="llms"; type="text/plain"',
+          '</llms-full.txt>; rel="llms-full"; type="text/plain"',
+          '</sitemap.xml>; rel="sitemap"; type="application/xml"',
+          '</sitemap.md>; rel="sitemap"; type="text/markdown"',
+          '</mcp>; rel="mcp"; type="application/json"',
+          '</docs>; rel="service-doc"; type="text/html"'
+        ].join(', '),
+        Vary: 'Accept, User-Agent'
+      }
+    },
     '/blog/rss.xml': { prerender: true },
     '/sitemap.xml': { prerender: true },
+    '/sitemap.md': { prerender: true },
     '/404.html': { prerender: true },
     '/docs/3.x/getting-started/introduction': { prerender: true },
     '/docs/4.x/getting-started/introduction': { prerender: true },
     '/docs/5.x/getting-started/introduction': { prerender: true },
-    '/modules': { isr: false, prerender: false },
+    '/modules': { isr: false, prerender: false, headers: { Vary: 'Accept, User-Agent' } },
     '/modules/**': { isr: 60 * 60 },
-    '/changelog': { isr: 60 * 60 },
+    '/changelog': { isr: 60 * 60, headers: { Vary: 'Accept, User-Agent' } },
+    // Markdown content negotiation routes (md-rewrite.ts emits Vercel rewrites
+    // based on `Accept` and `User-Agent`, so cached responses must vary on both).
+    // /raw/** is the rewrite destination — it must carry Vary too so CDNs
+    // don't serve cached markdown to a browser that asked for HTML.
+    '/docs/**': { headers: { Vary: 'Accept, User-Agent' } },
+    '/blog/**': { headers: { Vary: 'Accept, User-Agent' } },
+    '/deploy/**': { headers: { Vary: 'Accept, User-Agent' } },
+    '/raw/**': { headers: { Vary: 'Accept, User-Agent' } },
     // API
     '/api/v1/teams': { isr: 60 * 60 },
     // Admin
@@ -138,7 +171,6 @@ export default defineNuxtConfig({
     '/admin/**': { ssr: false },
     // Main navigation
     '/api/navigation.json': { prerender: true },
-    '/api/search.json': { prerender: true },
     // Redirects
     '/docs': { redirect: '/docs/getting-started/introduction', prerender: false },
     '/docs/3.x': { redirect: '/docs/3.x/getting-started/introduction', prerender: false },
@@ -463,7 +495,17 @@ export default defineNuxtConfig({
   },
   vite: {
     optimizeDeps: {
-      exclude: ['vue-chrts']
+      include: [
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+        'valibot',
+        '@comark/vue',
+        'zod',
+        'date-fns',
+        'ai',
+        '@ai-sdk/vue'
+      ],
+      exclude: ['vue-chrts', 'shaders']
     },
     // Явно: иначе плагины вроде nuxt:tree-shake-composables всё ещё участвуют в цепочке sourcemap.
     build: vercelBuild
@@ -510,6 +552,15 @@ export default defineNuxtConfig({
       rates: { info: 30 }
     }
   },
+  hints: {
+    features: {
+      hydration: true,
+      lazyLoad: false,
+      webVitals: true,
+      thirdPartyScripts: true,
+      htmlValidate: true
+    }
+  },
   icon: {
     customCollections: [{
       prefix: 'custom',
@@ -518,8 +569,7 @@ export default defineNuxtConfig({
     clientBundle: {
       scan: true,
       includeCustomCollections: true
-    },
-    provider: 'iconify'
+    }
   },
   image: {
     format: ['webp', 'jpeg', 'jpg', 'png', 'svg'],
@@ -568,8 +618,26 @@ export default defineNuxtConfig({
     icons: [
       { src: 'https://nuxt.com/icon.png', mimeType: 'image/png', sizes: ['64x64'] }
     ],
-    logging: {
-      env: { service: 'nuxt-com/mcp' }
+    logging: true
+  },
+  ogImage: {
+    cacheMaxAgeSeconds: 0,
+    security: {
+      renderTimeout: 60000
+    }
+  },
+  schemaOrg: {
+    identity: {
+      type: 'Organization',
+      name: 'Nuxt',
+      logo: '/icon.png',
+      sameAs: [
+        'https://github.com/nuxt',
+        'https://x.com/nuxt_js',
+        'https://bsky.app/profile/nuxt.com',
+        'https://www.linkedin.com/showcase/nuxt-framework/',
+        'https://m.webtoo.ls/@nuxt'
+      ]
     }
   },
   turnstile: {

@@ -3,7 +3,6 @@ const colorMode = useColorMode()
 const route = useRoute()
 const isChatRoute = computed(() => route.path === '/chat' || route.path.startsWith('/chat/'))
 const { version } = useDocsVersion()
-const { searchGroups, searchLinks, searchTerm } = useNavigation()
 const { fetchList: fetchModules } = useModules()
 const { fetchList: fetchHosting } = useHostingProviders()
 const { track } = useAnalytics()
@@ -16,10 +15,7 @@ watch(() => colorMode.preference, (newMode, oldMode) => {
   }
 })
 
-const [{ data: navigation }, { data: files }] = await Promise.all([
-  useFetch('/api/navigation.json'),
-  useFetch('/api/search.json', { server: false })
-])
+const { data: navigation } = await useFetch('/api/navigation.json')
 
 onNuxtReady(() => {
   fetchModules()
@@ -51,12 +47,19 @@ if (import.meta.server) {
     twitterCard: 'summary_large_image',
     twitterSite: 'nuxt_js'
   })
+  // Organization identity is provided via `schemaOrg.identity` in
+  // nuxt.config.ts so the module can emit a single `#identity` node
+  // (instead of a duplicated `#organization` graph entry). The WebSite
+  // resolver inherits `url` from siteConfig but not `name`, so we wire
+  // it up here against the same source of truth.
+  useSchemaOrg([
+    defineWebSite({
+      name: useSiteConfig().name
+    })
+  ])
 }
 
 const versionNavigation = computed(() => navigation.value?.filter(item => item.path === version.value.path || item.path === '/blog') ?? [])
-const versionFiles = computed(() => files.value?.filter((file) => {
-  return file.id.startsWith(version.value.path + '/') || file.id.startsWith('/blog/')
-}) ?? [])
 
 provide('navigation', versionNavigation)
 </script>
@@ -70,31 +73,16 @@ provide('navigation', versionNavigation)
         <NuxtLayout>
           <NuxtPage />
         </NuxtLayout>
-
-        <ClientOnly>
-          <LazyAgentFloatingInput v-if="!isChatRoute" />
-        </ClientOnly>
       </div>
 
-      <ClientOnly>
-        <LazyAgentPanel v-if="!isChatRoute" />
+      <ClientOnly v-if="!isChatRoute">
+        <LazyAgentFloatingInput />
+        <LazyAgentPanel />
       </ClientOnly>
     </div>
 
     <ClientOnly>
-      <LazyUContentSearch
-        v-model:search-term="searchTerm"
-        :files="versionFiles"
-        :navigation="versionNavigation"
-        :groups="searchGroups"
-        :links="searchLinks"
-        :fuse="{
-          resultLimit: 42,
-          fuseOptions: {
-            threshold: 0
-          }
-        }"
-      />
+      <Search :navigation="versionNavigation" />
     </ClientOnly>
   </UApp>
 </template>
