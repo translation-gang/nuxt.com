@@ -460,7 +460,7 @@ function selectWorstPages(count: number) {
         :x-formatter="xFormatter"
         :y-formatter="yFormatter"
         :x-label="dateRangeLabel"
-        y-label="Rating (out of 4)"
+        y-label="Оценка (из 4)"
         :show-tooltip="true"
       />
 
@@ -471,7 +471,7 @@ function selectWorstPages(count: number) {
         :x-formatter="xFormatter"
         :y-formatter="yFormatter"
         :x-label="dateRangeLabel"
-        y-label="Rating (out of 4)"
+        y-label="Оценка (из 4)"
         :show-tooltip="true"
         class="min-h-[300px]"
       />
@@ -485,7 +485,7 @@ function selectWorstPages(count: number) {
         :x-formatter="xFormatter"
         :y-formatter="yFormatter"
         :x-label="dateRangeLabel"
-        y-label="Feedback Count"
+        y-label="Количество отзывов"
         :height="300"
         :bar-padding="0.2"
         :y-grid-line="false"
@@ -495,7 +495,7 @@ function selectWorstPages(count: number) {
 
     <div v-if="!hasValidData" class="text-center py-4">
       <p class="text-sm text-muted">
-        Chart shows no data - will display real trends once feedback is collected
+        График пока без данных — отобразит реальные тренды после сбора отзывов
       </p>
     </div>
 
@@ -513,36 +513,36 @@ function selectWorstPages(count: number) {
             />
             <div class="space-y-3">
               <h3 class="text-lg font-semibold">
-                Select Pages to {{ chartType === 'line' ? 'Track' : 'Compare' }}
+                Выбрать страницы для {{ chartType === 'line' ? 'отслеживания' : 'сравнения' }}
               </h3>
               <div class="flex items-center gap-2 flex-wrap">
-                <span class="text-sm text-muted font-medium">Quick select:</span>
+                <span class="text-sm text-muted font-medium">Быстрый выбор:</span>
                 <UButton
                   size="sm"
                   variant="soft"
                   color="neutral"
-                  label="Best Rated 5"
+                  label="Лучшие 5"
                   @click="selectBestRatedPages(5)"
                 />
                 <UButton
                   size="sm"
                   variant="soft"
                   color="neutral"
-                  label="Most Popular 5"
+                  label="Популярные 5"
                   @click="selectTopPages(5)"
                 />
                 <UButton
                   size="sm"
                   variant="soft"
                   color="neutral"
-                  label="Worst Rated 5"
+                  label="Худшие 5"
                   @click="selectWorstPages(5)"
                 />
                 <UButton
                   size="sm"
                   variant="soft"
                   color="neutral"
-                  label="Worst Rated 10"
+                  label="Худшие 10"
                   @click="selectWorstPages(10)"
                 />
               </div>

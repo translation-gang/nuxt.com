@@ -140,7 +140,7 @@ const errorType = route.query.error as string
             color="neutral"
             size="sm"
             icon="i-simple-icons-github"
-            label="View Nuxt on GitHub"
+            label="Посмотреть Nuxt на GitHub"
             external
           />
         </motion.div>

@@ -75,11 +75,11 @@ const handleMouseLeave = () => {
     </div>
 
     <div class="font-bold text-sm text-muted transition-colors group-hover:text-default pt-2">
-      <UBadge color="warning" variant="soft" label="Black Friday Week" />
+      <UBadge color="warning" variant="soft" label="Неделя Черной Пятницы" />
     </div>
 
     <div class="text-xs text-muted py-1 transition-colors group-hover:text-default">
-      Get 50% off the complete Mastering Nuxt course.
+      Скидка 50% на полный курс Mastering Nuxt.
     </div>
   </div>
 </template>

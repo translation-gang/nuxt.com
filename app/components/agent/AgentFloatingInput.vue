@@ -69,7 +69,7 @@ function onEscape() {
           <UInput
             ref="inputRef"
             v-model="input"
-            placeholder="Ask anything…"
+            placeholder="Спросите что угодно…"
             size="lg"
             maxlength="1000"
             :ui="{

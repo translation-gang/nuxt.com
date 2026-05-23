@@ -36,12 +36,12 @@ const agentPrompt = computed(() => {
 
 function copyInstall() {
   track('Module Install Command Copied', { module: props.slug, source: 'nuxt-agent' })
-  copy(installCommand.value, { title: 'Command copied to clipboard:', description: installCommand.value })
+  copy(installCommand.value, { title: 'Команда скопирована в буфер обмена:', description: installCommand.value })
 }
 
 function copyPrompt() {
   track('Module Agent Prompt Copied', { module: props.slug, source: 'nuxt-agent' })
-  copy(agentPrompt.value, { title: 'Agent prompt copied!', description: props.npm || props.slug, icon: 'i-custom-ai' })
+  copy(agentPrompt.value, { title: 'Промпт агента скопирован!', description: props.npm || props.slug, icon: 'i-custom-ai' })
 }
 </script>
 
@@ -74,7 +74,7 @@ function copyPrompt() {
         </span>
         <NuxtLink v-if="website" :to="website" target="_blank" class="flex items-center gap-1 hover:text-default transition-colors">
           <UIcon name="i-lucide-book" class="size-3" />
-          Docs
+          Доки
         </NuxtLink>
         <NuxtLink v-if="repo" :to="`https://github.com/${repo}`" target="_blank" class="flex items-center gap-1 hover:text-default transition-colors">
           <UIcon name="i-lucide-github" class="size-3" />
@@ -84,7 +84,7 @@ function copyPrompt() {
 
       <UButton
         icon="i-custom-ai"
-        label="Prompt"
+        label="Промпт"
         size="xs"
         color="neutral"
         variant="outline"
@@ -92,7 +92,7 @@ function copyPrompt() {
       />
       <UButton
         icon="i-lucide-terminal"
-        label="Install"
+        label="Установить"
         size="xs"
         color="primary"
         variant="soft"

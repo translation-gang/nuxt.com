@@ -26,10 +26,10 @@ const { copy: copyJson, copied: jsonCopied } = useClipboard()
             <div>
               <h3 class="font-semibold text-lg flex items-center gap-2">
                 <UIcon name="i-lucide-plug" class="size-5 text-primary" />
-                Install Admin MCP
+                Установить Admin MCP
               </h3>
               <p class="text-sm text-muted mt-1">
-                Connect your IDE to the Nuxt admin MCP server to query feedback and AI agent data from the chat.
+                Подключите ваш IDE к админскому MCP-серверу Nuxt для запросов отзывов и данных AI-агента из чата.
               </p>
             </div>
             <UButton
@@ -44,7 +44,7 @@ const { copy: copyJson, copied: jsonCopied } = useClipboard()
 
         <div v-if="status === 'pending'" class="flex items-center gap-2 text-sm text-muted">
           <UIcon name="i-lucide-loader-2" class="size-4 animate-spin" />
-          Loading install info…
+          Загрузка информации об установке…
         </div>
 
         <UAlert
@@ -52,7 +52,7 @@ const { copy: copyJson, copied: jsonCopied } = useClipboard()
           color="error"
           variant="subtle"
           icon="i-lucide-triangle-alert"
-          title="Could not load install info"
+          title="Не удалось загрузить информацию об установке"
           :description="error.message"
         />
 
@@ -64,7 +64,7 @@ const { copy: copyJson, copied: jsonCopied } = useClipboard()
               color="neutral"
               variant="solid"
               icon="i-simple-icons-cursor"
-              label="Install in Cursor"
+              label="Установить в Cursor"
               block
             />
             <UButton
@@ -73,33 +73,33 @@ const { copy: copyJson, copied: jsonCopied } = useClipboard()
               color="neutral"
               variant="outline"
               icon="i-simple-icons-visualstudiocode"
-              label="Install in VS Code"
+              label="Установить в VS Code"
               block
             />
           </div>
 
-          <USeparator label="or configure manually" />
+          <USeparator label="или настройте вручную" />
 
           <div class="space-y-3">
             <div class="space-y-1.5">
-              <label class="text-xs font-medium text-muted uppercase tracking-wide">Server URL</label>
+              <label class="text-xs font-medium text-muted uppercase tracking-wide">URL сервера</label>
               <UInputCopy :value="data.url" size="lg" />
             </div>
 
             <div class="space-y-1.5">
-              <label class="text-xs font-medium text-muted uppercase tracking-wide">Bearer token</label>
+              <label class="text-xs font-medium text-muted uppercase tracking-wide">Bearer токен</label>
               <UInputCopy :value="data.token" size="lg" />
             </div>
 
             <div class="space-y-1.5">
               <div class="flex items-center justify-between">
-                <label class="text-xs font-medium text-muted uppercase tracking-wide">JSON config</label>
+                <label class="text-xs font-medium text-muted uppercase tracking-wide">JSON конфиг</label>
                 <UButton
                   size="xs"
                   variant="ghost"
                   color="neutral"
                   :icon="jsonCopied ? 'i-lucide-check' : 'i-lucide-copy'"
-                  :label="jsonCopied ? 'Copied' : 'Copy'"
+                  :label="jsonCopied ? 'Скопировано' : 'Копировать'"
                   @click="copyJson(jsonString)"
                 />
               </div>
@@ -111,8 +111,8 @@ const { copy: copyJson, copied: jsonCopied } = useClipboard()
             color="warning"
             variant="subtle"
             icon="i-lucide-shield-alert"
-            title="Keep this token private"
-            description="Anyone with this token has full read access to feedback and agent data. Do not share it or commit it to a public repository."
+            title="Храните этот токен в секрете"
+            description="Любой, у кого есть этот токен, имеет полный доступ к чтению отзывов и данных агента. Не делитесь им и не коммитьте в публичный репозиторий."
           />
         </div>
       </UCard>

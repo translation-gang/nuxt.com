@@ -194,7 +194,7 @@ const suggestions = [
           @submit="onSubmit"
         >
           <template #footer>
-            <UTooltip v-if="usage" text="Daily messages remaining">
+            <UTooltip v-if="usage" text="Осталось сообщений на сегодня">
               <span class="text-xs text-dimmed" :class="usage.remaining <= 5 ? 'text-warning' : ''">
                 {{ usage.remaining }}/{{ usage.limit }}
               </span>

@@ -67,7 +67,7 @@ function trackTemplateAction(action: 'Demo' | 'GitHub' | 'Purchase') {
     <template #footer>
       <UFieldGroup class="w-full">
         <UButton
-          label="Demo"
+          label="Демо"
           icon="i-lucide-laptop"
           :to="template.demo"
           target="_blank"
@@ -94,7 +94,7 @@ function trackTemplateAction(action: 'Demo' | 'GitHub' | 'Purchase') {
           target="_blank"
           :to="template.purchase"
           color="neutral"
-          label="Purchase"
+          label="Купить"
           variant="subtle"
           icon="i-lucide-credit-card"
           size="sm"

@@ -28,7 +28,7 @@ const safeUrl = computed(() => {
     </div>
     <UButton
       icon="i-lucide-external-link"
-      label="Open"
+      label="Открыть"
       size="xs"
       color="primary"
       variant="soft"
