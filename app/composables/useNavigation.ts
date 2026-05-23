@@ -196,7 +196,7 @@ const _useNavigation = () => {
   const { providers } = useHostingProviders()
 
   const searchLinks = computed(() => [{
-    label: 'Ask Agent',
+    label: 'Спросить агента',
     icon: 'i-lucide-wand',
     to: 'javascript:void(0);',
     onSelect: () => {
@@ -266,7 +266,7 @@ const _useNavigation = () => {
 
   const searchGroups = computed<CommandPaletteGroup[]>(() => [{
     id: 'modules-search',
-    label: 'Modules',
+    label: 'Модули',
     items: modulesItems.value,
     postFilter: (searchTerm: string, items: any[]) => {
       if (!searchTerm) {
@@ -276,7 +276,7 @@ const _useNavigation = () => {
     }
   }, {
     id: 'hosting-search',
-    label: 'Hosting',
+    label: 'Хостинг',
     items: hostingItems.value
   }, {
     id: 'ask-ai-search',
@@ -289,7 +289,7 @@ const _useNavigation = () => {
       return items
     },
     items: [{
-      label: 'Ask Agent',
+      label: 'Спросить агента',
       icon: 'i-lucide-wand',
       to: 'javascript:void(0);',
       onSelect() {

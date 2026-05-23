@@ -26,7 +26,7 @@ const items = computed<DropdownMenuItem[][]>(() => [
   ],
   [
     {
-      label: 'Install Admin MCP',
+      label: 'Установить Admin MCP',
       icon: 'i-lucide-plug',
       onClick: () => {
         showMcpInstall.value = true
@@ -343,10 +343,10 @@ watch(currentPage, () => {
       <div class="text-center mb-8 space-y-2">
         <UIcon name="i-lucide-bar-chart" class="size-8 text-primary mx-auto" />
         <h1 class="text-3xl font-bold">
-          Feedback Analytics
+          Аналитика отзывов
         </h1>
         <p class="text-muted text-lg max-w-2xl mx-auto">
-          Monitor user feedback and documentation satisfaction across all pages
+          Отслеживайте отзывы пользователей и удовлетворенность документацией на всех страницах
         </p>
       </div>
 
@@ -586,7 +586,7 @@ watch(currentPage, () => {
 
               <div v-if="totalPages > 1" class="flex items-center justify-between pt-4 border-t border-default">
                 <div class="text-sm text-muted">
-                  Showing {{ (currentPage - 1) * itemsPerPage + 1 }}-{{ Math.min(currentPage * itemsPerPage, selectedPage.total) }} of {{ selectedPage.total }} feedbacks
+                  Показано {{ (currentPage - 1) * itemsPerPage + 1 }}-{{ Math.min(currentPage * itemsPerPage, selectedPage.total) }} из {{ selectedPage.total }} отзывов
                 </div>
                 <UPagination
                   v-model:page="currentPage"

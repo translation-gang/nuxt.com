@@ -30,7 +30,7 @@ function explainWithAI() {
   <USeparator type="dashed" />
   <UPageLinks
     :links="[{
-      label: 'Explain with Agent',
+      label: 'Пояснить через агента',
       icon: 'i-lucide-brain',
       onClick: explainWithAI
     }]"
