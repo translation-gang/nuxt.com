@@ -474,6 +474,7 @@ export default defineNuxtConfig({
   nitro: {
     // Иначе Nitro всё ещё может тянуть карты и раздувать пик памяти при сборке.
     sourceMap: !vercelBuild,
+    minify: !vercelBuild,
     prerender: vercelBuild
       ? {
           routes: [],
