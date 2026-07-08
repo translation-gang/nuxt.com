@@ -1,3 +1,4 @@
 title: Оценки ИИ-агентов
+head.title: Оценки ИИ-агентов Nuxt
 description: "Результаты оценки ИИ-агентов на задачах генерации кода Nuxt: процент успеха и время выполнения."
 githubUrl: "https://github.com/vercel/nuxt-evals"

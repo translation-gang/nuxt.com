@@ -12,6 +12,7 @@ const STATIC_LINKS = [
   { title: 'Команда', path: '/team' },
   { title: 'Рассылка', path: '/newsletter' },
   { title: 'Набор для дизайна', path: '/design-kit' },
+  { title: 'Дизайн-система', path: '/design.md' },
   { title: 'Видеокурсы', path: '/video-courses' }
 ]
 

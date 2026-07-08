@@ -11,8 +11,8 @@ if (!page.value) {
   throw createError({ statusCode: 404, statusMessage: 'Страница не найдена', fatal: true })
 }
 
-const title = page.value.title
-const description = page.value.description
+const title = page.value.head?.title || page.value.title
+const description = page.value.head?.description || page.value.description
 
 function badgeLabel(badge: string) {
   if (badge === 'Premium' || badge === 'Премиум') {
@@ -39,8 +39,8 @@ defineOgImage('Docs.takumi', {
 <template>
   <UContainer v-if="page">
     <UPageHero
-      :title="title"
-      :description="description"
+      :title="page.title"
+      :description="page.description"
       :links="page.links"
     />
     <UPage>

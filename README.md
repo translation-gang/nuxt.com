@@ -90,27 +90,39 @@ pnpm build
 | Переменная | Описание |
 |------------|----------|
 | `NUXT_GITHUB_TOKEN` | GitHub Personal Access Token с доступом к репозиторию (для модулей, team, stats) |
+| `INTERNAL_API_SECRET` | Общий секрет между Nuxt-приложением и Eve runtime (Nuxi) |
+| `AI_GATEWAY_API_KEY` | API-ключ Vercel AI Gateway для Nuxi |
 
 **Опционально:** см. `.env.example` (Turnstile, Resend, Open Collective, OAuth для админки отзывов и т.д.).
 
 ### Сборка в Vercel
 
-Используются настройки из `vercel.json`:
+Используются настройки из `vercel.json` (сервисы `web` и `eve`). При необходимости переопределите команды в Vercel → Settings → General.
 
-- **Build Command:** `NODE_OPTIONS='--max-old-space-size=8192' pnpm run build`
-- **Install Command:** `corepack enable && corepack prepare pnpm@10.29.3 --activate && pnpm install`
+### NuxtHub
 
-При необходимости их можно переопределить в Vercel → Settings → General.
-
-### NuxtHub (1.6)
-
-- В проекте уже используется `@nuxthub/core` ^0.10.6, БД — sqlite (для продакшена на Vercel используется драйвер Vercel).
+- В проекте используется `@nuxthub/core`, БД — sqlite (на Vercel — драйвер Vercel).
 - Если меняете схему БД в `server/db/schema.ts`, локально выполните:
   ```bash
   pnpm db:generate
   pnpm db:migrate
   ```
-- Привязка проекта к NuxtHub (если нужен дашборд/бэкап): `npx nuxthub@latest login` и `npx nuxthub@latest link`.
+
+### Nuxi (Eve agent)
+
+Nuxi живёт в [`layers/nuxi/`](./layers/nuxi/) — runtime Eve (`agent/`), UI и internal API в одном слое. Для локальной разработки:
+
+```bash
+# Обязательно — общий секрет между Nuxt-приложением и Eve runtime
+INTERNAL_API_SECRET=$(openssl rand -base64 32)
+
+# Опционально — канонический URL сайта для MCP и internal API
+NUXT_PUBLIC_SITE_URL=http://localhost:3000
+
+pnpm dev
+```
+
+На Vercel настройте **оба** сервиса (`web` и `eve` в `vercel.json`) с одинаковыми `INTERNAL_API_SECRET`, `AI_GATEWAY_API_KEY` и переменными БД.
 
 ### Evals для MCP-сервера
 

@@ -7,14 +7,11 @@ align: center
 links:
   - label: 'Стартеры Nuxt'
     to: 'https://nuxt.new'
-    icon: 'i-simple-icons-nuxt'
+    icon: 'i-lucide-rocket'
+    trailingIcon: 'i-lucide-arrow-up-right'
     target: '_blank'
-    variant: solid
-    color: neutral
-    size: md
-  - label: 'Полнофункциональные шаблоны'
-    to: 'https://hub.nuxt.com/templates'
+  - label: 'Создать шаблон'
+    to: 'https://github.com/nuxt/starter/tree/templates/templates'
+    icon: 'i-simple-icons-github'
+    trailingIcon: 'i-lucide-arrow-up-right'
     target: '_blank'
-    variant: subtle
-    color: neutral
-    size: md

@@ -54,6 +54,7 @@ npm run dev
 - Блог: <${domain}/blog/rss.xml>
 - История изменений: <${domain}/changelog/rss.xml>
 - Команда: <${domain}/team>
+- Дизайн-система: <${domain}/design.md>
 - Карта сайта (XML): <${domain}/sitemap.xml>
 - Карта сайта (Markdown): <${domain}/sitemap.md>
 - Индекс LLMs: <${domain}/llms.txt>

@@ -16,7 +16,7 @@ website: 'https://pages.cloudflare.com/'
 ::
 
 ::important
-Ознакомьтесь с модулем [@nuxthub/core](/modules/hub) для создания полнофункциональных Nuxt-приложений с использованием Cloudflare. Узнайте больше на [hub.nuxt.com](https://hub.nuxt.com).
+Используйте [@nuxthub/core](/modules/hub), чтобы добавить в Nuxt-приложение базу данных, KV, blob-хранилище и кэш. NuxtHub работает на Vercel, Cloudflare, Netlify и других платформах. Подробнее на [hub.nuxt.com](https://hub.nuxt.com).
 ::
 
 ### Интеграция с Git

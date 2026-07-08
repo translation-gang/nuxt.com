@@ -7,22 +7,24 @@ defineProps<{
 
 const { version } = useDocsVersion()
 
-const collections = computed(() => [version.value.collection, 'blog' as const].filter(Boolean))
+const collection = computed(() => version.value.collection)
 
-const { status, search, init } = useSearchCollection(collections, {
+const { status, search, init } = useSearchCollection(collection, {
   immediate: false,
   ignoredTags: ['style']
 })
 
-const { searchGroups, searchLinks, searchTerm, searchFuse } = useNavigation()
-const { open } = useContentSearch()
+const { searchGroups, searchLinks, searchTerm } = useNavigation()
 const { track } = useAnalytics()
 
-watch(open, (value) => {
-  if (value && status.value === 'idle') {
-    init()
+const fuse = {
+  resultLimit: 25,
+  fuseOptions: {
+    useTokenSearch: false
   }
-})
+}
+
+onNuxtReady(init)
 
 watchDebounced(searchTerm, (term) => {
   if (term) {
@@ -39,6 +41,7 @@ watchDebounced(searchTerm, (term) => {
     :navigation="navigation"
     :search="search"
     :search-status="status"
-    :fuse="searchFuse"
+    :fuse="fuse"
+    :transition="false"
   />
 </template>

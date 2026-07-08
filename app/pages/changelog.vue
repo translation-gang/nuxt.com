@@ -6,19 +6,20 @@ definePageMeta({
 })
 
 const title = 'Список изменений'
+const seoTitle = `Nuxt ${title}`
 const description = 'Последние релизы Nuxt и официальных модулей.'
 
 useSeoMeta({
   titleTemplate: '%s',
-  title,
+  title: seoTitle,
   description,
   ogDescription: description,
-  ogTitle: title
+  ogTitle: seoTitle
 })
 useCanonical('/raw/changelog.md')
 defineOgImage('Docs.takumi', {
   headline: 'Список изменений',
-  title,
+  title: seoTitle,
   description
 })
 

@@ -1,0 +1,209 @@
+<script setup lang="ts">
+type Visibility = 'public' | 'private' | 'admin'
+
+const props = defineProps<{
+  chatId: string
+  visibility: Visibility
+}>()
+
+const emit = defineEmits<{
+  'update:visibility': [visibility: Visibility]
+}>()
+
+const toast = useToast()
+const clipboard = useClipboard()
+
+const open = ref(false)
+const loading = ref(false)
+const copied = ref(false)
+const advancedOpen = ref(false)
+
+const isShared = computed(() => props.visibility === 'public')
+const isAdminShared = computed(() => props.visibility === 'admin')
+
+const shareUrl = computed(() => {
+  if (!import.meta.client || !props.chatId) return ''
+  return `${window.location.origin}/dashboard/chat/${props.chatId}`
+})
+
+const options = [
+  {
+    value: 'private' as const,
+    label: 'Только для меня',
+    description: 'Только вы видите этот чат',
+    icon: 'i-lucide-lock'
+  },
+  {
+    value: 'public' as const,
+    label: 'По ссылке',
+    description: 'Любой со ссылкой может прочитать этот чат',
+    icon: 'i-lucide-globe'
+  }
+]
+
+async function updateVisibility(value: Visibility) {
+  if (value === props.visibility) return
+
+  loading.value = true
+  const previous = props.visibility
+  emit('update:visibility', value)
+
+  try {
+    await $fetch(`/api/chats/${props.chatId}/visibility`, {
+      method: 'PATCH',
+      body: { visibility: value }
+    })
+  } catch {
+    emit('update:visibility', previous)
+    toast.add({
+      title: 'Не удалось обновить видимость',
+      icon: 'i-lucide-alert-circle',
+      color: 'error'
+    })
+  } finally {
+    loading.value = false
+  }
+}
+
+function toggleAdminShare() {
+  updateVisibility(isAdminShared.value ? 'private' : 'admin')
+}
+
+async function copyLink() {
+  await clipboard.copy(shareUrl.value)
+  copied.value = true
+  setTimeout(() => {
+    copied.value = false
+  }, 2000)
+}
+
+const buttonIcon = computed(() => {
+  if (isShared.value) return 'i-lucide-globe'
+  if (isAdminShared.value) return 'i-lucide-shield'
+  return 'i-lucide-share'
+})
+const buttonLabel = computed(() => {
+  if (isShared.value) return 'Доступен'
+  if (isAdminShared.value) return 'Доступен админам'
+  return 'Поделиться'
+})
+</script>
+
+<template>
+  <UPopover v-model:open="open" :ui="{ content: 'w-80' }">
+    <UButton
+      :icon="buttonIcon"
+      :label="buttonLabel"
+      color="neutral"
+      variant="ghost"
+      size="sm"
+    />
+
+    <template #content>
+      <div class="p-3 space-y-3">
+        <div class="space-y-1">
+          <p class="text-sm font-medium text-highlighted">
+            Поделиться чатом
+          </p>
+          <p class="text-xs text-muted">
+            Выберите, кто может видеть этот диалог.
+          </p>
+        </div>
+
+        <div class="grid gap-1">
+          <button
+            v-for="option in options"
+            :key="option.value"
+            type="button"
+            class="flex items-start gap-3 px-2 py-2 rounded-md text-left hover:bg-elevated/60 transition-colors disabled:opacity-50"
+            :disabled="loading"
+            @click="updateVisibility(option.value)"
+          >
+            <UIcon :name="option.icon" class="size-4 mt-0.5 shrink-0 text-muted" />
+            <div class="flex-1 min-w-0">
+              <div class="flex items-center gap-2">
+                <span class="text-sm font-medium text-highlighted">{{ option.label }}</span>
+                <UIcon
+                  v-if="props.visibility === option.value"
+                  name="i-lucide-check"
+                  class="size-4 text-primary"
+                />
+              </div>
+              <p class="text-xs text-muted mt-0.5">
+                {{ option.description }}
+              </p>
+            </div>
+          </button>
+        </div>
+
+        <div v-if="isShared && shareUrl" class="pt-3 border-t border-default space-y-2">
+          <div class="flex items-center gap-2">
+            <UInput
+              :model-value="shareUrl"
+              readonly
+              size="sm"
+              class="flex-1"
+              :ui="{ base: 'truncate' }"
+            />
+            <UButton
+              :icon="copied ? 'i-lucide-check' : 'i-lucide-copy'"
+              :color="copied ? 'success' : 'neutral'"
+              :aria-label="copied ? 'Ссылка скопирована' : 'Копировать ссылку'"
+              variant="subtle"
+              size="sm"
+              @click="copyLink"
+            />
+          </div>
+        </div>
+
+        <UCollapsible v-model:open="advancedOpen" class="pt-2 border-t border-default">
+          <UButton
+            color="neutral"
+            variant="ghost"
+            size="sm"
+            block
+            :ui="{ base: 'justify-start gap-1.5' }"
+          >
+            <UIcon
+              name="i-lucide-chevron-right"
+              class="size-3.5 transition-transform"
+              :class="{ 'rotate-90': advancedOpen }"
+            />
+            <span class="flex-1 text-left">Дополнительно</span>
+            <span
+              v-if="isAdminShared"
+              class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-primary/15 text-primary text-[10px] font-medium leading-none"
+            >
+              <span class="size-1.5 rounded-full bg-primary" />
+              Общий доступ
+            </span>
+          </UButton>
+
+          <template #content>
+            <label
+              class="flex items-start gap-3 px-2 py-2 mt-1 rounded-md text-left cursor-pointer hover:bg-elevated/60 transition-colors"
+              :class="{ 'opacity-50 pointer-events-none': loading }"
+            >
+              <UIcon name="i-lucide-shield" class="size-4 mt-0.5 shrink-0 text-muted" />
+              <div class="flex-1 min-w-0">
+                <p class="text-sm font-medium text-highlighted">
+                  Поделиться с админами Nuxt
+                </p>
+                <p class="text-xs text-muted mt-0.5">
+                  Для отладки — админы смогут открыть этот чат в своей панели
+                </p>
+              </div>
+              <USwitch
+                :model-value="isAdminShared"
+                size="sm"
+                :disabled="loading"
+                class="mt-0.5 shrink-0"
+                @update:model-value="toggleAdminShare"
+              />
+            </label>
+          </template>
+        </UCollapsible>
+      </div>
+    </template>
+  </UPopover>
+</template>

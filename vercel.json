@@ -1,11 +1,16 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "node scripts/clean-content-git-cache.mjs && NODE_OPTIONS='--max-old-space-size=6144' pnpm run build",
-  "installCommand": "corepack enable && corepack prepare pnpm@11.1.3 --activate && pnpm install",
-  "crons": [
-    {
-      "path": "/api/agent/cleanup",
-      "schedule": "0 3 * * *"
+  "experimentalServices": {
+    "web": {
+      "entrypoint": ".",
+      "framework": "nuxtjs",
+      "routePrefix": "/"
+    },
+    "eve": {
+      "buildCommand": "eve build",
+      "entrypoint": "layers/nuxi",
+      "framework": "eve",
+      "routePrefix": "/_eve_internal/eve"
     }
-  ]
+  }
 }
