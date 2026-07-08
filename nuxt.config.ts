@@ -4,6 +4,21 @@ import { parseMdc } from './helpers/mdc-parser.mjs'
 const { resolve } = createResolver(import.meta.url)
 const vercelBuild = Boolean(process.env.VERCEL)
 
+const homeLinkHeaders = {
+  Link: [
+    '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
+    '</.well-known/mcp/server-card.json>; rel="service-desc"; type="application/json"; title="MCP Server Card"',
+    '</llms.txt>; rel="llms"; type="text/plain"',
+    '</llms-full.txt>; rel="llms-full"; type="text/plain"',
+    '</sitemap.xml>; rel="sitemap"; type="application/xml"',
+    '</sitemap.md>; rel="sitemap"; type="text/markdown"',
+    '</design.md>; rel="design"; type="text/markdown"',
+    '</mcp>; rel="mcp"; type="application/json"',
+    '</docs>; rel="service-doc"; type="text/html"'
+  ].join(', '),
+  Vary: 'Accept, User-Agent'
+}
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['./layers/nuxi'],
@@ -131,33 +146,17 @@ export default defineNuxtConfig({
   },
   routeRules: {
     // Pre-render
-    '/': {
-      prerender: true,
-      headers: {
-        // Relative URIs per RFC 8288 — agents resolve them against the request
-        // origin, so this works on production, preview deploys, and localhost.
-        Link: [
-          '</.well-known/api-catalog>; rel="api-catalog"; type="application/linkset+json"',
-          '</.well-known/mcp/server-card.json>; rel="service-desc"; type="application/json"; title="MCP Server Card"',
-          '</llms.txt>; rel="llms"; type="text/plain"',
-          '</llms-full.txt>; rel="llms-full"; type="text/plain"',
-          '</sitemap.xml>; rel="sitemap"; type="application/xml"',
-          '</sitemap.md>; rel="sitemap"; type="text/markdown"',
-          '</design.md>; rel="design"; type="text/markdown"',
-          '</mcp>; rel="mcp"; type="application/json"',
-          '</docs>; rel="service-doc"; type="text/html"'
-        ].join(', '),
-        Vary: 'Accept, User-Agent'
-      }
-    },
+    '/': vercelBuild
+      ? { isr: 3600, headers: homeLinkHeaders }
+      : { prerender: true, headers: homeLinkHeaders },
     '/blog/rss.xml': { prerender: true },
     '/sitemap.xml': { prerender: true },
     '/sitemap.md': { prerender: true },
     '/design.md': { prerender: true, headers: { Vary: 'Accept, User-Agent' } },
     '/404.html': { prerender: true },
-    '/docs/3.x/getting-started/introduction': { prerender: true },
-    '/docs/4.x/getting-started/introduction': { prerender: true },
-    '/docs/5.x/getting-started/introduction': { prerender: true },
+    '/docs/3.x/getting-started/introduction': vercelBuild ? { isr: 3600 } : { prerender: true },
+    '/docs/4.x/getting-started/introduction': vercelBuild ? { isr: 3600 } : { prerender: true },
+    '/docs/5.x/getting-started/introduction': vercelBuild ? { isr: 3600 } : { prerender: true },
     '/modules': { isr: 60 * 60, prerender: false, headers: { Vary: 'Accept, User-Agent' } },
     '/modules/**': { isr: 60 * 60 },
     '/changelog': { isr: 60 * 60, headers: { Vary: 'Accept, User-Agent' } },
