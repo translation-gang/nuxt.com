@@ -29,3 +29,4 @@ test-results/
 .env*.local
 
 .cursor
+.env*

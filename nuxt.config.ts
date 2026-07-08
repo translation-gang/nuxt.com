@@ -1,4 +1,4 @@
-import { createResolver } from 'nuxt/kit'
+import { createResolver, useNuxt } from 'nuxt/kit'
 import { parseMdc } from './helpers/mdc-parser.mjs'
 
 const { resolve } = createResolver(import.meta.url)
@@ -17,6 +17,11 @@ const homeLinkHeaders = {
     '</docs>; rel="service-doc"; type="text/html"'
   ].join(', '),
   Vary: 'Accept, User-Agent'
+}
+
+/** На Vercel prerender OOM при инициализации Nitro — ISR вместо build-time prerender. */
+function vercelIsrOrPrerender(isrSeconds = 3600, extra: Record<string, unknown> = {}) {
+  return vercelBuild ? { isr: isrSeconds, ...extra } : { prerender: true, ...extra }
 }
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -146,17 +151,15 @@ export default defineNuxtConfig({
   },
   routeRules: {
     // Pre-render
-    '/': vercelBuild
-      ? { isr: 3600, headers: homeLinkHeaders }
-      : { prerender: true, headers: homeLinkHeaders },
-    '/blog/rss.xml': { prerender: true },
-    '/sitemap.xml': { prerender: true },
-    '/sitemap.md': { prerender: true },
-    '/design.md': { prerender: true, headers: { Vary: 'Accept, User-Agent' } },
-    '/404.html': { prerender: true },
-    '/docs/3.x/getting-started/introduction': vercelBuild ? { isr: 3600 } : { prerender: true },
-    '/docs/4.x/getting-started/introduction': vercelBuild ? { isr: 3600 } : { prerender: true },
-    '/docs/5.x/getting-started/introduction': vercelBuild ? { isr: 3600 } : { prerender: true },
+    '/': vercelIsrOrPrerender(3600, { headers: homeLinkHeaders }),
+    '/blog/rss.xml': vercelIsrOrPrerender(),
+    '/sitemap.xml': vercelIsrOrPrerender(),
+    '/sitemap.md': vercelIsrOrPrerender(),
+    '/design.md': vercelIsrOrPrerender(3600, { headers: { Vary: 'Accept, User-Agent' } }),
+    '/404.html': vercelIsrOrPrerender(),
+    '/docs/3.x/getting-started/introduction': vercelIsrOrPrerender(),
+    '/docs/4.x/getting-started/introduction': vercelIsrOrPrerender(),
+    '/docs/5.x/getting-started/introduction': vercelIsrOrPrerender(),
     '/modules': { isr: 60 * 60, prerender: false, headers: { Vary: 'Accept, User-Agent' } },
     '/modules/**': { isr: 60 * 60 },
     '/changelog': { isr: 60 * 60, headers: { Vary: 'Accept, User-Agent' } },
@@ -180,7 +183,7 @@ export default defineNuxtConfig({
     '/_eve_internal/**': { headers: { 'cache-control': 'no-store' } },
     '/api/internal/**': { headers: { 'cache-control': 'no-store' } },
     // Main navigation
-    '/api/navigation.json': { prerender: true },
+    '/api/navigation.json': vercelIsrOrPrerender(),
     // Redirects
     '/docs': { redirect: '/docs/getting-started/introduction', prerender: false },
     '/docs/3.x': { redirect: '/docs/3.x/getting-started/introduction', prerender: false },
@@ -471,28 +474,32 @@ export default defineNuxtConfig({
   nitro: {
     // Иначе Nitro всё ещё может тянуть карты и раздувать пик памяти при сборке.
     sourceMap: !vercelBuild,
-    prerender: {
-      // Vercel: меньше параллельных SSR — меньше RAM при пререндере (раньше OOM после Vite).
-      concurrency: Number(process.env.NUXT_PRERENDER_CONCURRENCY) || (vercelBuild ? 1 : 8),
-      // Временный обход: на Vercel задать NUXT_PRERENDER_RELAX=1, если остаются единичные 404 в логах
-      failOnError: process.env.NUXT_PRERENDER_RELAX !== '1',
-      crawlLinks: false,
-      ignore: [
-        route => route === '/modules' || route.startsWith('/modules/'),
-        route => route.startsWith('/raw/'),
-        route => route.startsWith('/admin'),
-        route => route.startsWith('/login'),
-        route => route.startsWith('/dashboard'),
-        '/mcp',
-        route => route.startsWith('/mcp/'),
-        route => route.startsWith('/api/auth/'),
-        route => route.startsWith('/api/chats'),
-        route => route.includes('_dir'), // виртуальные индексные пути контента, /raw/.../_dir.md дают 500
-        route => route === '/llms-full.txt', // nuxt-llms генерирует маршрут, при пререндере возможен 500
-        route => route.startsWith('/__og-image__/') // OG-картинки при пререндере дают 500, генерируются по запросу
-      ],
-      autoSubfolderIndex: false
-    }
+    prerender: vercelBuild
+      ? {
+          routes: [],
+          crawlLinks: false,
+          autoSubfolderIndex: false
+        }
+      : {
+          concurrency: Number(process.env.NUXT_PRERENDER_CONCURRENCY) || 8,
+          failOnError: process.env.NUXT_PRERENDER_RELAX !== '1',
+          crawlLinks: false,
+          ignore: [
+            route => route === '/modules' || route.startsWith('/modules/'),
+            route => route.startsWith('/raw/'),
+            route => route.startsWith('/admin'),
+            route => route.startsWith('/login'),
+            route => route.startsWith('/dashboard'),
+            '/mcp',
+            route => route.startsWith('/mcp/'),
+            route => route.startsWith('/api/auth/'),
+            route => route.startsWith('/api/chats'),
+            route => route.includes('_dir'),
+            route => route === '/llms-full.txt',
+            route => route.startsWith('/__og-image__/')
+          ],
+          autoSubfolderIndex: false
+        }
   },
   hub: {
     db: 'sqlite',
@@ -525,6 +532,15 @@ export default defineNuxtConfig({
     }
   },
   hooks: {
+    'modules:done'() {
+      if (!vercelBuild) {
+        return
+      }
+      // После nuxt-llms (addPrerenderRoutes) — иначе /llms*.txt снова попадают в prerender.
+      useNuxt().hook('prerender:routes', ({ routes }) => {
+        routes.clear()
+      })
+    },
     'content:file:beforeParse': async ({ file }) => {
       if (file.id.startsWith('docsv5/')) {
         file.body = file.body.replaceAll(/\(\/docs\/(?!\d\.x)/g, '(/docs/5.x/')
