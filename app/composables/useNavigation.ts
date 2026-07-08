@@ -295,6 +295,7 @@ const _useNavigation = () => {
       label: 'Спросить Nuxi',
       icon: 'i-custom-nuxi',
       to: 'javascript:void(0);',
+      onSelect() {
         track('Nuxi Opened', { source: 'search-palette', query: searchTerm.value })
         openAgent(searchTerm.value)
       }

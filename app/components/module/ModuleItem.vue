@@ -23,9 +23,8 @@ const { copy } = useClipboard()
 const { selectedSort } = useModules()
 const { track } = useAnalytics()
 
-const timeAgoOptions = { locale: 'ru' } as const
-const publishedAgo = useTimeAgo(() => props.module.stats.publishedAt, timeAgoOptions)
-const createdAgo = useTimeAgo(() => props.module.stats.createdAt, timeAgoOptions)
+const publishedAgo = useTimeAgo(() => props.module.stats.publishedAt)
+const createdAgo = useTimeAgo(() => props.module.stats.createdAt)
 
 const relativeDate = computed(() =>
   selectedSort.value.key === 'publishedAt' ? publishedAgo.value : createdAgo.value
