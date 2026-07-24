@@ -149,7 +149,7 @@ const docsMapping: Record<string, string> = {
           <UButton
             v-if="docsMapping[selected.filename] || docsMapping[selectedFile.dir]"
             :to="docsMapping[selected.filename] || docsMapping[selectedFile.dir]"
-            label="Open docs"
+            label="Открыть документацию"
             trailing-icon="i-lucide-arrow-right"
             color="neutral"
             variant="ghost"
@@ -173,7 +173,7 @@ const docsMapping: Record<string, string> = {
           v-else
           class="flex items-center justify-center h-full p-8 text-sm text-muted"
         >
-          Select a file to view its contents
+          Выберите файл, чтобы просмотреть содержимое
         </div>
       </div>
     </div>

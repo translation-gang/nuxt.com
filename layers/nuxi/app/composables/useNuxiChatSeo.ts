@@ -5,7 +5,7 @@ interface UseNuxiChatSeoOptions {
   description?: string
 }
 
-const DEFAULT_DESCRIPTION = 'Nuxi helps you explore the documentation — ask about Nuxt, modules, deployment, and more.'
+const DEFAULT_DESCRIPTION = 'Nuxi помогает изучать документацию — спрашивайте про Nuxt, модули, деплой и многое другое.'
 
 export function useNuxiChatSeo(options: UseNuxiChatSeoOptions = {}) {
   const site = useSiteConfig()

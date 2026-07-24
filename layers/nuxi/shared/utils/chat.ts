@@ -1,7 +1,8 @@
 import type { UIMessage } from 'ai'
 import { format } from 'date-fns'
+import { ru } from 'date-fns/locale'
 
-export function toUIMessages(rows: ChatMessageRow[]): UIMessage[] {
+export function dbRowsToUIMessages(rows: ChatMessageRow[]): UIMessage[] {
   return rows.map(m => ({
     id: m.id,
     role: m.role,
@@ -12,12 +13,12 @@ export function toUIMessages(rows: ChatMessageRow[]): UIMessage[] {
 
 export function messageTime(message: UIMessage): string | null {
   const raw = (message.metadata as { createdAt?: string } | undefined)?.createdAt
-  return raw ? format(new Date(raw), 'h:mm a') : null
+  return raw ? format(new Date(raw), 'HH:mm', { locale: ru }) : null
 }
 
 export function messageFullTime(message: UIMessage): string | null {
   const raw = (message.metadata as { createdAt?: string } | undefined)?.createdAt
-  return raw ? format(new Date(raw), 'MMM d, yyyy, h:mm a') : null
+  return raw ? format(new Date(raw), 'd MMM yyyy, HH:mm', { locale: ru }) : null
 }
 
 export function titleFromParts(parts: UIMessage['parts']): string {
@@ -27,7 +28,7 @@ export function titleFromParts(parts: UIMessage['parts']): string {
     .join(' ')
     .trim()
 
-  if (!text) return 'Untitled'
+  if (!text) return 'Без названия'
   return text.length > 40 ? `${text.slice(0, 37)}…` : text
 }
 
@@ -35,7 +36,7 @@ export async function createChatWithMessage(
   chatId: string,
   parts: UIMessage['parts'],
   metadata: Record<string, unknown> = {}
-): Promise<UIMessage> {
+): Promise<ChatDetail> {
   const userMessage: UIMessage = {
     id: crypto.randomUUID(),
     role: 'user',
@@ -46,12 +47,12 @@ export async function createChatWithMessage(
     }
   }
 
-  await $fetch('/api/chats', {
+  const detail = await $fetch<ChatDetail>('/api/chats', {
     method: 'POST',
     body: { id: chatId, message: userMessage }
   })
 
-  return userMessage
+  return detail
 }
 
 export async function appendUserMessageToChat(
@@ -75,4 +76,14 @@ export async function appendUserMessageToChat(
   })
 
   return userMessage
+}
+
+export function persistAnonymousTitle(chatId: string, title: string) {
+  if (!import.meta.client) return
+  sessionStorage.setItem(`nuxi-chat-title:${chatId}`, title)
+}
+
+export function readAnonymousTitle(chatId: string): string | null {
+  if (!import.meta.client) return null
+  return sessionStorage.getItem(`nuxi-chat-title:${chatId}`)
 }

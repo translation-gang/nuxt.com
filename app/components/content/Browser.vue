@@ -30,7 +30,7 @@ defineProps<{
         size="xs"
         variant="ghost"
         color="neutral"
-        aria-label="Open in new tab"
+        aria-label="Открыть в новой вкладке"
       />
     </div>
 

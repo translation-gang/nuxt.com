@@ -349,8 +349,8 @@ foundation:
       color: '#F93920'
       gradient: 'bg-gradient-to-br from-[#F93920]/10 from-5% via-transparent via-50% to-transparent'
       link:
-        label: rspack.dev
-        to: https://rspack.dev
+        label: rspack.rs
+        to: https://rspack.rs
     - id: nitro
       title: Сервер Nitro
       description: Nuxt использует Nitro как серверный движок для создания универсальных полнофункциональных приложений, готовых к развёртыванию на любой платформе.

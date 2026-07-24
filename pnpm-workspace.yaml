@@ -4,6 +4,11 @@ packages:
 shamefullyHoist: true
 strictPeerDependencies: false
 
+overrides:
+  nostics: ^1.2.0
+  # chat@4.34.0 pins the 4.1.0-beta.2 prerelease, flagged as a downgrade by check-provenance
+  "@workflow/serde": 4.1.0
+
 allowBuilds:
   better-sqlite3: true
   esbuild: true
@@ -16,10 +21,7 @@ allowBuilds:
   vue-demi: false
 
 minimumReleaseAgeExclude:
-  - '@nuxt/ui@4.8.0'
-  - '@ai-sdk/gateway@4.0.2'
-  - ai@7.0.2
-  - eve@0.15.1 || 0.17.0
-  - '@nuxt/content@3.15.0'
-  - '@nuxtjs/mdc@0.22.1'
-  - remark-mdc@3.11.1
+  - eve@0.24.3 || 0.27.0
+  - evlog
+  - '@nuxt/content'
+  - '@nuxt/scripts'

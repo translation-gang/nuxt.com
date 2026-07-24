@@ -20,6 +20,6 @@ const classes = computed(() => {
 <template>
   <div :class="classes">
     <UIcon name="i-lucide-clock" class="size-4 shrink-0" />
-    <span>Daily limit reached. Try again tomorrow.</span>
+    <span>Дневной лимит исчерпан. Попробуйте снова завтра.</span>
   </div>
 </template>

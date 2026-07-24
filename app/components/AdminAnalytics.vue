@@ -21,7 +21,7 @@ const exportItems = computed<DropdownMenuItem[][]>(() => [
   ]
 ])
 
-const { data: rawFeedback, refresh: refreshFeedback } = await useFetch('/api/feedback')
+const { data: rawFeedback, refresh: refreshFeedback } = await useFetch<FeedbackItem[]>('/api/feedback')
 const { deleteFeedback } = useFeedbackDelete()
 const { exportFeedbackData, exportPageAnalytics } = useFeedbackExport()
 
@@ -223,7 +223,7 @@ function useAdminTable() {
         })
       },
       cell: ({ row }) => {
-        const date = row.original.createdAt.toLocaleDateString('en-US', {
+        const date = row.original.createdAt.toLocaleDateString('ru-RU', {
           month: 'short',
           day: 'numeric',
           year: '2-digit'

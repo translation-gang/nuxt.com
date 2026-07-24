@@ -9,15 +9,10 @@ const { renameChat, deleteChat, groups, refresh: refreshChats } = useChats()
 
 const sidebarOpen = ref(false)
 
-await useFetch<ChatListItem[]>('/api/chats', {
-  key: 'chats',
-  default: () => []
-})
-
 watch(loggedIn, () => {
   refreshChats()
   sidebarOpen.value = false
-})
+}, { immediate: true })
 
 const items = computed(() => groups.value?.flatMap(group => [
   { label: group.label, type: 'label' as const },
@@ -25,20 +20,20 @@ const items = computed(() => groups.value?.flatMap(group => [
     ...item,
     slot: 'chat' as const,
     icon: undefined,
-    class: item.label === 'Untitled' ? 'text-muted' : ''
+    class: item.label === 'Без названия' ? 'text-muted' : ''
   }))
 ]))
 
 function getChatActions(item: { id: string, label: string }): DropdownMenuItem[][] {
   return [[
     {
-      label: 'Rename',
+      label: 'Переименовать',
       icon: 'i-lucide-pencil',
-      onSelect: () => renameChat(item.id, item.label === 'Untitled' ? '' : item.label)
+      onSelect: () => renameChat(item.id, item.label === 'Без названия' ? '' : item.label)
     }
   ], [
     {
-      label: 'Delete',
+      label: 'Удалить',
       icon: 'i-lucide-trash',
       color: 'error' as const,
       onSelect: () => deleteChat(item.id)
@@ -49,10 +44,10 @@ function getChatActions(item: { id: string, label: string }): DropdownMenuItem[]
 const adminNavItems = computed<NavigationMenuItem[][]>(() => {
   if (user.value?.role !== 'admin') return []
   return [[{
-    label: 'Admin',
+    label: 'Админ',
     type: 'label' as const
   }, {
-    label: 'Analytics',
+    label: 'Аналитика',
     icon: 'i-lucide-chart-bar',
     to: '/admin/analytics'
   }]]
@@ -62,36 +57,36 @@ const userMenuItems = computed<DropdownMenuItem[][]>(() => {
   const groups: DropdownMenuItem[][] = [
     [{
       type: 'label' as const,
-      label: user.value?.name || user.value?.username || 'Account',
+      label: user.value?.name || user.value?.username || 'Аккаунт',
       avatar: { src: user.value?.avatar, alt: user.value?.username }
     }]
   ]
 
   groups.push([
     {
-      label: 'Home',
+      label: 'Главная',
       icon: 'i-lucide-house',
       to: '/'
     },
     {
-      label: 'Docs',
+      label: 'Документация',
       icon: 'i-lucide-book-open',
       to: '/docs'
     }
   ])
 
   groups.push([{
-    label: 'Appearance',
+    label: 'Оформление',
     icon: 'i-lucide-sun-moon',
     children: [[
       {
-        label: 'Light',
+        label: 'Светлая',
         icon: 'i-lucide-sun',
         onSelect: () => { colorMode.preference = 'light' },
         checked: colorMode.value === 'light'
       },
       {
-        label: 'Dark',
+        label: 'Тёмная',
         icon: 'i-lucide-moon',
         onSelect: () => { colorMode.preference = 'dark' },
         checked: colorMode.value === 'dark'
@@ -100,7 +95,7 @@ const userMenuItems = computed<DropdownMenuItem[][]>(() => {
   }])
 
   groups.push([{
-    label: 'Sign out',
+    label: 'Выйти',
     icon: 'i-lucide-log-out',
     onSelect: async () => {
       await clear()
@@ -139,12 +134,12 @@ defineShortcuts({
           color="neutral"
           variant="subtle"
           size="sm"
-          :label="collapsed ? undefined : 'New Chat'"
+          :label="collapsed ? undefined : 'Новый чат'"
           :icon="collapsed ? 'i-lucide-plus' : undefined"
           :block="!collapsed"
           :square="collapsed"
           to="/dashboard/chat"
-          aria-label="New chat"
+          aria-label="Новый чат"
           :class="['active:translate-y-px transition-transform mt-4', collapsed ? 'mx-auto' : '']"
         />
 
@@ -177,7 +172,7 @@ defineShortcuts({
                 variant="link"
                 size="sm"
                 class="rounded-[5px] hover:bg-accented/50 focus-visible:bg-accented/50 data-[state=open]:bg-accented/50"
-                aria-label="Chat actions"
+                aria-label="Действия с чатом"
                 tabindex="-1"
                 @click.stop.prevent
               />
@@ -191,7 +186,7 @@ defineShortcuts({
           v-if="!loggedIn"
           :to="loginHref"
           icon="i-simple-icons-github"
-          :label="collapsed ? undefined : 'Sign in with GitHub'"
+          :label="collapsed ? undefined : 'Войти через GitHub'"
           color="neutral"
           variant="subtle"
           :block="!collapsed"

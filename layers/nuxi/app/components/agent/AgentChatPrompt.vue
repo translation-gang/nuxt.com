@@ -49,7 +49,7 @@ const isSubmitDisabled = computed(() => {
     ref="chatPromptRef"
     v-model="input"
     :error="promptError"
-    placeholder="Ask anything…"
+    placeholder="Спросите что угодно…"
     :variant="variant"
     :size="size"
     :rows="2"
@@ -73,7 +73,7 @@ const isSubmitDisabled = computed(() => {
     <template #footer>
       <slot name="footer-left">
         <ClientOnly>
-          <UTooltip v-if="usage" text="Daily messages remaining">
+          <UTooltip v-if="usage" text="Осталось сообщений на сегодня">
             <span class="text-xs text-dimmed" :class="usage.remaining <= 5 ? 'text-warning' : ''">
               {{ usage.remaining }}/{{ usage.limit }}
             </span>

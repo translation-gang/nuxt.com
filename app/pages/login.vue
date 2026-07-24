@@ -23,36 +23,36 @@ const githubHref = computed(() => {
 })
 
 useSeoMeta({
-  title: 'Sign in',
-  description: 'Sign in to nuxt.com with your GitHub account to access chat history and more.'
+  title: 'Вход',
+  description: 'Войдите на nuxt.com через GitHub, чтобы сохранять историю чатов и получить доступ ко всем функциям.'
 })
 
 const features = [
   {
     icon: 'i-lucide-history',
-    title: 'Chat history',
-    description: 'Conversations saved across all your devices.'
+    title: 'История чатов',
+    description: 'Чаты сохраняются на всех ваших устройствах.'
   },
   {
     icon: 'i-lucide-message-circle',
-    title: 'Ask Nuxi',
-    description: 'Powered by the official documentation.'
+    title: 'Спросить Nuxi',
+    description: 'На основе официальной документации.'
   },
   {
     icon: 'i-lucide-git-branch',
-    title: 'Branch & explore',
-    description: 'Explore different directions without losing your thread.'
+    title: 'Ветвление и исследование',
+    description: 'Исследуйте разные направления, не теряя контекст.'
   }
 ]
 
 const chatPreview = [
-  { from: 'user', text: 'How do I deploy a Nuxt app to Vercel?', sources: undefined },
+  { from: 'user', text: 'Как задеплоить Nuxt-приложение на Vercel?', sources: undefined },
   {
     from: 'nuxi',
-    text: 'Just import your repo on Vercel, Nuxt is auto-detected and `nuxt build` runs with zero config. The Vercel preset is applied automatically.',
-    sources: ['Deploy on Vercel', 'Nitro presets']
+    text: 'Импортируйте репозиторий на Vercel — Nuxt определится автоматически, `nuxt build` запустится без конфигурации. Пресет Vercel применится сам.',
+    sources: ['Деплой на Vercel', 'Пресеты Nitro']
   },
-  { from: 'user', text: 'Can you show me how to enable ISR?', sources: undefined }
+  { from: 'user', text: 'Покажи, как включить ISR?', sources: undefined }
 ]
 
 function parseMessage(text: string) {
@@ -64,10 +64,10 @@ function parseMessage(text: string) {
 }
 
 const recentChats = [
-  { title: 'Deploy a Nuxt app to Vercel', time: '2m ago', branched: false },
-  { title: 'useFetch vs useAsyncData', time: '1h ago', branched: true },
-  { title: 'File-based routing in Nuxt', time: 'Yesterday', branched: false },
-  { title: 'Adding authentication', time: '2 days ago', branched: false }
+  { title: 'Деплой Nuxt-приложения на Vercel', time: '2 мин. назад', branched: false },
+  { title: 'useFetch vs useAsyncData', time: '1 ч. назад', branched: true },
+  { title: 'Файловая маршрутизация в Nuxt', time: 'Вчера', branched: false },
+  { title: 'Добавление аутентификации', time: '2 дня назад', branched: false }
 ]
 </script>
 
@@ -81,7 +81,7 @@ const recentChats = [
           variant="ghost"
           size="sm"
           icon="i-lucide-arrow-left"
-          label="Back"
+          label="Назад"
           class="-ml-2"
         />
         <NuxtLink to="/" aria-label="Nuxt home" class="inline-flex opacity-80 hover:opacity-100 transition-opacity">
@@ -97,17 +97,17 @@ const recentChats = [
       >
         <div class="flex flex-col gap-4">
           <h1 class="text-3xl sm:text-4xl font-semibold text-highlighted tracking-[-0.02em] leading-[1.1]">
-            Sign in to unlock the full experience.
+            Войдите, чтобы получить полный доступ.
           </h1>
           <p class="text-sm/6 text-muted">
-            Use your GitHub account to save your progress and access every feature of nuxt.com.
+            Войдите через GitHub, чтобы сохранять прогресс и пользоваться всеми возможностями nuxt.com.
           </p>
         </div>
 
         <UButton
           :to="githubHref"
           icon="i-simple-icons-github"
-          label="Continue with GitHub"
+          label="Продолжить через GitHub"
           color="neutral"
           variant="solid"
           size="lg"
@@ -139,7 +139,7 @@ const recentChats = [
         </ul>
 
         <p class="text-[0.6875rem] text-dimmed leading-relaxed">
-          We never store your GitHub token. Only your username and avatar are saved to your account.
+          Мы не храним ваш GitHub-токен. В аккаунте сохраняются только имя пользователя и аватар.
         </p>
       </motion.div>
     </div>
@@ -149,7 +149,7 @@ const recentChats = [
         <div class="absolute -top-40 -right-40 size-[700px] bg-primary/12 rounded-full blur-3xl" />
         <div class="absolute top-1/3 -left-40 size-[500px] bg-primary/6 rounded-full blur-3xl" />
         <div class="absolute -bottom-40 right-1/4 size-[500px] bg-sky-500/5 rounded-full blur-3xl" />
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.06)_1px,transparent_0)] bg-size-[28px_28px] mask-[radial-gradient(ellipse_70%_60%_at_50%_50%,black,transparent_85%)]" />
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_1px_1px,rgba(255,255,255,0.06)_1px,transparent_0)] bg-size-[28px_28px] mask-[radial-gradient(ellipse_70%_60%_at_50%_50.01%,black,transparent_85%)]" />
       </div>
 
       <div class="relative h-full flex flex-col items-center justify-center px-8 xl:px-16 py-20 gap-8">
@@ -164,7 +164,7 @@ const recentChats = [
 
             <div class="px-4 py-3 border-b border-default flex items-center gap-2.5">
               <p class="text-xs font-medium text-default truncate flex-1 min-w-0">
-                Deploying a Nuxt app to Vercel
+                Деплой Nuxt-приложения на Vercel
               </p>
               <UIcon name="i-lucide-more-horizontal" class="size-3.5 text-dimmed" />
             </div>
@@ -214,7 +214,7 @@ const recentChats = [
                         class="flex items-center gap-1 hover:text-primary transition-colors"
                       >
                         <UIcon name="i-lucide-git-branch" class="size-3" />
-                        Branch
+                        Ответвить
                       </button>
                     </div>
                   </div>
@@ -241,7 +241,7 @@ const recentChats = [
             <div class="px-3 pb-3">
               <div class="rounded-xl border border-default bg-elevated/30 pl-3.5 pr-1.5 py-1.5 flex items-center gap-2">
                 <p class="flex-1 min-w-0 text-xs text-dimmed truncate">
-                  Ask Nuxi anything...
+                  Спросите Nuxi о чём угодно…
                 </p>
                 <div class="size-6 rounded-md bg-primary/15 border border-primary/25 flex items-center justify-center shrink-0">
                   <UIcon name="i-lucide-arrow-up" class="size-3.5 text-primary" />
@@ -258,7 +258,7 @@ const recentChats = [
           class="relative w-full max-w-md flex flex-col gap-2"
         >
           <p class="text-[0.6875rem] font-medium uppercase tracking-[0.15em] text-dimmed px-1">
-            Recent
+            Недавние
           </p>
           <ul role="list" class="flex flex-col">
             <motion.li

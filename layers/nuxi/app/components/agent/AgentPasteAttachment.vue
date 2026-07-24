@@ -103,7 +103,7 @@ async function openPreview() {
         variant="link"
         size="xs"
         color="primary"
-        label="Show in text field"
+        label="Показать в поле ввода"
         class="mt-0.5 h-auto p-0 text-[11px]"
         @click.stop="$emit('restore')"
       />
@@ -116,7 +116,7 @@ async function openPreview() {
       variant="ghost"
       size="xs"
       square
-      aria-label="Remove attachment"
+      aria-label="Удалить вложение"
       @click.stop="$emit('remove')"
     />
   </component>
@@ -147,7 +147,7 @@ async function openPreview() {
             variant="ghost"
             size="xs"
             square
-            aria-label="Close"
+            aria-label="Закрыть"
             @click="open = false"
           />
         </div>

@@ -24,13 +24,21 @@ function vercelIsrOrPrerender(isrSeconds = 3600, extra: Record<string, unknown> 
   return vercelBuild ? { isr: isrSeconds, ...extra } : { prerender: true, ...extra }
 }
 
+// In `--ui-only` mode (default `pnpm dev`), skip the `eve/nuxt` module so the
+// Eve agent runtime is never spawned locally. The UI and server routes from
+// `layers/nuxi` are still loaded — only the agent itself is disabled.
+// `--with-nuxi` (`pnpm dev:nuxi`) re-enables the agent while keeping ui-only proxies.
+const uiOnly = process.argv.includes('--ui-only')
+const withNuxi = process.argv.includes('--with-nuxi')
+const nuxiEnabled = !uiOnly || withNuxi
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   extends: ['./layers/nuxi'],
 
   modules: [
     '@nuxt/ui',
-    'nuxt-content-twoslash',
+    // 'nuxt-content-twoslash',
     '@nuxt/test-utils',
     '@nuxt/content',
     '@nuxt/image',
@@ -51,7 +59,7 @@ export default defineNuxtConfig({
     '@vercel/speed-insights',
     '@comark/nuxt',
     'evlog/nuxt',
-    'eve/nuxt',
+    ...(nuxiEnabled ? ['eve/nuxt'] : []),
     ...(process.env.VITEST ? [] : ['nuxt-yandex-metrika'])
   ],
 
@@ -127,6 +135,9 @@ export default defineNuxtConfig({
     }
   },
   runtimeConfig: {
+    public: {
+      eveEnabled: nuxiEnabled
+    },
     contactEmail: '',
     mcpAdminToken: '',
     adminGithubLogins: '',
@@ -150,7 +161,6 @@ export default defineNuxtConfig({
     }
   },
   routeRules: {
-    // Pre-render
     '/': vercelIsrOrPrerender(3600, { headers: homeLinkHeaders }),
     '/blog/rss.xml': vercelIsrOrPrerender(),
     '/sitemap.xml': vercelIsrOrPrerender(),
@@ -160,6 +170,7 @@ export default defineNuxtConfig({
     '/docs/3.x/getting-started/introduction': vercelIsrOrPrerender(),
     '/docs/4.x/getting-started/introduction': vercelIsrOrPrerender(),
     '/docs/5.x/getting-started/introduction': vercelIsrOrPrerender(),
+    '/docs/4.x/errors': vercelIsrOrPrerender(),
     '/modules': { isr: 60 * 60, prerender: false, headers: { Vary: 'Accept, User-Agent' } },
     '/modules/**': { isr: 60 * 60 },
     '/changelog': { isr: 60 * 60, headers: { Vary: 'Accept, User-Agent' } },
@@ -461,8 +472,8 @@ export default defineNuxtConfig({
     ? { server: false, client: false }
     : true,
   experimental: {
-    extractAsyncDataHandlers: true,
     viewTransition: true,
+    extractAsyncDataHandlers: true,
     defaults: {
       nuxtLink: {
         externalRelAttribute: 'noopener'
@@ -695,15 +706,6 @@ export default defineNuxtConfig({
   },
   turnstile: {
     siteKey: '0x4AAAAAAAP2vNBsTBT3ucZi'
-  },
-  twoslash: {
-    floatingVueOptions: {
-      classMarkdown: 'prose prose-primary dark:prose-invert'
-    },
-    // Skip Twoslash in dev to improve performance. Turn this on when you want to explicitly test twoslash in dev.
-    enableInDev: false,
-    // Do not throw when twoslash fails, the typecheck should be down in github.com/nuxt/nuxt's CI
-    throws: false
   },
   yandexMetrika: {
     id: '106876068',

@@ -14,7 +14,7 @@ const {
 const { chatList } = useChats()
 const { loggedIn } = useUserSession()
 
-type ActiveChat = { id: string, messages: UIMessage[] }
+type ActiveChat = { id: string, messages: UIMessage[], sessionCursor?: ChatSessionCursor | null }
 const active = shallowRef<ActiveChat>({ id: crypto.randomUUID(), messages: [] })
 const chatId = computed(() => active.value.id)
 const initialMessages = computed(() => active.value.messages)
@@ -31,7 +31,11 @@ async function setActiveChat(id: string) {
   try {
     const data = await $fetch<ChatDetail>(`/api/chats/${id}`)
     if (token !== loadToken) return
-    active.value = { id, messages: toUIMessages(data.messages ?? []) }
+    active.value = {
+      id,
+      messages: dbRowsToUIMessages(data.messages ?? []),
+      sessionCursor: data.sessionCursor ?? null
+    }
   } catch {
     if (token === loadToken) {
       active.value = { id: crypto.randomUUID(), messages: [] }
@@ -116,6 +120,11 @@ defineShortcuts({
       </UTooltip>
     </template>
 
-    <AgentPanelChat :key="chatId" :chat-id="chatId" :initial-messages="initialMessages" />
+    <AgentPanelChat
+      :key="chatId"
+      :chat-id="chatId"
+      :initial-messages="initialMessages"
+      :session-cursor="active.sessionCursor"
+    />
   </AgentPanelShell>
 </template>
