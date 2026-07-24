@@ -7,17 +7,17 @@ import { bot } from '../channels/discord.js'
  * listener that holds the connection inside a function invocation and forwards
  * events to the channel webhook (`/eve/v1/discord`).
  *
- * Upstream uses `*/4 * * * *` (270s windows) for continuous coverage. Vercel
- * Hobby only allows daily crons, so this deploy keeps a once-daily tick; when
- * Discord is configured, prefer Pro + `*/4`, or trigger windows manually via
- * `POST /eve/v1/ops/discord-gateway/trigger` (see `channels/ops.ts`).
+ * Upstream uses a every-4-minutes cron (270s windows) for continuous coverage.
+ * Vercel Hobby only allows daily crons, so this deploy keeps a once-daily tick;
+ * when Discord is configured, prefer Pro + frequent cron, or trigger windows
+ * manually via `POST /eve/v1/ops/discord-gateway/trigger` (see `channels/ops.ts`).
  *
  * Inbound dedupe across overlapping listeners relies on the Chat SDK state
  * adapter — use Redis in production. Eve cron only runs on production.
  */
 const LISTENER_DURATION_MS = 270_000
 
-/** Hobby-safe daily cron; override with DISCORD_GATEWAY_CRON (e.g. `*/4 * * * *` on Pro). */
+/** Hobby-safe daily cron; on Pro set DISCORD_GATEWAY_CRON to every-4-minutes. */
 const DISCORD_GATEWAY_CRON = process.env.DISCORD_GATEWAY_CRON?.trim() || '0 3 * * *'
 
 function gatewayWebhookUrl(): string {
