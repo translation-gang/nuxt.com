@@ -84,7 +84,7 @@ pnpm build
 
 ### Сборка в Vercel
 
-Настройки в `vercel.json` (сервисы `web` и `eve`). При необходимости переопределите команды в Vercel → Settings → General.
+Команды install/build — в `vercel.json` (corepack + pnpm 11, heap 6144). Сервисы `web` и `eve` генерирует модуль `eve/nuxt` при сборке; `experimentalServices` больше не используется.
 
 ### NuxtHub
 
@@ -113,7 +113,7 @@ NUXT_PUBLIC_SITE_URL=http://localhost:3000
 pnpm dev:nuxi
 ```
 
-На Vercel задайте одинаковые `INTERNAL_API_SECRET`, `AI_GATEWAY_API_KEY` и переменные БД для сервисов `web` и `eve` в `vercel.json`.
+На Vercel задайте одинаковые `INTERNAL_API_SECRET`, `AI_GATEWAY_API_KEY` и переменные БД для сервисов `web` и `eve`.
 
 ### Evals для MCP-сервера
 
