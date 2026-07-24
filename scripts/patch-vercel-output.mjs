@@ -42,12 +42,14 @@ const db = drizzle({ connection: hubConnection(), schema })
 export { db, schema }
 `
 
-// @libsql/linux-x64-gnu — нужен при prebuilt с macOS; на Linux CI обычно уже в bundle
+// @libsql/linux-x64-gnu — нужен при prebuilt с macOS; на Linux CI Nitro уже кладёт пакет
 const libsqlSource = join(root, 'node_modules/@libsql/linux-x64-gnu')
-const libsqlTargetDir = join(funcDir, 'node_modules/@libsql')
-if (existsSync(libsqlSource)) {
-  mkdirSync(libsqlTargetDir, { recursive: true })
-  cpSync(libsqlSource, join(libsqlTargetDir, 'linux-x64-gnu'), { recursive: true })
+const libsqlTarget = join(funcDir, 'node_modules/@libsql/linux-x64-gnu')
+if (existsSync(libsqlTarget)) {
+  console.log('[patch-vercel-output] linux-x64-gnu already in bundle — skip')
+} else if (existsSync(libsqlSource)) {
+  mkdirSync(dirname(libsqlTarget), { recursive: true })
+  cpSync(libsqlSource, libsqlTarget, { recursive: true })
   console.log('[patch-vercel-output] linux-x64-gnu')
 } else {
   console.warn('[patch-vercel-output] Missing', libsqlSource)
