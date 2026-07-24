@@ -32,7 +32,7 @@ function send() {
       <span class="truncate font-mono text-sm text-default">{{ prompt }}</span>
     </span>
     <span class="flex items-center gap-1.5 text-xs font-medium text-muted group-hover:text-default">
-      {{ label ?? 'Try in Nuxi' }}
+      {{ label ?? 'Попробовать в Nuxi' }}
       <UIcon name="i-lucide-arrow-up-right" class="size-3.5 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
     </span>
   </button>

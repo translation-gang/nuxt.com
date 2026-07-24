@@ -28,7 +28,7 @@ export default defineEventHandler(async (event) => {
   })
 
   if (!chat) {
-    throw createError({ message: 'Chat not found', status: 404 })
+    throw createError({ message: 'Чат не найден', status: 404 })
   }
 
   const message = await db.query.messages.findFirst({
@@ -39,10 +39,10 @@ export default defineEventHandler(async (event) => {
   })
 
   if (!message) {
-    throw createError({ message: 'Message not found', status: 404 })
+    throw createError({ message: 'Сообщение не найдено', status: 404 })
   }
   if (message.role !== 'assistant') {
-    throw createError({ message: 'Cannot vote on this message', status: 400, why: 'Votes are only allowed on assistant messages.' })
+    throw createError({ message: 'Нельзя голосовать за это сообщение', status: 400, why: 'Голосовать можно только за сообщения ассистента.' })
   }
 
   if (isUpvoted === undefined) {

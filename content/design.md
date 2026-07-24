@@ -1,7 +1,7 @@
 ---
 version: alpha
 name: Nuxt
-description: Nuxt design system, powered by Nuxt UI and Tailwind CSS v4. Dark mode is the default theme.
+description: Дизайн-система Nuxt на Nuxt UI и Tailwind CSS v4. Тёмная тема по умолчанию.
 brand:
   green: "#00DC82"
   navy: "#020420"
@@ -69,17 +69,17 @@ components:
 
 # Nuxt
 
-## Overview
+## Обзор
 
-Nuxt is the design language for Nuxt products and communications. The aesthetic is developer-focused and confident: deep navy surfaces, Nuxt green as the single accent, and generous whitespace. Prioritize readability, accessibility, and clarity over decoration. Use color to signal state or hierarchy, not to fill space.
+Дизайн-язык продуктов и коммуникаций Nuxt. Стиль для разработчиков: тёмно-синие поверхности, зелёный Nuxt как единственный акцент, много воздуха. Читаемость, доступность и ясность важнее декора. Цвет — для состояния и иерархии, не чтобы заполнить пустоту.
 
-The system is powered by [Nuxt UI](https://ui.nuxt.com) and **Tailwind CSS v4**, with **CSS variables** as design tokens. Colors are semantic (`primary`, `neutral`, `error`…) rather than hardcoded hex values in components. Dark mode is the default theme.
+Система на [Nuxt UI](https://ui.nuxt.com) и **Tailwind CSS v4**, токены — **CSS-переменные**. В компонентах семантические цвета (`primary`, `neutral`, `error`…), не сырые hex. Тёмная тема по умолчанию.
 
-Logo assets and downloadable brand files live at [/design-kit](/design-kit).
+Логотипы и файлы бренда: [/design-kit](/design-kit).
 
 ## Tailwind CSS
 
-Theme tokens are defined with the `@theme` directive:
+Токены темы задаются директивой `@theme`:
 
 ```css
 @import "tailwindcss";
@@ -104,36 +104,36 @@ Theme tokens are defined with the `@theme` directive:
 }
 ```
 
-See the [Nuxt UI design system docs](https://ui.nuxt.com/docs/getting-started/theme/design-system) for full `@theme` customization options.
+Полные опции `@theme`: [документация Nuxt UI](https://ui.nuxt.com/docs/getting-started/theme/design-system).
 
-## Brand colors
+## Брендовые цвета
 
-These are the Nuxt marketing colors, distinct from Nuxt UI semantic tokens:
+Маркетинговые цвета Nuxt, отдельно от семантических токенов Nuxt UI:
 
-| Name | Hex | Usage |
-|------|-----|-------|
-| Green | `#00DC82` | Logo, brand accent. Maps to `green-400` in `@theme`. |
-| Navy | `#020420` | Dark backgrounds, OG images, `theme-color` meta. |
-| White | `#FFFFFF` | Text on dark surfaces, light logo variants. |
+| Имя | Hex | Назначение |
+|-----|-----|------------|
+| Green | `#00DC82` | Логотип, акцент бренда. В `@theme` — `green-400`. |
+| Navy | `#020420` | Тёмные фоны, OG-изображения, meta `theme-color`. |
+| White | `#FFFFFF` | Текст на тёмном, светлые варианты логотипа. |
 
-The full green scale (`green-50`–`green-950`) is defined in `@theme static` and powers the `primary` semantic color.
+Шкала green (`green-50`–`green-950`) в `@theme static` питает семантический `primary`.
 
-## Semantic colors
+## Семантические цвета
 
-Nuxt UI maps semantic aliases to Tailwind color scales via runtime config:
+Nuxt UI мапит алиасы на шкалы Tailwind через runtime config:
 
-| Semantic | Maps to | Usage |
-|----------|---------|-------|
-| `primary` | `green` | CTAs, links, active nav, brand elements |
-| `neutral` | `slate` | Text, borders, backgrounds, disabled states |
-| `important` | `violet` | Highlighted badges and emphasis |
-| `secondary` | `blue` (default) | Secondary actions |
-| `success` | `green` (default) | Success states |
-| `info` | `blue` (default) | Info alerts, tooltips |
-| `warning` | `yellow` (default) | Warnings, pending states |
-| `error` | `red` (default) | Errors, destructive actions |
+| Семантика | Шкала | Назначение |
+|-----------|-------|------------|
+| `primary` | `green` | CTA, ссылки, активная навигация, бренд |
+| `neutral` | `slate` | Текст, границы, фоны, disabled |
+| `important` | `violet` | Акцентные бейджи |
+| `secondary` | `blue` (default) | Вторичные действия |
+| `success` | `green` (default) | Успех |
+| `info` | `blue` (default) | Инфо, тултипы |
+| `warning` | `yellow` (default) | Предупреждения, ожидание |
+| `error` | `red` (default) | Ошибки, деструктивные действия |
 
-Use the `color` prop on Nuxt UI components:
+Проп `color` на компонентах Nuxt UI:
 
 ```vue
 <UButton color="primary">Get Started</UButton>
@@ -141,139 +141,139 @@ Use the `color` prop on Nuxt UI components:
 <UButton color="error">Delete</UButton>
 ```
 
-Registered theme colors: `primary`, `secondary`, `info`, `success`, `warning`, `error`, `important`.
+Цвета темы: `primary`, `secondary`, `info`, `success`, `warning`, `error`, `important`.
 
-## CSS variables
+## CSS-переменные
 
-Nuxt UI exposes semantic utility classes backed by `--ui-*` CSS variables. See the [CSS variables docs](https://ui.nuxt.com/docs/getting-started/theme/css-variables).
+Nuxt UI даёт utility-классы на `--ui-*`. Подробнее: [CSS variables](https://ui.nuxt.com/docs/getting-started/theme/css-variables).
 
-### Color utilities
+### Цветовые utility
 
-`text-primary`, `bg-success`, `border-error`, etc. — each resolves to a shade of the mapped color scale. Light mode uses `-500` shades; dark mode uses `-400`.
+`text-primary`, `bg-success`, `border-error` и т.д. — оттенок шкалы mapped color. Light: `-500`, dark: `-400`.
 
-### Text hierarchy
+### Иерархия текста
 
-| Class | Role |
+| Класс | Роль |
 |-------|------|
 | `text-dimmed` | Disabled, placeholder |
-| `text-muted` | Secondary text, captions |
-| `text-toned` | Tertiary text |
-| `text-default` | Body text |
-| `text-highlighted` | Headings, emphasis |
-| `text-inverted` | Text on inverted backgrounds |
+| `text-muted` | Вторичный текст, подписи |
+| `text-toned` | Третичный текст |
+| `text-default` | Основной текст |
+| `text-highlighted` | Заголовки, акцент |
+| `text-inverted` | Текст на инвертированном фоне |
 
-### Background hierarchy
+### Иерархия фона
 
-| Class | Role |
+| Класс | Роль |
 |-------|------|
-| `bg-default` | Page surface |
-| `bg-muted` | Subtle fill, grouped content |
-| `bg-elevated` | Cards, popovers |
-| `bg-accented` | Hover states, active panels |
-| `bg-inverted` | Inverted surface |
+| `bg-default` | Поверхность страницы |
+| `bg-muted` | Лёгкая заливка, группы |
+| `bg-elevated` | Карточки, popover |
+| `bg-accented` | Hover, активные панели |
+| `bg-inverted` | Инвертированная поверхность |
 
-The dark theme overrides `--ui-bg` to `neutral-950` (deeper than the Nuxt UI default `neutral-900`) for a navy-adjacent feel.
+В тёмной теме `--ui-bg` = `neutral-950` (глубже дефолта `neutral-900`) — оттенок ближе к navy.
 
-### Border hierarchy
+### Иерархия границ
 
-| Class | Role |
+| Класс | Роль |
 |-------|------|
-| `border-default` | Standard borders |
-| `border-muted` | Subtle dividers |
-| `border-accented` | Emphasized borders |
-| `border-inverted` | Borders on inverted surfaces |
+| `border-default` | Обычные границы |
+| `border-muted` | Тонкие разделители |
+| `border-accented` | Выделенные границы |
+| `border-inverted` | Границы на инвертированном фоне |
 
-Cards and modules typically use `border border-default` on `bg-elevated` or `bg-muted`.
+Карточки и модули: `border border-default` на `bg-elevated` или `bg-muted`.
 
-## Typography
+## Типографика
 
-**Font:** Public Sans (`--font-sans`), loaded via `@nuxt/fonts`.
+**Шрифт:** Public Sans (`--font-sans`), через `@nuxt/fonts`.
 
-Nuxt UI does not ship a fixed type scale like a dedicated design system. Use Tailwind utilities:
+Фиксированной type scale в Nuxt UI нет. Tailwind utilities:
 
-| Context | Typical classes |
-|---------|----------------|
-| Page hero | `text-5xl sm:text-7xl font-semibold` |
-| Section hero | `sm:text-5xl font-semibold` |
-| Section headings | `text-2xl`–`text-4xl font-semibold` |
+| Контекст | Типичные классы |
+|----------|-----------------|
+| Hero страницы | `text-5xl sm:text-7xl font-semibold` |
+| Hero секции | `sm:text-5xl font-semibold` |
+| Заголовки секций | `text-2xl`–`text-4xl font-semibold` |
 | Body / prose | `prose prose-primary dark:prose-invert` |
 | UI labels | `text-sm`, `text-xs` |
-| Code | `font-mono`, Shiki-highlighted blocks |
+| Код | `font-mono`, блоки Shiki |
 
-Prefer semantic text classes (`text-highlighted`, `text-muted`) over raw slate colors.
+Предпочитайте семантические классы (`text-highlighted`, `text-muted`) вместо raw slate.
 
-## Layout
+## Вёрстка
 
 ### Container
 
-`--ui-container: 90rem` — used by `UContainer`.
+`--ui-container: 90rem` — для `UContainer`.
 
 ### Header
 
-`--ui-header-height: 112px` on large screens for docs and marketing layouts.
+`--ui-header-height: 112px` на больших экранах (docs, marketing).
 
-### Spacing
+### Отступы
 
-Tailwind's default 4px-based spacing scale. Common rhythm:
+Шкала Tailwind, шаг 4px. Ритм:
 
-- `gap-2` / `p-2` (8px) — inside a group
-- `gap-4` / `p-4` (16px) — between related items
-- `py-10 sm:py-20` — section padding
-- `py-24 sm:py-32 lg:py-40` — hero sections
+- `gap-2` / `p-2` (8px) — внутри группы
+- `gap-4` / `p-4` (16px) — между связанными элементами
+- `py-10 sm:py-20` — padding секции
+- `py-24 sm:py-32 lg:py-40` — hero
 
 ### Breakpoints
 
 Tailwind defaults: `sm` 640px, `md` 768px, `lg` 1024px, `xl` 1280px, `2xl` 1536px.
 
-## Radius
+## Скругления
 
-Nuxt UI derives all `rounded-*` utilities from a single `--ui-radius` base (default `0.25rem`). Available: `rounded-xs`, `rounded-sm`, `rounded-md`, `rounded-lg`, `rounded-xl`, `rounded-2xl`, `rounded-3xl`.
+Все `rounded-*` от `--ui-radius` (default `0.25rem`): `rounded-xs` … `rounded-3xl`.
 
-Cards and controls typically use `rounded-lg` or `rounded-md`. Hero panels may use `rounded-2xl`.
+Карточки и контролы: `rounded-lg` или `rounded-md`. Hero-панели: `rounded-2xl`.
 
-## Components
+## Компоненты
 
-Use Nuxt UI primitives — do not rebuild what already exists:
+Примитивы Nuxt UI — не дублируйте:
 
-| Pattern | Component | Example |
-|---------|-----------|---------|
-| Primary action | `UButton` | `<UButton color="primary">Deploy</UButton>` |
-| Secondary action | `UButton` | `<UButton color="neutral" variant="subtle">Cancel</UButton>` |
-| Tertiary / link | `UButton` | `<UButton variant="ghost">Docs</UButton>` |
-| Destructive | `UButton` | `<UButton color="error">Delete</UButton>` |
-| Form input | `UInput` | `<UInput placeholder="Search modules" />` |
-| Page layout | `UPage`, `UPageHero`, `UPageBody` | Marketing and docs pages |
-| Content | `ContentRenderer` + prose | Markdown/MDC content |
-| Navigation | `UHeader`, `UNavigationMenu` | App header |
+| Паттерн | Компонент | Пример |
+|---------|-----------|--------|
+| Основное действие | `UButton` | `<UButton color="primary">Deploy</UButton>` |
+| Вторичное | `UButton` | `<UButton color="neutral" variant="subtle">Cancel</UButton>` |
+| Третичное / ссылка | `UButton` | `<UButton variant="ghost">Docs</UButton>` |
+| Деструктивное | `UButton` | `<UButton color="error">Delete</UButton>` |
+| Поле ввода | `UInput` | `<UInput placeholder="Search modules" />` |
+| Страница | `UPage`, `UPageHero`, `UPageBody` | Marketing, docs |
+| Контент | `ContentRenderer` + prose | Markdown/MDC |
+| Навигация | `UHeader`, `UNavigationMenu` | Шапка |
 
-Focus rings are handled by Nuxt UI (`outline-primary/25` on `:focus-visible`). Do not remove outlines without a visible replacement.
+Focus ring — у Nuxt UI (`outline-primary/25` на `:focus-visible`). Не убирайте outline без видимой замены.
 
-## Motion
+## Анимация
 
-Use motion sparingly. Honor `prefers-reduced-motion`. Nuxt UI components include sensible default transitions for modals, popovers, and menus.
+Умеренно. Учитывайте `prefers-reduced-motion`. У модалок, popover и меню — дефолтные transitions Nuxt UI.
 
-## Voice & Content
+## Тон и тексты
 
-- Title Case for labels, buttons, titles, and tabs; sentence case for body and helper text.
-- Name actions with a verb and a noun (`Deploy Project`, `Install Module`).
-- Write errors as what happened plus what to do next.
-- Toasts name the specific thing that changed — no trailing period, no "successfully".
-- Empty states point to the first action.
-- In-progress states use present participle + ellipsis: `Deploying…`.
+- Title Case для labels, кнопок, заголовков и табов; sentence case для body и подсказок.
+- Действия: глагол + существительное (`Deploy Project`, `Install Module`).
+- Ошибки: что случилось и что делать дальше.
+- Toast называет конкретное изменение — без точки в конце, без «successfully».
+- Empty state ведёт к первому действию.
+- Процесс: present participle + многоточие: `Deploying…`.
 
-## Do's and Don'ts
+## Делать и не делать
 
-- Use semantic color props (`color="primary"`) and utility classes (`text-muted`, `bg-elevated`) — not raw hex in components.
-- Use the green `primary` color for the main call to action on a view.
-- Rank text with `text-highlighted` > `text-default` > `text-muted` > `text-dimmed`.
-- Hold WCAG AA contrast (4.5:1 for body text).
-- Don't signal state with color alone; pair with an icon or label.
-- Don't hardcode `#00DC82` in UI code — use `text-primary` or `color="primary"`.
-- Don't use the wordmark without the mountain symbol — see [/design-kit](/design-kit).
+- Семантические props (`color="primary"`) и utility (`text-muted`, `bg-elevated`) — не raw hex в компонентах.
+- Зелёный `primary` — один главный CTA на экране.
+- Текст: `text-highlighted` > `text-default` > `text-muted` > `text-dimmed`.
+- Контраст WCAG AA (4.5:1 для body).
+- Состояние не только цветом — добавьте иконку или label.
+- Не хардкодьте `#00DC82` — `text-primary` или `color="primary"`.
+- Wordmark без горы — см. [/design-kit](/design-kit).
 
-## Resources
+## Ресурсы
 
-- Brand assets (logos, icons): [/design-kit](/design-kit)
-- Figma brand kit: [Nuxt Brand Kit](https://www.figma.com/community/file/1296154408275753939/nuxt-brand-kit)
-- Nuxt UI design system: [ui.nuxt.com/docs/getting-started/theme/design-system](https://ui.nuxt.com/docs/getting-started/theme/design-system)
-- Nuxt UI CSS variables: [ui.nuxt.com/docs/getting-started/theme/css-variables](https://ui.nuxt.com/docs/getting-started/theme/css-variables)
+- Ассеты бренда: [/design-kit](/design-kit)
+- Figma: [Nuxt Brand Kit](https://www.figma.com/community/file/1296154408275753939/nuxt-brand-kit)
+- Design system Nuxt UI: [ui.nuxt.com/docs/getting-started/theme/design-system](https://ui.nuxt.com/docs/getting-started/theme/design-system)
+- CSS variables Nuxt UI: [ui.nuxt.com/docs/getting-started/theme/css-variables](https://ui.nuxt.com/docs/getting-started/theme/css-variables)

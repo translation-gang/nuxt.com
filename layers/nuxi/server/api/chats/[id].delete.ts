@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
     .returning()
 
   if (!deleted.length) {
-    throw createError({ message: 'Chat not found', status: 404 })
+    throw createError({ message: 'Чат не найден', status: 404 })
   }
 
   return deleted

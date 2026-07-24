@@ -30,7 +30,7 @@ export default defineHook({
 
       if (response.status === 429) {
         const data = await response.json().catch(() => ({})) as { message?: string }
-        throw new Error(data.message ?? 'Daily message limit reached.')
+        throw new Error(data.message ?? 'Достигнут дневной лимит сообщений.')
       }
 
       if (!response.ok) {

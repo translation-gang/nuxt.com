@@ -11,7 +11,7 @@ export default defineEventHandler(async (event) => {
 
   if (sessionUserId) {
     if (sessionUserId !== claimedUserId) {
-      throw createError({ statusCode: 403, statusMessage: 'Forbidden' })
+      throw createError({ statusCode: 403, statusMessage: 'Доступ запрещён' })
     }
     return await consumeAgentRateLimitForUser(sessionUserId)
   }

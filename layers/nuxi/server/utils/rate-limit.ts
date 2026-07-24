@@ -54,7 +54,7 @@ export async function consumeAgentRateLimitForUser(userId: string): Promise<{ us
     if (used > limit) {
       throw createError({
         statusCode: 429,
-        message: `You've reached the daily limit of ${limit} messages. Try again tomorrow.`
+        message: `Достигнут дневной лимит: ${limit} сообщений. Попробуйте завтра.`
       })
     }
     return { used, remaining: limit - used, limit }

@@ -84,7 +84,7 @@ const recentChats = [
           label="Назад"
           class="-ml-2"
         />
-        <NuxtLink to="/" aria-label="Nuxt home" class="inline-flex opacity-80 hover:opacity-100 transition-opacity">
+        <NuxtLink to="/" aria-label="Главная Nuxt" class="inline-flex opacity-80 hover:opacity-100 transition-opacity">
           <NuxtLogo class="h-6 w-auto" />
         </NuxtLink>
       </div>

@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
   })
 
   if (!chat) {
-    throw createError({ message: 'Chat not found', status: 404 })
+    throw createError({ message: 'Чат не найден', status: 404 })
   }
 
   const allMessages = await db.select({ id: schema.messages.id, role: schema.messages.role })
@@ -39,15 +39,15 @@ export default defineEventHandler(async (event) => {
 
   const targetIndex = allMessages.findIndex((m: { id: string }) => m.id === messageId)
   if (targetIndex === -1) {
-    throw createError({ message: 'Message not found', status: 404 })
+    throw createError({ message: 'Сообщение не найдено', status: 404 })
   }
 
   const targetRole = allMessages[targetIndex]!.role
   if (type === 'edit' && targetRole !== 'user') {
-    throw createError({ message: 'Can only edit user messages', status: 400, why: `Target message role is "${targetRole}".` })
+    throw createError({ message: 'Редактировать можно только сообщения пользователя', status: 400, why: `Target message role is "${targetRole}".` })
   }
   if (type === 'regenerate' && targetRole !== 'assistant') {
-    throw createError({ message: 'Can only regenerate assistant messages', status: 400, why: `Target message role is "${targetRole}".` })
+    throw createError({ message: 'Перегенерировать можно только сообщения ассистента', status: 400, why: `Target message role is "${targetRole}".` })
   }
 
   const startIndex = type === 'edit' ? targetIndex + 1 : targetIndex

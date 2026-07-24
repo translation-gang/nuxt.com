@@ -31,7 +31,7 @@ export default defineEventHandler(async (event) => {
 
     if (existing) {
       if (existing.userId !== user.id) {
-        throw createError({ statusCode: 403, statusMessage: 'Forbidden' })
+        throw createError({ statusCode: 403, statusMessage: 'Доступ запрещён' })
       }
 
       await tx.insert(schema.messages).values({
@@ -55,7 +55,7 @@ export default defineEventHandler(async (event) => {
     }).returning()
 
     if (!row) {
-      throw createError({ statusCode: 500, statusMessage: 'Failed to create chat' })
+      throw createError({ statusCode: 500, statusMessage: 'Не удалось создать чат' })
     }
 
     await tx.insert(schema.messages).values({
@@ -78,7 +78,7 @@ export default defineEventHandler(async (event) => {
   })
 
   if (!detail) {
-    throw createError({ statusCode: 500, statusMessage: 'Failed to load created chat' })
+    throw createError({ statusCode: 500, statusMessage: 'Не удалось загрузить созданный чат' })
   }
 
   const { userId: _, state, ...rest } = detail

@@ -26,7 +26,7 @@ export default defineEventHandler(async (event) => {
   })
 
   if (!chat) {
-    throw createError({ message: 'Chat not found', status: 404 })
+    throw createError({ message: 'Чат не найден', status: 404 })
   }
 
   const isOwner = viewerId !== undefined && chat.userId === viewerId
@@ -46,7 +46,7 @@ export default defineEventHandler(async (event) => {
   })
 
   if (!canView) {
-    throw createError({ message: 'Chat not found', status: 404, why: 'Viewer is not the owner and the chat is not public.' })
+    throw createError({ message: 'Чат не найден', status: 404, why: 'Вы не владелец, и чат не публичный.' })
   }
 
   const { userId: _, state, ...rest } = chat

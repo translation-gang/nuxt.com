@@ -137,7 +137,7 @@ async function openPreview() {
             <UIcon :name="icon" class="size-3.5 shrink-0 text-dimmed" />
             <span class="text-xs font-medium text-highlighted">{{ typeLabel }}</span>
             <span class="font-mono text-[10px] tabular-nums text-dimmed">
-              {{ lineCount }} {{ lineCount === 1 ? 'line' : 'lines' }}
+              {{ lineCount }} {{ lineCount === 1 ? 'строка' : lineCount >= 2 && lineCount <= 4 ? 'строки' : 'строк' }}
             </span>
           </div>
 

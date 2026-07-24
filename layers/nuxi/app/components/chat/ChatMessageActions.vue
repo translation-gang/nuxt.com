@@ -2,6 +2,7 @@
 import type { UIMessage } from 'ai'
 import type { DropdownMenuItem } from '@nuxt/ui'
 import { format, isToday, isYesterday } from 'date-fns'
+import { ru } from 'date-fns/locale'
 
 const props = defineProps<{
   message: UIMessage
@@ -35,10 +36,10 @@ const createdAt = computed(() => {
 const dateLabel = computed(() => {
   if (!createdAt.value) return null
   const d = createdAt.value
-  const time = format(d, 'h:mm a')
-  if (isToday(d)) return `Today, ${time}`
-  if (isYesterday(d)) return `Yesterday, ${time}`
-  return format(d, 'MMM d, yyyy, h:mm a')
+  const time = format(d, 'HH:mm', { locale: ru })
+  if (isToday(d)) return `Сегодня, ${time}`
+  if (isYesterday(d)) return `Вчера, ${time}`
+  return format(d, 'd MMM yyyy, HH:mm', { locale: ru })
 })
 
 const isBranching = ref(false)

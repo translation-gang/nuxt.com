@@ -50,8 +50,8 @@ async function openInCursor() {
   const { url, needsClipboardFallback } = buildCursorBrowserUrl(props.prompt)
   if (needsClipboardFallback) {
     await copyPromptToClipboard({
-      title: 'Prompt copied',
-      description: `Paste with ${pasteShortcut.value} when your IDE opens`,
+      title: 'Промпт скопирован',
+      description: `Вставьте через ${pasteShortcut.value}, когда откроется IDE`,
       icon: 'i-lucide-clipboard-check'
     })
   }
@@ -66,8 +66,8 @@ async function openInClaudeCode() {
 
   if (needsClipboardFallback) {
     await copyPromptToClipboard({
-      title: 'Prompt copied',
-      description: `Paste with ${pasteShortcut.value} when your IDE opens`,
+      title: 'Промпт скопирован',
+      description: `Вставьте через ${pasteShortcut.value}, когда откроется IDE`,
       icon: 'i-lucide-clipboard-check'
     })
   }
@@ -78,7 +78,7 @@ async function openInClaudeCode() {
 function copyPrompt() {
   track('Nuxi Prompt Copied', { source: 'nuxt-agent' })
   void copyPromptToClipboard({
-    title: 'Prompt copied!',
+    title: 'Промпт скопирован!',
     description: props.description,
     icon: 'i-lucide-clipboard-check'
   })
@@ -108,7 +108,7 @@ function copyPrompt() {
         class="mt-1 text-[11px] text-dimmed hover:text-default transition-colors"
         @click="expanded = !expanded"
       >
-        {{ expanded ? 'Show less' : 'Show full prompt' }}
+        {{ expanded ? 'Свернуть' : 'Показать весь промпт' }}
       </button>
     </div>
 
@@ -117,7 +117,7 @@ function copyPrompt() {
         arrow
         :delay-duration="700"
         :content="{ side: 'top', sideOffset: 6 }"
-        text="Open prompt in Cursor"
+        text="Открыть промпт в Cursor"
       >
         <span class="inline-flex">
           <UButton
@@ -125,7 +125,7 @@ function copyPrompt() {
             color="neutral"
             variant="outline"
             icon="i-simple-icons-cursor"
-            label="Open in Cursor"
+            label="Открыть в Cursor"
             @click="openInCursor"
           />
         </span>
@@ -135,14 +135,14 @@ function copyPrompt() {
         arrow
         :delay-duration="700"
         :content="{ side: 'top', sideOffset: 6 }"
-        text="Prefill prompt in Claude Code"
+        text="Подставить промпт в Claude Code"
       >
         <span class="inline-flex">
           <UButton
             size="xs"
             color="neutral"
             variant="outline"
-            label="Open in Claude Code"
+            label="Открыть в Claude Code"
             @click="openInClaudeCode"
           >
             <template #leading>
@@ -156,7 +156,7 @@ function copyPrompt() {
         arrow
         :delay-duration="700"
         :content="{ side: 'top', sideOffset: 6 }"
-        text="Copy prompt"
+        text="Копировать промпт"
         class="ml-auto"
       >
         <span class="inline-flex">
@@ -165,7 +165,7 @@ function copyPrompt() {
             color="neutral"
             variant="ghost"
             :icon="copied ? 'i-lucide-check' : 'i-lucide-copy'"
-            :label="copied ? 'Copied' : 'Copy'"
+            :label="copied ? 'Скопировано' : 'Копировать'"
             @click="copyPrompt"
           />
         </span>

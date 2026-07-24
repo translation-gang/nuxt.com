@@ -54,7 +54,7 @@ watch(popoverOpen, (open) => {
     </motion.span>
     <span class="truncate">Nuxi</span>
     <UBadge variant="subtle" size="sm" class="shrink-0">
-      Beta
+      Бета
     </UBadge>
   </span>
 

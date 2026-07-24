@@ -33,17 +33,17 @@ export default defineEventHandler(async (event) => {
   })
 
   if (!chat) {
-    throw createError({ message: 'Chat not found', status: 404 })
+    throw createError({ message: 'Чат не найден', status: 404 })
   }
   if (chat.userId !== user.id) {
-    throw createError({ message: 'Chat not found', status: 404, why: 'Branching is only allowed on chats you own.' })
+    throw createError({ message: 'Чат не найден', status: 404, why: 'Ответвление доступно только для ваших чатов.' })
   }
 
   type MessageRow = InferSelectModel<typeof schema.messages>
 
   const cutIndex = chat.messages.findIndex((m: MessageRow) => m.id === messageId)
   if (cutIndex === -1) {
-    throw createError({ message: 'Message not found in chat', status: 404, why: 'messageId does not exist in this chat.' })
+    throw createError({ message: 'Сообщение не найдено в чате', status: 404, why: 'messageId отсутствует в этом чате.' })
   }
   const messagesToCopy = chat.messages.slice(0, cutIndex + 1)
 

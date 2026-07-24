@@ -421,11 +421,11 @@ const evalColumns: TableColumn<EvalResultItem>[] = [
         </UTable>
 
         <div class="mt-4 text-sm text-dimmed text-pretty text-justify bg-elevated/50 p-4 rounded-lg">
-          Each evaluation is attempted up to 4 times.
-          <span class="text-default font-medium">Success Rate</span> is the percentage of evals that passed on at least one attempt;
-          <span class="text-default font-medium">С первого раза</span> — доля оценок, пройденных с первой попытки; используется для сравнения моделей с одинаковой успешностью.
-          <span class="text-default font-medium">Avg Duration</span> is the mean time an agent took per eval. Expand a row to see per-eval results, where a
-          <span class="text-default font-medium">1/3</span> badge means the eval failed twice before passing.
+          На каждую оценку даётся до 4 попыток.
+          <span class="text-default font-medium">Успешность</span> — доля оценок, пройденных хотя бы с одной попытки;
+          <span class="text-default font-medium">С первого раза</span> — доля, пройденных сразу; помогает сравнивать модели при одинаковой успешности.
+          <span class="text-default font-medium">Ср. длительность</span> — среднее время агента на одну оценку. Разверните строку, чтобы увидеть детали: бейдж
+          <span class="text-default font-medium">1/3</span> значит, что оценка провалилась дважды, а прошла с третьей попытки.
         </div>
       </UContainer>
     </UPageBody>

@@ -21,7 +21,7 @@ const { track } = useAnalytics()
 const displayTitle = computed(() => {
   const fromNpm = props.npm?.trim()
   if (fromNpm) return fromNpm
-  return props.slug?.trim() || 'Module'
+  return props.slug?.trim() || 'Модуль'
 })
 
 const installCommand = computed(() => `npx nuxt@latest module add ${props.slug}`)

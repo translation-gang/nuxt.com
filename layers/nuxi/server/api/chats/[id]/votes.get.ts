@@ -23,7 +23,7 @@ export default defineEventHandler(async (event) => {
   })
 
   if (!chat) {
-    throw createError({ message: 'Chat not found', status: 404 })
+    throw createError({ message: 'Чат не найден', status: 404 })
   }
 
   return await db.select().from(schema.votes).where(eq(schema.votes.chatId, id))
