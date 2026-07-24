@@ -2,7 +2,6 @@ import { createDiscordAdapter } from '@chat-adapter/discord'
 import { createMemoryState } from '@chat-adapter/state-memory'
 import { createRedisState } from '@chat-adapter/state-redis'
 import type { Message, Thread } from 'chat'
-import { defineChannel } from 'eve/channels'
 import { chatSdkChannel } from 'eve/channels/chat-sdk'
 import { discordUserAuth, isAllowedDiscordChannel } from '../lib/discord-access.js'
 
@@ -11,54 +10,55 @@ const DISCORD_CONTEXT = [
   '**Discord formatting:** Use absolute nuxt.com links (`https://nuxt.com/docs/...`) — root-relative paths do not render as links on Discord. Standard Unicode emojis only (no Slack custom emojis). Never use `show_prompt` here. Keep replies compact — Discord splits messages over 2000 characters.'
 ]
 
-const discordConfigured = Boolean(process.env.DISCORD_BOT_TOKEN?.trim())
+/**
+ * Discord runs through the Chat SDK channel (mention-driven, replies in
+ * threads) instead of eve's native interactions-only channel, so Nuxi behaves
+ * like it does on Slack: @mention it in an allowed channel, it answers in a
+ * thread, and follow-ups in that thread continue the same eve session.
+ *
+ * Regular messages reach us through the Discord Gateway listener kept alive by
+ * `schedules/discord-gateway.ts`, which forwards events to this channel's
+ * webhook at `/eve/v1/discord`.
+ */
+// Durable state (thread subscriptions, dedupe, locks) needs Redis in
+// production — memory state doesn't survive across serverless invocations, so
+// silently falling back to it in prod would drop dedupe/locking and let the
+// Gateway's overlapping listener windows double-dispatch. Memory is fine for
+// local dev, previews, and when Discord itself is not configured.
 const redisUrl = process.env.REDIS_URL?.trim()
-
-// Durable state needs Redis when Discord actually runs in production.
+const discordConfigured = Boolean(process.env.DISCORD_BOT_TOKEN?.trim())
 if (discordConfigured && !redisUrl && process.env.VERCEL_ENV === 'production') {
   throw new Error('[nuxi:discord] REDIS_URL is required in production for durable Chat SDK state')
 }
 
-type DiscordBridge = ReturnType<typeof chatSdkChannel<{ discord: ReturnType<typeof createDiscordAdapter> }>>
-
-function createDisabledDiscordBridge(): DiscordBridge {
+if (!discordConfigured) {
   console.warn('[nuxi:discord] DISCORD_BOT_TOKEN unset — Discord channel disabled')
-  return {
-    bot: {
-      initialize: async () => undefined,
-      getAdapter: () => undefined,
-      onNewMention: () => undefined,
-      onSubscribedMessage: () => undefined
-    },
-    channel: defineChannel({}),
-    send: async () => {
-      throw new Error('[nuxi:discord] Discord channel is not configured')
-    }
-  } as unknown as DiscordBridge
 }
 
-function createDiscordBridge(): DiscordBridge {
-  return chatSdkChannel({
-    userName: 'Nuxi',
-    adapters: {
-      // Credentials resolve from DISCORD_BOT_TOKEN, DISCORD_PUBLIC_KEY and
-      // DISCORD_APPLICATION_ID env vars on the eve service.
-      discord: createDiscordAdapter()
-    },
-    state: redisUrl ? createRedisState() : createMemoryState(),
-    // Keep the Discord principal when a HITL button click resumes a session.
-    resolveInputAuth: event => discordUserAuth(event.user?.userId, event.user?.userName, event.thread?.channelId)
-  })
-}
-
-export const { bot, channel, send } = discordConfigured
-  ? createDiscordBridge()
-  : createDisabledDiscordBridge()
+export const { bot, channel, send } = chatSdkChannel({
+  userName: 'Nuxi',
+  adapters: discordConfigured
+    ? {
+        // Credentials resolve from DISCORD_BOT_TOKEN, DISCORD_PUBLIC_KEY and
+        // DISCORD_APPLICATION_ID env vars on the eve service.
+        discord: createDiscordAdapter()
+      }
+    : {},
+  state: redisUrl ? createRedisState() : createMemoryState(),
+  // Keep the Discord principal when a HITL button click resumes a session.
+  // Pass the action's own thread channel (not the allowlist gate below,
+  // which only runs for onNewMention/onSubscribedMessage) so a resume from
+  // an unlisted channel doesn't inherit admin access.
+  resolveInputAuth: event => discordUserAuth(event.user?.userId, event.user?.userName, event.thread?.channelId)
+})
 
 const THREAD_TITLE_MAX_LENGTH = 90
 
 function shouldDispatch(thread: Thread, message: Message): boolean {
   if (message.author.isMe || message.author.isBot === true) return false
+  // Allowlist gate: `thread.channelId` is always the parent Discord channel,
+  // even for messages inside threads. Discord sessions are admin-enabled
+  // (see admin-mcp-access.ts) — this gate is what makes that safe.
   const allowed = isAllowedDiscordChannel(thread.channelId)
   if (!allowed) {
     console.warn('[nuxi:discord] dropped mention: channel not in DISCORD_ALLOWED_CHANNELS', { channelId: thread.channelId })
@@ -66,6 +66,8 @@ function shouldDispatch(thread: Thread, message: Message): boolean {
   return allowed
 }
 
+// `message.text` is Discord's raw content, so a mention still contains the
+// `<@applicationId>` token — strip it before using the text as a thread title.
 function threadTitleFromMessage(text: string): string | undefined {
   const cleaned = text.replace(/<@[!&]?\d+>/g, '').replace(/\s+/g, ' ').trim()
   if (!cleaned) return undefined
@@ -79,6 +81,8 @@ if (discordConfigured) {
     if (!shouldDispatch(thread, message)) return
     await thread.subscribe()
 
+    // Fire-and-forget: rename the thread from Discord's default ("Thread 7/23/2026…")
+    // without delaying the reply.
     const title = threadTitleFromMessage(message.text)
     if (title) {
       void bot.getAdapter('discord')?.setThreadTitle(thread.id, title)
