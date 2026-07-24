@@ -1,5 +1,5 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "installCommand": "corepack enable && corepack prepare pnpm@11.15.1 --activate && corepack pnpm install",
-  "buildCommand": "node scripts/clean-content-git-cache.mjs && NODE_OPTIONS='--max-old-space-size=6144' corepack pnpm exec nuxt build"
+  "buildCommand": "node scripts/prepare-vercel-db.mjs && node scripts/clean-content-git-cache.mjs && NODE_OPTIONS='--max-old-space-size=6144' corepack pnpm exec nuxt build && node scripts/patch-vercel-output.mjs"
 }
