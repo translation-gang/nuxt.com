@@ -24,9 +24,10 @@ const DISCORD_CONTEXT = [
 // production — memory state doesn't survive across serverless invocations, so
 // silently falling back to it in prod would drop dedupe/locking and let the
 // Gateway's overlapping listener windows double-dispatch. Memory is fine for
-// local dev and previews.
+// local dev, previews, and when Discord itself is not configured.
 const redisUrl = process.env.REDIS_URL?.trim()
-if (!redisUrl && process.env.VERCEL_ENV === 'production') {
+const discordConfigured = Boolean(process.env.DISCORD_BOT_TOKEN?.trim())
+if (!redisUrl && process.env.VERCEL_ENV === 'production' && discordConfigured) {
   throw new Error('[nuxi:discord] REDIS_URL is required in production for durable Chat SDK state')
 }
 
